@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/carbon"
+    android:orientation="vertical" >
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="2dp"
+        android:background="@drawable/bg" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+            
+            <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+                <Spinner
+                    android:id="@+id/driver1Spinner"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <Spinner
+                    android:id="@+id/driver2Spinner"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+    </LinearLayout>
+
+    <TableLayout
+        android:id="@+id/head2headTable"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+    </TableLayout>
+            
+        </LinearLayout>
+    </ScrollView>
+
+    
+
+</LinearLayout>

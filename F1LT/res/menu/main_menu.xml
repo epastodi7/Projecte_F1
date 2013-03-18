@@ -1,0 +1,12 @@
+
+    <menu xmlns:android="http://schemas.android.com/apk/res/android">
+        <item android:id="@+id/login" android:title="@string/Login" android:icon="@drawable/ic_menu_login"></item>
+        <item android:id="@+id/preferences" android:title="@string/preferences" android:icon="@android:drawable/ic_menu_preferences"></item>
+        <item android:id="@+id/commentary" android:title="@string/commentary" android:icon="@drawable/ic_menu_commentary"></item>
+        <item android:id="@+id/fl" android:title="@string/fastest_laps" android:showAsAction="ifRoom" android:icon="@drawable/ic_menu_fl"></item>
+		<item android:id="@+id/sr" android:title="@string/speed_records" android:showAsAction="ifRoom" android:icon="@drawable/ic_menu_sr"></item>
+        <item android:id="@+id/h2h" android:title="@string/head_to_head" android:showAsAction="ifRoom" android:icon="@drawable/ic_menu_h2h"></item>
+        <item android:id="@+id/ltc" android:title="@string/lap_time_comparison" android:showAsAction="ifRoom" android:icon="@drawable/ic_menu_ltc"></item>
+        <item android:id="@+id/fps" android:title="@string/fastest_pit_stops" android:showAsAction="ifRoom" android:icon="@drawable/ic_menu_fps"></item>                
+        
+    </menu>
