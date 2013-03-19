@@ -405,7 +405,7 @@ public class DataStreamReader
         
         //Creem un arxiu per copiar a dins
         File sdCard = Environment.getExternalStorageDirectory();
-        File dir = new File (sdCard.getAbsolutePath() + "/PROVA/F1/AUS/Cursa4");
+        File dir = new File (sdCard.getAbsolutePath() + "/PROVA/F1/AUS/CursaFI");
         String nom = "Dades";
         nom=nom.concat(Integer.toString(blocks));
         nom=nom.concat(".txt");
@@ -414,24 +414,27 @@ public class DataStreamReader
         }
         File file = new File(dir, nom);
         Log.d("ARREL ARXIU: ", file.toString());
+        byte[] temps = new byte[1];
+        temps[0] = (byte)milis;
         
         try {
         	FileOutputStream f = new FileOutputStream(file);
+        	f.write(temps[0]);
             f.write(data);
-            f.write((int) milis);
+
             f.flush();
             f.close();
         } catch (Exception e) {
             Log.e("EERROR", "Error opening Log.", e);
         }
         
-        /*
+        
         for(int i=0;i<bytes;i++){
         	int value = data[i];
         	String valor = Integer.toString(value);
         	Log.d("==Valor i data:", valor +" i "+ milis);
         }
-        */
+        
         
         
         // Generem un arxiu per cada block rebut
