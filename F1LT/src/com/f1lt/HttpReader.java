@@ -39,6 +39,7 @@ public class HttpReader
 	
 	private static void sendAuthenticationCookie(final Handler handler, final Context context, final boolean result)
 	{
+		Log.d("HttpReader", "sendAuthenticationCookie");
 		if (handler == null || context == null)
 			return;
 		
@@ -52,6 +53,7 @@ public class HttpReader
 	}
 	private static void sendKeyFrame(final Handler handler, final DataStreamReader thread, final boolean result, final byte[] buf, final int bytes)
 	{
+		Log.d("HttpReader", "sendKeyFrame");
 		if (handler == null || thread == null)
 			return;
 		
@@ -66,6 +68,7 @@ public class HttpReader
 	}
 	private static void sendDecryptionKey(final Handler handler, final DataStreamReader thread, final boolean result)
 	{
+		Log.d("HttpReader", "sendDecryptionKey");
 		if (handler == null || thread == null)
 			return;
 		
@@ -81,6 +84,7 @@ public class HttpReader
 	
 	public static void authorize(String host, String loginHost, String email, String passwd, Handler handler, Context context)
 	{
+		Log.d("HttpReader", "authorize");
 		HttpReader.host = host;
 		HttpReader.loginHost = loginHost;
 		HttpReader.email = email;
@@ -151,6 +155,7 @@ public class HttpReader
 	}
 	public static Thread attemptAuth(final String host, final String loginHost, final String email, final String passwd, final Handler handler, final Context context)
 	{
+		Log.d("HttpReader", "attemptAuth");
 		Thread thread = new Thread()
 		{
 			public void run()
@@ -164,6 +169,7 @@ public class HttpReader
 	
 	public static Thread attemptAuth(final Handler handler, final Context context)
 	{
+		Log.d("HttpReader", "attemptAuth");
 		Thread thread = new Thread()
 		{
 			public void run()
@@ -177,6 +183,7 @@ public class HttpReader
 	
 	public static void obtainKeyFrame(final Handler handler, final DataStreamReader thread, final int frame)
 	{
+		Log.d("HttpReader", "obtainKeyFrame");
 		try
 		{
 			String url = "";
@@ -234,6 +241,7 @@ public class HttpReader
 	}
 	public static Thread attemptObtainKeyFrame(final int frame, final Handler handler, final DataStreamReader thread)
 	{
+		Log.d("HttpReader", "attemptObtainKeyFrame");
 		Thread _thread = new Thread()
 		{
 			public void run()
@@ -247,6 +255,7 @@ public class HttpReader
 	
 	public static int obtainDecryptionKey(final Handler handler, final DataStreamReader thread, final String eventNo)
 	{
+		Log.d("HttpReader", "obtainDecryptionKey");
 		try
 		{
 			
@@ -341,6 +350,7 @@ public class HttpReader
 	}
 	public static Thread attemptObtainDecryptionKey(final String eventNo, final Handler handler, final DataStreamReader thread)
 	{
+		Log.d("HttpReader", "attemptObtainDecryptionKey");
 		Thread _thread = new Thread()
 		{
 			public void run()

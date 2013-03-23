@@ -129,12 +129,13 @@ public class SocketDataReader //extends Thread
 	{
 		try
 		{
-			//Log.d("SocketDataReader", "Ping");
+			//Log.d("SocketDataReader", "PingOK");
 			outputStream.write(16);
 			outputStream.flush();
 		}
 		catch(Exception e)
 		{
+			Log.d("SocketDataReader", "PingException");
 			if (--tryReconnect > 0)			
 				reconnect();
 			

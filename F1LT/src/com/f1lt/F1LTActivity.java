@@ -144,7 +144,7 @@ public class F1LTActivity extends FragmentActivity  implements DataStreamReceive
     @Override
     protected void onSaveInstanceState (Bundle outState)
     {
-    	//Log.d("F1LTActivity", "onSaveInstanceState");
+    	Log.d("F1LTActivity", "onSaveInstanceState");
     	super.onSaveInstanceState(outState);
     	outState.putBoolean("connected", true);
     }

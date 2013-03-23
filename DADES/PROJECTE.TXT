@@ -1,0 +1,1 @@
+onConnectedClicked de F1LTActivity. TREURE user i passwd HARDCODED.

@@ -5,6 +5,7 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
+import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
@@ -27,26 +28,26 @@ class Decrypter
 	
 	public void setKey(int key)
 	{
-		//Log.d("DataStreamReader", "setKey");
+		Log.d("DataStreamReader", "setKey");
 		mask = seed;
 		this.key = key;
 	}
 	
 	public int getKey()
 	{	
-		//Log.d("DataStreamReader", "getKey");
+		Log.d("DataStreamReader", "getKey");
 		return key;
 	}
 	
 	public void resetDecryption()
 	{
-		//Log.d("DataStreamReader", "resetDecryption");
+		Log.d("DataStreamReader", "resetDecryption");
 		mask = seed;
 	}
 	
 	public byte[] decrypt(byte [] buf)
 	{
-		//Log.d("DataStreamReader", "decrypt");
+		Log.d("DataStreamReader", "decrypt");
 		for (int i = 0; i < buf.length; ++i)
 		{
 			mask = mask >> 1 & 0x7fffffff ^ ((mask & 1) != 1 ? 0 : key);
@@ -59,7 +60,7 @@ class Decrypter
 	 //very simple passwd encoding algorithm
     static public String encodePasswd(String passwd)
     {
-    	//Log.d("DataStreamReader", "encodePasswd");
+    	Log.d("DataStreamReader", "encodePasswd");
         int sz = passwd.length();
         String ret = "";
         for (int i = 0; i < sz; ++i)
@@ -121,7 +122,7 @@ public class DataStreamReader
 	
 	public static DataStreamReader getInstance()
 	{
-		//Log.d("DataStreamReader", "getInstance");
+		Log.d("DataStreamReader", "getInstance");
 		if (dataStreamReader == null)
 			dataStreamReader = new DataStreamReader();
 		
@@ -130,21 +131,21 @@ public class DataStreamReader
 	
 	public void setDataStreamReceiver(Handler receiverHandler, DataStreamReceiver dataStreamReceiver)
 	{
-		//Log.d("DataStreamReader", "setDataStreamReceiver");
+		Log.d("DataStreamReader", "setDataStreamReceiver");
 		this.dataStreamReceiver = dataStreamReceiver;
 		this.receiverHandler = receiverHandler;
 	}
 	
 	public void setSecondaryDataStreamReceiver(Handler receiverHandler, DataStreamReceiver dataStreamReceiver)
 	{
-		//Log.d("DataStreamReader", "setSecondaryDataStreamReceiver");
+		Log.d("DataStreamReader", "setSecondaryDataStreamReceiver");
 		this.secondaryDataStreamReceiver = dataStreamReceiver;
 		this.secondaryReceiverHandler = receiverHandler;
 		
 	}
 	public void removeSecondaryDataStreamReceiver()
 	{
-		//Log.d("DataStreamReader", "removeSecondaryDataStreamReceiver");
+		Log.d("DataStreamReader", "removeSecondaryDataStreamReceiver");
 		this.secondaryDataStreamReceiver = null;
 		this.secondaryReceiverHandler = null;
 		
@@ -152,13 +153,13 @@ public class DataStreamReader
 	
 	public DataStreamReceiver getSecondaryDataStreamReceiver()
 	{
-		//Log.d("DataStreamReader", "getSecondaryDataStreamReceiver");
+		Log.d("DataStreamReader", "getSecondaryDataStreamReceiver");
 		return secondaryDataStreamReceiver;
 	}
 	
 	public boolean isConnected()
 	{
-		//Log.d("DataStreamReader", "isConnected");
+		Log.d("DataStreamReader", "isConnected");
 		return connected;
 	}
 	
@@ -174,7 +175,7 @@ public class DataStreamReader
 	
 	public void connectToStream(final String host, final int port)
 	{
-		//Log.d("DataStreamReader", "connectToStream");
+		Log.d("DataStreamReader", "connectToStream");
 		this.host = host;
 		this.port = port;
 						
@@ -201,13 +202,13 @@ public class DataStreamReader
 	
 	public void reconnect()
 	{
-		//Log.d("DataStreamReader", "reconnect");
+		Log.d("DataStreamReader", "reconnect");
 		connectToStream(host, port);
 	}
 	
 	public void disconnect()
 	{
-		//Log.d("DataStreamReader", "disconnect");
+		Log.d("DataStreamReader", "disconnect");
 		connected = false;		
 		socketDataReader.closeStream();
 		
@@ -223,7 +224,7 @@ public class DataStreamReader
 	
 	 public void onSessionTimerUpdated(String time, boolean stop)
 	    {
-		 	//Log.d("DataStreamReader", "onSessionTimerUpdated");
+		 	Log.d("DataStreamReader", "onSessionTimerUpdated");
 	    	eventData.remainingTime = time;
 	    	
 //	    	receiverHandler.post(new Runnable() 
@@ -254,7 +255,7 @@ public class DataStreamReader
 	
 	public void onKeyFrameObtained(final byte[] buf, final int bytes, boolean result)
     {
-		//Log.d("DataStreamReader", "onKeyFrameObtained");
+		Log.d("DataStreamReader", "onKeyFrameObtained");
     	if (result)
     	{    		    	
 //    		Log.d("KEY FRAME OBTAINED", "" + bytes);
@@ -306,7 +307,7 @@ public class DataStreamReader
 	
 	public void onDecryptionKeyObtained(int key, boolean result)
     {
-		//Log.d("DataStreamReader", "onDecryptionKeyObtained");
+		Log.d("DataStreamReader", "onDecryptionKeyObtained");
     	if (result)
     	{
     		decrypter.setKey(key);    		
@@ -331,7 +332,7 @@ public class DataStreamReader
 	
 	public void onDataBlockObtained(final byte [] data, final int bytes, final boolean result)
     {    
-		//Log.d("DataStreamReader", "onDataBlockObtained");
+		Log.d("DataStreamReader", "onDataBlockObtained");
 		if (!connected)
 			return;
     	if (result)    	
@@ -366,7 +367,7 @@ public class DataStreamReader
 	
 	public void newDataObtained()
 	{
-		//Log.d("DataStreamReader", "newDataObtained");
+		Log.d("DataStreamReader", "newDataObtained");
 //		receiverHandler.post(new Runnable() 
 //		{
 //			public void run()
@@ -405,7 +406,7 @@ public class DataStreamReader
         
         //Creem un arxiu per copiar a dins
         File sdCard = Environment.getExternalStorageDirectory();
-        File dir = new File (sdCard.getAbsolutePath() + "/PROVA/F1/AUS/CursaFI");
+        File dir = new File (sdCard.getAbsolutePath() + "/PROVA/F1/MAL/Q1-1");
         String nom = "Dades";
         nom=nom.concat(Integer.toString(blocks));
         nom=nom.concat(".txt");
@@ -414,26 +415,25 @@ public class DataStreamReader
         }
         File file = new File(dir, nom);
         Log.d("ARREL ARXIU: ", file.toString());
-        byte[] temps = new byte[1];
-        temps[0] = (byte)milis;
+        byte[] temps = ByteBuffer.allocate(8).putLong(milis).array();
         
         try {
         	FileOutputStream f = new FileOutputStream(file);
-        	f.write(temps[0]);
+        	f.write(temps);
             f.write(data);
-
             f.flush();
             f.close();
         } catch (Exception e) {
             Log.e("EERROR", "Error opening Log.", e);
         }
         
-        
+        /*
         for(int i=0;i<bytes;i++){
         	int value = data[i];
         	String valor = Integer.toString(value);
-        	Log.d("==Valor i data:", valor +" i "+ milis);
+        	Log.d("==ITER: Valor i data:", i+ " "+valor);
         }
+        */
         
         
         
@@ -475,10 +475,11 @@ public class DataStreamReader
 	
 	public boolean parsePacket(AtomicReference<Packet> arPacket, byte [] buf, int bytes, AtomicReference<Integer> arPos)
 	{	
+		//Log.d("DataStreamReader", "parsePacket");
 		packets = packets + 1;
 		int cent = packets % 40;
 		if(cent==0){
-			Log.d("packets", String.valueOf(packets));
+			//Log.d("packets", String.valueOf(packets));
 		}
 		
 		Packet packet = arPacket.get();
@@ -624,7 +625,7 @@ public class DataStreamReader
 	
 	public void parseSystemPacket(Packet packet)
 	{
-		//Log.d("DataStreamReader", "parseSystemPacket");
+		Log.d("DataStreamReader", "parseSystemPacket");
 		try
 		{
 //			if (packet.type != LTData.SystemPacket.SYS_COMMENTARY && packet.type != LTData.SystemPacket.SYS_TIMESTAMP)
@@ -996,7 +997,7 @@ public class DataStreamReader
 	
 	public void parseCarPacket(Packet packet)
 	{    
-		//Log.d("DataStreamReader", "parseCarPacket");
+		Log.d("DataStreamReader", "parseCarPacket");
 		if (noSession)
 		{
 //			receiverHandler.post(new Runnable() 
@@ -1690,16 +1691,6 @@ public class DataStreamReader
 	    dd.carID = packet.carID;
 	    eventData.driversData.set(packet.carID-1, dd);	    
 
-    	/*
-	    String nom = dd.driver;
-	    Log.d("NOM", nom);
-	    String lapTime = dd.lastLap.lapTime.toString();
-	    Log.d("VOLTA", lapTime);
-	    String s1 = dd.lastLap.sector1.toString();
-	    String s2 = dd.lastLap.sector2.toString();
-	    String s3 = dd.lastLap.sector3.toString();
-	    Log.d("SECTORS: ", s1+" "+s2+" "+s3);
-	    */
 	    
 //	    if (emitSignal)
 //	        emit driverDataChanged(packet.carID);
