@@ -406,7 +406,7 @@ public class DataStreamReader
         
         //Creem un arxiu per copiar a dins
         File sdCard = Environment.getExternalStorageDirectory();
-        File dir = new File (sdCard.getAbsolutePath() + "/PROVA/F1/MAL/Q1-1");
+        File dir = new File (sdCard.getAbsolutePath() + "/PROVA/F1/MAL/RACE-4");
         String nom = "Dades";
         nom=nom.concat(Integer.toString(blocks));
         nom=nom.concat(".txt");
