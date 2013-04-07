@@ -398,36 +398,47 @@ public class DataStreamReader
         AtomicReference<Packet> packet = new AtomicReference<Packet>(new Packet());
         AtomicReference<Integer> pos = new AtomicReference<Integer>(0);   
         
-        //Creem calendari per extreure el temps ( en milisegons )
-        Calendar c1 = Calendar.getInstance();
-        long milis = c1.getTimeInMillis();
-        milis = milis / 1000;
+        boolean entra = true;
+        if(entra){
+	        //Creem calendari per extreure el temps ( en milisegons )
+	        Calendar c1 = Calendar.getInstance();
+	        long milis = c1.getTimeInMillis();
+	        milis = milis / 1000;
+	        
+	        //Creem un arxiu per copiar a dins
+	        File sdCard = Environment.getExternalStorageDirectory();
+	        File dir = new File (sdCard.getAbsolutePath() + "/PROVA/F1/MAL/RACE-CHECK-EFICIENT");
+	        String nom = "Dades";
+	        nom=nom.concat(Integer.toString(blocks));
+	        nom=nom.concat(".txt");
+	        if(carpeta_creada==false){
+		        dir.mkdirs();
+	        }
+	        File file = new File(dir, nom);
+	        Log.d("ARREL ARXIU: ", file.toString());
+	        byte[] temps = ByteBuffer.allocate(8).putLong(milis).array();
+	        
+	        // Nomes copiem els bytes del array que contenen elements
+	        byte[] dades = new byte [bytes];
+	        for(int i=0;i<bytes;i++){
+	        	dades[i] = data[i];
+	        }
+	        
+	        try {
+	        	FileOutputStream f = new FileOutputStream(file);
+	        	f.write(temps);
+	            f.write(dades);
+	            f.flush();
+	            f.close();
+	        } catch (Exception e) {
+	            Log.e("EERROR", "Error opening Log.", e);
+	        }
+	        
+        } // fi del if
         
-        
-        //Creem un arxiu per copiar a dins
-        File sdCard = Environment.getExternalStorageDirectory();
-        File dir = new File (sdCard.getAbsolutePath() + "/PROVA/F1/MAL/RACE-4");
-        String nom = "Dades";
-        nom=nom.concat(Integer.toString(blocks));
-        nom=nom.concat(".txt");
-        if(carpeta_creada==false){
-	        dir.mkdirs();
-        }
-        File file = new File(dir, nom);
-        Log.d("ARREL ARXIU: ", file.toString());
-        byte[] temps = ByteBuffer.allocate(8).putLong(milis).array();
-        
-        try {
-        	FileOutputStream f = new FileOutputStream(file);
-        	f.write(temps);
-            f.write(data);
-            f.flush();
-            f.close();
-        } catch (Exception e) {
-            Log.e("EERROR", "Error opening Log.", e);
-        }
         
         /*
+        // VALORS PARCIALS DE CADA PAQUET
         for(int i=0;i<bytes;i++){
         	int value = data[i];
         	String valor = Integer.toString(value);
@@ -435,17 +446,15 @@ public class DataStreamReader
         }
         */
         
-        
-        
-        // Generem un arxiu per cada block rebut
-        
-        
-        
+       
         // PROVA SI CADA COP QUE PARSEJA UN PACKET ENTRA AQUI.
+        /*
         int lon = data.length;
+        Log.d("parseBlock IF LON i BYTES", Integer.toString(lon) + " " + Integer.toString(bytes));
         if(lon==bytes){
         	Log.d("parseBlock lon==bytes", Integer.toString(lon));
         }
+        */
         
         while (parsePacket (packet, data, bytes, pos)) 
         { 
