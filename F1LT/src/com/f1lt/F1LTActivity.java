@@ -241,6 +241,7 @@ public class F1LTActivity extends FragmentActivity  implements DataStreamReceive
 	protected void onActivityResult(int requestCode, int resultCode, Intent data)
 	{
     	Log.d("F1LTActivity", "onActivityResult");
+    	Log.d("ResultCode dins F1LT", Integer.toString(resultCode));
 		if (requestCode == GET_LOGIN && resultCode == RESULT_OK)
 		{			
 			String email = data.getStringExtra("Email");
@@ -293,6 +294,9 @@ public class F1LTActivity extends FragmentActivity  implements DataStreamReceive
 			LTViewFragment lt = (LTViewFragment)getSupportFragmentManager().findFragmentByTag("LTViewFragment");
 			if (lt != null)
 				lt.refreshView();
+		}
+		else{
+			Log.d("onActivity", "FUNCIO DIFERIT");
 		}
 				
 	}
@@ -487,7 +491,8 @@ public class F1LTActivity extends FragmentActivity  implements DataStreamReceive
         } 
         else 
         {
-        	Toast.makeText(this, "Could not find any active network connections!", Toast.LENGTH_LONG);
+        	Toast error = Toast.makeText(this, "Could not find any active network connections!", Toast.LENGTH_LONG);
+        	error.show();
 //        	EditText t = (EditText)findViewById(R.id.editText3);                    
 //        	t.setText("No network connection available.");
         }

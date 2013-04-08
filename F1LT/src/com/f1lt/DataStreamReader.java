@@ -35,7 +35,7 @@ class Decrypter
 	
 	public int getKey()
 	{	
-		Log.d("DataStreamReader", "getKey");
+		//Log.d("DataStreamReader", "getKey");
 		return key;
 	}
 	
