@@ -2,6 +2,9 @@ package com.f1lt;
 
 
 
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 
 import org.apache.http.cookie.Cookie;
@@ -16,6 +19,7 @@ import android.content.pm.ActivityInfo;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
+import android.os.Environment;
 import android.os.Handler;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTransaction;
@@ -48,6 +52,7 @@ public class F1LTActivity extends FragmentActivity  implements DataStreamReceive
     private boolean portrait = false;
     private boolean messageBoardShown = false;
     private boolean showCommentaryLine = true;
+    private boolean delayed;
     
     private final String PREFS_NAME = "F1LTPrefs";    
     private final int GET_LOGIN = 1;
@@ -132,10 +137,12 @@ public class F1LTActivity extends FragmentActivity  implements DataStreamReceive
             
     		if (!dataStreamReader.isConnected())
     		{
+    			Log.d("F1LTAct L139","No conectat");
     			login(false);
 //    			onAuthorized(null, true);
     		}
     		else
+    			Log.d("F1LTAct L144","Conectat");
     			updateCommentaryLine();
         }
                             
@@ -242,6 +249,7 @@ public class F1LTActivity extends FragmentActivity  implements DataStreamReceive
 	{
     	Log.d("F1LTActivity", "onActivityResult");
     	Log.d("ResultCode dins F1LT", Integer.toString(resultCode));
+    	
 		if (requestCode == GET_LOGIN && resultCode == RESULT_OK)
 		{			
 			String email = data.getStringExtra("Email");
@@ -295,10 +303,55 @@ public class F1LTActivity extends FragmentActivity  implements DataStreamReceive
 			if (lt != null)
 				lt.refreshView();
 		}
-		else{
-			Log.d("onActivity", "FUNCIO DIFERIT");
-		}
 				
+	}
+    
+    private void delayed() {
+		
+    	Log.d("delayed", "FUNCIO DIFERIT");
+    	int blocks, bytes = 0;
+    	File sdCard = Environment.getExternalStorageDirectory();
+        File dir = new File (sdCard.getAbsolutePath() + "/PROVA/F1/MAL/RACE-CHECK-EFICIENT");
+        File[] llista = dir.listFiles();
+        Log.d("NUM FITXERS CARPETA:", Integer.toString(llista.length));
+        byte[] dades = new byte[65535];
+        
+        for(blocks=1;blocks<=llista.length;blocks++){
+        
+	        String nom = "Dades";
+	        nom=nom.concat(Integer.toString(blocks));
+	        nom=nom.concat(".txt");
+	        
+	        File file = new File(dir, nom);
+	        Log.d("ARREL ARXIU: ", file.toString());
+	        dades = null;
+	        ByteArrayOutputStream buffer = new ByteArrayOutputStream();
+	        byte[] data = new byte[65535];
+	    
+	        try {
+	        	FileInputStream f = new FileInputStream(file);
+	        	int nRead = 0;
+	
+	        	while ((nRead = f.read(data, 0, data.length)) != -1) {
+	        	  buffer.write(data, 0, nRead);
+	        	}
+	
+	        	dades = buffer.toByteArray();
+	        	bytes = dades.length;
+	        	buffer.flush();
+	        	
+	    		Log.d("NUM DADES BYTES:", Integer.toString(bytes));
+	        	//f.read(temps);
+	            //f.read(dades);
+	            f.close();
+	            
+	        } catch (Exception e) {
+	            Log.e("ERROR", "Error opening Log.", e);
+	        }
+	        
+	        //dataStreamReader.parseBlock(dades, bytes);
+        }
+		
 	}
     
 //    @Override
@@ -493,6 +546,32 @@ public class F1LTActivity extends FragmentActivity  implements DataStreamReceive
         {
         	Toast error = Toast.makeText(this, "Could not find any active network connections!", Toast.LENGTH_LONG);
         	error.show();
+        	
+        	DialogInterface.OnClickListener dialogClickListener = new DialogInterface.OnClickListener() {
+        	    
+        		@Override
+        	    public void onClick(DialogInterface dialog, int which) {
+        	        switch (which){
+        	        case DialogInterface.BUTTON_POSITIVE:
+        	            delayed = true;
+        	            Log.d("BOTO RESULTAT", "OK TIO");
+        	        	if(delayed){
+        	        		delayed();
+        	        	}
+        	            break;
+
+        	        case DialogInterface.BUTTON_NEGATIVE:
+        	            delayed = false;
+        	            Log.d("BOTO RESULTAT", "ROKA TIO");
+        	            break;
+        	        }
+        	    }
+        	};
+
+        	AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        	builder.setMessage("Not Connected. You want to play a session completed?").setPositiveButton("Yes", dialogClickListener)
+        	    .setNegativeButton("No", dialogClickListener).show();
+        	
 //        	EditText t = (EditText)findViewById(R.id.editText3);                    
 //        	t.setText("No network connection available.");
         }

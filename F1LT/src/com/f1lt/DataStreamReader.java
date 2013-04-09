@@ -28,7 +28,7 @@ class Decrypter
 	
 	public void setKey(int key)
 	{
-		Log.d("DataStreamReader", "setKey");
+		//Log.d("DataStreamReader", "setKey");
 		mask = seed;
 		this.key = key;
 	}
@@ -426,10 +426,11 @@ public class DataStreamReader
 	        
 	        try {
 	        	FileOutputStream f = new FileOutputStream(file);
-	        	f.write(temps);
+	        	//f.write(temps);
 	            f.write(dades);
 	            f.flush();
 	            f.close();
+	            Log.d("GUARDAT NUM DADES AL ARXIU: ", Integer.toString(dades.length));
 	        } catch (Exception e) {
 	            Log.e("EERROR", "Error opening Log.", e);
 	        }
