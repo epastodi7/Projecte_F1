@@ -295,9 +295,11 @@ public class DataStreamReader
 //	    				socketDataReader.openStream("192.168.1.2", 6666, handler, DataStreamReader.this);
 	    				while (connected)
 	    				{
+	    					Log.d("onKeyFrameObtained", "DINS WHILE CONNECTED");
 	    					//	just wait for data from socketDataReader and parse it
 	    					socketDataReader.readStream();
 	    				}
+	    				Log.d("onKeyFrameObtained", "SURT WHILE CONNECTED");
 	    			}
 	    		};
 	    		socketThread.start();
@@ -407,7 +409,7 @@ public class DataStreamReader
 	        
 	        //Creem un arxiu per copiar a dins
 	        File sdCard = Environment.getExternalStorageDirectory();
-	        File dir = new File (sdCard.getAbsolutePath() + "/PROVA/F1/MAL/RACE-CHECK-EFICIENT");
+	        File dir = new File (sdCard.getAbsolutePath() + "/PROVA/F1/CHI/Q-2");
 	        String nom = "Dades";
 	        nom=nom.concat(Integer.toString(blocks));
 	        nom=nom.concat(".txt");

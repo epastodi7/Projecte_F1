@@ -129,7 +129,7 @@ public class SocketDataReader //extends Thread
 	{
 		try
 		{
-			//Log.d("SocketDataReader", "PingOK");
+			Log.d("SocketDataReader", "PingOK");
 			outputStream.write(16);
 			outputStream.flush();
 		}

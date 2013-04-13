@@ -138,7 +138,7 @@ public class F1LTActivity extends FragmentActivity  implements DataStreamReceive
     		if (!dataStreamReader.isConnected())
     		{
     			Log.d("F1LTAct L139","No conectat");
-    			login(false);
+    			login(true);
 //    			onAuthorized(null, true);
     		}
     		else
