@@ -1,0 +1,2926 @@
+04-13 07:57:03.129: W/ApplicationContext(4352): getSharedPreferences
+04-13 07:57:03.129: W/ApplicationContext(4352): org.xmlpull.v1.XmlPullParserException: Error parsing document. (position:line -1, column -1) caused by: org.apache.harmony.xml.ExpatParser$ParseException: At line 4, column 27: not well-formed (invalid token)
+04-13 07:57:03.129: W/ApplicationContext(4352): 	at org.apache.harmony.xml.ExpatPullParser$ByteDocument.flush(ExpatPullParser.java:958)
+04-13 07:57:03.129: W/ApplicationContext(4352): 	at org.apache.harmony.xml.ExpatPullParser$Document.pump(ExpatPullParser.java:769)
+04-13 07:57:03.129: W/ApplicationContext(4352): 	at org.apache.harmony.xml.ExpatPullParser$Document.dequeue(ExpatPullParser.java:813)
+04-13 07:57:03.129: W/ApplicationContext(4352): 	at org.apache.harmony.xml.ExpatPullParser.next(ExpatPullParser.java:302)
+04-13 07:57:03.129: W/ApplicationContext(4352): 	at com.android.internal.util.XmlUtils.readValueXml(XmlUtils.java:675)
+04-13 07:57:03.129: W/ApplicationContext(4352): 	at com.android.internal.util.XmlUtils.readMapXml(XmlUtils.java:470)
+04-13 07:57:03.129: W/ApplicationContext(4352): 	at android.app.ContextImpl.getSharedPreferences(ContextImpl.java:385)
+04-13 07:57:03.129: W/ApplicationContext(4352): 	at android.content.ContextWrapper.getSharedPreferences(ContextWrapper.java:146)
+04-13 07:57:03.129: W/ApplicationContext(4352): 	at com.f1lt.F1LTActivity.onCreate(F1LTActivity.java:101)
+04-13 07:57:03.129: W/ApplicationContext(4352): 	at android.app.Instrumentation.callActivityOnCreate(Instrumentation.java:1047)
+04-13 07:57:03.129: W/ApplicationContext(4352): 	at android.app.ActivityThread.performLaunchActivity(ActivityThread.java:1615)
+04-13 07:57:03.129: W/ApplicationContext(4352): 	at android.app.ActivityThread.handleLaunchActivity(ActivityThread.java:1667)
+04-13 07:57:03.129: W/ApplicationContext(4352): 	at android.app.ActivityThread.access$1500(ActivityThread.java:117)
+04-13 07:57:03.129: W/ApplicationContext(4352): 	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:935)
+04-13 07:57:03.129: W/ApplicationContext(4352): 	at android.os.Handler.dispatchMessage(Handler.java:99)
+04-13 07:57:03.129: W/ApplicationContext(4352): 	at android.os.Looper.loop(Looper.java:130)
+04-13 07:57:03.129: W/ApplicationContext(4352): 	at android.app.ActivityThread.main(ActivityThread.java:3687)
+04-13 07:57:03.129: W/ApplicationContext(4352): 	at java.lang.reflect.Method.invokeNative(Native Method)
+04-13 07:57:03.129: W/ApplicationContext(4352): 	at java.lang.reflect.Method.invoke(Method.java:507)
+04-13 07:57:03.129: W/ApplicationContext(4352): 	at com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run(ZygoteInit.java:867)
+04-13 07:57:03.129: W/ApplicationContext(4352): 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:625)
+04-13 07:57:03.129: W/ApplicationContext(4352): 	at dalvik.system.NativeStart.main(Native Method)
+04-13 07:57:03.159: D/DataStreamReader(4352): isConnected
+04-13 07:57:03.159: D/F1LTAct L139(4352): No conectat
+04-13 07:57:03.159: D/F1LTActivity(4352): login
+04-13 07:57:03.189: D/F1LTActivity(4352): updateCommentaryLine
+04-13 07:57:03.189: D/F1LTActivity(4352): onStart
+04-13 07:57:03.949: D/F1LTActivity(4352): onSaveInstanceState
+04-13 07:57:03.959: W/dalvikvm(4352): VFY: unable to resolve virtual method 2951: Lcom/f1lt/LoginActivity;.getActionBar ()Landroid/app/ActionBar;
+04-13 07:57:03.989: I/ApplicationPackageManager(4352): cscCountry is not German : YOG
+04-13 07:57:12.899: D/F1LTActivity(4352): onActivityResult
+04-13 07:57:12.899: D/ResultCode dins F1LT(4352): -1
+04-13 07:57:12.899: D/F1LTActivity(4352): onConnectedClicked
+04-13 07:57:12.899: D/DataStreamReader(4352): encodePasswd
+04-13 07:57:12.969: D/F1LTActivity(4352): onRestart
+04-13 07:57:12.969: D/F1LTActivity(4352): onStart
+04-13 07:57:18.379: D/BOTO RESULTAT(4352): ROKA TIO
+04-13 07:57:19.049: W/KeyCharacterMap(4352): No keyboard for id 0
+04-13 07:57:19.049: W/KeyCharacterMap(4352): Using default keymap: /system/usr/keychars/qwerty.kcm.bin
+04-13 07:57:19.189: D/F1LTActivity(4352): onBackPressed
+04-13 07:57:19.779: D/F1LTActivity(4352): onDestroy
+04-13 07:57:19.799: W/IInputConnectionWrapper(4352): showStatusIcon on inactive InputConnection
+04-13 07:57:31.109: I/ApplicationPackageManager(4352): cscCountry is not German : YOG
+04-13 07:57:31.109: D/F1LTActivity(4352): onCreate
+04-13 07:57:31.449: D/DataStreamReader(4352): getInstance
+04-13 07:57:31.449: D/DataStreamReader(4352): setDataStreamReceiver
+04-13 07:57:31.589: D/DataStreamReader(4352): isConnected
+04-13 07:57:31.589: D/F1LTAct L139(4352): No conectat
+04-13 07:57:31.589: D/F1LTActivity(4352): login
+04-13 07:57:31.589: D/F1LTActivity(4352): updateCommentaryLine
+04-13 07:57:31.589: D/F1LTActivity(4352): onStart
+04-13 07:57:32.289: D/F1LTActivity(4352): onSaveInstanceState
+04-13 07:57:32.289: I/ApplicationPackageManager(4352): cscCountry is not German : YOG
+04-13 07:57:38.959: D/F1LTActivity(4352): onActivityResult
+04-13 07:57:38.959: D/ResultCode dins F1LT(4352): -1
+04-13 07:57:38.959: D/F1LTActivity(4352): onConnectedClicked
+04-13 07:57:38.979: D/DataStreamReader(4352): encodePasswd
+04-13 07:57:38.979: D/HttpReader(4352): attemptAuth
+04-13 07:57:38.979: D/F1LTActivity(4352): onRestart
+04-13 07:57:38.979: D/F1LTActivity(4352): onStart
+04-13 07:57:38.979: D/HttpReader(4352): authorize
+04-13 07:57:43.569: I/global(4352): Loaded time zone names for en_US in 4017ms.
+04-13 07:57:44.099: D/HttpReader(4352): sendAuthenticationCookie
+04-13 07:57:44.099: D/F1LTActivity(4352): onAuthorized
+04-13 07:57:44.179: D/DataStreamReader(4352): connectToStream
+04-13 07:57:44.179: D/HttpReader(4352): attemptObtainKeyFrame
+04-13 07:57:44.189: D/HttpReader(4352): obtainKeyFrame
+04-13 07:57:44.329: D/HttpReader(4352): sendKeyFrame
+04-13 07:57:44.329: D/DataStreamReader(4352): onKeyFrameObtained
+04-13 07:57:44.329: D/DataStreamReader(4352): resetDecryption
+04-13 07:57:44.329: D/DataStreamReader(4352): parseBlock: 1
+04-13 07:57:44.459: D/ARREL ARXIU:(4352): /mnt/sdcard/PROVA/F1/CHI/Q-1/Dades1.txt
+04-13 07:57:44.469: D/GUARDAT NUM DADES AL ARXIU:(4352): 2233
+04-13 07:57:44.469: D/DataStreamReader(4352): parseSystemPacket
+04-13 07:57:44.479: D/HttpReader(4352): attemptObtainDecryptionKey
+04-13 07:57:44.479: D/DataStreamReader(4352): resetDecryption
+04-13 07:57:44.479: D/DataStreamReader(4352): parseSystemPacket
+04-13 07:57:44.479: D/DataStreamReader(4352): parseSystemPacket
+04-13 07:57:44.479: D/DataStreamReader(4352): parseSystemPacket
+04-13 07:57:44.479: D/DataStreamReader(4352): parseCarPacket
+04-13 07:57:44.479: D/CAR=1(4352):  CAR TYPE=0 CAR DATA= 1 CAR LEN= 0 LONG DATA= 
+04-13 07:57:44.489: D/DataStreamReader(4352): parseCarPacket
+04-13 07:57:44.489: D/CAR=2(4352):  CAR TYPE=0 CAR DATA= 2 CAR LEN= 0 LONG DATA= 
+04-13 07:57:44.489: D/DataStreamReader(4352): parseCarPacket
+04-13 07:57:44.489: D/CAR=3(4352):  CAR TYPE=0 CAR DATA= 3 CAR LEN= 0 LONG DATA= 
+04-13 07:57:44.489: D/DataStreamReader(4352): parseCarPacket
+04-13 07:57:44.489: D/CAR=4(4352):  CAR TYPE=0 CAR DATA= 4 CAR LEN= 0 LONG DATA= 
+04-13 07:57:44.489: D/HttpReader(4352): obtainDecryptionKey
+04-13 07:57:44.489: D/DataStreamReader(4352): parseCarPacket
+04-13 07:57:44.489: D/CAR=5(4352):  CAR TYPE=0 CAR DATA= 5 CAR LEN= 0 LONG DATA= 
+04-13 07:57:44.489: D/DataStreamReader(4352): parseCarPacket
+04-13 07:57:44.489: D/CAR=6(4352):  CAR TYPE=0 CAR DATA= 6 CAR LEN= 0 LONG DATA= 
+04-13 07:57:44.509: D/DataStreamReader(4352): parseCarPacket
+04-13 07:57:44.509: D/CAR=7(4352):  CAR TYPE=0 CAR DATA= 7 CAR LEN= 0 LONG DATA= 
+04-13 07:57:44.509: D/DataStreamReader(4352): parseCarPacket
+04-13 07:57:44.509: D/CAR=8(4352):  CAR TYPE=0 CAR DATA= 8 CAR LEN= 0 LONG DATA= 
+04-13 07:57:44.509: D/DataStreamReader(4352): parseCarPacket
+04-13 07:57:44.509: D/CAR=9(4352):  CAR TYPE=0 CAR DATA= 9 CAR LEN= 0 LONG DATA= 
+04-13 07:57:44.509: D/DataStreamReader(4352): parseCarPacket
+04-13 07:57:44.509: D/CAR=10(4352):  CAR TYPE=0 CAR DATA= 10 CAR LEN= 0 LONG DATA= 
+04-13 07:57:44.509: D/DataStreamReader(4352): parseCarPacket
+04-13 07:57:44.509: D/CAR=11(4352):  CAR TYPE=0 CAR DATA= 11 CAR LEN= 0 LONG DATA= 
+04-13 07:57:44.509: D/DataStreamReader(4352): parseCarPacket
+04-13 07:57:44.509: D/CAR=12(4352):  CAR TYPE=0 CAR DATA= 12 CAR LEN= 0 LONG DATA= 
+04-13 07:57:44.509: D/DataStreamReader(4352): parseCarPacket
+04-13 07:57:44.509: D/CAR=13(4352):  CAR TYPE=0 CAR DATA= 13 CAR LEN= 0 LONG DATA= 
+04-13 07:57:44.529: D/DataStreamReader(4352): parseCarPacket
+04-13 07:57:44.529: D/CAR=14(4352):  CAR TYPE=0 CAR DATA= 14 CAR LEN= 0 LONG DATA= 
+04-13 07:57:44.529: D/DataStreamReader(4352): parseCarPacket
+04-13 07:57:44.529: D/CAR=15(4352):  CAR TYPE=0 CAR DATA= 15 CAR LEN= 0 LONG DATA= 
+04-13 07:57:44.529: D/DataStreamReader(4352): parseCarPacket
+04-13 07:57:44.529: D/CAR=16(4352):  CAR TYPE=0 CAR DATA= 16 CAR LEN= 0 LONG DATA= 
+04-13 07:57:44.529: D/DataStreamReader(4352): parseCarPacket
+04-13 07:57:44.529: D/CAR=17(4352):  CAR TYPE=0 CAR DATA= 17 CAR LEN= 0 LONG DATA= 
+04-13 07:57:44.529: D/DataStreamReader(4352): parseCarPacket
+04-13 07:57:44.529: D/CAR=18(4352):  CAR TYPE=0 CAR DATA= 18 CAR LEN= 0 LONG DATA= 
+04-13 07:57:44.529: D/DataStreamReader(4352): parseCarPacket
+04-13 07:57:44.529: D/CAR=19(4352):  CAR TYPE=0 CAR DATA= 19 CAR LEN= 0 LONG DATA= 
+04-13 07:57:44.529: D/DataStreamReader(4352): parseCarPacket
+04-13 07:57:44.529: D/CAR=20(4352):  CAR TYPE=0 CAR DATA= 20 CAR LEN= 0 LONG DATA= 
+04-13 07:57:44.539: D/DataStreamReader(4352): parseCarPacket
+04-13 07:57:44.539: D/CAR=21(4352):  CAR TYPE=0 CAR DATA= 21 CAR LEN= 0 LONG DATA= 
+04-13 07:57:44.539: D/DataStreamReader(4352): parseCarPacket
+04-13 07:57:44.539: D/CAR=22(4352):  CAR TYPE=0 CAR DATA= 22 CAR LEN= 0 LONG DATA= 
+04-13 07:57:44.549: D/DataStreamReader(4352): parseSystemPacket
+04-13 07:57:44.549: D/DataStreamReader(4352): parseSystemPacket
+04-13 07:57:44.549: D/DataStreamReader(4352): resetDecryption
+04-13 07:57:44.549: D/DataStreamReader(4352): resetDecryption
+04-13 07:57:44.549: D/SocketDataReader(4352): isConnected
+04-13 07:57:44.549: D/SocketDataReader(4352): openStream
+04-13 07:57:44.619: D/onKeyFrameObtained(4352): DINS WHILE CONNECTED
+04-13 07:57:44.619: D/SocketDataReader(4352): reading stream...
+04-13 07:57:44.669: D/SocketDataReader(4352): sendDataBlock
+04-13 07:57:44.669: D/onKeyFrameObtained(4352): DINS WHILE CONNECTED
+04-13 07:57:44.669: D/SocketDataReader(4352): reading stream...
+04-13 07:57:44.669: D/DataStreamReader(4352): onDataBlockObtained
+04-13 07:57:44.669: D/DataStreamReader(4352): parseBlock: 2
+04-13 07:57:44.669: D/ARREL ARXIU:(4352): /mnt/sdcard/PROVA/F1/CHI/Q-1/Dades2.txt
+04-13 07:57:44.679: D/GUARDAT NUM DADES AL ARXIU:(4352): 179
+04-13 07:57:44.679: D/DataStreamReader(4352): parseSystemPacket
+04-13 07:57:44.679: D/DataStreamReader(4352): resetDecryption
+04-13 07:57:44.739: D/DataStreamReader(4352): parseSystemPacket
+04-13 07:57:44.739: D/DataStreamReader(4352): resetDecryption
+04-13 07:57:44.739: D/DataStreamReader(4352): newDataObtained
+04-13 07:57:44.739: D/F1LTActivity(4352): onNewDataObtained
+04-13 07:57:44.739: D/HttpReader(4352): sendDecryptionKey
+04-13 07:57:45.109: D/F1LTActivity(4352): updateCommentaryLine
+04-13 07:57:45.439: D/DataStreamReader(4352): onDecryptionKeyObtained
+04-13 07:57:45.439: D/DataStreamReader(4352): resetDecryption
+04-13 07:57:45.439: D/DataStreamReader(4352): decrypt
+04-13 07:57:45.439: D/DataStreamReader(4352): parseSystemPacket
+04-13 07:57:45.439: D/DataStreamReader(4352): decrypt
+04-13 07:57:45.439: D/DataStreamReader(4352): parseCarPacket
+04-13 07:57:45.439: D/CAR=1(4352):  CAR TYPE=2 CAR DATA= 2 CAR LEN= 1 LONG DATA= 1
+04-13 07:57:45.439: D/DataStreamReader(4352): decrypt
+04-13 07:57:45.439: D/DataStreamReader(4352): parseCarPacket
+04-13 07:57:45.439: D/CAR=1(4352):  CAR TYPE=3 CAR DATA= 6 CAR LEN= 9 LONG DATA= S. VETTEL
+04-13 07:57:45.439: D/DataStreamReader(4352): decrypt
+04-13 07:57:45.439: D/DataStreamReader(4352): parseCarPacket
+04-13 07:57:45.439: D/CAR=2(4352):  CAR TYPE=2 CAR DATA= 2 CAR LEN= 1 LONG DATA= 2
+04-13 07:57:45.439: D/DataStreamReader(4352): decrypt
+04-13 07:57:45.439: D/DataStreamReader(4352): parseCarPacket
+04-13 07:57:45.439: D/CAR=2(4352):  CAR TYPE=3 CAR DATA= 6 CAR LEN= 9 LONG DATA= M. WEBBER
+04-13 07:57:45.439: D/DataStreamReader(4352): decrypt
+04-13 07:57:45.439: D/DataStreamReader(4352): parseCarPacket
+04-13 07:57:45.439: D/CAR=3(4352):  CAR TYPE=2 CAR DATA= 2 CAR LEN= 1 LONG DATA= 3
+04-13 07:57:45.439: D/DataStreamReader(4352): decrypt
+04-13 07:57:45.439: D/DataStreamReader(4352): parseCarPacket
+04-13 07:57:45.439: D/CAR=3(4352):  CAR TYPE=3 CAR DATA= 6 CAR LEN= 9 LONG DATA= F. ALONSO
+04-13 07:57:45.439: D/DataStreamReader(4352): decrypt
+04-13 07:57:45.439: D/DataStreamReader(4352): parseCarPacket
+04-13 07:57:45.439: D/CAR=4(4352):  CAR TYPE=2 CAR DATA= 2 CAR LEN= 1 LONG DATA= 4
+04-13 07:57:45.439: D/DataStreamReader(4352): decrypt
+04-13 07:57:45.449: D/DataStreamReader(4352): parseCarPacket
+04-13 07:57:45.449: D/CAR=4(4352):  CAR TYPE=3 CAR DATA= 6 CAR LEN= 8 LONG DATA= F. MASSA
+04-13 07:57:45.449: D/DataStreamReader(4352): decrypt
+04-13 07:57:45.449: D/DataStreamReader(4352): parseCarPacket
+04-13 07:57:45.449: D/CAR=5(4352):  CAR TYPE=2 CAR DATA= 2 CAR LEN= 1 LONG DATA= 5
+04-13 07:57:45.449: D/DataStreamReader(4352): decrypt
+04-13 07:57:45.449: D/DataStreamReader(4352): parseCarPacket
+04-13 07:57:45.449: D/CAR=5(4352):  CAR TYPE=3 CAR DATA= 6 CAR LEN= 9 LONG DATA= J. BUTTON
+04-13 07:57:45.449: D/DataStreamReader(4352): decrypt
+04-13 07:57:45.449: D/DataStreamReader(4352): parseCarPacket
+04-13 07:57:45.449: D/CAR=6(4352):  CAR TYPE=2 CAR DATA= 2 CAR LEN= 1 LONG DATA= 6
+04-13 07:57:45.449: D/DataStreamReader(4352): decrypt
+04-13 07:57:45.449: D/DataStreamReader(4352): parseCarPacket
+04-13 07:57:45.449: D/CAR=6(4352):  CAR TYPE=3 CAR DATA= 6 CAR LEN= 8 LONG DATA= S. PEREZ
+04-13 07:57:45.449: D/DataStreamReader(4352): decrypt
+04-13 07:57:45.449: D/DataStreamReader(4352): parseCarPacket
+04-13 07:57:45.449: D/CAR=7(4352):  CAR TYPE=2 CAR DATA= 2 CAR LEN= 1 LONG DATA= 7
+04-13 07:57:45.449: D/DataStreamReader(4352): decrypt
+04-13 07:57:45.449: D/DataStreamReader(4352): parseCarPacket
+04-13 07:57:45.449: D/CAR=7(4352):  CAR TYPE=3 CAR DATA= 6 CAR LEN= 12 LONG DATA= K. RAIKKONEN
+04-13 07:57:45.449: D/DataStreamReader(4352): decrypt
+04-13 07:57:45.449: D/DataStreamReader(4352): parseCarPacket
+04-13 07:57:45.459: D/CAR=8(4352):  CAR TYPE=2 CAR DATA= 2 CAR LEN= 1 LONG DATA= 8
+04-13 07:57:45.459: D/DataStreamReader(4352): decrypt
+04-13 07:57:45.459: D/DataStreamReader(4352): parseCarPacket
+04-13 07:57:45.459: D/CAR=8(4352):  CAR TYPE=3 CAR DATA= 6 CAR LEN= 11 LONG DATA= R. GROSJEAN
+04-13 07:57:45.459: D/DataStreamReader(4352): decrypt
+04-13 07:57:45.459: D/DataStreamReader(4352): parseCarPacket
+04-13 07:57:45.459: D/CAR=9(4352):  CAR TYPE=2 CAR DATA= 2 CAR LEN= 1 LONG DATA= 9
+04-13 07:57:45.459: D/DataStreamReader(4352): decrypt
+04-13 07:57:45.459: D/DataStreamReader(4352): parseCarPacket
+04-13 07:57:45.459: D/CAR=9(4352):  CAR TYPE=3 CAR DATA= 6 CAR LEN= 10 LONG DATA= N. ROSBERG
+04-13 07:57:45.459: D/DataStreamReader(4352): decrypt
+04-13 07:57:45.459: D/DataStreamReader(4352): parseCarPacket
+04-13 07:57:45.459: D/CAR=10(4352):  CAR TYPE=2 CAR DATA= 2 CAR LEN= 2 LONG DATA= 10
+04-13 07:57:45.459: D/DataStreamReader(4352): decrypt
+04-13 07:57:45.459: D/DataStreamReader(4352): parseCarPacket
+04-13 07:57:45.459: D/CAR=10(4352):  CAR TYPE=3 CAR DATA= 6 CAR LEN= 11 LONG DATA= L. HAMILTON
+04-13 07:57:45.459: D/DataStreamReader(4352): decrypt
+04-13 07:57:45.459: D/DataStreamReader(4352): parseCarPacket
+04-13 07:57:45.459: D/CAR=11(4352):  CAR TYPE=2 CAR DATA= 2 CAR LEN= 2 LONG DATA= 11
+04-13 07:57:45.459: D/DataStreamReader(4352): decrypt
+04-13 07:57:45.459: D/DataStreamReader(4352): parseCarPacket
+04-13 07:57:45.459: D/CAR=11(4352):  CAR TYPE=3 CAR DATA= 6 CAR LEN= 13 LONG DATA= N. HULKENBERG
+04-13 07:57:45.459: D/DataStreamReader(4352): decrypt
+04-13 07:57:45.469: D/DataStreamReader(4352): parseCarPacket
+04-13 07:57:45.469: D/CAR=12(4352):  CAR TYPE=2 CAR DATA= 2 CAR LEN= 2 LONG DATA= 12
+04-13 07:57:45.469: D/DataStreamReader(4352): decrypt
+04-13 07:57:45.469: D/DataStreamReader(4352): parseCarPacket
+04-13 07:57:45.469: D/CAR=12(4352):  CAR TYPE=3 CAR DATA= 6 CAR LEN= 12 LONG DATA= E. GUTIERREZ
+04-13 07:57:45.469: D/DataStreamReader(4352): decrypt
+04-13 07:57:45.469: D/DataStreamReader(4352): parseCarPacket
+04-13 07:57:45.469: D/CAR=13(4352):  CAR TYPE=2 CAR DATA= 2 CAR LEN= 2 LONG DATA= 14
+04-13 07:57:45.469: D/DataStreamReader(4352): decrypt
+04-13 07:57:45.469: D/DataStreamReader(4352): parseCarPacket
+04-13 07:57:45.469: D/CAR=13(4352):  CAR TYPE=3 CAR DATA= 6 CAR LEN= 11 LONG DATA= P. DI RESTA
+04-13 07:57:45.469: D/DataStreamReader(4352): decrypt
+04-13 07:57:45.469: D/DataStreamReader(4352): parseCarPacket
+04-13 07:57:45.469: D/CAR=14(4352):  CAR TYPE=2 CAR DATA= 2 CAR LEN= 2 LONG DATA= 15
+04-13 07:57:45.469: D/DataStreamReader(4352): decrypt
+04-13 07:57:45.469: D/DataStreamReader(4352): parseCarPacket
+04-13 07:57:45.469: D/CAR=14(4352):  CAR TYPE=3 CAR DATA= 6 CAR LEN= 8 LONG DATA= A. SUTIL
+04-13 07:57:45.469: D/DataStreamReader(4352): decrypt
+04-13 07:57:45.469: D/DataStreamReader(4352): parseCarPacket
+04-13 07:57:45.469: D/CAR=15(4352):  CAR TYPE=2 CAR DATA= 2 CAR LEN= 2 LONG DATA= 16
+04-13 07:57:45.469: D/DataStreamReader(4352): decrypt
+04-13 07:57:45.469: D/DataStreamReader(4352): parseCarPacket
+04-13 07:57:45.469: D/CAR=15(4352):  CAR TYPE=3 CAR DATA= 6 CAR LEN= 12 LONG DATA= P. MALDONADO
+04-13 07:57:45.469: D/DataStreamReader(4352): decrypt
+04-13 07:57:45.469: D/DataStreamReader(4352): parseCarPacket
+04-13 07:57:45.469: D/CAR=16(4352):  CAR TYPE=2 CAR DATA= 2 CAR LEN= 2 LONG DATA= 17
+04-13 07:57:45.469: D/DataStreamReader(4352): decrypt
+04-13 07:57:45.469: D/DataStreamReader(4352): parseCarPacket
+04-13 07:57:45.469: D/CAR=16(4352):  CAR TYPE=3 CAR DATA= 6 CAR LEN= 9 LONG DATA= V. BOTTAS
+04-13 07:57:45.469: D/DataStreamReader(4352): decrypt
+04-13 07:57:45.469: D/DataStreamReader(4352): parseCarPacket
+04-13 07:57:45.469: D/CAR=17(4352):  CAR TYPE=2 CAR DATA= 2 CAR LEN= 2 LONG DATA= 18
+04-13 07:57:45.469: D/DataStreamReader(4352): decrypt
+04-13 07:57:45.469: D/DataStreamReader(4352): parseCarPacket
+04-13 07:57:45.469: D/CAR=17(4352):  CAR TYPE=3 CAR DATA= 6 CAR LEN= 9 LONG DATA= J. VERGNE
+04-13 07:57:45.469: D/DataStreamReader(4352): decrypt
+04-13 07:57:45.469: D/DataStreamReader(4352): parseCarPacket
+04-13 07:57:45.479: D/CAR=18(4352):  CAR TYPE=2 CAR DATA= 2 CAR LEN= 2 LONG DATA= 19
+04-13 07:57:45.479: D/DataStreamReader(4352): decrypt
+04-13 07:57:45.479: D/DataStreamReader(4352): parseCarPacket
+04-13 07:57:45.479: D/CAR=18(4352):  CAR TYPE=3 CAR DATA= 6 CAR LEN= 12 LONG DATA= D. RICCIARDO
+04-13 07:57:45.479: D/DataStreamReader(4352): decrypt
+04-13 07:57:45.479: D/DataStreamReader(4352): parseCarPacket
+04-13 07:57:45.479: D/CAR=19(4352):  CAR TYPE=2 CAR DATA= 2 CAR LEN= 2 LONG DATA= 20
+04-13 07:57:45.479: D/DataStreamReader(4352): decrypt
+04-13 07:57:45.479: D/DataStreamReader(4352): parseCarPacket
+04-13 07:57:45.479: D/CAR=19(4352):  CAR TYPE=3 CAR DATA= 6 CAR LEN= 6 LONG DATA= C. PIC
+04-13 07:57:45.479: D/DataStreamReader(4352): decrypt
+04-13 07:57:45.479: D/DataStreamReader(4352): parseCarPacket
+04-13 07:57:45.479: D/CAR=20(4352):  CAR TYPE=2 CAR DATA= 2 CAR LEN= 2 LONG DATA= 21
+04-13 07:57:45.479: D/DataStreamReader(4352): decrypt
+04-13 07:57:45.479: D/DataStreamReader(4352): parseCarPacket
+04-13 07:57:45.479: D/CAR=20(4352):  CAR TYPE=3 CAR DATA= 6 CAR LEN= 14 LONG DATA= G. VAN DER GAR
+04-13 07:57:45.479: D/DataStreamReader(4352): decrypt
+04-13 07:57:45.479: D/DataStreamReader(4352): parseCarPacket
+04-13 07:57:45.479: D/CAR=21(4352):  CAR TYPE=2 CAR DATA= 2 CAR LEN= 2 LONG DATA= 22
+04-13 07:57:45.479: D/DataStreamReader(4352): decrypt
+04-13 07:57:45.479: D/DataStreamReader(4352): parseCarPacket
+04-13 07:57:45.479: D/CAR=21(4352):  CAR TYPE=3 CAR DATA= 6 CAR LEN= 10 LONG DATA= J. BIANCHI
+04-13 07:57:45.479: D/DataStreamReader(4352): decrypt
+04-13 07:57:45.479: D/DataStreamReader(4352): parseCarPacket
+04-13 07:57:45.479: D/CAR=22(4352):  CAR TYPE=2 CAR DATA= 2 CAR LEN= 2 LONG DATA= 23
+04-13 07:57:45.479: D/DataStreamReader(4352): decrypt
+04-13 07:57:45.479: D/DataStreamReader(4352): parseCarPacket
+04-13 07:57:45.479: D/CAR=22(4352):  CAR TYPE=3 CAR DATA= 6 CAR LEN= 10 LONG DATA= M. CHILTON
+04-13 07:57:45.479: D/DataStreamReader(4352): decrypt
+04-13 07:57:45.479: D/DataStreamReader(4352): parseSystemPacket
+04-13 07:57:45.479: D/DataStreamReader(4352): decrypt
+04-13 07:57:45.479: D/DataStreamReader(4352): parseSystemPacket
+04-13 07:57:45.479: D/DataStreamReader(4352): decrypt
+04-13 07:57:45.479: D/DataStreamReader(4352): parseSystemPacket
+04-13 07:57:45.479: D/DataStreamReader(4352): decrypt
+04-13 07:57:45.479: D/DataStreamReader(4352): parseSystemPacket
+04-13 07:57:45.479: D/DataStreamReader(4352): decrypt
+04-13 07:57:45.479: D/DataStreamReader(4352): parseSystemPacket
+04-13 07:57:45.479: D/DataStreamReader(4352): decrypt
+04-13 07:57:45.479: D/DataStreamReader(4352): parseSystemPacket
+04-13 07:57:45.489: D/DataStreamReader(4352): decrypt
+04-13 07:57:45.489: D/DataStreamReader(4352): parseSystemPacket
+04-13 07:57:45.489: D/DataStreamReader(4352): decrypt
+04-13 07:57:45.489: D/DataStreamReader(4352): parseSystemPacket
+04-13 07:57:45.489: D/DataStreamReader(4352): decrypt
+04-13 07:57:45.489: D/DataStreamReader(4352): parseSystemPacket
+04-13 07:57:45.489: D/DataStreamReader(4352): decrypt
+04-13 07:57:45.489: D/DataStreamReader(4352): parseSystemPacket
+04-13 07:57:45.489: D/DataStreamReader(4352): decrypt
+04-13 07:57:45.489: D/DataStreamReader(4352): parseSystemPacket
+04-13 07:57:45.489: D/DataStreamReader(4352): decrypt
+04-13 07:57:45.499: D/DataStreamReader(4352): parseSystemPacket
+04-13 07:57:45.499: D/DataStreamReader(4352): decrypt
+04-13 07:57:45.499: D/DataStreamReader(4352): parseSystemPacket
+04-13 07:57:45.499: D/packet(4352): TIMESTAMP=21 0 21
+04-13 07:57:45.499: D/DataStreamReader(4352): decrypt
+04-13 07:57:45.499: D/DataStreamReader(4352): parseSystemPacket
+04-13 07:57:45.499: D/DataStreamReader(4352): decrypt
+04-13 07:57:45.499: D/DataStreamReader(4352): parseSystemPacket
+04-13 07:57:45.499: D/DataStreamReader(4352): decrypt
+04-13 07:57:45.499: D/DataStreamReader(4352): parseSystemPacket
+04-13 07:57:45.499: D/DataStreamReader(4352): decrypt
+04-13 07:57:45.499: D/DataStreamReader(4352): parseSystemPacket
+04-13 07:57:45.499: D/DataStreamReader(4352): decrypt
+04-13 07:57:45.499: D/DataStreamReader(4352): parseSystemPacket
+04-13 07:57:45.499: D/packet(4352): TIMESTAMP=28 0 28
+04-13 07:57:45.499: D/DataStreamReader(4352): decrypt
+04-13 07:57:45.499: D/DataStreamReader(4352): parseSystemPacket
+04-13 07:57:45.499: D/DataStreamReader(4352): decrypt
+04-13 07:57:45.499: D/DataStreamReader(4352): parseSystemPacket
+04-13 07:57:45.499: D/DataStreamReader(4352): decrypt
+04-13 07:57:45.499: D/DataStreamReader(4352): parseSystemPacket
+04-13 07:57:45.499: D/packet(4352): TIMESTAMP=39 0 39
+04-13 07:57:45.499: D/DataStreamReader(4352): decrypt
+04-13 07:57:45.499: D/DataStreamReader(4352): parseSystemPacket
+04-13 07:57:45.499: D/DataStreamReader(4352): decrypt
+04-13 07:57:45.499: D/DataStreamReader(4352): parseSystemPacket
+04-13 07:57:45.499: D/DataStreamReader(4352): decrypt
+04-13 07:57:45.499: D/DataStreamReader(4352): parseSystemPacket
+04-13 07:57:45.499: D/packet(4352): TIMESTAMP=52 0 52
+04-13 07:57:45.499: D/DataStreamReader(4352): decrypt
+04-13 07:57:45.499: D/DataStreamReader(4352): parseSystemPacket
+04-13 07:57:45.509: D/DataStreamReader(4352): decrypt
+04-13 07:57:45.509: D/DataStreamReader(4352): parseSystemPacket
+04-13 07:57:45.509: D/DataStreamReader(4352): decrypt
+04-13 07:57:45.509: D/DataStreamReader(4352): parseSystemPacket
+04-13 07:57:45.509: D/packet(4352): TIMESTAMP=68 0 68
+04-13 07:57:45.509: D/DataStreamReader(4352): decrypt
+04-13 07:57:45.509: D/DataStreamReader(4352): parseSystemPacket
+04-13 07:57:45.509: D/DataStreamReader(4352): decrypt
+04-13 07:57:45.509: D/DataStreamReader(4352): parseSystemPacket
+04-13 07:57:45.509: D/DataStreamReader(4352): decrypt
+04-13 07:57:45.509: D/DataStreamReader(4352): parseSystemPacket
+04-13 07:57:45.509: D/packet(4352): TIMESTAMP=76 0 76
+04-13 07:57:45.509: D/DataStreamReader(4352): decrypt
+04-13 07:57:45.509: D/DataStreamReader(4352): parseSystemPacket
+04-13 07:57:45.509: D/DataStreamReader(4352): decrypt
+04-13 07:57:45.509: D/DataStreamReader(4352): parseSystemPacket
+04-13 07:57:45.509: D/DataStreamReader(4352): decrypt
+04-13 07:57:45.509: D/DataStreamReader(4352): parseSystemPacket
+04-13 07:57:45.509: D/packet(4352): TIMESTAMP=86 0 86
+04-13 07:57:45.509: D/DataStreamReader(4352): decrypt
+04-13 07:57:45.509: D/DataStreamReader(4352): parseSystemPacket
+04-13 07:57:45.509: D/DataStreamReader(4352): decrypt
+04-13 07:57:45.509: D/DataStreamReader(4352): parseSystemPacket
+04-13 07:57:45.529: D/DataStreamReader(4352): decrypt
+04-13 07:57:45.529: D/DataStreamReader(4352): parseSystemPacket
+04-13 07:57:45.529: D/DataStreamReader(4352): decrypt
+04-13 07:57:45.529: D/DataStreamReader(4352): parseSystemPacket
+04-13 07:57:45.529: D/packet(4352): TIMESTAMP=104 0 104
+04-13 07:57:45.529: D/DataStreamReader(4352): decrypt
+04-13 07:57:45.529: D/DataStreamReader(4352): parseSystemPacket
+04-13 07:57:45.529: D/DataStreamReader(4352): decrypt
+04-13 07:57:45.529: D/SocketDataReader(4352): PingOK
+04-13 07:57:45.529: D/DataStreamReader(4352): parseSystemPacket
+04-13 07:57:45.539: D/DataStreamReader(4352): decrypt
+04-13 07:57:45.539: D/DataStreamReader(4352): parseSystemPacket
+04-13 07:57:45.539: D/packet(4352): TIMESTAMP=129 0 -127
+04-13 07:57:45.539: D/DataStreamReader(4352): decrypt
+04-13 07:57:45.539: D/DataStreamReader(4352): parseSystemPacket
+04-13 07:57:45.539: D/DataStreamReader(4352): decrypt
+04-13 07:57:45.539: D/DataStreamReader(4352): parseSystemPacket
+04-13 07:57:45.539: D/DataStreamReader(4352): decrypt
+04-13 07:57:45.539: D/DataStreamReader(4352): parseSystemPacket
+04-13 07:57:45.539: D/DataStreamReader(4352): decrypt
+04-13 07:57:45.539: D/DataStreamReader(4352): parseSystemPacket
+04-13 07:57:45.539: D/packet(4352): TIMESTAMP=6579 25 -77
+04-13 07:57:45.539: D/DataStreamReader(4352): decrypt
+04-13 07:57:45.539: D/DataStreamReader(4352): parseSystemPacket
+04-13 07:57:45.539: D/DataStreamReader(4352): decrypt
+04-13 07:57:45.539: D/DataStreamReader(4352): parseSystemPacket
+04-13 07:57:45.539: D/DataStreamReader(4352): decrypt
+04-13 07:57:45.539: D/DataStreamReader(4352): parseSystemPacket
+04-13 07:57:45.539: D/packet(4352): TIMESTAMP=48895 -66 -1
+04-13 07:57:45.539: D/DataStreamReader(4352): decrypt
+04-13 07:57:45.539: D/DataStreamReader(4352): parseSystemPacket
+04-13 07:57:45.539: D/DataStreamReader(4352): decrypt
+04-13 07:57:45.539: D/DataStreamReader(4352): parseSystemPacket
+04-13 07:57:45.539: D/DataStreamReader(4352): decrypt
+04-13 07:57:45.539: D/DataStreamReader(4352): parseSystemPacket
+04-13 07:57:45.539: D/DataStreamReader(4352): decrypt
+04-13 07:57:45.539: D/DataStreamReader(4352): parseSystemPacket
+04-13 07:57:45.539: D/DataStreamReader(4352): decrypt
+04-13 07:57:45.539: D/DataStreamReader(4352): parseSystemPacket
+04-13 07:57:45.539: D/DataStreamReader(4352): newDataObtained
+04-13 07:57:45.539: D/F1LTActivity(4352): onNewDataObtained
+04-13 07:57:45.729: D/F1LTActivity(4352): updateCommentaryLine
+04-13 07:57:46.429: D/SocketDataReader(4352): PingOK
+04-13 07:57:47.329: D/SocketDataReader(4352): PingOK
+04-13 07:57:47.599: D/F1LTActivity(4352): onSaveInstanceState
+04-13 07:57:48.229: D/SocketDataReader(4352): PingOK
+04-13 07:57:49.139: D/SocketDataReader(4352): PingOK
+04-13 07:57:50.039: D/SocketDataReader(4352): PingOK
+04-13 07:57:50.939: D/SocketDataReader(4352): PingOK
+04-13 07:57:51.839: D/SocketDataReader(4352): PingOK
+04-13 07:57:52.739: D/SocketDataReader(4352): PingOK
+04-13 07:57:53.639: D/SocketDataReader(4352): PingOK
+04-13 07:57:54.539: D/SocketDataReader(4352): PingOK
+04-13 07:57:55.439: D/SocketDataReader(4352): PingOK
+04-13 07:57:56.339: D/SocketDataReader(4352): PingOK
+04-13 07:57:56.479: D/SocketDataReader(4352): sendDataBlock
+04-13 07:57:56.479: D/onKeyFrameObtained(4352): DINS WHILE CONNECTED
+04-13 07:57:56.479: D/SocketDataReader(4352): reading stream...
+04-13 07:57:56.479: D/DataStreamReader(4352): onDataBlockObtained
+04-13 07:57:56.479: D/DataStreamReader(4352): parseBlock: 3
+04-13 07:57:56.479: D/ARREL ARXIU:(4352): /mnt/sdcard/PROVA/F1/CHI/Q-1/Dades3.txt
+04-13 07:57:56.489: D/GUARDAT NUM DADES AL ARXIU:(4352): 4
+04-13 07:57:56.489: D/DataStreamReader(4352): parseSystemPacket
+04-13 07:57:56.489: D/DataStreamReader(4352): resetDecryption
+04-13 07:57:56.489: D/DataStreamReader(4352): newDataObtained
+04-13 07:57:56.489: D/F1LTActivity(4352): onNewDataObtained
+04-13 07:57:56.609: D/F1LTActivity(4352): updateCommentaryLine
+04-13 07:57:57.239: D/SocketDataReader(4352): PingOK
+04-13 07:57:58.139: D/SocketDataReader(4352): PingOK
+04-13 07:57:59.039: D/SocketDataReader(4352): PingOK
+04-13 07:57:59.939: D/SocketDataReader(4352): PingOK
+04-13 07:58:00.839: D/SocketDataReader(4352): PingOK
+04-13 07:58:01.739: D/SocketDataReader(4352): PingOK
+04-13 07:58:02.639: D/SocketDataReader(4352): PingOK
+04-13 07:58:03.449: D/F1LTActivity(4352): onSaveInstanceState
+04-13 07:58:03.539: D/SocketDataReader(4352): PingOK
+04-13 07:58:04.539: D/SocketDataReader(4352): PingOK
+04-13 07:58:05.509: D/SocketDataReader(4352): PingOK
+04-13 07:58:06.409: D/SocketDataReader(4352): PingOK
+04-13 07:58:07.319: D/SocketDataReader(4352): PingOK
+04-13 07:58:08.229: D/SocketDataReader(4352): PingOK
+04-13 07:58:09.129: D/SocketDataReader(4352): PingOK
+04-13 07:58:10.029: D/SocketDataReader(4352): PingOK
+04-13 07:58:10.939: D/SocketDataReader(4352): PingOK
+04-13 07:58:11.829: D/SocketDataReader(4352): PingOK
+04-13 07:58:12.729: D/SocketDataReader(4352): PingOK
+04-13 07:58:13.629: D/SocketDataReader(4352): PingOK
+04-13 07:58:14.539: D/SocketDataReader(4352): PingOK
+04-13 07:58:15.459: D/SocketDataReader(4352): PingOK
+04-13 07:58:16.439: D/SocketDataReader(4352): PingOK
+04-13 07:58:17.349: D/SocketDataReader(4352): PingOK
+04-13 07:58:18.249: D/SocketDataReader(4352): PingOK
+04-13 07:58:19.359: D/SocketDataReader(4352): PingOK
+04-13 07:58:20.269: D/SocketDataReader(4352): PingOK
+04-13 07:58:21.169: D/SocketDataReader(4352): PingOK
+04-13 07:58:21.329: D/F1LTActivity(4352): onRestart
+04-13 07:58:21.329: D/F1LTActivity(4352): onStart
+04-13 07:58:22.079: D/SocketDataReader(4352): PingOK
+04-13 07:58:22.979: D/SocketDataReader(4352): PingOK
+04-13 07:58:23.219: D/F1LTActivity(4352): onSaveInstanceState
+04-13 07:58:23.879: D/SocketDataReader(4352): PingOK
+04-13 07:58:24.049: D/SocketDataReader(4352): sendDataBlock
+04-13 07:58:24.049: D/onKeyFrameObtained(4352): DINS WHILE CONNECTED
+04-13 07:58:24.049: D/SocketDataReader(4352): reading stream...
+04-13 07:58:24.079: D/DataStreamReader(4352): onDataBlockObtained
+04-13 07:58:24.079: D/DataStreamReader(4352): parseBlock: 4
+04-13 07:58:24.079: D/ARREL ARXIU:(4352): /mnt/sdcard/PROVA/F1/CHI/Q-1/Dades4.txt
+04-13 07:58:24.089: D/GUARDAT NUM DADES AL ARXIU:(4352): 25
+04-13 07:58:24.089: D/DataStreamReader(4352): decrypt
+04-13 07:58:24.089: D/DataStreamReader(4352): parseSystemPacket
+04-13 07:58:24.089: D/packet(4352): TIMESTAMP=186 0 -70
+04-13 07:58:24.089: D/DataStreamReader(4352): decrypt
+04-13 07:58:24.089: D/DataStreamReader(4352): parseSystemPacket
+04-13 07:58:24.089: D/DataStreamReader(4352): parseSystemPacket
+04-13 07:58:24.089: D/DataStreamReader(4352): resetDecryption
+04-13 07:58:24.089: D/DataStreamReader(4352): decrypt
+04-13 07:58:24.089: D/DataStreamReader(4352): parseSystemPacket
+04-13 07:58:24.089: D/DataStreamReader(4352): decrypt
+04-13 07:58:24.089: D/DataStreamReader(4352): parseSystemPacket
+04-13 07:58:24.089: D/DataStreamReader(4352): newDataObtained
+04-13 07:58:24.089: D/F1LTActivity(4352): onNewDataObtained
+04-13 07:58:24.209: D/F1LTActivity(4352): updateCommentaryLine
+04-13 07:58:24.779: D/SocketDataReader(4352): PingOK
+04-13 07:58:25.679: D/SocketDataReader(4352): PingOK
+04-13 07:58:26.579: D/SocketDataReader(4352): PingOK
+04-13 07:58:27.479: D/SocketDataReader(4352): PingOK
+04-13 07:58:28.379: D/SocketDataReader(4352): PingOK
+04-13 07:58:29.279: D/SocketDataReader(4352): PingOK
+04-13 07:58:30.179: D/SocketDataReader(4352): PingOK
+04-13 07:58:31.079: D/SocketDataReader(4352): PingOK
+04-13 07:58:31.989: D/SocketDataReader(4352): PingOK
+04-13 07:58:32.889: D/SocketDataReader(4352): PingOK
+04-13 07:58:33.789: D/SocketDataReader(4352): PingOK
+04-13 07:58:34.679: D/SocketDataReader(4352): PingOK
+04-13 07:58:35.589: D/SocketDataReader(4352): PingOK
+04-13 07:58:36.489: D/SocketDataReader(4352): PingOK
+04-13 07:58:37.389: D/SocketDataReader(4352): PingOK
+04-13 07:58:38.289: D/SocketDataReader(4352): PingOK
+04-13 07:58:39.189: D/SocketDataReader(4352): PingOK
+04-13 07:58:40.089: D/SocketDataReader(4352): PingOK
+04-13 07:58:40.999: D/SocketDataReader(4352): PingOK
+04-13 07:58:41.899: D/SocketDataReader(4352): PingOK
+04-13 07:58:42.799: D/SocketDataReader(4352): PingOK
+04-13 07:58:43.699: D/SocketDataReader(4352): PingOK
+04-13 07:58:44.599: D/SocketDataReader(4352): PingOK
+04-13 07:58:45.499: D/SocketDataReader(4352): PingOK
+04-13 07:58:46.399: D/SocketDataReader(4352): PingOK
+04-13 07:58:47.299: D/SocketDataReader(4352): PingOK
+04-13 07:58:48.199: D/SocketDataReader(4352): PingOK
+04-13 07:58:49.099: D/SocketDataReader(4352): PingOK
+04-13 07:58:49.999: D/SocketDataReader(4352): PingOK
+04-13 07:58:50.899: D/SocketDataReader(4352): PingOK
+04-13 07:58:51.809: D/SocketDataReader(4352): PingOK
+04-13 07:58:52.709: D/SocketDataReader(4352): PingOK
+04-13 07:58:52.929: D/SocketDataReader(4352): sendDataBlock
+04-13 07:58:52.929: D/onKeyFrameObtained(4352): DINS WHILE CONNECTED
+04-13 07:58:52.929: D/SocketDataReader(4352): reading stream...
+04-13 07:58:52.929: D/DataStreamReader(4352): onDataBlockObtained
+04-13 07:58:52.929: D/DataStreamReader(4352): parseBlock: 5
+04-13 07:58:52.929: D/ARREL ARXIU:(4352): /mnt/sdcard/PROVA/F1/CHI/Q-1/Dades5.txt
+04-13 07:58:52.939: D/GUARDAT NUM DADES AL ARXIU:(4352): 4
+04-13 07:58:52.939: D/DataStreamReader(4352): parseSystemPacket
+04-13 07:58:52.939: D/DataStreamReader(4352): resetDecryption
+04-13 07:58:52.939: D/DataStreamReader(4352): newDataObtained
+04-13 07:58:52.939: D/F1LTActivity(4352): onNewDataObtained
+04-13 07:58:53.059: D/F1LTActivity(4352): updateCommentaryLine
+04-13 07:58:53.599: D/SocketDataReader(4352): PingOK
+04-13 07:58:54.509: D/SocketDataReader(4352): PingOK
+04-13 07:58:55.409: D/SocketDataReader(4352): PingOK
+04-13 07:58:56.299: D/SocketDataReader(4352): PingOK
+04-13 07:58:57.209: D/SocketDataReader(4352): PingOK
+04-13 07:58:58.109: D/SocketDataReader(4352): PingOK
+04-13 07:58:59.009: D/SocketDataReader(4352): PingOK
+04-13 07:58:59.909: D/SocketDataReader(4352): PingOK
+04-13 07:59:00.809: D/SocketDataReader(4352): PingOK
+04-13 07:59:01.709: D/SocketDataReader(4352): PingOK
+04-13 07:59:02.609: D/SocketDataReader(4352): PingOK
+04-13 07:59:03.509: D/SocketDataReader(4352): PingOK
+04-13 07:59:04.419: D/SocketDataReader(4352): PingOK
+04-13 07:59:05.319: D/SocketDataReader(4352): PingOK
+04-13 07:59:06.219: D/SocketDataReader(4352): PingOK
+04-13 07:59:07.119: D/SocketDataReader(4352): PingOK
+04-13 07:59:08.019: D/SocketDataReader(4352): PingOK
+04-13 07:59:08.919: D/SocketDataReader(4352): PingOK
+04-13 07:59:09.819: D/SocketDataReader(4352): PingOK
+04-13 07:59:10.719: D/SocketDataReader(4352): PingOK
+04-13 07:59:11.619: D/SocketDataReader(4352): PingOK
+04-13 07:59:12.519: D/SocketDataReader(4352): PingOK
+04-13 07:59:13.419: D/SocketDataReader(4352): PingOK
+04-13 07:59:14.319: D/SocketDataReader(4352): PingOK
+04-13 07:59:15.219: D/SocketDataReader(4352): PingOK
+04-13 07:59:16.119: D/SocketDataReader(4352): PingOK
+04-13 07:59:17.019: D/SocketDataReader(4352): PingOK
+04-13 07:59:17.919: D/SocketDataReader(4352): PingOK
+04-13 07:59:18.819: D/SocketDataReader(4352): PingOK
+04-13 07:59:19.239: D/SocketDataReader(4352): sendDataBlock
+04-13 07:59:19.239: D/onKeyFrameObtained(4352): DINS WHILE CONNECTED
+04-13 07:59:19.239: D/SocketDataReader(4352): reading stream...
+04-13 07:59:19.249: D/DataStreamReader(4352): onDataBlockObtained
+04-13 07:59:19.249: D/DataStreamReader(4352): parseBlock: 6
+04-13 07:59:19.249: D/ARREL ARXIU:(4352): /mnt/sdcard/PROVA/F1/CHI/Q-1/Dades6.txt
+04-13 07:59:19.269: D/GUARDAT NUM DADES AL ARXIU:(4352): 12
+04-13 07:59:19.279: D/DataStreamReader(4352): decrypt
+04-13 07:59:19.279: D/DataStreamReader(4352): parseSystemPacket
+04-13 07:59:19.279: D/packet(4352): TIMESTAMP=241 0 -15
+04-13 07:59:19.279: D/DataStreamReader(4352): decrypt
+04-13 07:59:19.279: D/DataStreamReader(4352): parseSystemPacket
+04-13 07:59:19.279: D/DataStreamReader(4352): parseSystemPacket
+04-13 07:59:19.279: D/DataStreamReader(4352): resetDecryption
+04-13 07:59:19.279: D/DataStreamReader(4352): newDataObtained
+04-13 07:59:19.279: D/F1LTActivity(4352): onNewDataObtained
+04-13 07:59:19.389: D/F1LTActivity(4352): updateCommentaryLine
+04-13 07:59:19.729: D/SocketDataReader(4352): PingOK
+04-13 07:59:19.869: D/SocketDataReader(4352): sendDataBlock
+04-13 07:59:19.869: D/onKeyFrameObtained(4352): DINS WHILE CONNECTED
+04-13 07:59:19.869: D/SocketDataReader(4352): reading stream...
+04-13 07:59:19.869: D/DataStreamReader(4352): onDataBlockObtained
+04-13 07:59:19.869: D/DataStreamReader(4352): parseBlock: 7
+04-13 07:59:19.869: D/ARREL ARXIU:(4352): /mnt/sdcard/PROVA/F1/CHI/Q-1/Dades7.txt
+04-13 07:59:19.879: D/GUARDAT NUM DADES AL ARXIU:(4352): 9
+04-13 07:59:19.879: D/DataStreamReader(4352): decrypt
+04-13 07:59:19.879: D/DataStreamReader(4352): parseSystemPacket
+04-13 07:59:19.879: D/DataStreamReader(4352): decrypt
+04-13 07:59:19.879: D/DataStreamReader(4352): parseSystemPacket
+04-13 07:59:19.879: D/DataStreamReader(4352): newDataObtained
+04-13 07:59:19.879: D/F1LTActivity(4352): onNewDataObtained
+04-13 07:59:19.989: D/F1LTActivity(4352): updateCommentaryLine
+04-13 07:59:20.629: D/SocketDataReader(4352): PingOK
+04-13 07:59:21.529: D/SocketDataReader(4352): PingOK
+04-13 07:59:22.429: D/SocketDataReader(4352): PingOK
+04-13 07:59:23.329: D/SocketDataReader(4352): PingOK
+04-13 07:59:24.229: D/SocketDataReader(4352): PingOK
+04-13 07:59:24.609: D/F1LTActivity(4352): onSaveInstanceState
+04-13 07:59:25.139: D/SocketDataReader(4352): PingOK
+04-13 07:59:26.039: D/SocketDataReader(4352): PingOK
+04-13 07:59:26.579: D/F1LTActivity(4352): onSaveInstanceState
+04-13 07:59:26.939: D/SocketDataReader(4352): PingOK
+04-13 07:59:27.839: D/SocketDataReader(4352): PingOK
+04-13 07:59:28.739: D/SocketDataReader(4352): PingOK
+04-13 07:59:29.639: D/SocketDataReader(4352): PingOK
+04-13 07:59:30.539: D/SocketDataReader(4352): PingOK
+04-13 07:59:31.439: D/SocketDataReader(4352): PingOK
+04-13 07:59:32.339: D/SocketDataReader(4352): PingOK
+04-13 07:59:33.239: D/SocketDataReader(4352): PingOK
+04-13 07:59:34.139: D/SocketDataReader(4352): PingOK
+04-13 07:59:35.039: D/SocketDataReader(4352): PingOK
+04-13 07:59:35.939: D/SocketDataReader(4352): PingOK
+04-13 07:59:36.849: D/SocketDataReader(4352): PingOK
+04-13 07:59:37.749: D/SocketDataReader(4352): PingOK
+04-13 07:59:38.649: D/SocketDataReader(4352): PingOK
+04-13 07:59:39.549: D/SocketDataReader(4352): PingOK
+04-13 07:59:40.450: D/SocketDataReader(4352): PingOK
+04-13 07:59:41.349: D/SocketDataReader(4352): PingOK
+04-13 07:59:42.249: D/SocketDataReader(4352): PingOK
+04-13 07:59:43.149: D/SocketDataReader(4352): PingOK
+04-13 07:59:44.049: D/SocketDataReader(4352): PingOK
+04-13 07:59:44.949: D/SocketDataReader(4352): PingOK
+04-13 07:59:45.849: D/SocketDataReader(4352): PingOK
+04-13 07:59:46.749: D/SocketDataReader(4352): PingOK
+04-13 07:59:47.649: D/SocketDataReader(4352): PingOK
+04-13 07:59:47.819: D/SocketDataReader(4352): sendDataBlock
+04-13 07:59:47.819: D/onKeyFrameObtained(4352): DINS WHILE CONNECTED
+04-13 07:59:47.819: D/SocketDataReader(4352): reading stream...
+04-13 07:59:47.819: D/DataStreamReader(4352): onDataBlockObtained
+04-13 07:59:47.819: D/DataStreamReader(4352): parseBlock: 8
+04-13 07:59:47.819: D/ARREL ARXIU:(4352): /mnt/sdcard/PROVA/F1/CHI/Q-1/Dades8.txt
+04-13 07:59:47.829: D/GUARDAT NUM DADES AL ARXIU:(4352): 4
+04-13 07:59:47.829: D/DataStreamReader(4352): parseSystemPacket
+04-13 07:59:47.829: D/DataStreamReader(4352): resetDecryption
+04-13 07:59:47.829: D/DataStreamReader(4352): newDataObtained
+04-13 07:59:47.829: D/F1LTActivity(4352): onNewDataObtained
+04-13 07:59:47.989: D/F1LTActivity(4352): updateCommentaryLine
+04-13 07:59:48.549: D/SocketDataReader(4352): PingOK
+04-13 07:59:49.459: D/SocketDataReader(4352): PingOK
+04-13 07:59:50.359: D/SocketDataReader(4352): PingOK
+04-13 07:59:51.259: D/SocketDataReader(4352): PingOK
+04-13 07:59:52.149: D/SocketDataReader(4352): PingOK
+04-13 07:59:53.059: D/SocketDataReader(4352): PingOK
+04-13 07:59:53.959: D/SocketDataReader(4352): PingOK
+04-13 07:59:54.859: D/SocketDataReader(4352): PingOK
+04-13 07:59:55.759: D/SocketDataReader(4352): PingOK
+04-13 07:59:56.659: D/SocketDataReader(4352): PingOK
+04-13 07:59:57.559: D/SocketDataReader(4352): PingOK
+04-13 07:59:58.469: D/SocketDataReader(4352): PingOK
+04-13 07:59:59.369: D/SocketDataReader(4352): PingOK
+04-13 08:00:00.269: D/SocketDataReader(4352): PingOK
+04-13 08:00:01.169: D/SocketDataReader(4352): PingOK
+04-13 08:00:02.069: D/SocketDataReader(4352): PingOK
+04-13 08:00:02.969: D/SocketDataReader(4352): PingOK
+04-13 08:00:03.869: D/SocketDataReader(4352): PingOK
+04-13 08:00:04.769: D/SocketDataReader(4352): PingOK
+04-13 08:00:05.669: D/SocketDataReader(4352): PingOK
+04-13 08:00:06.569: D/SocketDataReader(4352): PingOK
+04-13 08:00:07.469: D/SocketDataReader(4352): PingOK
+04-13 08:00:08.369: D/SocketDataReader(4352): PingOK
+04-13 08:00:09.269: D/SocketDataReader(4352): PingOK
+04-13 08:00:10.169: D/SocketDataReader(4352): PingOK
+04-13 08:00:11.079: D/SocketDataReader(4352): PingOK
+04-13 08:00:11.159: D/SocketDataReader(4352): sendDataBlock
+04-13 08:00:11.159: D/onKeyFrameObtained(4352): DINS WHILE CONNECTED
+04-13 08:00:11.159: D/SocketDataReader(4352): reading stream...
+04-13 08:00:11.159: D/DataStreamReader(4352): onDataBlockObtained
+04-13 08:00:11.159: D/DataStreamReader(4352): parseBlock: 9
+04-13 08:00:11.159: D/ARREL ARXIU:(4352): /mnt/sdcard/PROVA/F1/CHI/Q-1/Dades9.txt
+04-13 08:00:11.169: D/GUARDAT NUM DADES AL ARXIU:(4352): 15
+04-13 08:00:11.169: D/DataStreamReader(4352): decrypt
+04-13 08:00:11.169: D/DataStreamReader(4352): parseSystemPacket
+04-13 08:00:11.179: D/packet(4352): TIMESTAMP=294 1 38
+04-13 08:00:11.179: D/DataStreamReader(4352): decrypt
+04-13 08:00:11.179: D/DataStreamReader(4352): parseSystemPacket
+04-13 08:00:11.179: D/DataStreamReader(4352): parseSystemPacket
+04-13 08:00:11.179: D/DataStreamReader(4352): resetDecryption
+04-13 08:00:11.179: D/DataStreamReader(4352): newDataObtained
+04-13 08:00:11.179: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:00:11.299: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:00:11.629: D/DataStreamReader(4352): getInstance
+04-13 08:00:11.629: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:00:11.629: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:00:11.639: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:00:11.979: D/SocketDataReader(4352): PingOK
+04-13 08:00:12.079: D/SocketDataReader(4352): sendDataBlock
+04-13 08:00:12.079: D/onKeyFrameObtained(4352): DINS WHILE CONNECTED
+04-13 08:00:12.079: D/SocketDataReader(4352): reading stream...
+04-13 08:00:12.079: D/DataStreamReader(4352): onDataBlockObtained
+04-13 08:00:12.079: D/DataStreamReader(4352): parseBlock: 10
+04-13 08:00:12.079: D/ARREL ARXIU:(4352): /mnt/sdcard/PROVA/F1/CHI/Q-1/Dades10.txt
+04-13 08:00:12.099: D/GUARDAT NUM DADES AL ARXIU:(4352): 6
+04-13 08:00:12.099: D/DataStreamReader(4352): decrypt
+04-13 08:00:12.099: D/DataStreamReader(4352): parseSystemPacket
+04-13 08:00:12.099: D/packet(4352): TIMESTAMP=295 1 39
+04-13 08:00:12.099: D/DataStreamReader(4352): newDataObtained
+04-13 08:00:12.099: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:00:12.209: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:00:12.539: D/DataStreamReader(4352): getInstance
+04-13 08:00:12.539: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:00:12.539: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:00:12.539: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:00:12.879: D/SocketDataReader(4352): PingOK
+04-13 08:00:13.199: D/DataStreamReader(4352): getInstance
+04-13 08:00:13.199: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:00:13.199: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:00:13.209: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:00:13.779: D/SocketDataReader(4352): PingOK
+04-13 08:00:14.199: D/DataStreamReader(4352): getInstance
+04-13 08:00:14.199: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:00:14.199: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:00:14.209: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:00:14.679: D/SocketDataReader(4352): PingOK
+04-13 08:00:15.199: D/DataStreamReader(4352): getInstance
+04-13 08:00:15.199: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:00:15.199: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:00:15.209: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:00:15.579: D/SocketDataReader(4352): PingOK
+04-13 08:00:16.199: D/DataStreamReader(4352): getInstance
+04-13 08:00:16.199: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:00:16.199: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:00:16.209: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:00:16.479: D/SocketDataReader(4352): PingOK
+04-13 08:00:17.199: D/DataStreamReader(4352): getInstance
+04-13 08:00:17.199: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:00:17.199: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:00:17.209: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:00:17.379: D/SocketDataReader(4352): PingOK
+04-13 08:00:18.199: D/DataStreamReader(4352): getInstance
+04-13 08:00:18.199: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:00:18.199: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:00:18.219: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:00:18.279: D/SocketDataReader(4352): PingOK
+04-13 08:00:19.179: D/SocketDataReader(4352): PingOK
+04-13 08:00:19.199: D/DataStreamReader(4352): getInstance
+04-13 08:00:19.199: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:00:19.199: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:00:19.209: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:00:20.079: D/SocketDataReader(4352): PingOK
+04-13 08:00:20.179: D/SocketDataReader(4352): sendDataBlock
+04-13 08:00:20.179: D/onKeyFrameObtained(4352): DINS WHILE CONNECTED
+04-13 08:00:20.179: D/SocketDataReader(4352): reading stream...
+04-13 08:00:20.179: D/DataStreamReader(4352): onDataBlockObtained
+04-13 08:00:20.179: D/DataStreamReader(4352): parseBlock: 11
+04-13 08:00:20.179: D/ARREL ARXIU:(4352): /mnt/sdcard/PROVA/F1/CHI/Q-1/Dades11.txt
+04-13 08:00:20.189: D/GUARDAT NUM DADES AL ARXIU:(4352): 184
+04-13 08:00:20.189: D/DataStreamReader(4352): parseSystemPacket
+04-13 08:00:20.189: D/DataStreamReader(4352): decrypt
+04-13 08:00:20.189: D/DataStreamReader(4352): parseSystemPacket
+04-13 08:00:20.189: D/packet(4352): TIMESTAMP=302 1 46
+04-13 08:00:20.189: D/DataStreamReader(4352): decrypt
+04-13 08:00:20.189: D/DataStreamReader(4352): parseSystemPacket
+04-13 08:00:20.189: D/DataStreamReader(4352): decrypt
+04-13 08:00:20.189: D/DataStreamReader(4352): parseSystemPacket
+04-13 08:00:20.199: D/DataStreamReader(4352): newDataObtained
+04-13 08:00:20.199: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:00:20.319: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:00:20.649: D/DataStreamReader(4352): getInstance
+04-13 08:00:20.649: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:00:20.649: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:00:20.659: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:00:20.979: D/SocketDataReader(4352): PingOK
+04-13 08:00:21.199: D/DataStreamReader(4352): getInstance
+04-13 08:00:21.199: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:00:21.199: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:00:21.219: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:00:21.879: D/SocketDataReader(4352): PingOK
+04-13 08:00:22.199: D/DataStreamReader(4352): getInstance
+04-13 08:00:22.199: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:00:22.199: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:00:22.219: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:00:22.779: D/SocketDataReader(4352): PingOK
+04-13 08:00:23.209: D/DataStreamReader(4352): getInstance
+04-13 08:00:23.209: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:00:23.209: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:00:23.229: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:00:23.679: D/SocketDataReader(4352): PingOK
+04-13 08:00:24.199: D/DataStreamReader(4352): getInstance
+04-13 08:00:24.199: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:00:24.209: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:00:24.219: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:00:24.589: D/SocketDataReader(4352): PingOK
+04-13 08:00:25.209: D/DataStreamReader(4352): getInstance
+04-13 08:00:25.209: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:00:25.209: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:00:25.219: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:00:25.489: D/SocketDataReader(4352): PingOK
+04-13 08:00:26.209: D/DataStreamReader(4352): getInstance
+04-13 08:00:26.209: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:00:26.209: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:00:26.229: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:00:26.389: D/SocketDataReader(4352): PingOK
+04-13 08:00:27.209: D/DataStreamReader(4352): getInstance
+04-13 08:00:27.209: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:00:27.209: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:00:27.219: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:00:27.289: D/SocketDataReader(4352): PingOK
+04-13 08:00:28.159: D/SocketDataReader(4352): sendDataBlock
+04-13 08:00:28.159: D/onKeyFrameObtained(4352): DINS WHILE CONNECTED
+04-13 08:00:28.159: D/SocketDataReader(4352): reading stream...
+04-13 08:00:28.159: D/DataStreamReader(4352): onDataBlockObtained
+04-13 08:00:28.159: D/DataStreamReader(4352): parseBlock: 12
+04-13 08:00:28.159: D/ARREL ARXIU:(4352): /mnt/sdcard/PROVA/F1/CHI/Q-1/Dades12.txt
+04-13 08:00:28.169: D/GUARDAT NUM DADES AL ARXIU:(4352): 8
+04-13 08:00:28.169: D/DataStreamReader(4352): decrypt
+04-13 08:00:28.169: D/DataStreamReader(4352): parseSystemPacket
+04-13 08:00:28.179: D/packet(4352): TIMESTAMP=310 1 54
+04-13 08:00:28.179: D/DataStreamReader(4352): parseSystemPacket
+04-13 08:00:28.179: D/DataStreamReader(4352): resetDecryption
+04-13 08:00:28.179: D/DataStreamReader(4352): newDataObtained
+04-13 08:00:28.179: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:00:28.189: D/SocketDataReader(4352): PingOK
+04-13 08:00:28.299: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:00:28.619: D/DataStreamReader(4352): getInstance
+04-13 08:00:28.619: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:00:28.619: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:00:28.619: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:00:29.089: D/SocketDataReader(4352): PingOK
+04-13 08:00:29.209: D/DataStreamReader(4352): getInstance
+04-13 08:00:29.209: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:00:29.209: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:00:29.219: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:00:29.719: D/F1LTActivity(4352): onSaveInstanceState
+04-13 08:00:29.999: D/SocketDataReader(4352): PingOK
+04-13 08:00:30.209: D/DataStreamReader(4352): getInstance
+04-13 08:00:30.209: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:00:30.209: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:00:30.229: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:00:30.899: D/SocketDataReader(4352): PingOK
+04-13 08:00:31.209: D/DataStreamReader(4352): getInstance
+04-13 08:00:31.209: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:00:31.209: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:00:31.229: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:00:31.789: D/SocketDataReader(4352): PingOK
+04-13 08:00:32.219: D/DataStreamReader(4352): getInstance
+04-13 08:00:32.219: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:00:32.219: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:00:32.229: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:00:32.689: D/SocketDataReader(4352): PingOK
+04-13 08:00:33.209: D/DataStreamReader(4352): getInstance
+04-13 08:00:33.209: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:00:33.219: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:00:33.239: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:00:33.589: D/SocketDataReader(4352): PingOK
+04-13 08:00:34.209: D/DataStreamReader(4352): getInstance
+04-13 08:00:34.209: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:00:34.219: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:00:34.229: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:00:34.489: D/SocketDataReader(4352): PingOK
+04-13 08:00:35.169: D/F1LTActivity(4352): onSaveInstanceState
+04-13 08:00:35.239: D/DataStreamReader(4352): getInstance
+04-13 08:00:35.239: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:00:35.239: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:00:35.239: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:00:35.399: D/SocketDataReader(4352): PingOK
+04-13 08:00:36.219: D/DataStreamReader(4352): getInstance
+04-13 08:00:36.219: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:00:36.219: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:00:36.229: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:00:36.289: D/SocketDataReader(4352): PingOK
+04-13 08:00:37.199: D/SocketDataReader(4352): PingOK
+04-13 08:00:37.229: D/DataStreamReader(4352): getInstance
+04-13 08:00:37.229: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:00:37.229: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:00:37.239: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:00:38.099: D/SocketDataReader(4352): PingOK
+04-13 08:00:38.229: D/DataStreamReader(4352): getInstance
+04-13 08:00:38.229: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:00:38.229: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:00:38.249: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:00:38.999: D/SocketDataReader(4352): PingOK
+04-13 08:00:39.239: D/DataStreamReader(4352): getInstance
+04-13 08:00:39.239: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:00:39.239: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:00:39.249: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:00:39.899: D/SocketDataReader(4352): PingOK
+04-13 08:00:40.229: D/DataStreamReader(4352): getInstance
+04-13 08:00:40.229: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:00:40.229: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:00:40.259: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:00:40.799: D/SocketDataReader(4352): PingOK
+04-13 08:00:41.229: D/DataStreamReader(4352): getInstance
+04-13 08:00:41.229: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:00:41.229: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:00:41.239: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:00:41.699: D/SocketDataReader(4352): PingOK
+04-13 08:00:42.229: D/DataStreamReader(4352): getInstance
+04-13 08:00:42.229: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:00:42.229: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:00:42.239: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:00:42.599: D/SocketDataReader(4352): PingOK
+04-13 08:00:43.229: D/DataStreamReader(4352): getInstance
+04-13 08:00:43.229: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:00:43.229: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:00:43.249: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:00:43.499: D/SocketDataReader(4352): PingOK
+04-13 08:00:44.229: D/DataStreamReader(4352): getInstance
+04-13 08:00:44.229: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:00:44.229: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:00:44.249: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:00:44.399: D/SocketDataReader(4352): PingOK
+04-13 08:00:44.559: D/SocketDataReader(4352): sendDataBlock
+04-13 08:00:44.559: D/onKeyFrameObtained(4352): DINS WHILE CONNECTED
+04-13 08:00:44.559: D/SocketDataReader(4352): reading stream...
+04-13 08:00:44.559: D/DataStreamReader(4352): onDataBlockObtained
+04-13 08:00:44.559: D/DataStreamReader(4352): parseBlock: 13
+04-13 08:00:44.559: D/ARREL ARXIU:(4352): /mnt/sdcard/PROVA/F1/CHI/Q-1/Dades13.txt
+04-13 08:00:44.579: D/GUARDAT NUM DADES AL ARXIU:(4352): 8
+04-13 08:00:44.579: D/DataStreamReader(4352): decrypt
+04-13 08:00:44.579: D/DataStreamReader(4352): parseSystemPacket
+04-13 08:00:44.579: D/packet(4352): TIMESTAMP=326 1 70
+04-13 08:00:44.579: D/DataStreamReader(4352): parseSystemPacket
+04-13 08:00:44.579: D/DataStreamReader(4352): resetDecryption
+04-13 08:00:44.579: D/DataStreamReader(4352): newDataObtained
+04-13 08:00:44.579: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:00:44.699: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:00:45.239: D/DataStreamReader(4352): getInstance
+04-13 08:00:45.239: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:00:45.239: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:00:45.249: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:00:45.299: D/SocketDataReader(4352): PingOK
+04-13 08:00:46.199: D/SocketDataReader(4352): PingOK
+04-13 08:00:46.239: D/DataStreamReader(4352): getInstance
+04-13 08:00:46.239: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:00:46.239: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:00:46.249: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:00:47.099: D/SocketDataReader(4352): PingOK
+04-13 08:00:47.239: D/DataStreamReader(4352): getInstance
+04-13 08:00:47.239: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:00:47.239: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:00:47.249: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:00:47.999: D/SocketDataReader(4352): PingOK
+04-13 08:00:48.239: D/DataStreamReader(4352): getInstance
+04-13 08:00:48.239: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:00:48.239: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:00:48.259: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:00:48.909: D/SocketDataReader(4352): PingOK
+04-13 08:00:49.239: D/DataStreamReader(4352): getInstance
+04-13 08:00:49.239: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:00:49.239: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:00:49.249: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:00:49.809: D/SocketDataReader(4352): PingOK
+04-13 08:00:50.239: D/DataStreamReader(4352): getInstance
+04-13 08:00:50.239: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:00:50.239: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:00:50.249: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:00:50.709: D/SocketDataReader(4352): PingOK
+04-13 08:00:51.249: D/DataStreamReader(4352): getInstance
+04-13 08:00:51.249: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:00:51.249: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:00:51.259: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:00:51.609: D/SocketDataReader(4352): PingOK
+04-13 08:00:52.239: D/DataStreamReader(4352): getInstance
+04-13 08:00:52.239: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:00:52.239: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:00:52.249: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:00:52.509: D/SocketDataReader(4352): PingOK
+04-13 08:00:53.249: D/DataStreamReader(4352): getInstance
+04-13 08:00:53.249: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:00:53.249: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:00:53.269: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:00:53.409: D/SocketDataReader(4352): PingOK
+04-13 08:00:54.239: D/DataStreamReader(4352): getInstance
+04-13 08:00:54.239: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:00:54.239: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:00:54.259: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:00:54.309: D/SocketDataReader(4352): PingOK
+04-13 08:00:55.209: D/SocketDataReader(4352): PingOK
+04-13 08:00:55.239: D/DataStreamReader(4352): getInstance
+04-13 08:00:55.239: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:00:55.239: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:00:55.259: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:00:56.109: D/SocketDataReader(4352): PingOK
+04-13 08:00:56.239: D/DataStreamReader(4352): getInstance
+04-13 08:00:56.249: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:00:56.249: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:00:56.259: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:00:57.009: D/SocketDataReader(4352): PingOK
+04-13 08:00:57.249: D/DataStreamReader(4352): getInstance
+04-13 08:00:57.249: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:00:57.249: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:00:57.259: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:00:57.909: D/SocketDataReader(4352): PingOK
+04-13 08:00:58.249: D/DataStreamReader(4352): getInstance
+04-13 08:00:58.249: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:00:58.259: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:00:58.269: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:00:58.809: D/SocketDataReader(4352): PingOK
+04-13 08:00:59.249: D/DataStreamReader(4352): getInstance
+04-13 08:00:59.249: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:00:59.249: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:00:59.259: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:00:59.709: D/SocketDataReader(4352): PingOK
+04-13 08:01:00.249: D/DataStreamReader(4352): getInstance
+04-13 08:01:00.249: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:01:00.249: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:01:00.249: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:01:00.519: D/SocketDataReader(4352): sendDataBlock
+04-13 08:01:00.519: D/onKeyFrameObtained(4352): DINS WHILE CONNECTED
+04-13 08:01:00.519: D/SocketDataReader(4352): reading stream...
+04-13 08:01:00.519: D/DataStreamReader(4352): onDataBlockObtained
+04-13 08:01:00.519: D/DataStreamReader(4352): parseBlock: 14
+04-13 08:01:00.519: D/ARREL ARXIU:(4352): /mnt/sdcard/PROVA/F1/CHI/Q-1/Dades14.txt
+04-13 08:01:00.529: D/GUARDAT NUM DADES AL ARXIU:(4352): 8
+04-13 08:01:00.529: D/DataStreamReader(4352): decrypt
+04-13 08:01:00.529: D/DataStreamReader(4352): parseSystemPacket
+04-13 08:01:00.529: D/packet(4352): TIMESTAMP=342 1 86
+04-13 08:01:00.529: D/DataStreamReader(4352): parseSystemPacket
+04-13 08:01:00.539: D/DataStreamReader(4352): resetDecryption
+04-13 08:01:00.539: D/DataStreamReader(4352): newDataObtained
+04-13 08:01:00.539: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:01:00.629: D/SocketDataReader(4352): PingOK
+04-13 08:01:00.779: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:01:01.249: D/DataStreamReader(4352): getInstance
+04-13 08:01:01.249: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:01:01.249: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:01:01.259: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:01:01.529: D/SocketDataReader(4352): PingOK
+04-13 08:01:02.249: D/DataStreamReader(4352): getInstance
+04-13 08:01:02.249: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:01:02.249: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:01:02.269: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:01:02.429: D/SocketDataReader(4352): PingOK
+04-13 08:01:03.249: D/DataStreamReader(4352): getInstance
+04-13 08:01:03.249: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:01:03.249: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:01:03.269: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:01:03.329: D/SocketDataReader(4352): PingOK
+04-13 08:01:04.229: D/SocketDataReader(4352): PingOK
+04-13 08:01:04.249: D/DataStreamReader(4352): getInstance
+04-13 08:01:04.249: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:01:04.249: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:01:04.259: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:01:05.129: D/SocketDataReader(4352): PingOK
+04-13 08:01:05.249: D/DataStreamReader(4352): getInstance
+04-13 08:01:05.249: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:01:05.259: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:01:05.269: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:01:06.029: D/SocketDataReader(4352): PingOK
+04-13 08:01:06.249: D/DataStreamReader(4352): getInstance
+04-13 08:01:06.249: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:01:06.249: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:01:06.259: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:01:06.929: D/SocketDataReader(4352): PingOK
+04-13 08:01:07.259: D/DataStreamReader(4352): getInstance
+04-13 08:01:07.259: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:01:07.259: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:01:07.269: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:01:07.829: D/SocketDataReader(4352): PingOK
+04-13 08:01:08.259: D/DataStreamReader(4352): getInstance
+04-13 08:01:08.259: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:01:08.259: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:01:08.279: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:01:08.739: D/SocketDataReader(4352): PingOK
+04-13 08:01:09.259: D/DataStreamReader(4352): getInstance
+04-13 08:01:09.259: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:01:09.259: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:01:09.269: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:01:09.639: D/SocketDataReader(4352): PingOK
+04-13 08:01:09.729: D/SocketDataReader(4352): sendDataBlock
+04-13 08:01:09.729: D/onKeyFrameObtained(4352): DINS WHILE CONNECTED
+04-13 08:01:09.729: D/SocketDataReader(4352): reading stream...
+04-13 08:01:09.739: D/DataStreamReader(4352): onDataBlockObtained
+04-13 08:01:09.739: D/DataStreamReader(4352): parseBlock: 15
+04-13 08:01:09.749: D/ARREL ARXIU:(4352): /mnt/sdcard/PROVA/F1/CHI/Q-1/Dades15.txt
+04-13 08:01:09.759: D/GUARDAT NUM DADES AL ARXIU:(4352): 9
+04-13 08:01:09.759: D/DataStreamReader(4352): decrypt
+04-13 08:01:09.759: D/DataStreamReader(4352): parseSystemPacket
+04-13 08:01:09.759: D/packet(4352): TIMESTAMP=352 1 96
+04-13 08:01:09.759: D/DataStreamReader(4352): decrypt
+04-13 08:01:09.759: D/DataStreamReader(4352): parseSystemPacket
+04-13 08:01:09.759: D/DataStreamReader(4352): newDataObtained
+04-13 08:01:09.759: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:01:09.889: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:01:10.259: D/DataStreamReader(4352): getInstance
+04-13 08:01:10.259: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:01:10.259: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:01:10.259: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:01:10.539: D/SocketDataReader(4352): PingOK
+04-13 08:01:11.259: D/DataStreamReader(4352): getInstance
+04-13 08:01:11.259: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:01:11.259: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:01:11.279: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:01:11.439: D/SocketDataReader(4352): PingOK
+04-13 08:01:11.579: D/SocketDataReader(4352): sendDataBlock
+04-13 08:01:11.579: D/onKeyFrameObtained(4352): DINS WHILE CONNECTED
+04-13 08:01:11.579: D/SocketDataReader(4352): reading stream...
+04-13 08:01:11.579: D/DataStreamReader(4352): onDataBlockObtained
+04-13 08:01:11.579: D/DataStreamReader(4352): parseBlock: 16
+04-13 08:01:11.579: D/ARREL ARXIU:(4352): /mnt/sdcard/PROVA/F1/CHI/Q-1/Dades16.txt
+04-13 08:01:11.589: D/GUARDAT NUM DADES AL ARXIU:(4352): 78
+04-13 08:01:11.589: D/DataStreamReader(4352): decrypt
+04-13 08:01:11.589: D/DataStreamReader(4352): parseSystemPacket
+04-13 08:01:11.589: D/packet(4352): TIMESTAMP=354 1 98
+04-13 08:01:11.589: D/DataStreamReader(4352): decrypt
+04-13 08:01:11.589: D/DataStreamReader(4352): parseSystemPacket
+04-13 08:01:11.599: D/DataStreamReader(4352): newDataObtained
+04-13 08:01:11.599: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:01:11.699: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:01:12.259: D/DataStreamReader(4352): getInstance
+04-13 08:01:12.259: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:01:12.259: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:01:12.259: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:01:12.339: D/SocketDataReader(4352): PingOK
+04-13 08:01:13.239: D/SocketDataReader(4352): PingOK
+04-13 08:01:13.259: D/DataStreamReader(4352): getInstance
+04-13 08:01:13.259: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:01:13.259: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:01:13.269: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:01:14.139: D/SocketDataReader(4352): PingOK
+04-13 08:01:14.259: D/DataStreamReader(4352): getInstance
+04-13 08:01:14.259: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:01:14.259: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:01:14.269: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:01:15.039: D/SocketDataReader(4352): PingOK
+04-13 08:01:15.099: D/SocketDataReader(4352): sendDataBlock
+04-13 08:01:15.099: D/onKeyFrameObtained(4352): DINS WHILE CONNECTED
+04-13 08:01:15.099: D/SocketDataReader(4352): reading stream...
+04-13 08:01:15.099: D/DataStreamReader(4352): onDataBlockObtained
+04-13 08:01:15.099: D/DataStreamReader(4352): parseBlock: 17
+04-13 08:01:15.099: D/ARREL ARXIU:(4352): /mnt/sdcard/PROVA/F1/CHI/Q-1/Dades17.txt
+04-13 08:01:15.109: D/GUARDAT NUM DADES AL ARXIU:(4352): 8
+04-13 08:01:15.109: D/DataStreamReader(4352): decrypt
+04-13 08:01:15.109: D/DataStreamReader(4352): parseSystemPacket
+04-13 08:01:15.119: D/packet(4352): TIMESTAMP=357 1 101
+04-13 08:01:15.119: D/DataStreamReader(4352): parseSystemPacket
+04-13 08:01:15.119: D/DataStreamReader(4352): resetDecryption
+04-13 08:01:15.119: D/DataStreamReader(4352): newDataObtained
+04-13 08:01:15.119: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:01:15.229: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:01:15.479: D/DataStreamReader(4352): getInstance
+04-13 08:01:15.479: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:01:15.479: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:01:15.499: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:01:15.939: D/SocketDataReader(4352): PingOK
+04-13 08:01:16.259: D/DataStreamReader(4352): getInstance
+04-13 08:01:16.259: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:01:16.259: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:01:16.279: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:01:16.849: D/SocketDataReader(4352): PingOK
+04-13 08:01:17.269: D/DataStreamReader(4352): getInstance
+04-13 08:01:17.269: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:01:17.269: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:01:17.279: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:01:17.749: D/SocketDataReader(4352): PingOK
+04-13 08:01:18.269: D/DataStreamReader(4352): getInstance
+04-13 08:01:18.269: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:01:18.269: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:01:18.279: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:01:18.649: D/SocketDataReader(4352): PingOK
+04-13 08:01:19.269: D/DataStreamReader(4352): getInstance
+04-13 08:01:19.269: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:01:19.269: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:01:19.279: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:01:19.549: D/SocketDataReader(4352): PingOK
+04-13 08:01:20.269: D/DataStreamReader(4352): getInstance
+04-13 08:01:20.269: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:01:20.269: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:01:20.279: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:01:20.449: D/SocketDataReader(4352): PingOK
+04-13 08:01:21.269: D/DataStreamReader(4352): getInstance
+04-13 08:01:21.269: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:01:21.269: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:01:21.279: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:01:21.349: D/SocketDataReader(4352): PingOK
+04-13 08:01:22.259: D/SocketDataReader(4352): PingOK
+04-13 08:01:22.269: D/DataStreamReader(4352): getInstance
+04-13 08:01:22.269: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:01:22.269: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:01:22.279: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:01:23.159: D/SocketDataReader(4352): PingOK
+04-13 08:01:23.269: D/DataStreamReader(4352): getInstance
+04-13 08:01:23.269: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:01:23.269: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:01:23.279: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:01:24.059: D/SocketDataReader(4352): PingOK
+04-13 08:01:24.279: D/DataStreamReader(4352): getInstance
+04-13 08:01:24.279: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:01:24.279: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:01:24.289: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:01:24.959: D/SocketDataReader(4352): PingOK
+04-13 08:01:25.279: D/DataStreamReader(4352): getInstance
+04-13 08:01:25.279: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:01:25.279: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:01:25.279: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:01:25.859: D/SocketDataReader(4352): PingOK
+04-13 08:01:26.279: D/DataStreamReader(4352): getInstance
+04-13 08:01:26.279: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:01:26.279: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:01:26.279: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:01:26.759: D/SocketDataReader(4352): PingOK
+04-13 08:01:27.279: D/DataStreamReader(4352): getInstance
+04-13 08:01:27.279: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:01:27.279: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:01:27.289: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:01:27.659: D/SocketDataReader(4352): PingOK
+04-13 08:01:28.279: D/DataStreamReader(4352): getInstance
+04-13 08:01:28.279: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:01:28.279: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:01:28.289: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:01:28.559: D/SocketDataReader(4352): PingOK
+04-13 08:01:29.279: D/DataStreamReader(4352): getInstance
+04-13 08:01:29.279: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:01:29.279: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:01:29.289: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:01:29.459: D/SocketDataReader(4352): PingOK
+04-13 08:01:30.279: D/DataStreamReader(4352): getInstance
+04-13 08:01:30.279: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:01:30.279: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:01:30.289: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:01:30.359: D/SocketDataReader(4352): PingOK
+04-13 08:01:31.259: D/SocketDataReader(4352): PingOK
+04-13 08:01:31.279: D/DataStreamReader(4352): getInstance
+04-13 08:01:31.279: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:01:31.279: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:01:31.289: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:01:31.439: D/SocketDataReader(4352): sendDataBlock
+04-13 08:01:31.439: D/onKeyFrameObtained(4352): DINS WHILE CONNECTED
+04-13 08:01:31.439: D/SocketDataReader(4352): reading stream...
+04-13 08:01:31.439: D/DataStreamReader(4352): onDataBlockObtained
+04-13 08:01:31.439: D/DataStreamReader(4352): parseBlock: 18
+04-13 08:01:31.439: D/ARREL ARXIU:(4352): /mnt/sdcard/PROVA/F1/CHI/Q-1/Dades18.txt
+04-13 08:01:31.459: D/GUARDAT NUM DADES AL ARXIU:(4352): 8
+04-13 08:01:31.459: D/DataStreamReader(4352): decrypt
+04-13 08:01:31.459: D/DataStreamReader(4352): parseSystemPacket
+04-13 08:01:31.459: D/packet(4352): TIMESTAMP=374 1 118
+04-13 08:01:31.459: D/DataStreamReader(4352): parseSystemPacket
+04-13 08:01:31.459: D/DataStreamReader(4352): resetDecryption
+04-13 08:01:31.459: D/DataStreamReader(4352): newDataObtained
+04-13 08:01:31.459: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:01:31.639: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:01:32.159: D/SocketDataReader(4352): PingOK
+04-13 08:01:32.279: D/DataStreamReader(4352): getInstance
+04-13 08:01:32.279: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:01:32.279: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:01:32.289: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:01:33.069: D/SocketDataReader(4352): PingOK
+04-13 08:01:33.279: D/DataStreamReader(4352): getInstance
+04-13 08:01:33.279: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:01:33.279: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:01:33.299: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:01:33.969: D/SocketDataReader(4352): PingOK
+04-13 08:01:34.279: D/DataStreamReader(4352): getInstance
+04-13 08:01:34.279: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:01:34.279: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:01:34.289: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:01:34.869: D/SocketDataReader(4352): PingOK
+04-13 08:01:35.279: D/DataStreamReader(4352): getInstance
+04-13 08:01:35.279: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:01:35.279: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:01:35.309: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:01:35.769: D/SocketDataReader(4352): PingOK
+04-13 08:01:36.289: D/DataStreamReader(4352): getInstance
+04-13 08:01:36.289: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:01:36.289: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:01:36.299: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:01:36.669: D/SocketDataReader(4352): PingOK
+04-13 08:01:37.289: D/DataStreamReader(4352): getInstance
+04-13 08:01:37.289: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:01:37.289: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:01:37.299: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:01:37.569: D/SocketDataReader(4352): PingOK
+04-13 08:01:38.289: D/DataStreamReader(4352): getInstance
+04-13 08:01:38.289: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:01:38.289: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:01:38.289: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:01:38.469: D/SocketDataReader(4352): PingOK
+04-13 08:01:39.289: D/DataStreamReader(4352): getInstance
+04-13 08:01:39.289: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:01:39.289: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:01:39.299: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:01:39.369: D/SocketDataReader(4352): PingOK
+04-13 08:01:40.269: D/SocketDataReader(4352): PingOK
+04-13 08:01:40.289: D/DataStreamReader(4352): getInstance
+04-13 08:01:40.289: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:01:40.289: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:01:40.309: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:01:41.159: D/F1LTActivity(4352): onSaveInstanceState
+04-13 08:01:41.169: D/SocketDataReader(4352): PingOK
+04-13 08:01:41.289: D/DataStreamReader(4352): getInstance
+04-13 08:01:41.289: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:01:41.289: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:01:41.299: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:01:42.069: D/SocketDataReader(4352): PingOK
+04-13 08:01:42.299: D/DataStreamReader(4352): getInstance
+04-13 08:01:42.299: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:01:42.299: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:01:42.309: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:01:42.969: D/SocketDataReader(4352): PingOK
+04-13 08:01:43.299: D/DataStreamReader(4352): getInstance
+04-13 08:01:43.299: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:01:43.299: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:01:43.299: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:01:43.879: D/SocketDataReader(4352): PingOK
+04-13 08:01:44.299: D/DataStreamReader(4352): getInstance
+04-13 08:01:44.299: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:01:44.299: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:01:44.299: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:01:44.779: D/SocketDataReader(4352): PingOK
+04-13 08:01:45.299: D/DataStreamReader(4352): getInstance
+04-13 08:01:45.299: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:01:45.299: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:01:45.309: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:01:45.679: D/SocketDataReader(4352): PingOK
+04-13 08:01:46.299: D/DataStreamReader(4352): getInstance
+04-13 08:01:46.299: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:01:46.299: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:01:46.299: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:01:46.569: D/SocketDataReader(4352): PingOK
+04-13 08:01:47.299: D/DataStreamReader(4352): getInstance
+04-13 08:01:47.299: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:01:47.299: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:01:47.319: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:01:47.469: D/SocketDataReader(4352): PingOK
+04-13 08:01:47.719: D/SocketDataReader(4352): sendDataBlock
+04-13 08:01:47.719: D/onKeyFrameObtained(4352): DINS WHILE CONNECTED
+04-13 08:01:47.719: D/SocketDataReader(4352): reading stream...
+04-13 08:01:47.719: D/DataStreamReader(4352): onDataBlockObtained
+04-13 08:01:47.719: D/DataStreamReader(4352): parseBlock: 19
+04-13 08:01:47.719: D/ARREL ARXIU:(4352): /mnt/sdcard/PROVA/F1/CHI/Q-1/Dades19.txt
+04-13 08:01:47.729: D/GUARDAT NUM DADES AL ARXIU:(4352): 8
+04-13 08:01:47.729: D/DataStreamReader(4352): decrypt
+04-13 08:01:47.729: D/DataStreamReader(4352): parseSystemPacket
+04-13 08:01:47.729: D/packet(4352): TIMESTAMP=390 1 -122
+04-13 08:01:47.729: D/DataStreamReader(4352): parseSystemPacket
+04-13 08:01:47.729: D/DataStreamReader(4352): resetDecryption
+04-13 08:01:47.729: D/DataStreamReader(4352): newDataObtained
+04-13 08:01:47.729: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:01:47.829: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:01:48.299: D/DataStreamReader(4352): getInstance
+04-13 08:01:48.299: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:01:48.299: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:01:48.329: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:01:48.379: D/SocketDataReader(4352): PingOK
+04-13 08:01:49.279: D/SocketDataReader(4352): PingOK
+04-13 08:01:49.299: D/DataStreamReader(4352): getInstance
+04-13 08:01:49.299: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:01:49.299: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:01:49.329: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:01:50.179: D/SocketDataReader(4352): PingOK
+04-13 08:01:50.299: D/DataStreamReader(4352): getInstance
+04-13 08:01:50.299: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:01:50.299: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:01:50.329: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:01:51.089: D/SocketDataReader(4352): PingOK
+04-13 08:01:51.299: D/DataStreamReader(4352): getInstance
+04-13 08:01:51.299: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:01:51.299: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:01:51.299: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:01:51.989: D/SocketDataReader(4352): PingOK
+04-13 08:01:52.299: D/DataStreamReader(4352): getInstance
+04-13 08:01:52.299: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:01:52.299: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:01:52.329: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:01:52.889: D/SocketDataReader(4352): PingOK
+04-13 08:01:53.299: D/DataStreamReader(4352): getInstance
+04-13 08:01:53.299: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:01:53.299: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:01:53.329: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:01:53.789: D/SocketDataReader(4352): PingOK
+04-13 08:01:54.309: D/DataStreamReader(4352): getInstance
+04-13 08:01:54.309: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:01:54.309: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:01:54.329: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:01:54.679: D/SocketDataReader(4352): PingOK
+04-13 08:01:55.299: D/DataStreamReader(4352): getInstance
+04-13 08:01:55.299: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:01:55.299: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:01:55.319: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:01:55.589: D/SocketDataReader(4352): PingOK
+04-13 08:01:56.309: D/DataStreamReader(4352): getInstance
+04-13 08:01:56.309: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:01:56.309: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:01:56.339: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:01:56.489: D/SocketDataReader(4352): PingOK
+04-13 08:01:57.319: D/DataStreamReader(4352): getInstance
+04-13 08:01:57.319: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:01:57.319: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:01:57.329: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:01:57.389: D/SocketDataReader(4352): PingOK
+04-13 08:01:58.289: D/SocketDataReader(4352): PingOK
+04-13 08:01:58.319: D/DataStreamReader(4352): getInstance
+04-13 08:01:58.319: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:01:58.319: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:01:58.329: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:01:59.189: D/SocketDataReader(4352): PingOK
+04-13 08:01:59.319: D/DataStreamReader(4352): getInstance
+04-13 08:01:59.319: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:01:59.319: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:01:59.339: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:02:00.089: D/SocketDataReader(4352): PingOK
+04-13 08:02:00.319: D/DataStreamReader(4352): getInstance
+04-13 08:02:00.319: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:02:00.319: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:02:00.339: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:02:00.989: D/SocketDataReader(4352): PingOK
+04-13 08:02:01.319: D/DataStreamReader(4352): getInstance
+04-13 08:02:01.319: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:02:01.319: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:02:01.339: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:02:01.889: D/SocketDataReader(4352): PingOK
+04-13 08:02:02.329: D/DataStreamReader(4352): getInstance
+04-13 08:02:02.329: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:02:02.329: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:02:02.339: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:02:02.799: D/SocketDataReader(4352): PingOK
+04-13 08:02:03.329: D/DataStreamReader(4352): getInstance
+04-13 08:02:03.329: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:02:03.329: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:02:03.339: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:02:03.699: D/SocketDataReader(4352): PingOK
+04-13 08:02:03.799: D/SocketDataReader(4352): sendDataBlock
+04-13 08:02:03.799: D/onKeyFrameObtained(4352): DINS WHILE CONNECTED
+04-13 08:02:03.799: D/SocketDataReader(4352): reading stream...
+04-13 08:02:03.799: D/DataStreamReader(4352): onDataBlockObtained
+04-13 08:02:03.799: D/DataStreamReader(4352): parseBlock: 20
+04-13 08:02:03.799: D/ARREL ARXIU:(4352): /mnt/sdcard/PROVA/F1/CHI/Q-1/Dades20.txt
+04-13 08:02:03.809: D/GUARDAT NUM DADES AL ARXIU:(4352): 12
+04-13 08:02:03.809: D/DataStreamReader(4352): decrypt
+04-13 08:02:03.819: D/DataStreamReader(4352): parseSystemPacket
+04-13 08:02:03.819: D/packet(4352): TIMESTAMP=406 1 -106
+04-13 08:02:03.819: D/DataStreamReader(4352): parseSystemPacket
+04-13 08:02:03.819: D/DataStreamReader(4352): resetDecryption
+04-13 08:02:03.819: D/DataStreamReader(4352): decrypt
+04-13 08:02:03.819: D/DataStreamReader(4352): parseSystemPacket
+04-13 08:02:03.819: D/DataStreamReader(4352): newDataObtained
+04-13 08:02:03.819: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:02:03.939: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:02:04.329: D/DataStreamReader(4352): getInstance
+04-13 08:02:04.329: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:02:04.329: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:02:04.339: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:02:04.589: D/SocketDataReader(4352): PingOK
+04-13 08:02:05.029: D/SocketDataReader(4352): sendDataBlock
+04-13 08:02:05.029: D/onKeyFrameObtained(4352): DINS WHILE CONNECTED
+04-13 08:02:05.029: D/SocketDataReader(4352): reading stream...
+04-13 08:02:05.029: D/DataStreamReader(4352): onDataBlockObtained
+04-13 08:02:05.029: D/DataStreamReader(4352): parseBlock: 21
+04-13 08:02:05.029: D/ARREL ARXIU:(4352): /mnt/sdcard/PROVA/F1/CHI/Q-1/Dades21.txt
+04-13 08:02:05.049: D/GUARDAT NUM DADES AL ARXIU:(4352): 17
+04-13 08:02:05.049: D/DataStreamReader(4352): decrypt
+04-13 08:02:05.049: D/DataStreamReader(4352): parseSystemPacket
+04-13 08:02:05.049: D/packet(4352): TIMESTAMP=407 1 -105
+04-13 08:02:05.049: D/DataStreamReader(4352): decrypt
+04-13 08:02:05.049: D/DataStreamReader(4352): parseSystemPacket
+04-13 08:02:05.059: D/DataStreamReader(4352): decrypt
+04-13 08:02:05.059: D/DataStreamReader(4352): parseSystemPacket
+04-13 08:02:05.059: D/DataStreamReader(4352): newDataObtained
+04-13 08:02:05.059: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:02:05.149: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:02:05.359: D/DataStreamReader(4352): getInstance
+04-13 08:02:05.359: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:02:05.369: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:02:05.369: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:02:05.499: D/SocketDataReader(4352): PingOK
+04-13 08:02:06.339: D/DataStreamReader(4352): getInstance
+04-13 08:02:06.339: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:02:06.339: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:02:06.349: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:02:06.389: D/SocketDataReader(4352): PingOK
+04-13 08:02:07.299: D/SocketDataReader(4352): PingOK
+04-13 08:02:07.339: D/DataStreamReader(4352): getInstance
+04-13 08:02:07.339: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:02:07.339: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:02:07.349: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:02:08.199: D/SocketDataReader(4352): PingOK
+04-13 08:02:08.339: D/DataStreamReader(4352): getInstance
+04-13 08:02:08.339: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:02:08.339: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:02:08.349: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:02:09.099: D/SocketDataReader(4352): PingOK
+04-13 08:02:09.339: D/DataStreamReader(4352): getInstance
+04-13 08:02:09.339: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:02:09.339: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:02:09.349: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:02:09.999: D/SocketDataReader(4352): PingOK
+04-13 08:02:10.349: D/DataStreamReader(4352): getInstance
+04-13 08:02:10.349: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:02:10.349: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:02:10.349: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:02:10.899: D/SocketDataReader(4352): PingOK
+04-13 08:02:11.349: D/DataStreamReader(4352): getInstance
+04-13 08:02:11.349: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:02:11.349: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:02:11.359: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:02:11.799: D/SocketDataReader(4352): PingOK
+04-13 08:02:12.339: D/DataStreamReader(4352): getInstance
+04-13 08:02:12.339: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:02:12.339: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:02:12.359: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:02:12.699: D/SocketDataReader(4352): PingOK
+04-13 08:02:13.349: D/DataStreamReader(4352): getInstance
+04-13 08:02:13.349: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:02:13.349: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:02:13.349: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:02:13.599: D/SocketDataReader(4352): PingOK
+04-13 08:02:14.349: D/DataStreamReader(4352): getInstance
+04-13 08:02:14.349: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:02:14.349: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:02:14.359: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:02:14.499: D/SocketDataReader(4352): PingOK
+04-13 08:02:15.349: D/DataStreamReader(4352): getInstance
+04-13 08:02:15.349: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:02:15.349: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:02:15.359: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:02:15.399: D/SocketDataReader(4352): PingOK
+04-13 08:02:16.299: D/SocketDataReader(4352): PingOK
+04-13 08:02:16.349: D/DataStreamReader(4352): getInstance
+04-13 08:02:16.349: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:02:16.349: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:02:16.359: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:02:17.199: D/SocketDataReader(4352): PingOK
+04-13 08:02:17.349: D/DataStreamReader(4352): getInstance
+04-13 08:02:17.349: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:02:17.349: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:02:17.359: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:02:18.099: D/SocketDataReader(4352): PingOK
+04-13 08:02:18.349: D/DataStreamReader(4352): getInstance
+04-13 08:02:18.349: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:02:18.349: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:02:18.359: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:02:19.009: D/SocketDataReader(4352): PingOK
+04-13 08:02:19.269: D/SocketDataReader(4352): sendDataBlock
+04-13 08:02:19.269: D/onKeyFrameObtained(4352): DINS WHILE CONNECTED
+04-13 08:02:19.269: D/SocketDataReader(4352): reading stream...
+04-13 08:02:19.269: D/DataStreamReader(4352): onDataBlockObtained
+04-13 08:02:19.269: D/DataStreamReader(4352): parseBlock: 22
+04-13 08:02:19.269: D/ARREL ARXIU:(4352): /mnt/sdcard/PROVA/F1/CHI/Q-1/Dades22.txt
+04-13 08:02:19.279: D/GUARDAT NUM DADES AL ARXIU:(4352): 8
+04-13 08:02:19.279: D/DataStreamReader(4352): decrypt
+04-13 08:02:19.279: D/DataStreamReader(4352): parseSystemPacket
+04-13 08:02:19.279: D/packet(4352): TIMESTAMP=422 1 -90
+04-13 08:02:19.279: D/DataStreamReader(4352): parseSystemPacket
+04-13 08:02:19.279: D/DataStreamReader(4352): resetDecryption
+04-13 08:02:19.279: D/DataStreamReader(4352): newDataObtained
+04-13 08:02:19.279: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:02:19.399: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:02:19.689: D/DataStreamReader(4352): getInstance
+04-13 08:02:19.689: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:02:19.689: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:02:19.699: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:02:19.909: D/SocketDataReader(4352): PingOK
+04-13 08:02:20.359: D/DataStreamReader(4352): getInstance
+04-13 08:02:20.359: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:02:20.359: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:02:20.359: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:02:20.809: D/SocketDataReader(4352): PingOK
+04-13 08:02:21.359: D/DataStreamReader(4352): getInstance
+04-13 08:02:21.359: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:02:21.359: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:02:21.359: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:02:21.709: D/SocketDataReader(4352): PingOK
+04-13 08:02:22.359: D/DataStreamReader(4352): getInstance
+04-13 08:02:22.359: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:02:22.359: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:02:22.369: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:02:22.609: D/SocketDataReader(4352): PingOK
+04-13 08:02:23.359: D/DataStreamReader(4352): getInstance
+04-13 08:02:23.359: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:02:23.359: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:02:23.359: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:02:23.509: D/SocketDataReader(4352): PingOK
+04-13 08:02:24.349: D/DataStreamReader(4352): getInstance
+04-13 08:02:24.349: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:02:24.349: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:02:24.369: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:02:24.409: D/SocketDataReader(4352): PingOK
+04-13 08:02:25.319: D/SocketDataReader(4352): PingOK
+04-13 08:02:25.359: D/DataStreamReader(4352): getInstance
+04-13 08:02:25.359: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:02:25.359: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:02:25.369: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:02:26.219: D/SocketDataReader(4352): PingOK
+04-13 08:02:26.359: D/DataStreamReader(4352): getInstance
+04-13 08:02:26.359: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:02:26.359: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:02:26.369: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:02:27.119: D/SocketDataReader(4352): PingOK
+04-13 08:02:27.359: D/DataStreamReader(4352): getInstance
+04-13 08:02:27.359: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:02:27.359: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:02:27.369: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:02:28.019: D/SocketDataReader(4352): PingOK
+04-13 08:02:28.359: D/DataStreamReader(4352): getInstance
+04-13 08:02:28.359: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:02:28.359: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:02:28.369: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:02:28.919: D/SocketDataReader(4352): PingOK
+04-13 08:02:29.359: D/DataStreamReader(4352): getInstance
+04-13 08:02:29.359: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:02:29.359: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:02:29.369: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:02:29.819: D/SocketDataReader(4352): PingOK
+04-13 08:02:30.359: D/DataStreamReader(4352): getInstance
+04-13 08:02:30.359: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:02:30.359: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:02:30.369: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:02:30.719: D/SocketDataReader(4352): PingOK
+04-13 08:02:31.359: D/DataStreamReader(4352): getInstance
+04-13 08:02:31.359: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:02:31.359: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:02:31.369: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:02:31.619: D/SocketDataReader(4352): PingOK
+04-13 08:02:32.369: D/DataStreamReader(4352): getInstance
+04-13 08:02:32.369: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:02:32.369: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:02:32.369: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:02:32.519: D/SocketDataReader(4352): PingOK
+04-13 08:02:33.369: D/DataStreamReader(4352): getInstance
+04-13 08:02:33.369: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:02:33.369: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:02:33.379: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:02:33.419: D/SocketDataReader(4352): PingOK
+04-13 08:02:34.319: D/SocketDataReader(4352): PingOK
+04-13 08:02:34.359: D/DataStreamReader(4352): getInstance
+04-13 08:02:34.359: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:02:34.359: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:02:34.379: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:02:35.229: D/SocketDataReader(4352): PingOK
+04-13 08:02:35.309: D/SocketDataReader(4352): sendDataBlock
+04-13 08:02:35.309: D/onKeyFrameObtained(4352): DINS WHILE CONNECTED
+04-13 08:02:35.309: D/SocketDataReader(4352): reading stream...
+04-13 08:02:35.309: D/DataStreamReader(4352): onDataBlockObtained
+04-13 08:02:35.309: D/DataStreamReader(4352): parseBlock: 23
+04-13 08:02:35.329: D/ARREL ARXIU:(4352): /mnt/sdcard/PROVA/F1/CHI/Q-1/Dades23.txt
+04-13 08:02:35.349: D/GUARDAT NUM DADES AL ARXIU:(4352): 8
+04-13 08:02:35.349: D/DataStreamReader(4352): decrypt
+04-13 08:02:35.349: D/DataStreamReader(4352): parseSystemPacket
+04-13 08:02:35.349: D/packet(4352): TIMESTAMP=438 1 -74
+04-13 08:02:35.349: D/DataStreamReader(4352): parseSystemPacket
+04-13 08:02:35.349: D/DataStreamReader(4352): resetDecryption
+04-13 08:02:35.349: D/DataStreamReader(4352): newDataObtained
+04-13 08:02:35.349: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:02:35.449: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:02:35.729: D/DataStreamReader(4352): getInstance
+04-13 08:02:35.729: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:02:35.729: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:02:35.729: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:02:36.129: D/SocketDataReader(4352): PingOK
+04-13 08:02:36.369: D/DataStreamReader(4352): getInstance
+04-13 08:02:36.369: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:02:36.369: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:02:36.379: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:02:37.029: D/SocketDataReader(4352): PingOK
+04-13 08:02:37.369: D/DataStreamReader(4352): getInstance
+04-13 08:02:37.369: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:02:37.369: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:02:37.379: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:02:37.929: D/SocketDataReader(4352): PingOK
+04-13 08:02:38.369: D/DataStreamReader(4352): getInstance
+04-13 08:02:38.369: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:02:38.369: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:02:38.379: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:02:38.829: D/SocketDataReader(4352): PingOK
+04-13 08:02:39.369: D/DataStreamReader(4352): getInstance
+04-13 08:02:39.369: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:02:39.369: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:02:39.389: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:02:39.729: D/SocketDataReader(4352): PingOK
+04-13 08:02:39.739: D/F1LTActivity(4352): onSaveInstanceState
+04-13 08:02:40.369: D/DataStreamReader(4352): getInstance
+04-13 08:02:40.369: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:02:40.369: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:02:40.379: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:02:40.629: D/SocketDataReader(4352): PingOK
+04-13 08:02:41.369: D/DataStreamReader(4352): getInstance
+04-13 08:02:41.369: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:02:41.369: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:02:41.389: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:02:41.529: D/SocketDataReader(4352): PingOK
+04-13 08:02:42.379: D/DataStreamReader(4352): getInstance
+04-13 08:02:42.379: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:02:42.379: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:02:42.389: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:02:42.429: D/SocketDataReader(4352): PingOK
+04-13 08:02:43.139: D/F1LTActivity(4352): onSaveInstanceState
+04-13 08:02:43.329: D/SocketDataReader(4352): PingOK
+04-13 08:02:43.379: D/DataStreamReader(4352): getInstance
+04-13 08:02:43.379: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:02:43.379: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:02:43.389: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:02:44.239: D/SocketDataReader(4352): PingOK
+04-13 08:02:44.379: D/DataStreamReader(4352): getInstance
+04-13 08:02:44.379: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:02:44.379: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:02:44.389: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:02:45.139: D/SocketDataReader(4352): PingOK
+04-13 08:02:45.379: D/DataStreamReader(4352): getInstance
+04-13 08:02:45.379: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:02:45.379: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:02:45.389: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:02:46.039: D/SocketDataReader(4352): PingOK
+04-13 08:02:46.379: D/DataStreamReader(4352): getInstance
+04-13 08:02:46.379: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:02:46.379: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:02:46.389: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:02:46.939: D/SocketDataReader(4352): PingOK
+04-13 08:02:47.389: D/DataStreamReader(4352): getInstance
+04-13 08:02:47.389: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:02:47.389: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:02:47.399: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:02:47.839: D/SocketDataReader(4352): PingOK
+04-13 08:02:48.389: D/DataStreamReader(4352): getInstance
+04-13 08:02:48.389: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:02:48.389: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:02:48.409: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:02:48.739: D/SocketDataReader(4352): PingOK
+04-13 08:02:49.389: D/DataStreamReader(4352): getInstance
+04-13 08:02:49.389: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:02:49.389: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:02:49.389: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:02:49.639: D/SocketDataReader(4352): PingOK
+04-13 08:02:50.389: D/DataStreamReader(4352): getInstance
+04-13 08:02:50.389: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:02:50.389: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:02:50.399: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:02:50.539: D/SocketDataReader(4352): PingOK
+04-13 08:02:51.389: D/DataStreamReader(4352): getInstance
+04-13 08:02:51.389: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:02:51.389: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:02:51.429: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:02:51.439: D/SocketDataReader(4352): PingOK
+04-13 08:02:51.629: D/SocketDataReader(4352): sendDataBlock
+04-13 08:02:51.629: D/onKeyFrameObtained(4352): DINS WHILE CONNECTED
+04-13 08:02:51.629: D/SocketDataReader(4352): reading stream...
+04-13 08:02:51.629: D/DataStreamReader(4352): onDataBlockObtained
+04-13 08:02:51.629: D/DataStreamReader(4352): parseBlock: 24
+04-13 08:02:51.629: D/ARREL ARXIU:(4352): /mnt/sdcard/PROVA/F1/CHI/Q-1/Dades24.txt
+04-13 08:02:51.639: D/GUARDAT NUM DADES AL ARXIU:(4352): 8
+04-13 08:02:51.639: D/DataStreamReader(4352): decrypt
+04-13 08:02:51.639: D/DataStreamReader(4352): parseSystemPacket
+04-13 08:02:51.639: D/packet(4352): TIMESTAMP=454 1 -58
+04-13 08:02:51.649: D/DataStreamReader(4352): parseSystemPacket
+04-13 08:02:51.649: D/DataStreamReader(4352): resetDecryption
+04-13 08:02:51.649: D/DataStreamReader(4352): newDataObtained
+04-13 08:02:51.649: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:02:51.849: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:02:52.339: D/SocketDataReader(4352): PingOK
+04-13 08:02:52.399: D/DataStreamReader(4352): getInstance
+04-13 08:02:52.399: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:02:52.399: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:02:52.399: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:02:53.239: D/SocketDataReader(4352): PingOK
+04-13 08:02:53.389: D/DataStreamReader(4352): getInstance
+04-13 08:02:53.389: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:02:53.389: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:02:53.399: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:02:54.149: D/SocketDataReader(4352): PingOK
+04-13 08:02:54.399: D/DataStreamReader(4352): getInstance
+04-13 08:02:54.399: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:02:54.399: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:02:54.409: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:02:55.049: D/SocketDataReader(4352): PingOK
+04-13 08:02:55.399: D/DataStreamReader(4352): getInstance
+04-13 08:02:55.399: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:02:55.399: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:02:55.409: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:02:55.949: D/SocketDataReader(4352): PingOK
+04-13 08:02:56.399: D/DataStreamReader(4352): getInstance
+04-13 08:02:56.399: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:02:56.399: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:02:56.409: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:02:56.849: D/SocketDataReader(4352): PingOK
+04-13 08:02:57.399: D/DataStreamReader(4352): getInstance
+04-13 08:02:57.399: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:02:57.399: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:02:57.439: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:02:57.749: D/SocketDataReader(4352): PingOK
+04-13 08:02:58.399: D/DataStreamReader(4352): getInstance
+04-13 08:02:58.399: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:02:58.399: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:02:58.409: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:02:58.649: D/SocketDataReader(4352): PingOK
+04-13 08:02:58.789: D/SocketDataReader(4352): sendDataBlock
+04-13 08:02:58.789: D/onKeyFrameObtained(4352): DINS WHILE CONNECTED
+04-13 08:02:58.789: D/SocketDataReader(4352): reading stream...
+04-13 08:02:58.789: D/DataStreamReader(4352): onDataBlockObtained
+04-13 08:02:58.789: D/DataStreamReader(4352): parseBlock: 25
+04-13 08:02:58.789: D/ARREL ARXIU:(4352): /mnt/sdcard/PROVA/F1/CHI/Q-1/Dades25.txt
+04-13 08:02:58.799: D/GUARDAT NUM DADES AL ARXIU:(4352): 8
+04-13 08:02:58.799: D/DataStreamReader(4352): decrypt
+04-13 08:02:58.799: D/DataStreamReader(4352): parseSystemPacket
+04-13 08:02:58.799: D/packet(4352): TIMESTAMP=461 1 -51
+04-13 08:02:58.799: D/DataStreamReader(4352): decrypt
+04-13 08:02:58.799: D/DataStreamReader(4352): parseSystemPacket
+04-13 08:02:58.799: D/DataStreamReader(4352): newDataObtained
+04-13 08:02:58.799: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:02:58.929: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:02:59.409: D/DataStreamReader(4352): getInstance
+04-13 08:02:59.409: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:02:59.409: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:02:59.419: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:02:59.549: D/SocketDataReader(4352): PingOK
+04-13 08:03:00.399: D/DataStreamReader(4352): getInstance
+04-13 08:03:00.399: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:03:00.399: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:03:00.409: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:03:00.449: D/SocketDataReader(4352): PingOK
+04-13 08:03:00.529: D/SocketDataReader(4352): sendDataBlock
+04-13 08:03:00.529: D/onKeyFrameObtained(4352): DINS WHILE CONNECTED
+04-13 08:03:00.529: D/SocketDataReader(4352): reading stream...
+04-13 08:03:00.529: D/DataStreamReader(4352): onDataBlockObtained
+04-13 08:03:00.529: D/DataStreamReader(4352): parseBlock: 26
+04-13 08:03:00.539: D/ARREL ARXIU:(4352): /mnt/sdcard/PROVA/F1/CHI/Q-1/Dades26.txt
+04-13 08:03:00.549: D/GUARDAT NUM DADES AL ARXIU:(4352): 17
+04-13 08:03:00.549: D/DataStreamReader(4352): decrypt
+04-13 08:03:00.549: D/DataStreamReader(4352): parseSystemPacket
+04-13 08:03:00.559: D/packet(4352): TIMESTAMP=462 1 -50
+04-13 08:03:00.559: D/DataStreamReader(4352): decrypt
+04-13 08:03:00.559: D/DataStreamReader(4352): parseSystemPacket
+04-13 08:03:00.559: D/DataStreamReader(4352): decrypt
+04-13 08:03:00.559: D/DataStreamReader(4352): parseSystemPacket
+04-13 08:03:00.559: D/DataStreamReader(4352): newDataObtained
+04-13 08:03:00.559: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:03:00.679: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:03:01.349: D/SocketDataReader(4352): PingOK
+04-13 08:03:01.409: D/DataStreamReader(4352): getInstance
+04-13 08:03:01.409: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:03:01.409: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:03:01.409: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:03:02.249: D/SocketDataReader(4352): PingOK
+04-13 08:03:02.409: D/DataStreamReader(4352): getInstance
+04-13 08:03:02.409: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:03:02.409: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:03:02.419: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:03:03.149: D/SocketDataReader(4352): PingOK
+04-13 08:03:03.419: D/DataStreamReader(4352): getInstance
+04-13 08:03:03.419: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:03:03.419: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:03:03.429: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:03:04.059: D/SocketDataReader(4352): PingOK
+04-13 08:03:04.419: D/DataStreamReader(4352): getInstance
+04-13 08:03:04.419: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:03:04.419: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:03:04.429: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:03:04.959: D/SocketDataReader(4352): PingOK
+04-13 08:03:05.419: D/DataStreamReader(4352): getInstance
+04-13 08:03:05.419: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:03:05.419: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:03:05.429: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:03:05.859: D/SocketDataReader(4352): PingOK
+04-13 08:03:06.419: D/DataStreamReader(4352): getInstance
+04-13 08:03:06.419: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:03:06.419: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:03:06.429: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:03:06.759: D/SocketDataReader(4352): PingOK
+04-13 08:03:07.419: D/DataStreamReader(4352): getInstance
+04-13 08:03:07.419: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:03:07.419: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:03:07.429: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:03:07.649: D/SocketDataReader(4352): PingOK
+04-13 08:03:07.799: D/SocketDataReader(4352): sendDataBlock
+04-13 08:03:07.799: D/onKeyFrameObtained(4352): DINS WHILE CONNECTED
+04-13 08:03:07.799: D/SocketDataReader(4352): reading stream...
+04-13 08:03:07.799: D/DataStreamReader(4352): onDataBlockObtained
+04-13 08:03:07.799: D/DataStreamReader(4352): parseBlock: 27
+04-13 08:03:07.799: D/ARREL ARXIU:(4352): /mnt/sdcard/PROVA/F1/CHI/Q-1/Dades27.txt
+04-13 08:03:07.809: D/GUARDAT NUM DADES AL ARXIU:(4352): 8
+04-13 08:03:07.809: D/DataStreamReader(4352): decrypt
+04-13 08:03:07.809: D/DataStreamReader(4352): parseSystemPacket
+04-13 08:03:07.809: D/packet(4352): TIMESTAMP=470 1 -42
+04-13 08:03:07.819: D/DataStreamReader(4352): parseSystemPacket
+04-13 08:03:07.819: D/DataStreamReader(4352): resetDecryption
+04-13 08:03:07.819: D/DataStreamReader(4352): newDataObtained
+04-13 08:03:07.819: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:03:07.919: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:03:08.419: D/DataStreamReader(4352): getInstance
+04-13 08:03:08.419: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:03:08.419: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:03:08.429: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:03:08.559: D/SocketDataReader(4352): PingOK
+04-13 08:03:09.419: D/DataStreamReader(4352): getInstance
+04-13 08:03:09.419: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:03:09.419: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:03:09.429: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:03:09.449: D/SocketDataReader(4352): PingOK
+04-13 08:03:10.359: D/SocketDataReader(4352): PingOK
+04-13 08:03:10.419: D/DataStreamReader(4352): getInstance
+04-13 08:03:10.419: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:03:10.419: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:03:10.429: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:03:11.259: D/SocketDataReader(4352): PingOK
+04-13 08:03:11.419: D/DataStreamReader(4352): getInstance
+04-13 08:03:11.419: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:03:11.419: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:03:11.429: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:03:12.159: D/SocketDataReader(4352): PingOK
+04-13 08:03:12.429: D/DataStreamReader(4352): getInstance
+04-13 08:03:12.429: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:03:12.429: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:03:12.429: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:03:13.059: D/SocketDataReader(4352): PingOK
+04-13 08:03:13.419: D/DataStreamReader(4352): getInstance
+04-13 08:03:13.419: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:03:13.419: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:03:13.439: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:03:13.959: D/SocketDataReader(4352): PingOK
+04-13 08:03:14.429: D/DataStreamReader(4352): getInstance
+04-13 08:03:14.429: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:03:14.429: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:03:14.429: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:03:14.859: D/SocketDataReader(4352): PingOK
+04-13 08:03:15.429: D/DataStreamReader(4352): getInstance
+04-13 08:03:15.429: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:03:15.429: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:03:15.439: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:03:15.759: D/SocketDataReader(4352): PingOK
+04-13 08:03:16.419: D/DataStreamReader(4352): getInstance
+04-13 08:03:16.419: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:03:16.419: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:03:16.429: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:03:16.659: D/SocketDataReader(4352): PingOK
+04-13 08:03:17.439: D/DataStreamReader(4352): getInstance
+04-13 08:03:17.439: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:03:17.439: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:03:17.449: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:03:17.559: D/SocketDataReader(4352): PingOK
+04-13 08:03:18.439: D/DataStreamReader(4352): getInstance
+04-13 08:03:18.439: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:03:18.439: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:03:18.449: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:03:18.459: D/SocketDataReader(4352): PingOK
+04-13 08:03:19.359: D/SocketDataReader(4352): PingOK
+04-13 08:03:19.449: D/DataStreamReader(4352): getInstance
+04-13 08:03:19.449: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:03:19.449: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:03:19.459: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:03:20.269: D/SocketDataReader(4352): PingOK
+04-13 08:03:20.449: D/DataStreamReader(4352): getInstance
+04-13 08:03:20.449: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:03:20.449: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:03:20.459: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:03:21.169: D/SocketDataReader(4352): PingOK
+04-13 08:03:21.449: D/DataStreamReader(4352): getInstance
+04-13 08:03:21.449: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:03:21.449: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:03:21.459: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:03:22.069: D/SocketDataReader(4352): PingOK
+04-13 08:03:22.449: D/DataStreamReader(4352): getInstance
+04-13 08:03:22.449: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:03:22.449: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:03:22.459: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:03:22.969: D/SocketDataReader(4352): PingOK
+04-13 08:03:23.259: D/SocketDataReader(4352): sendDataBlock
+04-13 08:03:23.259: D/onKeyFrameObtained(4352): DINS WHILE CONNECTED
+04-13 08:03:23.259: D/SocketDataReader(4352): reading stream...
+04-13 08:03:23.259: D/DataStreamReader(4352): onDataBlockObtained
+04-13 08:03:23.259: D/DataStreamReader(4352): parseBlock: 28
+04-13 08:03:23.269: D/ARREL ARXIU:(4352): /mnt/sdcard/PROVA/F1/CHI/Q-1/Dades28.txt
+04-13 08:03:23.279: D/GUARDAT NUM DADES AL ARXIU:(4352): 8
+04-13 08:03:23.279: D/DataStreamReader(4352): decrypt
+04-13 08:03:23.279: D/DataStreamReader(4352): parseSystemPacket
+04-13 08:03:23.279: D/packet(4352): TIMESTAMP=486 1 -26
+04-13 08:03:23.279: D/DataStreamReader(4352): parseSystemPacket
+04-13 08:03:23.279: D/DataStreamReader(4352): resetDecryption
+04-13 08:03:23.279: D/DataStreamReader(4352): newDataObtained
+04-13 08:03:23.279: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:03:23.399: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:03:23.599: D/DataStreamReader(4352): getInstance
+04-13 08:03:23.599: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:03:23.599: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:03:23.609: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:03:23.869: D/SocketDataReader(4352): PingOK
+04-13 08:03:24.459: D/DataStreamReader(4352): getInstance
+04-13 08:03:24.459: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:03:24.459: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:03:24.469: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:03:24.769: D/SocketDataReader(4352): PingOK
+04-13 08:03:25.459: D/DataStreamReader(4352): getInstance
+04-13 08:03:25.459: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:03:25.459: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:03:25.459: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:03:25.679: D/SocketDataReader(4352): PingOK
+04-13 08:03:26.459: D/DataStreamReader(4352): getInstance
+04-13 08:03:26.459: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:03:26.459: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:03:26.459: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:03:26.579: D/SocketDataReader(4352): PingOK
+04-13 08:03:27.459: D/DataStreamReader(4352): getInstance
+04-13 08:03:27.459: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:03:27.459: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:03:27.469: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:03:27.469: D/SocketDataReader(4352): PingOK
+04-13 08:03:28.379: D/SocketDataReader(4352): PingOK
+04-13 08:03:28.459: D/DataStreamReader(4352): getInstance
+04-13 08:03:28.459: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:03:28.459: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:03:28.459: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:03:29.279: D/SocketDataReader(4352): PingOK
+04-13 08:03:29.459: D/DataStreamReader(4352): getInstance
+04-13 08:03:29.459: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:03:29.459: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:03:29.469: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:03:30.179: D/SocketDataReader(4352): PingOK
+04-13 08:03:30.459: D/DataStreamReader(4352): getInstance
+04-13 08:03:30.459: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:03:30.459: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:03:30.469: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:03:31.079: D/SocketDataReader(4352): PingOK
+04-13 08:03:31.459: D/DataStreamReader(4352): getInstance
+04-13 08:03:31.459: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:03:31.459: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:03:31.469: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:03:31.979: D/SocketDataReader(4352): PingOK
+04-13 08:03:32.459: D/DataStreamReader(4352): getInstance
+04-13 08:03:32.459: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:03:32.459: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:03:32.469: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:03:32.879: D/SocketDataReader(4352): PingOK
+04-13 08:03:33.469: D/DataStreamReader(4352): getInstance
+04-13 08:03:33.469: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:03:33.469: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:03:33.479: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:03:33.779: D/SocketDataReader(4352): PingOK
+04-13 08:03:34.469: D/DataStreamReader(4352): getInstance
+04-13 08:03:34.469: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:03:34.469: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:03:34.499: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:03:34.679: D/SocketDataReader(4352): PingOK
+04-13 08:03:35.469: D/DataStreamReader(4352): getInstance
+04-13 08:03:35.469: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:03:35.469: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:03:35.479: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:03:35.579: D/SocketDataReader(4352): PingOK
+04-13 08:03:36.479: D/DataStreamReader(4352): getInstance
+04-13 08:03:36.479: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:03:36.479: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:03:36.479: D/SocketDataReader(4352): PingOK
+04-13 08:03:36.489: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:03:37.389: D/SocketDataReader(4352): PingOK
+04-13 08:03:37.479: D/DataStreamReader(4352): getInstance
+04-13 08:03:37.479: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:03:37.479: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:03:37.499: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:03:38.289: D/SocketDataReader(4352): PingOK
+04-13 08:03:38.479: D/DataStreamReader(4352): getInstance
+04-13 08:03:38.479: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:03:38.479: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:03:38.489: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:03:39.189: D/SocketDataReader(4352): PingOK
+04-13 08:03:39.439: D/SocketDataReader(4352): sendDataBlock
+04-13 08:03:39.439: D/onKeyFrameObtained(4352): DINS WHILE CONNECTED
+04-13 08:03:39.439: D/SocketDataReader(4352): reading stream...
+04-13 08:03:39.439: D/DataStreamReader(4352): onDataBlockObtained
+04-13 08:03:39.439: D/DataStreamReader(4352): parseBlock: 29
+04-13 08:03:39.439: D/ARREL ARXIU:(4352): /mnt/sdcard/PROVA/F1/CHI/Q-1/Dades29.txt
+04-13 08:03:39.459: D/GUARDAT NUM DADES AL ARXIU:(4352): 8
+04-13 08:03:39.459: D/DataStreamReader(4352): decrypt
+04-13 08:03:39.459: D/DataStreamReader(4352): parseSystemPacket
+04-13 08:03:39.459: D/packet(4352): TIMESTAMP=502 1 -10
+04-13 08:03:39.459: D/DataStreamReader(4352): parseSystemPacket
+04-13 08:03:39.459: D/DataStreamReader(4352): resetDecryption
+04-13 08:03:39.459: D/DataStreamReader(4352): newDataObtained
+04-13 08:03:39.459: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:03:39.629: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:03:39.959: D/DataStreamReader(4352): getInstance
+04-13 08:03:39.959: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:03:39.959: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:03:39.959: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:03:40.089: D/SocketDataReader(4352): PingOK
+04-13 08:03:40.139: D/F1LTActivity(4352): onSaveInstanceState
+04-13 08:03:40.479: D/DataStreamReader(4352): getInstance
+04-13 08:03:40.479: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:03:40.479: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:03:40.489: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:03:40.979: D/SocketDataReader(4352): PingOK
+04-13 08:03:41.489: D/DataStreamReader(4352): getInstance
+04-13 08:03:41.489: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:03:41.489: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:03:41.489: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:03:41.889: D/SocketDataReader(4352): PingOK
+04-13 08:03:42.489: D/DataStreamReader(4352): getInstance
+04-13 08:03:42.489: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:03:42.489: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:03:42.499: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:03:42.789: D/SocketDataReader(4352): PingOK
+04-13 08:03:43.489: D/DataStreamReader(4352): getInstance
+04-13 08:03:43.489: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:03:43.489: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:03:43.499: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:03:43.689: D/SocketDataReader(4352): PingOK
+04-13 08:03:44.489: D/DataStreamReader(4352): getInstance
+04-13 08:03:44.489: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:03:44.489: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:03:44.499: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:03:44.589: D/SocketDataReader(4352): PingOK
+04-13 08:03:45.489: D/SocketDataReader(4352): PingOK
+04-13 08:03:45.489: D/DataStreamReader(4352): getInstance
+04-13 08:03:45.489: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:03:45.489: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:03:45.499: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:03:46.389: D/SocketDataReader(4352): PingOK
+04-13 08:03:46.499: D/DataStreamReader(4352): getInstance
+04-13 08:03:46.499: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:03:46.499: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:03:46.499: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:03:47.299: D/SocketDataReader(4352): PingOK
+04-13 08:03:47.499: D/DataStreamReader(4352): getInstance
+04-13 08:03:47.499: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:03:47.499: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:03:47.509: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:03:48.199: D/SocketDataReader(4352): PingOK
+04-13 08:03:48.499: D/DataStreamReader(4352): getInstance
+04-13 08:03:48.499: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:03:48.499: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:03:48.499: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:03:49.099: D/SocketDataReader(4352): PingOK
+04-13 08:03:49.489: D/DataStreamReader(4352): getInstance
+04-13 08:03:49.489: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:03:49.489: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:03:49.499: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:03:49.669: D/F1LTActivity(4352): onSaveInstanceState
+04-13 08:03:50.009: D/SocketDataReader(4352): PingOK
+04-13 08:03:51.249: D/SocketDataReader(4352): PingOK
+04-13 08:03:51.319: D/DataStreamReader(4352): getInstance
+04-13 08:03:51.339: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:03:51.349: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:03:51.509: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:03:51.549: W/IInputConnectionWrapper(4352): getTextBeforeCursor on inactive InputConnection
+04-13 08:03:51.869: D/DataStreamReader(4352): getInstance
+04-13 08:03:51.869: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:03:51.869: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:03:51.869: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:03:51.889: W/IInputConnectionWrapper(4352): getTextBeforeCursor on inactive InputConnection
+04-13 08:03:51.909: W/IInputConnectionWrapper(4352): getTextBeforeCursor on inactive InputConnection
+04-13 08:03:52.179: D/SocketDataReader(4352): PingOK
+04-13 08:03:52.609: D/DataStreamReader(4352): getInstance
+04-13 08:03:52.609: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:03:52.609: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:03:52.619: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:03:53.089: D/SocketDataReader(4352): PingOK
+04-13 08:03:53.609: D/DataStreamReader(4352): getInstance
+04-13 08:03:53.609: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:03:53.609: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:03:53.619: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:03:53.989: D/SocketDataReader(4352): PingOK
+04-13 08:03:54.089: D/SocketDataReader(4352): sendDataBlock
+04-13 08:03:54.089: D/onKeyFrameObtained(4352): DINS WHILE CONNECTED
+04-13 08:03:54.089: D/SocketDataReader(4352): reading stream...
+04-13 08:03:54.089: D/DataStreamReader(4352): onDataBlockObtained
+04-13 08:03:54.099: D/DataStreamReader(4352): parseBlock: 30
+04-13 08:03:54.109: D/ARREL ARXIU:(4352): /mnt/sdcard/PROVA/F1/CHI/Q-1/Dades30.txt
+04-13 08:03:54.119: D/GUARDAT NUM DADES AL ARXIU:(4352): 8
+04-13 08:03:54.119: D/DataStreamReader(4352): decrypt
+04-13 08:03:54.119: D/DataStreamReader(4352): parseSystemPacket
+04-13 08:03:54.119: D/packet(4352): TIMESTAMP=517 2 5
+04-13 08:03:54.119: D/DataStreamReader(4352): decrypt
+04-13 08:03:54.119: D/DataStreamReader(4352): parseSystemPacket
+04-13 08:03:54.129: D/DataStreamReader(4352): newDataObtained
+04-13 08:03:54.129: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:03:54.219: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:03:54.609: D/DataStreamReader(4352): getInstance
+04-13 08:03:54.609: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:03:54.609: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:03:54.609: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:03:54.889: D/SocketDataReader(4352): PingOK
+04-13 08:03:55.209: D/SocketDataReader(4352): sendDataBlock
+04-13 08:03:55.209: D/onKeyFrameObtained(4352): DINS WHILE CONNECTED
+04-13 08:03:55.209: D/SocketDataReader(4352): reading stream...
+04-13 08:03:55.209: D/DataStreamReader(4352): onDataBlockObtained
+04-13 08:03:55.209: D/DataStreamReader(4352): parseBlock: 31
+04-13 08:03:55.219: D/ARREL ARXIU:(4352): /mnt/sdcard/PROVA/F1/CHI/Q-1/Dades31.txt
+04-13 08:03:55.229: D/GUARDAT NUM DADES AL ARXIU:(4352): 13
+04-13 08:03:55.229: D/DataStreamReader(4352): decrypt
+04-13 08:03:55.229: D/DataStreamReader(4352): parseSystemPacket
+04-13 08:03:55.229: D/packet(4352): TIMESTAMP=518 2 6
+04-13 08:03:55.229: D/DataStreamReader(4352): decrypt
+04-13 08:03:55.229: D/DataStreamReader(4352): parseSystemPacket
+04-13 08:03:55.229: D/DataStreamReader(4352): parseSystemPacket
+04-13 08:03:55.229: D/DataStreamReader(4352): resetDecryption
+04-13 08:03:55.229: D/DataStreamReader(4352): newDataObtained
+04-13 08:03:55.229: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:03:55.329: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:03:55.609: D/DataStreamReader(4352): getInstance
+04-13 08:03:55.609: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:03:55.609: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:03:55.609: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:03:55.789: D/SocketDataReader(4352): PingOK
+04-13 08:03:56.609: D/DataStreamReader(4352): getInstance
+04-13 08:03:56.609: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:03:56.609: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:03:56.619: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:03:56.699: D/SocketDataReader(4352): PingOK
+04-13 08:03:57.599: D/SocketDataReader(4352): PingOK
+04-13 08:03:57.609: D/DataStreamReader(4352): getInstance
+04-13 08:03:57.609: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:03:57.609: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:03:57.619: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:03:58.499: D/SocketDataReader(4352): PingOK
+04-13 08:03:58.609: D/DataStreamReader(4352): getInstance
+04-13 08:03:58.609: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:03:58.609: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:03:58.619: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:03:59.409: D/SocketDataReader(4352): PingOK
+04-13 08:03:59.609: D/F1LTActivity(4352): onRestart
+04-13 08:03:59.609: D/F1LTActivity(4352): onStart
+04-13 08:03:59.879: D/DataStreamReader(4352): getInstance
+04-13 08:03:59.879: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:03:59.879: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:03:59.879: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:04:00.309: D/SocketDataReader(4352): PingOK
+04-13 08:04:00.619: D/DataStreamReader(4352): getInstance
+04-13 08:04:00.619: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:04:00.619: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:04:00.629: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:04:01.209: D/SocketDataReader(4352): PingOK
+04-13 08:04:01.629: D/DataStreamReader(4352): getInstance
+04-13 08:04:01.629: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:04:01.629: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:04:01.639: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:04:02.109: D/SocketDataReader(4352): PingOK
+04-13 08:04:02.619: D/DataStreamReader(4352): getInstance
+04-13 08:04:02.619: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:04:02.619: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:04:02.659: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:04:03.019: D/SocketDataReader(4352): PingOK
+04-13 08:04:03.619: D/DataStreamReader(4352): getInstance
+04-13 08:04:03.619: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:04:03.629: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:04:03.649: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:04:03.919: D/SocketDataReader(4352): PingOK
+04-13 08:04:04.629: D/DataStreamReader(4352): getInstance
+04-13 08:04:04.629: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:04:04.629: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:04:04.639: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:04:04.819: D/SocketDataReader(4352): PingOK
+04-13 08:04:05.629: D/DataStreamReader(4352): getInstance
+04-13 08:04:05.629: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:04:05.629: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:04:05.639: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:04:05.719: D/SocketDataReader(4352): PingOK
+04-13 08:04:06.619: D/SocketDataReader(4352): PingOK
+04-13 08:04:06.629: D/DataStreamReader(4352): getInstance
+04-13 08:04:06.629: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:04:06.629: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:04:06.649: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:04:07.519: D/SocketDataReader(4352): PingOK
+04-13 08:04:07.639: D/DataStreamReader(4352): getInstance
+04-13 08:04:07.639: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:04:07.639: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:04:07.659: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:04:08.419: D/SocketDataReader(4352): PingOK
+04-13 08:04:08.639: D/DataStreamReader(4352): getInstance
+04-13 08:04:08.639: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:04:08.639: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:04:08.649: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:04:09.319: D/SocketDataReader(4352): PingOK
+04-13 08:04:09.639: D/DataStreamReader(4352): getInstance
+04-13 08:04:09.639: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:04:09.639: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:04:09.659: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:04:10.219: D/SocketDataReader(4352): PingOK
+04-13 08:04:10.359: D/SocketDataReader(4352): sendDataBlock
+04-13 08:04:10.359: D/onKeyFrameObtained(4352): DINS WHILE CONNECTED
+04-13 08:04:10.369: D/SocketDataReader(4352): reading stream...
+04-13 08:04:10.369: D/DataStreamReader(4352): onDataBlockObtained
+04-13 08:04:10.369: D/DataStreamReader(4352): parseBlock: 32
+04-13 08:04:10.369: D/ARREL ARXIU:(4352): /mnt/sdcard/PROVA/F1/CHI/Q-1/Dades32.txt
+04-13 08:04:10.379: D/GUARDAT NUM DADES AL ARXIU:(4352): 8
+04-13 08:04:10.379: D/DataStreamReader(4352): decrypt
+04-13 08:04:10.379: D/DataStreamReader(4352): parseSystemPacket
+04-13 08:04:10.379: D/packet(4352): TIMESTAMP=534 2 22
+04-13 08:04:10.379: D/DataStreamReader(4352): parseSystemPacket
+04-13 08:04:10.379: D/DataStreamReader(4352): resetDecryption
+04-13 08:04:10.379: D/DataStreamReader(4352): newDataObtained
+04-13 08:04:10.379: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:04:10.469: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:04:10.769: D/DataStreamReader(4352): getInstance
+04-13 08:04:10.769: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:04:10.769: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:04:10.779: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:04:11.119: D/SocketDataReader(4352): PingOK
+04-13 08:04:11.639: D/DataStreamReader(4352): getInstance
+04-13 08:04:11.639: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:04:11.639: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:04:11.649: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:04:12.019: D/SocketDataReader(4352): PingOK
+04-13 08:04:12.639: D/DataStreamReader(4352): getInstance
+04-13 08:04:12.639: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:04:12.639: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:04:12.659: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:04:12.919: D/SocketDataReader(4352): PingOK
+04-13 08:04:13.649: D/DataStreamReader(4352): getInstance
+04-13 08:04:13.649: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:04:13.649: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:04:13.659: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:04:13.819: D/SocketDataReader(4352): PingOK
+04-13 08:04:14.649: D/DataStreamReader(4352): getInstance
+04-13 08:04:14.649: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:04:14.649: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:04:14.659: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:04:14.719: D/SocketDataReader(4352): PingOK
+04-13 08:04:15.619: D/SocketDataReader(4352): PingOK
+04-13 08:04:15.639: D/DataStreamReader(4352): getInstance
+04-13 08:04:15.639: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:04:15.639: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:04:15.659: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:04:16.519: D/SocketDataReader(4352): PingOK
+04-13 08:04:16.649: D/DataStreamReader(4352): getInstance
+04-13 08:04:16.649: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:04:16.649: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:04:16.669: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:04:17.429: D/SocketDataReader(4352): PingOK
+04-13 08:04:17.649: D/DataStreamReader(4352): getInstance
+04-13 08:04:17.649: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:04:17.649: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:04:17.649: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:04:18.329: D/SocketDataReader(4352): PingOK
+04-13 08:04:18.649: D/DataStreamReader(4352): getInstance
+04-13 08:04:18.649: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:04:18.649: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:04:18.659: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:04:19.229: D/SocketDataReader(4352): PingOK
+04-13 08:04:19.649: D/DataStreamReader(4352): getInstance
+04-13 08:04:19.649: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:04:19.649: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:04:19.669: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:04:20.129: D/SocketDataReader(4352): PingOK
+04-13 08:04:20.649: D/DataStreamReader(4352): getInstance
+04-13 08:04:20.649: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:04:20.649: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:04:20.659: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:04:21.029: D/SocketDataReader(4352): PingOK
+04-13 08:04:21.649: D/DataStreamReader(4352): getInstance
+04-13 08:04:21.649: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:04:21.649: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:04:21.669: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:04:21.929: D/SocketDataReader(4352): PingOK
+04-13 08:04:22.649: D/DataStreamReader(4352): getInstance
+04-13 08:04:22.649: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:04:22.649: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:04:22.669: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:04:22.829: D/SocketDataReader(4352): PingOK
+04-13 08:04:23.649: D/DataStreamReader(4352): getInstance
+04-13 08:04:23.649: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:04:23.649: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:04:23.659: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:04:23.729: D/SocketDataReader(4352): PingOK
+04-13 08:04:24.629: D/SocketDataReader(4352): PingOK
+04-13 08:04:24.649: D/DataStreamReader(4352): getInstance
+04-13 08:04:24.649: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:04:24.649: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:04:24.669: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:04:25.529: D/SocketDataReader(4352): PingOK
+04-13 08:04:25.649: D/DataStreamReader(4352): getInstance
+04-13 08:04:25.649: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:04:25.649: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:04:25.669: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:04:26.429: D/SocketDataReader(4352): PingOK
+04-13 08:04:26.649: D/DataStreamReader(4352): getInstance
+04-13 08:04:26.649: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:04:26.649: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:04:26.659: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:04:26.749: D/SocketDataReader(4352): sendDataBlock
+04-13 08:04:26.749: D/onKeyFrameObtained(4352): DINS WHILE CONNECTED
+04-13 08:04:26.749: D/SocketDataReader(4352): reading stream...
+04-13 08:04:26.749: D/DataStreamReader(4352): onDataBlockObtained
+04-13 08:04:26.749: D/DataStreamReader(4352): parseBlock: 33
+04-13 08:04:26.759: D/ARREL ARXIU:(4352): /mnt/sdcard/PROVA/F1/CHI/Q-1/Dades33.txt
+04-13 08:04:26.769: D/GUARDAT NUM DADES AL ARXIU:(4352): 8
+04-13 08:04:26.769: D/DataStreamReader(4352): decrypt
+04-13 08:04:26.769: D/DataStreamReader(4352): parseSystemPacket
+04-13 08:04:26.769: D/packet(4352): TIMESTAMP=550 2 38
+04-13 08:04:26.769: D/DataStreamReader(4352): parseSystemPacket
+04-13 08:04:26.769: D/DataStreamReader(4352): resetDecryption
+04-13 08:04:26.769: D/DataStreamReader(4352): newDataObtained
+04-13 08:04:26.769: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:04:26.879: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:04:27.329: D/SocketDataReader(4352): PingOK
+04-13 08:04:27.649: D/DataStreamReader(4352): getInstance
+04-13 08:04:27.649: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:04:27.649: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:04:27.669: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:04:28.239: D/SocketDataReader(4352): PingOK
+04-13 08:04:28.649: D/DataStreamReader(4352): getInstance
+04-13 08:04:28.649: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:04:28.649: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:04:28.679: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:04:29.139: D/SocketDataReader(4352): PingOK
+04-13 08:04:29.659: D/DataStreamReader(4352): getInstance
+04-13 08:04:29.659: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:04:29.659: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:04:29.669: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:04:30.039: D/SocketDataReader(4352): PingOK
+04-13 08:04:30.659: D/DataStreamReader(4352): getInstance
+04-13 08:04:30.659: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:04:30.659: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:04:30.669: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:04:30.939: D/SocketDataReader(4352): PingOK
+04-13 08:04:31.659: D/DataStreamReader(4352): getInstance
+04-13 08:04:31.659: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:04:31.659: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:04:31.679: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:04:31.839: D/SocketDataReader(4352): PingOK
+04-13 08:04:32.659: D/DataStreamReader(4352): getInstance
+04-13 08:04:32.659: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:04:32.659: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:04:32.669: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:04:32.729: D/SocketDataReader(4352): PingOK
+04-13 08:04:33.639: D/SocketDataReader(4352): PingOK
+04-13 08:04:33.659: D/DataStreamReader(4352): getInstance
+04-13 08:04:33.659: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:04:33.659: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:04:33.679: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:04:34.529: D/SocketDataReader(4352): PingOK
+04-13 08:04:34.659: D/DataStreamReader(4352): getInstance
+04-13 08:04:34.659: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:04:34.659: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:04:34.679: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:04:35.439: D/SocketDataReader(4352): PingOK
+04-13 08:04:35.669: D/DataStreamReader(4352): getInstance
+04-13 08:04:35.669: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:04:35.669: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:04:35.669: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:04:36.339: D/SocketDataReader(4352): PingOK
+04-13 08:04:36.669: D/DataStreamReader(4352): getInstance
+04-13 08:04:36.669: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:04:36.669: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:04:36.679: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:04:37.239: D/SocketDataReader(4352): PingOK
+04-13 08:04:37.659: D/DataStreamReader(4352): getInstance
+04-13 08:04:37.659: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:04:37.659: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:04:37.679: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:04:38.139: D/SocketDataReader(4352): PingOK
+04-13 08:04:38.669: D/DataStreamReader(4352): getInstance
+04-13 08:04:38.669: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:04:38.669: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:04:38.679: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:04:39.039: D/SocketDataReader(4352): PingOK
+04-13 08:04:39.659: D/DataStreamReader(4352): getInstance
+04-13 08:04:39.659: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:04:39.659: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:04:39.679: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:04:39.849: D/F1LTActivity(4352): onSaveInstanceState
+04-13 08:04:39.939: D/SocketDataReader(4352): PingOK
+04-13 08:04:40.669: D/DataStreamReader(4352): getInstance
+04-13 08:04:40.669: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:04:40.669: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:04:40.689: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:04:40.839: D/SocketDataReader(4352): PingOK
+04-13 08:04:41.669: D/DataStreamReader(4352): getInstance
+04-13 08:04:41.669: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:04:41.669: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:04:41.679: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:04:41.739: D/SocketDataReader(4352): PingOK
+04-13 08:04:42.639: D/SocketDataReader(4352): PingOK
+04-13 08:04:42.669: D/DataStreamReader(4352): getInstance
+04-13 08:04:42.669: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:04:42.669: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:04:42.679: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:04:43.539: D/SocketDataReader(4352): PingOK
+04-13 08:04:43.669: D/DataStreamReader(4352): getInstance
+04-13 08:04:43.669: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:04:43.669: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:04:43.689: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:04:43.749: D/SocketDataReader(4352): sendDataBlock
+04-13 08:04:43.749: D/onKeyFrameObtained(4352): DINS WHILE CONNECTED
+04-13 08:04:43.749: D/SocketDataReader(4352): reading stream...
+04-13 08:04:43.759: D/DataStreamReader(4352): onDataBlockObtained
+04-13 08:04:43.759: D/DataStreamReader(4352): parseBlock: 34
+04-13 08:04:43.759: D/ARREL ARXIU:(4352): /mnt/sdcard/PROVA/F1/CHI/Q-1/Dades34.txt
+04-13 08:04:43.789: D/GUARDAT NUM DADES AL ARXIU:(4352): 8
+04-13 08:04:43.789: D/DataStreamReader(4352): decrypt
+04-13 08:04:43.789: D/DataStreamReader(4352): parseSystemPacket
+04-13 08:04:43.789: D/packet(4352): TIMESTAMP=566 2 54
+04-13 08:04:43.789: D/DataStreamReader(4352): parseSystemPacket
+04-13 08:04:43.789: D/DataStreamReader(4352): resetDecryption
+04-13 08:04:43.789: D/DataStreamReader(4352): newDataObtained
+04-13 08:04:43.789: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:04:43.959: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:04:44.439: D/SocketDataReader(4352): PingOK
+04-13 08:04:44.669: D/DataStreamReader(4352): getInstance
+04-13 08:04:44.669: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:04:44.669: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:04:44.679: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:04:45.339: D/SocketDataReader(4352): PingOK
+04-13 08:04:45.669: D/DataStreamReader(4352): getInstance
+04-13 08:04:45.669: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:04:45.669: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:04:45.689: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:04:46.239: D/SocketDataReader(4352): PingOK
+04-13 08:04:46.669: D/DataStreamReader(4352): getInstance
+04-13 08:04:46.669: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:04:46.669: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:04:46.689: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:04:47.149: D/SocketDataReader(4352): PingOK
+04-13 08:04:47.679: D/DataStreamReader(4352): getInstance
+04-13 08:04:47.679: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:04:47.679: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:04:47.679: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:04:48.049: D/SocketDataReader(4352): PingOK
+04-13 08:04:48.669: D/DataStreamReader(4352): getInstance
+04-13 08:04:48.669: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:04:48.669: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:04:48.689: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:04:48.949: D/SocketDataReader(4352): PingOK
+04-13 08:04:49.679: D/DataStreamReader(4352): getInstance
+04-13 08:04:49.679: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:04:49.679: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:04:49.699: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:04:49.789: D/SocketDataReader(4352): sendDataBlock
+04-13 08:04:49.789: D/onKeyFrameObtained(4352): DINS WHILE CONNECTED
+04-13 08:04:49.789: D/SocketDataReader(4352): reading stream...
+04-13 08:04:49.789: D/DataStreamReader(4352): onDataBlockObtained
+04-13 08:04:49.789: D/DataStreamReader(4352): parseBlock: 35
+04-13 08:04:49.789: D/ARREL ARXIU:(4352): /mnt/sdcard/PROVA/F1/CHI/Q-1/Dades35.txt
+04-13 08:04:49.799: D/GUARDAT NUM DADES AL ARXIU:(4352): 8
+04-13 08:04:49.799: D/DataStreamReader(4352): decrypt
+04-13 08:04:49.799: D/DataStreamReader(4352): parseSystemPacket
+04-13 08:04:49.799: D/packet(4352): TIMESTAMP=572 2 60
+04-13 08:04:49.809: D/DataStreamReader(4352): decrypt
+04-13 08:04:49.809: D/DataStreamReader(4352): parseSystemPacket
+04-13 08:04:49.809: D/DataStreamReader(4352): newDataObtained
+04-13 08:04:49.809: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:04:49.849: D/SocketDataReader(4352): PingOK
+04-13 08:04:49.899: D/SocketDataReader(4352): sendDataBlock
+04-13 08:04:49.899: D/onKeyFrameObtained(4352): DINS WHILE CONNECTED
+04-13 08:04:49.899: D/SocketDataReader(4352): reading stream...
+04-13 08:04:49.919: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:04:50.129: D/DataStreamReader(4352): onDataBlockObtained
+04-13 08:04:50.129: D/DataStreamReader(4352): parseBlock: 36
+04-13 08:04:50.139: D/ARREL ARXIU:(4352): /mnt/sdcard/PROVA/F1/CHI/Q-1/Dades36.txt
+04-13 08:04:50.149: D/GUARDAT NUM DADES AL ARXIU:(4352): 13
+04-13 08:04:50.149: D/DataStreamReader(4352): decrypt
+04-13 08:04:50.149: D/DataStreamReader(4352): parseSystemPacket
+04-13 08:04:50.149: D/DataStreamReader(4352): decrypt
+04-13 08:04:50.149: D/DataStreamReader(4352): parseSystemPacket
+04-13 08:04:50.149: D/DataStreamReader(4352): newDataObtained
+04-13 08:04:50.149: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:04:50.359: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:04:50.669: D/DataStreamReader(4352): getInstance
+04-13 08:04:50.669: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:04:50.669: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:04:50.689: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:04:50.749: D/SocketDataReader(4352): PingOK
+04-13 08:04:51.649: D/SocketDataReader(4352): PingOK
+04-13 08:04:51.669: D/DataStreamReader(4352): getInstance
+04-13 08:04:51.669: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:04:51.669: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:04:51.689: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:04:52.549: D/SocketDataReader(4352): PingOK
+04-13 08:04:52.679: D/DataStreamReader(4352): getInstance
+04-13 08:04:52.679: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:04:52.679: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:04:52.699: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:04:53.459: D/SocketDataReader(4352): PingOK
+04-13 08:04:53.679: D/DataStreamReader(4352): getInstance
+04-13 08:04:53.679: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:04:53.679: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:04:53.689: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:04:54.359: D/SocketDataReader(4352): PingOK
+04-13 08:04:54.679: D/DataStreamReader(4352): getInstance
+04-13 08:04:54.679: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:04:54.679: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:04:54.699: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:04:55.259: D/SocketDataReader(4352): PingOK
+04-13 08:04:55.569: D/F1LTActivity(4352): onSaveInstanceState
+04-13 08:04:55.679: D/DataStreamReader(4352): getInstance
+04-13 08:04:55.679: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:04:55.679: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:04:55.679: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:04:56.159: D/SocketDataReader(4352): PingOK
+04-13 08:04:56.679: D/DataStreamReader(4352): getInstance
+04-13 08:04:56.679: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:04:56.679: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:04:56.689: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:04:57.059: D/SocketDataReader(4352): PingOK
+04-13 08:04:57.679: D/DataStreamReader(4352): getInstance
+04-13 08:04:57.679: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:04:57.679: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:04:57.699: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:04:57.959: D/SocketDataReader(4352): PingOK
+04-13 08:04:58.689: D/DataStreamReader(4352): getInstance
+04-13 08:04:58.689: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:04:58.689: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:04:58.699: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:04:58.859: D/SocketDataReader(4352): PingOK
+04-13 08:04:59.209: D/SocketDataReader(4352): sendDataBlock
+04-13 08:04:59.209: D/onKeyFrameObtained(4352): DINS WHILE CONNECTED
+04-13 08:04:59.209: D/SocketDataReader(4352): reading stream...
+04-13 08:04:59.209: D/DataStreamReader(4352): onDataBlockObtained
+04-13 08:04:59.209: D/DataStreamReader(4352): parseBlock: 37
+04-13 08:04:59.209: D/ARREL ARXIU:(4352): /mnt/sdcard/PROVA/F1/CHI/Q-1/Dades37.txt
+04-13 08:04:59.219: D/GUARDAT NUM DADES AL ARXIU:(4352): 8
+04-13 08:04:59.219: D/DataStreamReader(4352): decrypt
+04-13 08:04:59.219: D/DataStreamReader(4352): parseSystemPacket
+04-13 08:04:59.219: D/packet(4352): TIMESTAMP=581 2 69
+04-13 08:04:59.229: D/DataStreamReader(4352): parseSystemPacket
+04-13 08:04:59.229: D/DataStreamReader(4352): resetDecryption
+04-13 08:04:59.229: D/DataStreamReader(4352): newDataObtained
+04-13 08:04:59.229: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:04:59.339: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:04:59.679: D/DataStreamReader(4352): getInstance
+04-13 08:04:59.679: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:04:59.679: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:04:59.689: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:04:59.749: D/SocketDataReader(4352): PingOK
+04-13 08:04:59.929: D/SocketDataReader(4352): sendDataBlock
+04-13 08:04:59.929: D/onKeyFrameObtained(4352): DINS WHILE CONNECTED
+04-13 08:04:59.929: D/SocketDataReader(4352): reading stream...
+04-13 08:04:59.929: D/DataStreamReader(4352): onDataBlockObtained
+04-13 08:04:59.929: D/DataStreamReader(4352): parseBlock: 38
+04-13 08:04:59.929: D/ARREL ARXIU:(4352): /mnt/sdcard/PROVA/F1/CHI/Q-1/Dades38.txt
+04-13 08:04:59.939: D/GUARDAT NUM DADES AL ARXIU:(4352): 95
+04-13 08:04:59.939: D/DataStreamReader(4352): decrypt
+04-13 08:04:59.939: D/DataStreamReader(4352): parseSystemPacket
+04-13 08:04:59.939: D/DataStreamReader(4352): newDataObtained
+04-13 08:04:59.939: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:05:00.079: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:05:00.659: D/SocketDataReader(4352): PingOK
+04-13 08:05:00.679: D/DataStreamReader(4352): getInstance
+04-13 08:05:00.679: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:05:00.679: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:05:00.699: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:05:01.559: D/SocketDataReader(4352): PingOK
+04-13 08:05:01.689: D/DataStreamReader(4352): getInstance
+04-13 08:05:01.689: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:05:01.689: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:05:01.709: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:05:02.459: D/SocketDataReader(4352): PingOK
+04-13 08:05:02.689: D/DataStreamReader(4352): getInstance
+04-13 08:05:02.689: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:05:02.699: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:05:02.709: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:05:03.359: D/SocketDataReader(4352): PingOK
+04-13 08:05:03.709: D/DataStreamReader(4352): getInstance
+04-13 08:05:03.709: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:05:03.709: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:05:03.719: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:05:04.259: D/SocketDataReader(4352): PingOK
+04-13 08:05:04.689: D/DataStreamReader(4352): getInstance
+04-13 08:05:04.689: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:05:04.689: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:05:04.709: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:05:05.159: D/SocketDataReader(4352): PingOK
+04-13 08:05:05.689: D/DataStreamReader(4352): getInstance
+04-13 08:05:05.689: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:05:05.689: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:05:05.709: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:05:06.059: D/SocketDataReader(4352): PingOK
+04-13 08:05:06.709: D/DataStreamReader(4352): getInstance
+04-13 08:05:06.709: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:05:06.709: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:05:06.719: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:05:06.959: D/SocketDataReader(4352): PingOK
+04-13 08:05:07.689: D/DataStreamReader(4352): getInstance
+04-13 08:05:07.689: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:05:07.689: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:05:07.709: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:05:07.869: D/SocketDataReader(4352): PingOK
+04-13 08:05:08.699: D/DataStreamReader(4352): getInstance
+04-13 08:05:08.699: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:05:08.699: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:05:08.709: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:05:08.769: D/SocketDataReader(4352): PingOK
+04-13 08:05:09.669: D/SocketDataReader(4352): PingOK
+04-13 08:05:09.689: D/DataStreamReader(4352): getInstance
+04-13 08:05:09.689: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:05:09.699: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:05:09.719: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:05:10.569: D/SocketDataReader(4352): PingOK
+04-13 08:05:10.699: D/DataStreamReader(4352): getInstance
+04-13 08:05:10.699: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:05:10.699: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:05:10.709: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:05:11.469: D/SocketDataReader(4352): PingOK
+04-13 08:05:11.699: D/DataStreamReader(4352): getInstance
+04-13 08:05:11.699: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:05:11.699: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:05:11.709: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:05:12.369: D/SocketDataReader(4352): PingOK
+04-13 08:05:12.699: D/DataStreamReader(4352): getInstance
+04-13 08:05:12.699: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:05:12.709: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:05:12.719: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:05:13.269: D/SocketDataReader(4352): PingOK
+04-13 08:05:13.699: D/DataStreamReader(4352): getInstance
+04-13 08:05:13.709: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:05:13.709: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:05:13.719: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:05:14.169: D/SocketDataReader(4352): PingOK
+04-13 08:05:14.699: D/DataStreamReader(4352): getInstance
+04-13 08:05:14.699: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:05:14.699: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:05:14.709: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:05:15.079: D/SocketDataReader(4352): PingOK
+04-13 08:05:15.709: D/DataStreamReader(4352): getInstance
+04-13 08:05:15.709: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:05:15.709: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:05:15.719: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:05:15.979: D/SocketDataReader(4352): PingOK
+04-13 08:05:15.999: D/SocketDataReader(4352): sendDataBlock
+04-13 08:05:16.009: D/onKeyFrameObtained(4352): DINS WHILE CONNECTED
+04-13 08:05:16.009: D/SocketDataReader(4352): reading stream...
+04-13 08:05:16.009: D/DataStreamReader(4352): onDataBlockObtained
+04-13 08:05:16.009: D/DataStreamReader(4352): parseBlock: 39
+04-13 08:05:16.009: D/ARREL ARXIU:(4352): /mnt/sdcard/PROVA/F1/CHI/Q-1/Dades39.txt
+04-13 08:05:16.029: D/GUARDAT NUM DADES AL ARXIU:(4352): 8
+04-13 08:05:16.029: D/DataStreamReader(4352): decrypt
+04-13 08:05:16.029: D/DataStreamReader(4352): parseSystemPacket
+04-13 08:05:16.029: D/packet(4352): TIMESTAMP=598 2 86
+04-13 08:05:16.029: D/DataStreamReader(4352): parseSystemPacket
+04-13 08:05:16.029: D/DataStreamReader(4352): resetDecryption
+04-13 08:05:16.029: D/DataStreamReader(4352): newDataObtained
+04-13 08:05:16.029: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:05:16.229: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:05:16.709: D/DataStreamReader(4352): getInstance
+04-13 08:05:16.709: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:05:16.709: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:05:16.719: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:05:16.879: D/SocketDataReader(4352): PingOK
+04-13 08:05:17.699: D/DataStreamReader(4352): getInstance
+04-13 08:05:17.699: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:05:17.699: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:05:17.719: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:05:17.779: D/SocketDataReader(4352): PingOK
+04-13 08:05:18.679: D/SocketDataReader(4352): PingOK
+04-13 08:05:18.709: D/DataStreamReader(4352): getInstance
+04-13 08:05:18.709: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:05:18.709: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:05:18.719: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:05:19.579: D/SocketDataReader(4352): PingOK
+04-13 08:05:19.709: D/DataStreamReader(4352): getInstance
+04-13 08:05:19.709: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:05:19.709: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:05:19.729: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:05:20.479: D/SocketDataReader(4352): PingOK
+04-13 08:05:20.709: D/DataStreamReader(4352): getInstance
+04-13 08:05:20.709: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:05:20.709: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:05:20.749: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:05:21.379: D/SocketDataReader(4352): PingOK
+04-13 08:05:21.709: D/DataStreamReader(4352): getInstance
+04-13 08:05:21.709: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:05:21.709: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:05:21.729: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:05:22.299: D/SocketDataReader(4352): PingOK
+04-13 08:05:22.709: D/DataStreamReader(4352): getInstance
+04-13 08:05:22.709: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:05:22.709: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:05:22.729: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:05:23.199: D/SocketDataReader(4352): PingOK
+04-13 08:05:23.709: D/DataStreamReader(4352): getInstance
+04-13 08:05:23.709: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:05:23.709: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:05:23.719: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:05:24.099: D/SocketDataReader(4352): PingOK
+04-13 08:05:24.709: D/DataStreamReader(4352): getInstance
+04-13 08:05:24.709: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:05:24.719: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:05:24.729: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:05:24.999: D/SocketDataReader(4352): PingOK
+04-13 08:05:25.709: D/DataStreamReader(4352): getInstance
+04-13 08:05:25.709: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:05:25.709: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:05:25.729: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:05:25.899: D/SocketDataReader(4352): PingOK
+04-13 08:05:26.709: D/DataStreamReader(4352): getInstance
+04-13 08:05:26.709: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:05:26.709: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:05:26.729: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:05:26.799: D/SocketDataReader(4352): PingOK
+04-13 08:05:27.699: D/SocketDataReader(4352): PingOK
+04-13 08:05:27.719: D/DataStreamReader(4352): getInstance
+04-13 08:05:27.719: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:05:27.719: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:05:27.729: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:05:28.599: D/SocketDataReader(4352): PingOK
+04-13 08:05:28.729: D/DataStreamReader(4352): getInstance
+04-13 08:05:28.729: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:05:28.729: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:05:28.739: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:05:29.499: D/SocketDataReader(4352): PingOK
+04-13 08:05:29.719: D/DataStreamReader(4352): getInstance
+04-13 08:05:29.719: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:05:29.719: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:05:29.729: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:05:30.399: D/SocketDataReader(4352): PingOK
+04-13 08:05:30.719: D/DataStreamReader(4352): getInstance
+04-13 08:05:30.719: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:05:30.729: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:05:30.739: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:05:30.749: D/SocketDataReader(4352): sendDataBlock
+04-13 08:05:30.749: D/onKeyFrameObtained(4352): DINS WHILE CONNECTED
+04-13 08:05:30.749: D/SocketDataReader(4352): reading stream...
+04-13 08:05:30.779: D/DataStreamReader(4352): onDataBlockObtained
+04-13 08:05:30.779: D/DataStreamReader(4352): parseBlock: 40
+04-13 08:05:30.779: D/ARREL ARXIU:(4352): /mnt/sdcard/PROVA/F1/CHI/Q-1/Dades40.txt
+04-13 08:05:30.789: D/GUARDAT NUM DADES AL ARXIU:(4352): 8
+04-13 08:05:30.789: D/DataStreamReader(4352): decrypt
+04-13 08:05:30.789: D/DataStreamReader(4352): parseSystemPacket
+04-13 08:05:30.789: D/packet(4352): TIMESTAMP=614 2 102
+04-13 08:05:30.789: D/DataStreamReader(4352): parseSystemPacket
+04-13 08:05:30.789: D/DataStreamReader(4352): resetDecryption
+04-13 08:05:30.789: D/DataStreamReader(4352): newDataObtained
+04-13 08:05:30.789: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:05:30.879: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:05:31.299: D/SocketDataReader(4352): PingOK
+04-13 08:05:31.719: D/DataStreamReader(4352): getInstance
+04-13 08:05:31.719: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:05:31.719: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:05:31.739: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:05:32.209: D/SocketDataReader(4352): PingOK
+04-13 08:05:32.719: D/DataStreamReader(4352): getInstance
+04-13 08:05:32.719: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:05:32.719: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:05:32.739: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:05:33.109: D/SocketDataReader(4352): PingOK
+04-13 08:05:33.729: D/DataStreamReader(4352): getInstance
+04-13 08:05:33.729: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:05:33.729: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:05:33.739: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:05:34.009: D/SocketDataReader(4352): PingOK
+04-13 08:05:34.719: D/DataStreamReader(4352): getInstance
+04-13 08:05:34.719: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:05:34.719: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:05:34.739: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:05:34.909: D/SocketDataReader(4352): PingOK
+04-13 08:05:35.719: D/DataStreamReader(4352): getInstance
+04-13 08:05:35.719: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:05:35.719: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:05:35.739: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:05:35.809: D/SocketDataReader(4352): PingOK
+04-13 08:05:36.709: D/SocketDataReader(4352): PingOK
+04-13 08:05:36.719: D/DataStreamReader(4352): getInstance
+04-13 08:05:36.719: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:05:36.729: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:05:36.739: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:05:37.609: D/SocketDataReader(4352): PingOK
+04-13 08:05:37.729: D/DataStreamReader(4352): getInstance
+04-13 08:05:37.729: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:05:37.729: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:05:37.749: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:05:38.509: D/SocketDataReader(4352): PingOK
+04-13 08:05:38.729: D/DataStreamReader(4352): getInstance
+04-13 08:05:38.729: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:05:38.729: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:05:38.749: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:05:39.409: D/SocketDataReader(4352): PingOK
+04-13 08:05:39.729: D/DataStreamReader(4352): getInstance
+04-13 08:05:39.729: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:05:39.729: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:05:39.739: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:05:40.309: D/SocketDataReader(4352): PingOK
+04-13 08:05:40.729: D/DataStreamReader(4352): getInstance
+04-13 08:05:40.729: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:05:40.729: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:05:40.739: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:05:41.209: D/SocketDataReader(4352): PingOK
+04-13 08:05:41.729: D/DataStreamReader(4352): getInstance
+04-13 08:05:41.729: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:05:41.729: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:05:41.749: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:05:42.109: D/SocketDataReader(4352): PingOK
+04-13 08:05:42.739: D/DataStreamReader(4352): getInstance
+04-13 08:05:42.739: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:05:42.739: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:05:42.749: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:05:43.019: D/SocketDataReader(4352): PingOK
+04-13 08:05:43.739: D/DataStreamReader(4352): getInstance
+04-13 08:05:43.739: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:05:43.739: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:05:43.749: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:05:43.919: D/SocketDataReader(4352): PingOK
+04-13 08:05:43.969: D/SocketDataReader(4352): sendDataBlock
+04-13 08:05:43.969: D/onKeyFrameObtained(4352): DINS WHILE CONNECTED
+04-13 08:05:43.969: D/SocketDataReader(4352): reading stream...
+04-13 08:05:43.969: D/DataStreamReader(4352): onDataBlockObtained
+04-13 08:05:43.969: D/DataStreamReader(4352): parseBlock: 41
+04-13 08:05:43.969: D/ARREL ARXIU:(4352): /mnt/sdcard/PROVA/F1/CHI/Q-1/Dades41.txt
+04-13 08:05:43.979: D/GUARDAT NUM DADES AL ARXIU:(4352): 8
+04-13 08:05:43.979: D/DataStreamReader(4352): decrypt
+04-13 08:05:43.979: D/DataStreamReader(4352): parseSystemPacket
+04-13 08:05:43.979: D/packet(4352): TIMESTAMP=627 2 115
+04-13 08:05:43.979: D/DataStreamReader(4352): decrypt
+04-13 08:05:43.979: D/DataStreamReader(4352): parseSystemPacket
+04-13 08:05:43.979: D/DataStreamReader(4352): newDataObtained
+04-13 08:05:43.979: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:05:44.089: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:05:44.729: D/DataStreamReader(4352): getInstance
+04-13 08:05:44.729: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:05:44.729: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:05:44.739: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:05:44.819: D/SocketDataReader(4352): PingOK
+04-13 08:05:44.879: D/SocketDataReader(4352): sendDataBlock
+04-13 08:05:44.889: D/onKeyFrameObtained(4352): DINS WHILE CONNECTED
+04-13 08:05:44.889: D/SocketDataReader(4352): reading stream...
+04-13 08:05:44.889: D/DataStreamReader(4352): onDataBlockObtained
+04-13 08:05:44.889: D/DataStreamReader(4352): parseBlock: 42
+04-13 08:05:44.899: D/ARREL ARXIU:(4352): /mnt/sdcard/PROVA/F1/CHI/Q-1/Dades42.txt
+04-13 08:05:44.909: D/GUARDAT NUM DADES AL ARXIU:(4352): 13
+04-13 08:05:44.909: D/DataStreamReader(4352): decrypt
+04-13 08:05:44.909: D/DataStreamReader(4352): parseSystemPacket
+04-13 08:05:44.909: D/DataStreamReader(4352): decrypt
+04-13 08:05:44.909: D/DataStreamReader(4352): parseSystemPacket
+04-13 08:05:44.909: D/DataStreamReader(4352): newDataObtained
+04-13 08:05:44.909: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:05:45.089: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:05:45.719: D/SocketDataReader(4352): PingOK
+04-13 08:05:45.729: D/DataStreamReader(4352): getInstance
+04-13 08:05:45.729: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:05:45.729: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:05:45.749: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:05:46.619: D/SocketDataReader(4352): PingOK
+04-13 08:05:46.739: D/DataStreamReader(4352): getInstance
+04-13 08:05:46.739: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:05:46.739: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:05:46.749: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:05:47.339: D/SocketDataReader(4352): sendDataBlock
+04-13 08:05:47.339: D/onKeyFrameObtained(4352): DINS WHILE CONNECTED
+04-13 08:05:47.339: D/SocketDataReader(4352): reading stream...
+04-13 08:05:47.349: D/DataStreamReader(4352): onDataBlockObtained
+04-13 08:05:47.349: D/DataStreamReader(4352): parseBlock: 43
+04-13 08:05:47.349: D/ARREL ARXIU:(4352): /mnt/sdcard/PROVA/F1/CHI/Q-1/Dades43.txt
+04-13 08:05:47.359: D/GUARDAT NUM DADES AL ARXIU:(4352): 8
+04-13 08:05:47.359: D/DataStreamReader(4352): decrypt
+04-13 08:05:47.359: D/DataStreamReader(4352): parseSystemPacket
+04-13 08:05:47.359: D/packet(4352): TIMESTAMP=629 2 117
+04-13 08:05:47.359: D/DataStreamReader(4352): parseSystemPacket
+04-13 08:05:47.359: D/DataStreamReader(4352): resetDecryption
+04-13 08:05:47.369: D/DataStreamReader(4352): newDataObtained
+04-13 08:05:47.369: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:05:47.489: D/F1LTActivity(4352): updateCommentaryLine
+04-13 08:05:47.519: D/SocketDataReader(4352): PingOK
+04-13 08:05:47.769: D/DataStreamReader(4352): getInstance
+04-13 08:05:47.769: D/DataStreamReader(4352): onSessionTimerUpdated
+04-13 08:05:47.769: D/F1LTActivity(4352): onNewDataObtained
+04-13 08:05:47.779: D/F1LTActivity(4352): updateCommentaryLine

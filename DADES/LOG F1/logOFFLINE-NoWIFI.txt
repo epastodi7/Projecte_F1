@@ -1,0 +1,17 @@
+04-07 11:56:39.249: I/ApplicationPackageManager(6695): cscCountry is not German : YOG
+04-07 11:56:39.269: D/F1LTActivity(6695): onCreate
+04-07 11:56:39.449: D/DataStreamReader(6695): getInstance
+04-07 11:56:39.459: D/DataStreamReader(6695): setDataStreamReceiver
+04-07 11:56:39.639: W/ApplicationContext(6695): getSharedPreferences
+04-07 11:56:39.669: D/DataStreamReader(6695): isConnected
+04-07 11:56:39.679: D/F1LTActivity(6695): login
+04-07 11:56:39.769: D/F1LTActivity(6695): onStart
+04-07 11:56:40.109: D/F1LTActivity(6695): onSaveInstanceState
+04-07 11:56:40.119: I/ApplicationPackageManager(6695): cscCountry is not German : YOG
+04-07 11:56:43.269: I/ApplicationPackageManager(6695): cscCountry is not German : YOG
+04-07 11:56:45.899: I/ApplicationPackageManager(6695): cscCountry is not German : YOG
+04-07 11:56:51.669: D/F1LTActivity(6695): onActivityResult
+04-07 11:56:51.669: D/F1LTActivity(6695): onConnectedClicked
+04-07 11:56:51.679: D/DataStreamReader(6695): encodePasswd
+04-07 11:56:51.709: D/F1LTActivity(6695): onRestart
+04-07 11:56:51.709: D/F1LTActivity(6695): onStart

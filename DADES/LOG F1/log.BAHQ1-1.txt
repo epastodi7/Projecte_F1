@@ -1,0 +1,502 @@
+04-20 12:58:49.209: D/F1LTActivity(2677): onCreate
+04-20 12:58:49.369: D/DataStreamReader(2677): getInstance
+04-20 12:58:49.369: D/DataStreamReader(2677): setDataStreamReceiver
+04-20 12:58:49.379: W/ApplicationContext(2677): getSharedPreferences
+04-20 12:58:49.379: W/ApplicationContext(2677): org.xmlpull.v1.XmlPullParserException: Error parsing document. (position:line -1, column -1) caused by: org.apache.harmony.xml.ExpatParser$ParseException: At line 3, column 27: not well-formed (invalid token)
+04-20 12:58:49.379: W/ApplicationContext(2677): 	at org.apache.harmony.xml.ExpatPullParser$ByteDocument.flush(ExpatPullParser.java:958)
+04-20 12:58:49.379: W/ApplicationContext(2677): 	at org.apache.harmony.xml.ExpatPullParser$Document.pump(ExpatPullParser.java:769)
+04-20 12:58:49.379: W/ApplicationContext(2677): 	at org.apache.harmony.xml.ExpatPullParser$Document.dequeue(ExpatPullParser.java:813)
+04-20 12:58:49.379: W/ApplicationContext(2677): 	at org.apache.harmony.xml.ExpatPullParser.next(ExpatPullParser.java:302)
+04-20 12:58:49.379: W/ApplicationContext(2677): 	at com.android.internal.util.XmlUtils.readValueXml(XmlUtils.java:675)
+04-20 12:58:49.379: W/ApplicationContext(2677): 	at com.android.internal.util.XmlUtils.readMapXml(XmlUtils.java:470)
+04-20 12:58:49.379: W/ApplicationContext(2677): 	at android.app.ContextImpl.getSharedPreferences(ContextImpl.java:385)
+04-20 12:58:49.379: W/ApplicationContext(2677): 	at android.content.ContextWrapper.getSharedPreferences(ContextWrapper.java:146)
+04-20 12:58:49.379: W/ApplicationContext(2677): 	at com.f1lt.F1LTActivity.onCreate(F1LTActivity.java:101)
+04-20 12:58:49.379: W/ApplicationContext(2677): 	at android.app.Instrumentation.callActivityOnCreate(Instrumentation.java:1047)
+04-20 12:58:49.379: W/ApplicationContext(2677): 	at android.app.ActivityThread.performLaunchActivity(ActivityThread.java:1615)
+04-20 12:58:49.379: W/ApplicationContext(2677): 	at android.app.ActivityThread.handleLaunchActivity(ActivityThread.java:1667)
+04-20 12:58:49.379: W/ApplicationContext(2677): 	at android.app.ActivityThread.access$1500(ActivityThread.java:117)
+04-20 12:58:49.379: W/ApplicationContext(2677): 	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:935)
+04-20 12:58:49.379: W/ApplicationContext(2677): 	at android.os.Handler.dispatchMessage(Handler.java:99)
+04-20 12:58:49.379: W/ApplicationContext(2677): 	at android.os.Looper.loop(Looper.java:130)
+04-20 12:58:49.379: W/ApplicationContext(2677): 	at android.app.ActivityThread.main(ActivityThread.java:3687)
+04-20 12:58:49.379: W/ApplicationContext(2677): 	at java.lang.reflect.Method.invokeNative(Native Method)
+04-20 12:58:49.379: W/ApplicationContext(2677): 	at java.lang.reflect.Method.invoke(Method.java:507)
+04-20 12:58:49.379: W/ApplicationContext(2677): 	at com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run(ZygoteInit.java:867)
+04-20 12:58:49.379: W/ApplicationContext(2677): 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:625)
+04-20 12:58:49.379: W/ApplicationContext(2677): 	at dalvik.system.NativeStart.main(Native Method)
+04-20 12:58:49.389: D/DataStreamReader(2677): isConnected
+04-20 12:58:49.389: D/F1LTAct L139(2677): No conectat
+04-20 12:58:49.389: D/F1LTActivity(2677): login
+04-20 12:58:49.389: D/F1LTActivity(2677): updateCommentaryLine
+04-20 12:58:49.389: D/F1LTActivity(2677): onStart
+04-20 12:58:49.619: D/F1LTActivity(2677): onSaveInstanceState
+04-20 12:58:49.629: W/dalvikvm(2677): VFY: unable to resolve virtual method 2951: Lcom/f1lt/LoginActivity;.getActionBar ()Landroid/app/ActionBar;
+04-20 12:58:49.629: I/ApplicationPackageManager(2677): cscCountry is not German : YOG
+04-20 12:58:56.329: D/F1LTActivity(2677): onActivityResult
+04-20 12:58:56.329: D/ResultCode dins F1LT(2677): -1
+04-20 12:58:56.329: D/F1LTActivity(2677): onConnectedClicked
+04-20 12:58:56.339: D/DataStreamReader(2677): encodePasswd
+04-20 12:58:56.359: D/HttpReader(2677): attemptAuth
+04-20 12:58:56.359: D/F1LTActivity(2677): onRestart
+04-20 12:58:56.359: D/F1LTActivity(2677): onStart
+04-20 12:58:56.369: D/HttpReader(2677): authorize
+04-20 12:58:58.919: I/global(2677): Loaded time zone names for en_US in 1545ms.
+04-20 12:58:59.459: D/HttpReader(2677): sendAuthenticationCookie
+04-20 12:58:59.459: D/F1LTActivity(2677): onAuthorized
+04-20 12:58:59.539: D/DataStreamReader(2677): connectToStream
+04-20 12:58:59.539: D/HttpReader(2677): attemptObtainKeyFrame
+04-20 12:58:59.559: D/HttpReader(2677): obtainKeyFrame
+04-20 12:58:59.759: D/HttpReader(2677): sendKeyFrame
+04-20 12:58:59.759: D/DataStreamReader(2677): onKeyFrameObtained
+04-20 12:58:59.759: D/DataStreamReader(2677): resetDecryption
+04-20 12:58:59.759: D/DataStreamReader(2677): parseBlock: 1
+04-20 12:58:59.769: D/ARREL ARXIU:(2677): /mnt/sdcard/PROVA/F1/BAH/Q-1/Dades1.txt
+04-20 12:58:59.779: D/GUARDAT NUM DADES AL ARXIU:(2677): 2965
+04-20 12:58:59.779: D/DataStreamReader(2677): parseSystemPacket
+04-20 12:58:59.789: D/HttpReader(2677): attemptObtainDecryptionKey
+04-20 12:58:59.789: D/DataStreamReader(2677): resetDecryption
+04-20 12:58:59.789: D/DataStreamReader(2677): parseSystemPacket
+04-20 12:58:59.789: D/DataStreamReader(2677): parseSystemPacket
+04-20 12:58:59.789: D/DataStreamReader(2677): parseSystemPacket
+04-20 12:58:59.799: D/DataStreamReader(2677): parseCarPacket
+04-20 12:58:59.799: D/CAR=1(2677):  CAR TYPE=0 CAR DATA= 1 CAR LEN= 0 LONG DATA= 
+04-20 12:58:59.799: D/HttpReader(2677): obtainDecryptionKey
+04-20 12:58:59.809: D/DataStreamReader(2677): parseCarPacket
+04-20 12:58:59.809: D/CAR=2(2677):  CAR TYPE=0 CAR DATA= 2 CAR LEN= 0 LONG DATA= 
+04-20 12:58:59.809: D/DataStreamReader(2677): parseCarPacket
+04-20 12:58:59.809: D/CAR=3(2677):  CAR TYPE=0 CAR DATA= 3 CAR LEN= 0 LONG DATA= 
+04-20 12:58:59.809: D/DataStreamReader(2677): parseCarPacket
+04-20 12:58:59.819: D/CAR=4(2677):  CAR TYPE=0 CAR DATA= 4 CAR LEN= 0 LONG DATA= 
+04-20 12:58:59.819: D/DataStreamReader(2677): parseCarPacket
+04-20 12:58:59.819: D/CAR=5(2677):  CAR TYPE=0 CAR DATA= 5 CAR LEN= 0 LONG DATA= 
+04-20 12:58:59.819: D/DataStreamReader(2677): parseCarPacket
+04-20 12:58:59.819: D/CAR=6(2677):  CAR TYPE=0 CAR DATA= 6 CAR LEN= 0 LONG DATA= 
+04-20 12:58:59.819: D/DataStreamReader(2677): parseCarPacket
+04-20 12:58:59.819: D/CAR=7(2677):  CAR TYPE=0 CAR DATA= 7 CAR LEN= 0 LONG DATA= 
+04-20 12:58:59.819: D/DataStreamReader(2677): parseCarPacket
+04-20 12:58:59.819: D/CAR=8(2677):  CAR TYPE=0 CAR DATA= 8 CAR LEN= 0 LONG DATA= 
+04-20 12:58:59.819: D/DataStreamReader(2677): parseCarPacket
+04-20 12:58:59.819: D/CAR=9(2677):  CAR TYPE=0 CAR DATA= 9 CAR LEN= 0 LONG DATA= 
+04-20 12:58:59.819: D/DataStreamReader(2677): parseCarPacket
+04-20 12:58:59.829: D/CAR=10(2677):  CAR TYPE=0 CAR DATA= 10 CAR LEN= 0 LONG DATA= 
+04-20 12:58:59.829: D/DataStreamReader(2677): parseCarPacket
+04-20 12:58:59.829: D/CAR=11(2677):  CAR TYPE=0 CAR DATA= 11 CAR LEN= 0 LONG DATA= 
+04-20 12:58:59.829: D/DataStreamReader(2677): parseCarPacket
+04-20 12:58:59.829: D/CAR=12(2677):  CAR TYPE=0 CAR DATA= 12 CAR LEN= 0 LONG DATA= 
+04-20 12:58:59.829: D/DataStreamReader(2677): parseCarPacket
+04-20 12:58:59.829: D/CAR=13(2677):  CAR TYPE=0 CAR DATA= 13 CAR LEN= 0 LONG DATA= 
+04-20 12:58:59.829: D/DataStreamReader(2677): parseCarPacket
+04-20 12:58:59.829: D/CAR=14(2677):  CAR TYPE=0 CAR DATA= 14 CAR LEN= 0 LONG DATA= 
+04-20 12:58:59.829: D/DataStreamReader(2677): parseCarPacket
+04-20 12:58:59.829: D/CAR=15(2677):  CAR TYPE=0 CAR DATA= 15 CAR LEN= 0 LONG DATA= 
+04-20 12:58:59.829: D/DataStreamReader(2677): parseCarPacket
+04-20 12:58:59.829: D/CAR=16(2677):  CAR TYPE=0 CAR DATA= 16 CAR LEN= 0 LONG DATA= 
+04-20 12:58:59.829: D/DataStreamReader(2677): parseCarPacket
+04-20 12:58:59.839: D/CAR=17(2677):  CAR TYPE=0 CAR DATA= 17 CAR LEN= 0 LONG DATA= 
+04-20 12:58:59.839: D/DataStreamReader(2677): parseCarPacket
+04-20 12:58:59.839: D/CAR=18(2677):  CAR TYPE=0 CAR DATA= 18 CAR LEN= 0 LONG DATA= 
+04-20 12:58:59.839: D/DataStreamReader(2677): parseCarPacket
+04-20 12:58:59.839: D/CAR=19(2677):  CAR TYPE=0 CAR DATA= 19 CAR LEN= 0 LONG DATA= 
+04-20 12:58:59.839: D/DataStreamReader(2677): parseCarPacket
+04-20 12:58:59.839: D/CAR=20(2677):  CAR TYPE=0 CAR DATA= 20 CAR LEN= 0 LONG DATA= 
+04-20 12:58:59.839: D/DataStreamReader(2677): parseCarPacket
+04-20 12:58:59.839: D/CAR=21(2677):  CAR TYPE=0 CAR DATA= 21 CAR LEN= 0 LONG DATA= 
+04-20 12:58:59.839: D/DataStreamReader(2677): parseCarPacket
+04-20 12:58:59.839: D/CAR=22(2677):  CAR TYPE=0 CAR DATA= 22 CAR LEN= 0 LONG DATA= 
+04-20 12:58:59.859: D/DataStreamReader(2677): parseSystemPacket
+04-20 12:58:59.859: D/DataStreamReader(2677): parseSystemPacket
+04-20 12:58:59.859: D/DataStreamReader(2677): resetDecryption
+04-20 12:58:59.859: D/DataStreamReader(2677): resetDecryption
+04-20 12:58:59.859: D/SocketDataReader(2677): isConnected
+04-20 12:58:59.869: D/SocketDataReader(2677): openStream
+04-20 12:58:59.929: D/onKeyFrameObtained(2677): DINS WHILE CONNECTED
+04-20 12:58:59.929: D/SocketDataReader(2677): reading stream...
+04-20 12:58:59.949: D/HttpReader(2677): sendDecryptionKey
+04-20 12:58:59.959: D/DataStreamReader(2677): onDecryptionKeyObtained
+04-20 12:58:59.959: D/DataStreamReader(2677): resetDecryption
+04-20 12:58:59.959: D/DataStreamReader(2677): decrypt
+04-20 12:58:59.959: D/DataStreamReader(2677): parseSystemPacket
+04-20 12:58:59.959: D/DataStreamReader(2677): decrypt
+04-20 12:58:59.959: D/DataStreamReader(2677): parseCarPacket
+04-20 12:58:59.959: D/CAR=1(2677):  CAR TYPE=2 CAR DATA= 2 CAR LEN= 1 LONG DATA= 1
+04-20 12:58:59.959: D/DataStreamReader(2677): decrypt
+04-20 12:58:59.959: D/DataStreamReader(2677): parseCarPacket
+04-20 12:58:59.959: D/CAR=1(2677):  CAR TYPE=3 CAR DATA= 6 CAR LEN= 9 LONG DATA= S. VETTEL
+04-20 12:58:59.959: D/DataStreamReader(2677): decrypt
+04-20 12:58:59.959: D/DataStreamReader(2677): parseCarPacket
+04-20 12:58:59.959: D/CAR=2(2677):  CAR TYPE=2 CAR DATA= 2 CAR LEN= 1 LONG DATA= 2
+04-20 12:58:59.959: D/DataStreamReader(2677): decrypt
+04-20 12:58:59.959: D/DataStreamReader(2677): parseCarPacket
+04-20 12:58:59.959: D/CAR=2(2677):  CAR TYPE=3 CAR DATA= 6 CAR LEN= 9 LONG DATA= M. WEBBER
+04-20 12:58:59.959: D/DataStreamReader(2677): decrypt
+04-20 12:58:59.959: D/DataStreamReader(2677): parseCarPacket
+04-20 12:58:59.959: D/CAR=3(2677):  CAR TYPE=2 CAR DATA= 2 CAR LEN= 1 LONG DATA= 3
+04-20 12:58:59.959: D/DataStreamReader(2677): decrypt
+04-20 12:58:59.969: D/DataStreamReader(2677): parseCarPacket
+04-20 12:58:59.969: D/CAR=3(2677):  CAR TYPE=3 CAR DATA= 6 CAR LEN= 9 LONG DATA= F. ALONSO
+04-20 12:58:59.969: D/DataStreamReader(2677): decrypt
+04-20 12:58:59.969: D/DataStreamReader(2677): parseCarPacket
+04-20 12:58:59.969: D/CAR=4(2677):  CAR TYPE=2 CAR DATA= 2 CAR LEN= 1 LONG DATA= 4
+04-20 12:58:59.969: D/DataStreamReader(2677): decrypt
+04-20 12:58:59.969: D/DataStreamReader(2677): parseCarPacket
+04-20 12:58:59.969: D/CAR=4(2677):  CAR TYPE=3 CAR DATA= 6 CAR LEN= 8 LONG DATA= F. MASSA
+04-20 12:58:59.969: D/DataStreamReader(2677): decrypt
+04-20 12:58:59.969: D/DataStreamReader(2677): parseCarPacket
+04-20 12:58:59.969: D/CAR=5(2677):  CAR TYPE=2 CAR DATA= 2 CAR LEN= 1 LONG DATA= 5
+04-20 12:58:59.969: D/DataStreamReader(2677): decrypt
+04-20 12:58:59.969: D/DataStreamReader(2677): parseCarPacket
+04-20 12:58:59.969: D/CAR=5(2677):  CAR TYPE=3 CAR DATA= 6 CAR LEN= 9 LONG DATA= J. BUTTON
+04-20 12:58:59.969: D/DataStreamReader(2677): decrypt
+04-20 12:58:59.969: D/DataStreamReader(2677): parseCarPacket
+04-20 12:58:59.969: D/CAR=6(2677):  CAR TYPE=2 CAR DATA= 2 CAR LEN= 1 LONG DATA= 6
+04-20 12:58:59.969: D/DataStreamReader(2677): decrypt
+04-20 12:58:59.969: D/DataStreamReader(2677): parseCarPacket
+04-20 12:58:59.969: D/CAR=6(2677):  CAR TYPE=3 CAR DATA= 6 CAR LEN= 8 LONG DATA= S. PEREZ
+04-20 12:58:59.969: D/DataStreamReader(2677): decrypt
+04-20 12:58:59.969: D/DataStreamReader(2677): parseCarPacket
+04-20 12:58:59.969: D/CAR=7(2677):  CAR TYPE=2 CAR DATA= 2 CAR LEN= 1 LONG DATA= 7
+04-20 12:58:59.969: D/DataStreamReader(2677): decrypt
+04-20 12:58:59.969: D/DataStreamReader(2677): parseCarPacket
+04-20 12:58:59.969: D/CAR=7(2677):  CAR TYPE=3 CAR DATA= 6 CAR LEN= 12 LONG DATA= K. RAIKKONEN
+04-20 12:58:59.969: D/DataStreamReader(2677): decrypt
+04-20 12:58:59.969: D/DataStreamReader(2677): parseCarPacket
+04-20 12:58:59.969: D/CAR=8(2677):  CAR TYPE=2 CAR DATA= 2 CAR LEN= 1 LONG DATA= 8
+04-20 12:58:59.969: D/DataStreamReader(2677): decrypt
+04-20 12:58:59.969: D/DataStreamReader(2677): parseCarPacket
+04-20 12:58:59.969: D/CAR=8(2677):  CAR TYPE=3 CAR DATA= 6 CAR LEN= 11 LONG DATA= R. GROSJEAN
+04-20 12:58:59.969: D/DataStreamReader(2677): decrypt
+04-20 12:58:59.969: D/DataStreamReader(2677): parseCarPacket
+04-20 12:58:59.969: D/CAR=9(2677):  CAR TYPE=2 CAR DATA= 2 CAR LEN= 1 LONG DATA= 9
+04-20 12:58:59.969: D/DataStreamReader(2677): decrypt
+04-20 12:58:59.969: D/DataStreamReader(2677): parseCarPacket
+04-20 12:58:59.979: D/SocketDataReader(2677): sendDataBlock
+04-20 12:58:59.979: D/onKeyFrameObtained(2677): DINS WHILE CONNECTED
+04-20 12:58:59.979: D/SocketDataReader(2677): reading stream...
+04-20 12:58:59.989: D/CAR=9(2677):  CAR TYPE=3 CAR DATA= 6 CAR LEN= 10 LONG DATA= N. ROSBERG
+04-20 12:58:59.989: D/DataStreamReader(2677): decrypt
+04-20 12:58:59.989: D/DataStreamReader(2677): parseCarPacket
+04-20 12:58:59.989: D/CAR=10(2677):  CAR TYPE=2 CAR DATA= 2 CAR LEN= 2 LONG DATA= 10
+04-20 12:58:59.989: D/DataStreamReader(2677): decrypt
+04-20 12:58:59.989: D/DataStreamReader(2677): parseCarPacket
+04-20 12:58:59.989: D/CAR=10(2677):  CAR TYPE=3 CAR DATA= 6 CAR LEN= 11 LONG DATA= L. HAMILTON
+04-20 12:58:59.989: D/DataStreamReader(2677): decrypt
+04-20 12:58:59.989: D/DataStreamReader(2677): parseCarPacket
+04-20 12:58:59.989: D/CAR=11(2677):  CAR TYPE=2 CAR DATA= 2 CAR LEN= 2 LONG DATA= 11
+04-20 12:58:59.989: D/DataStreamReader(2677): decrypt
+04-20 12:58:59.989: D/DataStreamReader(2677): parseCarPacket
+04-20 12:58:59.989: D/CAR=11(2677):  CAR TYPE=3 CAR DATA= 6 CAR LEN= 13 LONG DATA= N. HULKENBERG
+04-20 12:58:59.989: D/DataStreamReader(2677): decrypt
+04-20 12:58:59.989: D/DataStreamReader(2677): parseCarPacket
+04-20 12:58:59.989: D/CAR=12(2677):  CAR TYPE=2 CAR DATA= 2 CAR LEN= 2 LONG DATA= 12
+04-20 12:59:00.009: D/DataStreamReader(2677): decrypt
+04-20 12:59:00.009: D/DataStreamReader(2677): parseCarPacket
+04-20 12:59:00.009: D/CAR=12(2677):  CAR TYPE=3 CAR DATA= 6 CAR LEN= 12 LONG DATA= E. GUTIERREZ
+04-20 12:59:00.009: D/DataStreamReader(2677): decrypt
+04-20 12:59:00.009: D/DataStreamReader(2677): parseCarPacket
+04-20 12:59:00.009: D/CAR=13(2677):  CAR TYPE=2 CAR DATA= 2 CAR LEN= 2 LONG DATA= 14
+04-20 12:59:00.009: D/DataStreamReader(2677): decrypt
+04-20 12:59:00.009: D/DataStreamReader(2677): parseCarPacket
+04-20 12:59:00.009: D/CAR=13(2677):  CAR TYPE=3 CAR DATA= 6 CAR LEN= 11 LONG DATA= P. DI RESTA
+04-20 12:59:00.009: D/DataStreamReader(2677): decrypt
+04-20 12:59:00.009: D/DataStreamReader(2677): parseCarPacket
+04-20 12:59:00.009: D/CAR=14(2677):  CAR TYPE=2 CAR DATA= 2 CAR LEN= 2 LONG DATA= 15
+04-20 12:59:00.009: D/DataStreamReader(2677): decrypt
+04-20 12:59:00.009: D/DataStreamReader(2677): parseCarPacket
+04-20 12:59:00.009: D/CAR=14(2677):  CAR TYPE=3 CAR DATA= 6 CAR LEN= 8 LONG DATA= A. SUTIL
+04-20 12:59:00.009: D/DataStreamReader(2677): decrypt
+04-20 12:59:00.009: D/DataStreamReader(2677): parseCarPacket
+04-20 12:59:00.009: D/CAR=15(2677):  CAR TYPE=2 CAR DATA= 2 CAR LEN= 2 LONG DATA= 16
+04-20 12:59:00.009: D/DataStreamReader(2677): decrypt
+04-20 12:59:00.009: D/DataStreamReader(2677): parseCarPacket
+04-20 12:59:00.029: D/CAR=15(2677):  CAR TYPE=3 CAR DATA= 6 CAR LEN= 12 LONG DATA= P. MALDONADO
+04-20 12:59:00.029: D/DataStreamReader(2677): decrypt
+04-20 12:59:00.029: D/DataStreamReader(2677): parseCarPacket
+04-20 12:59:00.029: D/CAR=16(2677):  CAR TYPE=2 CAR DATA= 2 CAR LEN= 2 LONG DATA= 17
+04-20 12:59:00.029: D/DataStreamReader(2677): decrypt
+04-20 12:59:00.029: D/DataStreamReader(2677): parseCarPacket
+04-20 12:59:00.029: D/CAR=16(2677):  CAR TYPE=3 CAR DATA= 6 CAR LEN= 9 LONG DATA= V. BOTTAS
+04-20 12:59:00.029: D/DataStreamReader(2677): decrypt
+04-20 12:59:00.029: D/DataStreamReader(2677): parseCarPacket
+04-20 12:59:00.029: D/CAR=17(2677):  CAR TYPE=2 CAR DATA= 2 CAR LEN= 2 LONG DATA= 18
+04-20 12:59:00.029: D/DataStreamReader(2677): decrypt
+04-20 12:59:00.029: D/DataStreamReader(2677): parseCarPacket
+04-20 12:59:00.029: D/CAR=17(2677):  CAR TYPE=3 CAR DATA= 6 CAR LEN= 9 LONG DATA= J. VERGNE
+04-20 12:59:00.029: D/DataStreamReader(2677): decrypt
+04-20 12:59:00.029: D/DataStreamReader(2677): parseCarPacket
+04-20 12:59:00.039: D/CAR=18(2677):  CAR TYPE=2 CAR DATA= 2 CAR LEN= 2 LONG DATA= 19
+04-20 12:59:00.039: D/DataStreamReader(2677): decrypt
+04-20 12:59:00.039: D/DataStreamReader(2677): parseCarPacket
+04-20 12:59:00.039: D/CAR=18(2677):  CAR TYPE=3 CAR DATA= 6 CAR LEN= 12 LONG DATA= D. RICCIARDO
+04-20 12:59:00.039: D/DataStreamReader(2677): decrypt
+04-20 12:59:00.039: D/DataStreamReader(2677): parseCarPacket
+04-20 12:59:00.039: D/CAR=19(2677):  CAR TYPE=2 CAR DATA= 2 CAR LEN= 2 LONG DATA= 20
+04-20 12:59:00.039: D/DataStreamReader(2677): decrypt
+04-20 12:59:00.039: D/DataStreamReader(2677): parseCarPacket
+04-20 12:59:00.039: D/CAR=19(2677):  CAR TYPE=3 CAR DATA= 6 CAR LEN= 6 LONG DATA= C. PIC
+04-20 12:59:00.039: D/DataStreamReader(2677): decrypt
+04-20 12:59:00.039: D/DataStreamReader(2677): parseCarPacket
+04-20 12:59:00.039: D/CAR=20(2677):  CAR TYPE=2 CAR DATA= 2 CAR LEN= 2 LONG DATA= 21
+04-20 12:59:00.039: D/DataStreamReader(2677): decrypt
+04-20 12:59:00.039: D/DataStreamReader(2677): parseCarPacket
+04-20 12:59:00.039: D/CAR=20(2677):  CAR TYPE=3 CAR DATA= 6 CAR LEN= 14 LONG DATA= G. VAN DER GAR
+04-20 12:59:00.039: D/DataStreamReader(2677): decrypt
+04-20 12:59:00.039: D/DataStreamReader(2677): parseCarPacket
+04-20 12:59:00.039: D/CAR=21(2677):  CAR TYPE=2 CAR DATA= 2 CAR LEN= 2 LONG DATA= 22
+04-20 12:59:00.039: D/DataStreamReader(2677): decrypt
+04-20 12:59:00.039: D/DataStreamReader(2677): parseCarPacket
+04-20 12:59:00.039: D/CAR=21(2677):  CAR TYPE=3 CAR DATA= 6 CAR LEN= 10 LONG DATA= J. BIANCHI
+04-20 12:59:00.039: D/DataStreamReader(2677): decrypt
+04-20 12:59:00.039: D/DataStreamReader(2677): parseCarPacket
+04-20 12:59:00.039: D/CAR=22(2677):  CAR TYPE=2 CAR DATA= 2 CAR LEN= 2 LONG DATA= 23
+04-20 12:59:00.039: D/DataStreamReader(2677): decrypt
+04-20 12:59:00.039: D/DataStreamReader(2677): parseCarPacket
+04-20 12:59:00.039: D/CAR=22(2677):  CAR TYPE=3 CAR DATA= 6 CAR LEN= 10 LONG DATA= M. CHILTON
+04-20 12:59:00.039: D/DataStreamReader(2677): decrypt
+04-20 12:59:00.039: D/DataStreamReader(2677): parseSystemPacket
+04-20 12:59:00.039: D/DataStreamReader(2677): decrypt
+04-20 12:59:00.039: D/DataStreamReader(2677): parseSystemPacket
+04-20 12:59:00.039: D/DataStreamReader(2677): decrypt
+04-20 12:59:00.039: D/DataStreamReader(2677): parseSystemPacket
+04-20 12:59:00.039: D/DataStreamReader(2677): decrypt
+04-20 12:59:00.039: D/DataStreamReader(2677): parseSystemPacket
+04-20 12:59:00.039: D/DataStreamReader(2677): decrypt
+04-20 12:59:00.039: D/DataStreamReader(2677): parseSystemPacket
+04-20 12:59:00.039: D/DataStreamReader(2677): decrypt
+04-20 12:59:00.039: D/DataStreamReader(2677): parseSystemPacket
+04-20 12:59:00.039: D/DataStreamReader(2677): decrypt
+04-20 12:59:00.039: D/DataStreamReader(2677): parseSystemPacket
+04-20 12:59:00.039: D/DataStreamReader(2677): decrypt
+04-20 12:59:00.039: D/DataStreamReader(2677): parseSystemPacket
+04-20 12:59:00.039: D/DataStreamReader(2677): decrypt
+04-20 12:59:00.039: D/DataStreamReader(2677): parseSystemPacket
+04-20 12:59:00.039: D/DataStreamReader(2677): decrypt
+04-20 12:59:00.039: D/DataStreamReader(2677): parseSystemPacket
+04-20 12:59:00.039: D/DataStreamReader(2677): decrypt
+04-20 12:59:00.039: D/DataStreamReader(2677): parseSystemPacket
+04-20 12:59:00.059: D/DataStreamReader(2677): decrypt
+04-20 12:59:00.059: D/DataStreamReader(2677): parseSystemPacket
+04-20 12:59:00.059: D/DataStreamReader(2677): decrypt
+04-20 12:59:00.059: D/DataStreamReader(2677): parseSystemPacket
+04-20 12:59:00.069: D/packet(2677): TIMESTAMP=2 0 2
+04-20 12:59:00.069: D/DataStreamReader(2677): decrypt
+04-20 12:59:00.069: D/DataStreamReader(2677): parseSystemPacket
+04-20 12:59:00.069: D/DataStreamReader(2677): decrypt
+04-20 12:59:00.069: D/DataStreamReader(2677): parseSystemPacket
+04-20 12:59:00.069: D/DataStreamReader(2677): decrypt
+04-20 12:59:00.069: D/DataStreamReader(2677): parseSystemPacket
+04-20 12:59:00.069: D/DataStreamReader(2677): decrypt
+04-20 12:59:00.069: D/DataStreamReader(2677): parseSystemPacket
+04-20 12:59:00.069: D/packet(2677): TIMESTAMP=52 0 52
+04-20 12:59:00.069: D/DataStreamReader(2677): decrypt
+04-20 12:59:00.069: D/DataStreamReader(2677): parseSystemPacket
+04-20 12:59:00.069: D/DataStreamReader(2677): decrypt
+04-20 12:59:00.069: D/DataStreamReader(2677): parseSystemPacket
+04-20 12:59:00.069: D/DataStreamReader(2677): decrypt
+04-20 12:59:00.069: D/DataStreamReader(2677): parseSystemPacket
+04-20 12:59:00.069: D/packet(2677): TIMESTAMP=62 0 62
+04-20 12:59:00.069: D/DataStreamReader(2677): decrypt
+04-20 12:59:00.069: D/DataStreamReader(2677): parseSystemPacket
+04-20 12:59:00.069: D/DataStreamReader(2677): decrypt
+04-20 12:59:00.069: D/DataStreamReader(2677): parseSystemPacket
+04-20 12:59:00.069: D/DataStreamReader(2677): decrypt
+04-20 12:59:00.069: D/DataStreamReader(2677): parseSystemPacket
+04-20 12:59:00.069: D/DataStreamReader(2677): decrypt
+04-20 12:59:00.069: D/DataStreamReader(2677): parseSystemPacket
+04-20 12:59:00.089: D/DataStreamReader(2677): decrypt
+04-20 12:59:00.089: D/DataStreamReader(2677): parseSystemPacket
+04-20 12:59:00.089: D/packet(2677): TIMESTAMP=98 0 98
+04-20 12:59:00.089: D/DataStreamReader(2677): decrypt
+04-20 12:59:00.089: D/DataStreamReader(2677): parseSystemPacket
+04-20 12:59:00.089: D/DataStreamReader(2677): decrypt
+04-20 12:59:00.089: D/DataStreamReader(2677): parseSystemPacket
+04-20 12:59:00.089: D/DataStreamReader(2677): decrypt
+04-20 12:59:00.089: D/DataStreamReader(2677): parseSystemPacket
+04-20 12:59:00.089: D/DataStreamReader(2677): decrypt
+04-20 12:59:00.089: D/DataStreamReader(2677): parseSystemPacket
+04-20 12:59:00.089: D/packet(2677): TIMESTAMP=111 0 111
+04-20 12:59:00.089: D/DataStreamReader(2677): decrypt
+04-20 12:59:00.089: D/DataStreamReader(2677): parseSystemPacket
+04-20 12:59:00.099: D/DataStreamReader(2677): decrypt
+04-20 12:59:00.099: D/DataStreamReader(2677): parseSystemPacket
+04-20 12:59:00.099: D/DataStreamReader(2677): decrypt
+04-20 12:59:00.099: D/DataStreamReader(2677): parseSystemPacket
+04-20 12:59:00.099: D/packet(2677): TIMESTAMP=112 0 112
+04-20 12:59:00.099: D/DataStreamReader(2677): decrypt
+04-20 12:59:00.099: D/DataStreamReader(2677): parseSystemPacket
+04-20 12:59:00.099: D/DataStreamReader(2677): decrypt
+04-20 12:59:00.099: D/DataStreamReader(2677): parseSystemPacket
+04-20 12:59:00.099: D/DataStreamReader(2677): decrypt
+04-20 12:59:00.109: D/DataStreamReader(2677): parseSystemPacket
+04-20 12:59:00.109: D/DataStreamReader(2677): decrypt
+04-20 12:59:00.109: D/DataStreamReader(2677): parseSystemPacket
+04-20 12:59:00.109: D/DataStreamReader(2677): decrypt
+04-20 12:59:00.109: D/DataStreamReader(2677): parseSystemPacket
+04-20 12:59:00.109: D/packet(2677): TIMESTAMP=120 0 120
+04-20 12:59:00.109: D/DataStreamReader(2677): decrypt
+04-20 12:59:00.109: D/DataStreamReader(2677): parseSystemPacket
+04-20 12:59:00.109: D/DataStreamReader(2677): decrypt
+04-20 12:59:00.109: D/DataStreamReader(2677): parseSystemPacket
+04-20 12:59:00.109: D/DataStreamReader(2677): decrypt
+04-20 12:59:00.109: D/DataStreamReader(2677): parseSystemPacket
+04-20 12:59:00.109: D/packet(2677): TIMESTAMP=130 0 -126
+04-20 12:59:00.109: D/DataStreamReader(2677): decrypt
+04-20 12:59:00.109: D/DataStreamReader(2677): parseSystemPacket
+04-20 12:59:00.109: D/DataStreamReader(2677): decrypt
+04-20 12:59:00.109: D/DataStreamReader(2677): parseSystemPacket
+04-20 12:59:00.109: D/DataStreamReader(2677): decrypt
+04-20 12:59:00.109: D/DataStreamReader(2677): parseSystemPacket
+04-20 12:59:00.109: D/DataStreamReader(2677): decrypt
+04-20 12:59:00.109: D/DataStreamReader(2677): parseSystemPacket
+04-20 12:59:00.109: D/packet(2677): TIMESTAMP=141 0 -115
+04-20 12:59:00.119: D/DataStreamReader(2677): decrypt
+04-20 12:59:00.119: D/DataStreamReader(2677): parseSystemPacket
+04-20 12:59:00.119: D/DataStreamReader(2677): decrypt
+04-20 12:59:00.119: D/DataStreamReader(2677): parseSystemPacket
+04-20 12:59:00.119: D/DataStreamReader(2677): decrypt
+04-20 12:59:00.119: D/DataStreamReader(2677): parseSystemPacket
+04-20 12:59:00.119: D/packet(2677): TIMESTAMP=168 0 -88
+04-20 12:59:00.119: D/DataStreamReader(2677): decrypt
+04-20 12:59:00.119: D/DataStreamReader(2677): parseSystemPacket
+04-20 12:59:00.119: D/DataStreamReader(2677): decrypt
+04-20 12:59:00.119: D/DataStreamReader(2677): parseSystemPacket
+04-20 12:59:00.119: D/DataStreamReader(2677): decrypt
+04-20 12:59:00.129: D/DataStreamReader(2677): parseSystemPacket
+04-20 12:59:00.129: D/DataStreamReader(2677): decrypt
+04-20 12:59:00.129: D/DataStreamReader(2677): parseSystemPacket
+04-20 12:59:00.129: D/packet(2677): TIMESTAMP=177 0 -79
+04-20 12:59:00.129: D/DataStreamReader(2677): decrypt
+04-20 12:59:00.129: D/DataStreamReader(2677): parseSystemPacket
+04-20 12:59:00.129: D/DataStreamReader(2677): decrypt
+04-20 12:59:00.129: D/DataStreamReader(2677): parseSystemPacket
+04-20 12:59:00.179: D/DataStreamReader(2677): decrypt
+04-20 12:59:00.179: D/DataStreamReader(2677): parseSystemPacket
+04-20 12:59:00.179: D/DataStreamReader(2677): newDataObtained
+04-20 12:59:00.179: D/F1LTActivity(2677): onNewDataObtained
+04-20 12:59:00.519: D/F1LTActivity(2677): updateCommentaryLine
+04-20 12:59:00.519: D/DataStreamReader(2677): onDataBlockObtained
+04-20 12:59:00.519: D/DataStreamReader(2677): parseBlock: 2
+04-20 12:59:00.519: D/ARREL ARXIU:(2677): /mnt/sdcard/PROVA/F1/BAH/Q-1/Dades2.txt
+04-20 12:59:00.539: D/GUARDAT NUM DADES AL ARXIU:(2677): 219
+04-20 12:59:00.539: D/DataStreamReader(2677): parseSystemPacket
+04-20 12:59:00.539: D/DataStreamReader(2677): resetDecryption
+04-20 12:59:00.539: D/DataStreamReader(2677): decrypt
+04-20 12:59:00.539: D/DataStreamReader(2677): parseSystemPacket
+04-20 12:59:00.539: D/packet(2677): TIMESTAMP=177 0 -79
+04-20 12:59:00.539: D/DataStreamReader(2677): decrypt
+04-20 12:59:00.539: D/DataStreamReader(2677): parseSystemPacket
+04-20 12:59:00.539: D/DataStreamReader(2677): decrypt
+04-20 12:59:00.539: D/DataStreamReader(2677): parseSystemPacket
+04-20 12:59:00.539: D/DataStreamReader(2677): parseSystemPacket
+04-20 12:59:00.539: D/DataStreamReader(2677): resetDecryption
+04-20 12:59:00.539: D/DataStreamReader(2677): newDataObtained
+04-20 12:59:00.539: D/F1LTActivity(2677): onNewDataObtained
+04-20 12:59:00.629: D/F1LTActivity(2677): updateCommentaryLine
+04-20 12:59:00.829: D/SocketDataReader(2677): PingOK
+04-20 12:59:01.069: D/SocketDataReader(2677): sendDataBlock
+04-20 12:59:01.069: D/onKeyFrameObtained(2677): DINS WHILE CONNECTED
+04-20 12:59:01.069: D/SocketDataReader(2677): reading stream...
+04-20 12:59:01.119: D/DataStreamReader(2677): onDataBlockObtained
+04-20 12:59:01.119: D/DataStreamReader(2677): parseBlock: 3
+04-20 12:59:01.119: D/ARREL ARXIU:(2677): /mnt/sdcard/PROVA/F1/BAH/Q-1/Dades3.txt
+04-20 12:59:01.119: D/GUARDAT NUM DADES AL ARXIU:(2677): 13
+04-20 12:59:01.119: D/DataStreamReader(2677): decrypt
+04-20 12:59:01.119: D/DataStreamReader(2677): parseSystemPacket
+04-20 12:59:01.119: D/packet(2677): TIMESTAMP=222 0 -34
+04-20 12:59:01.119: D/DataStreamReader(2677): decrypt
+04-20 12:59:01.119: D/DataStreamReader(2677): parseSystemPacket
+04-20 12:59:01.119: D/DataStreamReader(2677): parseSystemPacket
+04-20 12:59:01.119: D/DataStreamReader(2677): resetDecryption
+04-20 12:59:01.119: D/DataStreamReader(2677): newDataObtained
+04-20 12:59:01.119: D/F1LTActivity(2677): onNewDataObtained
+04-20 12:59:01.229: D/F1LTActivity(2677): updateCommentaryLine
+04-20 12:59:01.739: D/SocketDataReader(2677): PingOK
+04-20 12:59:01.879: D/SocketDataReader(2677): sendDataBlock
+04-20 12:59:01.879: D/onKeyFrameObtained(2677): DINS WHILE CONNECTED
+04-20 12:59:01.879: D/SocketDataReader(2677): reading stream...
+04-20 12:59:01.889: D/DataStreamReader(2677): onDataBlockObtained
+04-20 12:59:01.889: D/DataStreamReader(2677): parseBlock: 4
+04-20 12:59:01.889: D/ARREL ARXIU:(2677): /mnt/sdcard/PROVA/F1/BAH/Q-1/Dades4.txt
+04-20 12:59:01.889: D/GUARDAT NUM DADES AL ARXIU:(2677): 5
+04-20 12:59:01.889: D/DataStreamReader(2677): decrypt
+04-20 12:59:01.889: D/DataStreamReader(2677): parseSystemPacket
+04-20 12:59:01.889: D/DataStreamReader(2677): newDataObtained
+04-20 12:59:01.889: D/F1LTActivity(2677): onNewDataObtained
+04-20 12:59:02.029: D/F1LTActivity(2677): updateCommentaryLine
+04-20 12:59:02.629: D/SocketDataReader(2677): PingOK
+04-20 12:59:03.529: D/SocketDataReader(2677): PingOK
+04-20 12:59:04.429: D/SocketDataReader(2677): PingOK
+04-20 12:59:05.329: D/SocketDataReader(2677): PingOK
+04-20 12:59:06.229: D/SocketDataReader(2677): PingOK
+04-20 12:59:06.729: W/KeyCharacterMap(2677): No keyboard for id 0
+04-20 12:59:06.729: W/KeyCharacterMap(2677): Using default keymap: /system/usr/keychars/qwerty.kcm.bin
+04-20 12:59:06.729: D/F1LTActivity(2677): onCreateOptionsMenu
+04-20 12:59:07.129: D/SocketDataReader(2677): PingOK
+04-20 12:59:07.819: D/F1LTActivity(2677): onSaveInstanceState
+04-20 12:59:08.029: D/SocketDataReader(2677): PingOK
+04-20 12:59:08.939: D/SocketDataReader(2677): PingOK
+04-20 12:59:09.839: D/SocketDataReader(2677): PingOK
+04-20 12:59:10.739: D/SocketDataReader(2677): PingOK
+04-20 12:59:11.639: D/SocketDataReader(2677): PingOK
+04-20 12:59:12.539: D/SocketDataReader(2677): PingOK
+04-20 12:59:13.449: D/SocketDataReader(2677): PingOK
+04-20 12:59:13.879: D/F1LTActivity(2677): onOptionsItemSelected
+04-20 12:59:13.879: D/F1LTActivity(2677): showPreferences
+04-20 12:59:13.889: D/F1LTActivity(2677): onSaveInstanceState
+04-20 12:59:13.929: W/dalvikvm(2677): VFY: unable to resolve virtual method 2992: Lcom/f1lt/PreferencesActivity;.getActionBar ()Landroid/app/ActionBar;
+04-20 12:59:13.929: I/ApplicationPackageManager(2677): cscCountry is not German : YOG
+04-20 12:59:14.349: D/SocketDataReader(2677): PingOK
+04-20 12:59:15.239: D/SocketDataReader(2677): PingOK
+04-20 12:59:15.569: D/F1LTActivity(2677): onActivityResult
+04-20 12:59:15.569: D/ResultCode dins F1LT(2677): -1
+04-20 12:59:15.709: D/F1LTActivity(2677): onRestart
+04-20 12:59:15.709: D/F1LTActivity(2677): onStart
+04-20 12:59:16.139: D/SocketDataReader(2677): PingOK
+04-20 12:59:17.039: D/SocketDataReader(2677): PingOK
+04-20 12:59:17.949: D/SocketDataReader(2677): PingOK
+04-20 12:59:18.849: D/SocketDataReader(2677): PingOK
+04-20 12:59:19.749: D/SocketDataReader(2677): PingOK
+04-20 12:59:20.649: D/SocketDataReader(2677): PingOK
+04-20 12:59:21.549: D/SocketDataReader(2677): PingOK
+04-20 12:59:22.449: D/SocketDataReader(2677): PingOK
+04-20 12:59:23.349: D/SocketDataReader(2677): PingOK
+04-20 12:59:24.249: D/SocketDataReader(2677): PingOK
+04-20 12:59:25.149: D/SocketDataReader(2677): PingOK
+04-20 12:59:26.049: D/SocketDataReader(2677): PingOK
+04-20 12:59:26.949: D/SocketDataReader(2677): PingOK
+04-20 12:59:27.849: D/SocketDataReader(2677): PingOK
+04-20 12:59:28.759: D/SocketDataReader(2677): PingOK
+04-20 12:59:29.659: D/SocketDataReader(2677): PingOK
+04-20 12:59:30.559: D/SocketDataReader(2677): PingOK
+04-20 12:59:31.459: D/SocketDataReader(2677): PingOK
+04-20 12:59:31.589: D/SocketDataReader(2677): sendDataBlock
+04-20 12:59:31.589: D/onKeyFrameObtained(2677): DINS WHILE CONNECTED
+04-20 12:59:31.589: D/SocketDataReader(2677): reading stream...
+04-20 12:59:31.599: D/DataStreamReader(2677): onDataBlockObtained
+04-20 12:59:31.599: D/DataStreamReader(2677): parseBlock: 5
+04-20 12:59:31.599: D/ARREL ARXIU:(2677): /mnt/sdcard/PROVA/F1/BAH/Q-1/Dades5.txt
+04-20 12:59:31.609: D/GUARDAT NUM DADES AL ARXIU:(2677): 4
+04-20 12:59:31.609: D/DataStreamReader(2677): parseSystemPacket
+04-20 12:59:31.609: D/DataStreamReader(2677): resetDecryption
+04-20 12:59:31.609: D/DataStreamReader(2677): newDataObtained
+04-20 12:59:31.609: D/F1LTActivity(2677): onNewDataObtained
+04-20 12:59:31.729: D/F1LTActivity(2677): updateCommentaryLine
+04-20 12:59:32.359: D/SocketDataReader(2677): PingOK
+04-20 12:59:33.259: D/SocketDataReader(2677): PingOK
+04-20 12:59:34.159: D/SocketDataReader(2677): PingOK
+04-20 12:59:35.059: D/SocketDataReader(2677): PingOK
+04-20 12:59:35.959: D/SocketDataReader(2677): PingOK
+04-20 12:59:36.859: D/SocketDataReader(2677): PingOK
+04-20 12:59:37.769: D/SocketDataReader(2677): PingOK
+04-20 12:59:38.669: D/SocketDataReader(2677): PingOK
+04-20 12:59:39.569: D/SocketDataReader(2677): PingOK
+04-20 12:59:40.469: D/SocketDataReader(2677): PingOK
+04-20 12:59:41.369: D/SocketDataReader(2677): PingOK
+04-20 12:59:42.269: D/SocketDataReader(2677): PingOK
+04-20 12:59:43.169: D/SocketDataReader(2677): PingOK
+04-20 12:59:44.069: D/SocketDataReader(2677): PingOK
+04-20 12:59:44.969: D/SocketDataReader(2677): PingOK
+04-20 12:59:45.869: D/SocketDataReader(2677): PingOK
+04-20 12:59:46.769: D/SocketDataReader(2677): PingOK
+04-20 12:59:47.679: D/SocketDataReader(2677): PingOK
+04-20 12:59:48.579: D/SocketDataReader(2677): PingOK

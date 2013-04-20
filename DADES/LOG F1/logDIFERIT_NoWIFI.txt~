@@ -1,0 +1,46 @@
+04-08 17:55:15.499: I/ApplicationPackageManager(12962): cscCountry is not German : YOG
+04-08 17:55:15.499: D/F1LTActivity(12962): onCreate
+04-08 17:55:15.659: D/DataStreamReader(12962): getInstance
+04-08 17:55:15.669: D/DataStreamReader(12962): setDataStreamReceiver
+04-08 17:55:15.779: W/ApplicationContext(12962): getSharedPreferences
+04-08 17:55:15.779: W/ApplicationContext(12962): org.xmlpull.v1.XmlPullParserException: Error parsing document. (position:line -1, column -1) caused by: org.apache.harmony.xml.ExpatParser$ParseException: At line 4, column 27: not well-formed (invalid token)
+04-08 17:55:15.779: W/ApplicationContext(12962): 	at org.apache.harmony.xml.ExpatPullParser$ByteDocument.flush(ExpatPullParser.java:958)
+04-08 17:55:15.779: W/ApplicationContext(12962): 	at org.apache.harmony.xml.ExpatPullParser$Document.pump(ExpatPullParser.java:769)
+04-08 17:55:15.779: W/ApplicationContext(12962): 	at org.apache.harmony.xml.ExpatPullParser$Document.dequeue(ExpatPullParser.java:813)
+04-08 17:55:15.779: W/ApplicationContext(12962): 	at org.apache.harmony.xml.ExpatPullParser.next(ExpatPullParser.java:302)
+04-08 17:55:15.779: W/ApplicationContext(12962): 	at com.android.internal.util.XmlUtils.readValueXml(XmlUtils.java:675)
+04-08 17:55:15.779: W/ApplicationContext(12962): 	at com.android.internal.util.XmlUtils.readMapXml(XmlUtils.java:470)
+04-08 17:55:15.779: W/ApplicationContext(12962): 	at android.app.ContextImpl.getSharedPreferences(ContextImpl.java:385)
+04-08 17:55:15.779: W/ApplicationContext(12962): 	at android.content.ContextWrapper.getSharedPreferences(ContextWrapper.java:146)
+04-08 17:55:15.779: W/ApplicationContext(12962): 	at com.f1lt.F1LTActivity.onCreate(F1LTActivity.java:96)
+04-08 17:55:15.779: W/ApplicationContext(12962): 	at android.app.Instrumentation.callActivityOnCreate(Instrumentation.java:1047)
+04-08 17:55:15.779: W/ApplicationContext(12962): 	at android.app.ActivityThread.performLaunchActivity(ActivityThread.java:1615)
+04-08 17:55:15.779: W/ApplicationContext(12962): 	at android.app.ActivityThread.handleLaunchActivity(ActivityThread.java:1667)
+04-08 17:55:15.779: W/ApplicationContext(12962): 	at android.app.ActivityThread.access$1500(ActivityThread.java:117)
+04-08 17:55:15.779: W/ApplicationContext(12962): 	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:935)
+04-08 17:55:15.779: W/ApplicationContext(12962): 	at android.os.Handler.dispatchMessage(Handler.java:99)
+04-08 17:55:15.779: W/ApplicationContext(12962): 	at android.os.Looper.loop(Looper.java:130)
+04-08 17:55:15.779: W/ApplicationContext(12962): 	at android.app.ActivityThread.main(ActivityThread.java:3687)
+04-08 17:55:15.779: W/ApplicationContext(12962): 	at java.lang.reflect.Method.invokeNative(Native Method)
+04-08 17:55:15.779: W/ApplicationContext(12962): 	at java.lang.reflect.Method.invoke(Method.java:507)
+04-08 17:55:15.779: W/ApplicationContext(12962): 	at com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run(ZygoteInit.java:867)
+04-08 17:55:15.779: W/ApplicationContext(12962): 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:625)
+04-08 17:55:15.779: W/ApplicationContext(12962): 	at dalvik.system.NativeStart.main(Native Method)
+04-08 17:55:15.779: D/DataStreamReader(12962): isConnected
+04-08 17:55:15.799: D/F1LTActivity(12962): login
+04-08 17:55:15.819: D/F1LTActivity(12962): onStart
+04-08 17:55:16.039: D/F1LTActivity(12962): onSaveInstanceState
+04-08 17:55:16.049: W/dalvikvm(12962): VFY: unable to resolve virtual method 2944: Lcom/f1lt/LoginActivity;.getActionBar ()Landroid/app/ActionBar;
+04-08 17:55:16.049: I/ApplicationPackageManager(12962): cscCountry is not German : YOG
+04-08 17:55:23.999: D/F1LTActivity(12962): onActivityResult
+04-08 17:55:23.999: D/ResultCode dins F1LT(12962): -1
+04-08 17:55:23.999: D/F1LTActivity(12962): onConnectedClicked
+04-08 17:55:23.999: D/DataStreamReader(12962): encodePasswd
+04-08 17:55:24.029: D/onActivity(12962): FUNCIO DIFERIT
+04-08 17:55:24.029: D/F1LTActivity(12962): onRestart
+04-08 17:55:24.029: D/F1LTActivity(12962): onStart
+04-08 17:55:50.869: W/KeyCharacterMap(12962): No keyboard for id 0
+04-08 17:55:50.869: W/KeyCharacterMap(12962): Using default keymap: /system/usr/keychars/qwerty.kcm.bin
+04-08 17:55:50.989: D/F1LTActivity(12962): onBackPressed
+04-08 17:55:51.289: D/F1LTActivity(12962): onDestroy
+04-08 17:55:51.869: W/IInputConnectionWrapper(12962): showStatusIcon on inactive InputConnection

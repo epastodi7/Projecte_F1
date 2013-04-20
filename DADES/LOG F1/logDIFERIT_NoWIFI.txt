@@ -1,0 +1,22 @@
+04-08 17:55:15.499: I/ApplicationPackageManager(12962): cscCountry is not German : YOG
+04-08 17:55:15.499: D/F1LTActivity(12962): onCreate
+04-08 17:55:15.659: D/DataStreamReader(12962): getInstance
+04-08 17:55:15.669: D/DataStreamReader(12962): setDataStreamReceiver
+04-08 17:55:15.779: W/ApplicationContext(12962): getSharedPreferences
+04-08 17:55:15.779: D/DataStreamReader(12962): isConnected
+04-08 17:55:15.799: D/F1LTActivity(12962): login
+04-08 17:55:15.819: D/F1LTActivity(12962): onStart
+04-08 17:55:16.039: D/F1LTActivity(12962): onSaveInstanceState
+04-08 17:55:16.049: I/ApplicationPackageManager(12962): cscCountry is not German : YOG
+04-08 17:55:23.999: D/F1LTActivity(12962): onActivityResult
+04-08 17:55:23.999: D/ResultCode dins F1LT(12962): -1
+04-08 17:55:23.999: D/F1LTActivity(12962): onConnectedClicked
+04-08 17:55:23.999: D/DataStreamReader(12962): encodePasswd
+04-08 17:55:24.029: D/onActivity(12962): FUNCIO DIFERIT
+04-08 17:55:24.029: D/F1LTActivity(12962): onRestart
+04-08 17:55:24.029: D/F1LTActivity(12962): onStart
+04-08 17:55:50.869: W/KeyCharacterMap(12962): No keyboard for id 0
+04-08 17:55:50.869: W/KeyCharacterMap(12962): Using default keymap: /system/usr/keychars/qwerty.kcm.bin
+04-08 17:55:50.989: D/F1LTActivity(12962): onBackPressed
+04-08 17:55:51.289: D/F1LTActivity(12962): onDestroy
+04-08 17:55:51.869: W/IInputConnectionWrapper(12962): showStatusIcon on inactive InputConnection
