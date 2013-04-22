@@ -97,6 +97,7 @@ public class DataStreamReader
 	private int packets = 0;
 	private int blocks = 0;
 	private boolean carpeta_creada = false;
+	private boolean delayed = false;
 	
 	private Handler receiverHandler;
 	private Handler secondaryReceiverHandler;
@@ -310,6 +311,7 @@ public class DataStreamReader
 	public void onDecryptionKeyObtained(int key, boolean result)
     {
 		Log.d("DataStreamReader", "onDecryptionKeyObtained");
+		Log.d("KEY ES", Integer.toString(key));
     	if (result)
     	{
     		decrypter.setKey(key);    		
@@ -439,6 +441,59 @@ public class DataStreamReader
 	        
         } // fi del if
         
+        
+        /*
+        // VALORS PARCIALS DE CADA PAQUET
+        for(int i=0;i<bytes;i++){
+        	int value = data[i];
+        	String valor = Integer.toString(value);
+        	Log.d("==ITER: Valor i data:", i+ " "+valor);
+        }
+        */
+        
+       
+        // PROVA SI CADA COP QUE PARSEJA UN PACKET ENTRA AQUI.
+        /*
+        int lon = data.length;
+        Log.d("parseBlock IF LON i BYTES", Integer.toString(lon) + " " + Integer.toString(bytes));
+        if(lon==bytes){
+        	Log.d("parseBlock lon==bytes", Integer.toString(lon));
+        }
+        */
+        
+        while (parsePacket (packet, data, bytes, pos)) 
+        { 
+        	try
+        	{
+        		if (!packet.get().encrypted || eventData.key != -1)
+        		{
+		    		if (packet.get().carID !=0 ) 
+		    		{
+		    			parseCarPacket (packet.get());
+		    		} 
+		    		else 
+		    		{	    	    			
+		    			parseSystemPacket(packet.get());
+		    		}    	    		
+        		}
+        	}
+        	catch(Exception e) {}
+    		    		    		
+        	if (packet.get().longData != null)
+        	for (int i = 0; i < packet.get().longData.length; ++i)
+        		packet.get().longData[i] = 0;
+        	
+    		pbuf.clear();
+    	}
+    }
+	
+	public void parseBlockDelayed(byte[] data, int bytes)
+    {
+		delayed = true;
+		blocks = blocks + 1;
+		Log.d("DataStreamReader", "parseBlock: " + blocks);
+        AtomicReference<Packet> packet = new AtomicReference<Packet>(new Packet());
+        AtomicReference<Integer> pos = new AtomicReference<Integer>(0);         
         
         /*
         // VALORS PARCIALS DE CADA PAQUET
@@ -697,8 +752,13 @@ public class DataStreamReader
 	    	            eventData.lapsCompleted = 0;
 	            	}
 	            		
-	            	
-	            	httpThread = HttpReader.attemptObtainDecryptionKey(eventNo, handler, this);	 	            		            	
+	            	Log.d("HTTP ATTEMPT L752", Integer.toString(number));
+	            	if(!delayed){
+	            		httpThread = HttpReader.attemptObtainDecryptionKey(eventNo, handler, this);
+	            	}
+	            	else{
+	            		onDecryptionKeyObtained(-1730044027, true);
+	            	}
 	            }
 	            catch (Exception e)
 	            {
@@ -730,10 +790,11 @@ public class DataStreamReader
 	            number = packet.longData[1] << 8 & 0xff00 | packet.longData[0] & 0xff;
 	            decrypter.resetDecryption();
 
-	             if (eventData.frame == 0)
+	             if (eventData.frame == 0 && delayed == false)
 	             {
 	                eventData.frame = number;
 	                httpThread = HttpReader.attemptObtainKeyFrame(number, handler, DataStreamReader.this);
+	                Log.d("HTTP ATTEMPT L789", Integer.toString(number));
 	             }
 	             else
 	                 eventData.frame = number;

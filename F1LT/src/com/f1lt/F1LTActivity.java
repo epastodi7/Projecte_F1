@@ -265,7 +265,6 @@ public class F1LTActivity extends FragmentActivity  implements DataStreamReceive
             	ltViewFragment.setPreferences(data);
 			
 			
-			
             boolean drawCarThumbnails = data.getBooleanExtra("DrawCarThumbnails", false);
 			boolean printShortNames = data.getBooleanExtra("PrintShortNames", false);
 			boolean showCommentaryLine = data.getBooleanExtra("ShowCommentaryLine", false);
@@ -311,7 +310,7 @@ public class F1LTActivity extends FragmentActivity  implements DataStreamReceive
     	Log.d("delayed", "FUNCIO DIFERIT");
     	int blocks, bytes = 0;
     	File sdCard = Environment.getExternalStorageDirectory();
-        File dir = new File (sdCard.getAbsolutePath() + "/PROVA/F1/MAL/RACE-CHECK-EFICIENT");
+        File dir = new File (sdCard.getAbsolutePath() + "/PROVA/F1/BAH/R-3");
         File[] llista = dir.listFiles();
         Log.d("NUM FITXERS CARPETA:", Integer.toString(llista.length));
         byte[] dades = new byte[65535];
@@ -349,7 +348,7 @@ public class F1LTActivity extends FragmentActivity  implements DataStreamReceive
 	            Log.e("ERROR", "Error opening Log.", e);
 	        }
 	        
-	        //dataStreamReader.parseBlock(dades, bytes);
+	        dataStreamReader.parseBlockDelayed(dades, bytes);
         }
 		
 	}
