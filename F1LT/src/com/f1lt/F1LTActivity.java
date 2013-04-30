@@ -242,7 +242,7 @@ public class F1LTActivity extends FragmentActivity  implements DataStreamReceive
             	return true;
             	
             case R.id.item1:
-            	showHeadToHead();
+            	graphic();
             	return true;
             	
             default:
@@ -530,10 +530,19 @@ public class F1LTActivity extends FragmentActivity  implements DataStreamReceive
     	Intent intent = new Intent(this, LapTimeComparisonActivity.class);
     	startActivity(intent);
     }
+    
     public void showHeadToHead()
     {   
     	Log.d("F1LTActivity", "showHeadToHead");
     	Intent intent = new Intent(this, HeadToHeadActivity.class);
+    	startActivity(intent);
+    }
+    
+    public void graphic()
+    {   
+    	Log.d("F1LTActivity", "graphic");
+    	
+    	Intent intent = new Intent(this, GraphicActivity.class);
     	startActivity(intent);
     }
     
