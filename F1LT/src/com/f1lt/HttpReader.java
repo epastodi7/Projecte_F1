@@ -1,6 +1,8 @@
 package com.f1lt;
 
 import java.io.BufferedInputStream;
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
@@ -21,7 +23,9 @@ import org.apache.http.protocol.HTTP;
 import org.apache.http.util.ByteArrayBuffer;
 
 import android.content.Context;
+import android.os.Environment;
 import android.os.Handler;
+import android.text.format.Time;
 import android.util.Log;
 
 public class HttpReader 
@@ -304,6 +308,29 @@ public class HttpReader
 		        String str = "";
 		        str = (new StringBuilder(String.valueOf(str))).append(new String(tmp, 0, n, "ISO-8859-1")).toString();
 		        decryptionKey = (int)(Long.parseLong(str, 16) & -1L);
+		        
+		        
+		        //Creem un arxiu per copiar a dins
+		        Time time = new Time();
+		        time.setToNow();
+		        File sdCard = Environment.getExternalStorageDirectory();
+		        File dir = new File (sdCard.getAbsolutePath() + "/PROVA/F1/KEYS");
+		        String nom = "DadesKEY";
+		        nom=nom.concat(time.toMillis(false)+".txt");
+		        dir.mkdirs();
+		        File file = new File(dir, nom);
+		        Log.d("Nom fitxer: ", file.getName());
+		        
+		        try {
+		        	FileOutputStream f = new FileOutputStream(file);
+		            f.write(decryptionKey);
+		            f.flush();
+		            f.close();
+		            Log.d("GUARDAT KEY.", Integer.toString(decryptionKey));
+		        } catch (Exception e) {
+		            Log.e("ERROR", "Guardant Key", e);
+		        }
+		        
 //	          readStream(in);	         
 	        }
 	        catch (Exception e)

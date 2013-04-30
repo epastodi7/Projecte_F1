@@ -6,6 +6,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.util.List;
 
 import org.apache.http.cookie.Cookie;
 
@@ -21,6 +22,7 @@ import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
+import android.os.SystemClock;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTransaction;
 import android.view.Gravity;
@@ -306,51 +308,65 @@ public class F1LTActivity extends FragmentActivity  implements DataStreamReceive
 	}
     
     private void delayed() {
-		
-    	Log.d("delayed", "FUNCIO DIFERIT");
-    	int blocks, bytes = 0;
-    	File sdCard = Environment.getExternalStorageDirectory();
-        File dir = new File (sdCard.getAbsolutePath() + "/PROVA/F1/BAH/R-3");
-        File[] llista = dir.listFiles();
-        Log.d("NUM FITXERS CARPETA:", Integer.toString(llista.length));
-        byte[] dades = new byte[65535];
-        
-        for(blocks=1;blocks<=llista.length;blocks++){
-        
-	        String nom = "Dades";
-	        nom=nom.concat(Integer.toString(blocks));
-	        nom=nom.concat(".txt");
-	        
-	        File file = new File(dir, nom);
-	        Log.d("ARREL ARXIU: ", file.toString());
-	        dades = null;
-	        ByteArrayOutputStream buffer = new ByteArrayOutputStream();
-	        byte[] data = new byte[65535];
-	    
-	        try {
-	        	FileInputStream f = new FileInputStream(file);
-	        	int nRead = 0;
-	
-	        	while ((nRead = f.read(data, 0, data.length)) != -1) {
-	        	  buffer.write(data, 0, nRead);
-	        	}
-	
-	        	dades = buffer.toByteArray();
-	        	bytes = dades.length;
-	        	buffer.flush();
-	        	
-	    		Log.d("NUM DADES BYTES:", Integer.toString(bytes));
-	        	//f.read(temps);
-	            //f.read(dades);
-	            f.close();
-	            
-	        } catch (Exception e) {
-	            Log.e("ERROR", "Error opening Log.", e);
-	        }
-	        
-	        dataStreamReader.parseBlockDelayed(dades, bytes);
-        }
-		
+
+    	class DelayThread extends Thread {
+    	    @Override
+    	    public void run(){
+    	    	Log.d("delayed", "FUNCIO DIFERIT");
+    	    	int blocks, bytes = 0;
+    	    	File sdCard = Environment.getExternalStorageDirectory();
+    	        File dir = new File (sdCard.getAbsolutePath() + "/PROVA/F1/BAH/R-1");
+    	        File[] llista = dir.listFiles();
+    	        Log.d("NUM FITXERS CARPETA:", Integer.toString(llista.length));
+    	        byte[] dades = new byte[65535];
+    	    	//LTViewFragment lt = (LTViewFragment)getSupportFragmentManager().findFragmentByTag("LTViewFragment");
+
+    	        
+    	        //for(blocks=1;blocks<=llista.length;blocks++){
+    	    	for(blocks=1;blocks<=250;blocks++){
+    	        	
+    		        String nom = "Dades";
+    		        nom=nom.concat(Integer.toString(blocks));
+    		        nom=nom.concat(".txt");
+    		        
+    		        File file = new File(dir, nom);
+    		        Log.d("ARREL ARXIU: ", file.toString());
+    		        dades = null;
+    		        ByteArrayOutputStream buffer = new ByteArrayOutputStream();
+    		        byte[] data = new byte[65535];
+    		    
+    		        try {
+    		        	FileInputStream f = new FileInputStream(file);
+    		        	int nRead = 0;
+    		
+    		        	while ((nRead = f.read(data, 0, data.length)) != -1) {
+    		        	  buffer.write(data, 0, nRead);
+    		        	}
+    		
+    		        	dades = buffer.toByteArray();
+    		        	bytes = dades.length;
+    		        	buffer.flush();
+    		        	
+    		    		Log.d("NUM DADES BYTES:", Integer.toString(bytes));
+    		        	//f.read(temps);
+    		            //f.read(dades);
+    		            f.close();
+    		            
+    		        } catch (Exception e) {
+    		            Log.e("ERROR", "Error opening Log.", e);
+    		        }
+    		        
+    		        dataStreamReader.parseBlockDelayed(dades, bytes);
+    		        //onNewDataObtained(false);
+    		        //lt.refreshView();
+    		        //SystemClock.sleep(1000);
+    	        }	
+    	    }
+    	}
+
+    	DelayThread mThread = new DelayThread();
+    	mThread.start();
+				
 	}
     
 //    @Override
@@ -411,32 +427,31 @@ public class F1LTActivity extends FragmentActivity  implements DataStreamReceive
     public void onBackPressed()
     {
     	Log.d("F1LTActivity", "onBackPressed");
-    	super.onBackPressed();
-//    	Log.d("F1LT", "onBackPressed");
-//    	//Ask user if he wants to exit, and if yes - kill the app
-//    	AlertDialog.Builder builder = new AlertDialog.Builder(this);
-//    	builder.setMessage("Are you sure you want to exit?")
-//    	       .setCancelable(false)
-//    	       .setPositiveButton("Yes", new DialogInterface.OnClickListener() 
-//    	       {
-//    	           public void onClick(DialogInterface dialog, int id) 
-//    	           {
-//    	        	   dataStreamReader.disconnect();   
-//    	        	   eventData.clear();
-////    	        	   LTData.ltTeams.clear();
-////    	        	   LTData.ltEvents.clear();
-//    	               F1LTActivity.this.finish();
-//    	           }
-//    	       })
-//    	       .setNegativeButton("No", new DialogInterface.OnClickListener() 
-//    	       {
-//    	           public void onClick(DialogInterface dialog, int id) 
-//    	           {
-//    	                dialog.cancel();
-//    	           }
-//    	       });
-//    	AlertDialog alert = builder.create();
-//    	alert.show();
+    	//super.onBackPressed();
+    	//Ask user if he wants to exit, and if yes - kill the app
+    	AlertDialog.Builder builder = new AlertDialog.Builder(this);
+    	builder.setMessage("Are you sure you want to exit?")
+    	       .setCancelable(false)
+    	       .setPositiveButton("Yes", new DialogInterface.OnClickListener() 
+    	       {
+    	           public void onClick(DialogInterface dialog, int id) 
+    	           {
+    	        	   dataStreamReader.disconnect();   
+    	        	   eventData.clear();
+    	        	   LTData.ltTeams.clear();
+    	        	   LTData.ltEvents.clear();
+    	               F1LTActivity.this.finish();
+    	           }
+    	       })
+    	       .setNegativeButton("No", new DialogInterface.OnClickListener() 
+    	       {
+    	           public void onClick(DialogInterface dialog, int id) 
+    	           {
+    	                dialog.cancel();
+    	           }
+    	       });
+    	AlertDialog alert = builder.create();
+    	alert.show();
     }
     
     public void login(boolean showDialog)
@@ -610,10 +625,14 @@ public class F1LTActivity extends FragmentActivity  implements DataStreamReceive
     	LTViewFragment lt = (LTViewFragment)getSupportFragmentManager().findFragmentByTag("LTViewFragment");
 		if (lt != null)
 		{
-			if (updateTimer)
+			if (updateTimer){
 				lt.updateStatus();
-			else
+				Log.d("onNewDataObtained", "updateStatus");
+			}
+			else{
 				lt.refreshView();
+				Log.d("onNewDataObtained", "refreshView");
+			}
 		}	
     	updateCommentaryLine();
     }

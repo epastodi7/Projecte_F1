@@ -417,6 +417,7 @@ public class DataStreamReader
 	        nom=nom.concat(".txt");
 	        if(carpeta_creada==false){
 		        dir.mkdirs();
+		        carpeta_creada=true;
 	        }
 	        File file = new File(dir, nom);
 	        Log.d("ARREL ARXIU: ", file.toString());
