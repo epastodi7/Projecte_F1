@@ -17,6 +17,7 @@
              android:layout_height="fill_parent"
              android:orientation="vertical" >
          </FrameLayout>
+         
      </LinearLayout>
 
      <TextView

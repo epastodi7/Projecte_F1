@@ -241,6 +241,10 @@ public class F1LTActivity extends FragmentActivity  implements DataStreamReceive
             	showHeadToHead();
             	return true;
             	
+            case R.id.item1:
+            	showHeadToHead();
+            	return true;
+            	
             default:
                 return super.onOptionsItemSelected(item);
         }

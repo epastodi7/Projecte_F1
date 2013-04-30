@@ -7,6 +7,8 @@
 		<item android:id="@+id/sr" android:title="@string/speed_records" android:showAsAction="ifRoom" android:icon="@drawable/ic_menu_sr"></item>
         <item android:id="@+id/h2h" android:title="@string/head_to_head" android:showAsAction="ifRoom" android:icon="@drawable/ic_menu_h2h"></item>
         <item android:id="@+id/ltc" android:title="@string/lap_time_comparison" android:showAsAction="ifRoom" android:icon="@drawable/ic_menu_ltc"></item>
-        <item android:id="@+id/fps" android:title="@string/fastest_pit_stops" android:showAsAction="ifRoom" android:icon="@drawable/ic_menu_fps"></item>                
+        <item android:id="@+id/fps" android:title="@string/fastest_pit_stops" android:showAsAction="ifRoom" android:icon="@drawable/ic_menu_fps"></item>
+        <item android:id="@+id/item1" android:title="@string/pos_history"></item>
+                        
         
     </menu>
