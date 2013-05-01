@@ -4,11 +4,20 @@ import java.text.FieldPosition;
 import java.text.Format;
 import java.text.ParsePosition;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.graphics.Color;
+import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
+import android.os.Handler;
+import android.util.Log;
+import android.view.Gravity;
 import android.view.Menu;
+import android.widget.TableLayout;
+import android.widget.TableRow;
 
 import com.androidplot.series.XYSeries;
 import com.androidplot.xy.LineAndPointFormatter;
@@ -17,11 +26,16 @@ import com.androidplot.xy.XYPlot;
 import com.androidplot.xy.XYStepMode;
 
 import android.app.Activity;
+import android.content.DialogInterface;
 import android.os.Bundle;
 
-public class GraphicActivity extends Activity {
+public class GraphicActivity extends Activity implements DataStreamReceiver{
 
- 
+		private boolean alertDialogShown = false;
+		DataStreamReader dataStreamReader;
+		private Handler handler = new Handler();
+		private EventData eventData = EventData.getInstance();
+	
 	    private XYPlot mySimpleXYPlot;
 	 
 	    @Override
@@ -30,13 +44,16 @@ public class GraphicActivity extends Activity {
 	 
 	        super.onCreate(savedInstanceState);
 	        setContentView(R.layout.graphic);
-	 
+	        //double temp = eventData.airTemp;
+	        //Log.d("Temperatura: ", Double.toString(temp));
+	        info();
+	        
 	        // initialize our XYPlot reference:
 	        mySimpleXYPlot = (XYPlot) findViewById(R.id.mySimpleXYPlot);
 	 
 	        // Create a couple arrays of y-values to plot:
-	        Number[] series1Numbers = {1, 8, 5, 2, 7, 4};
-	        Number[] series2Numbers = {4, 6, 3, 8, 2, 10};
+	        Integer[] series1Numbers = {1, 8, 5, 2, 7, 4};
+	        Integer[] series2Numbers = {4, 6, 3, 8, 2, 10};
 	 
 	        // Turn the above arrays into XYSeries':
 	        XYSeries series1 = new SimpleXYSeries(
@@ -67,4 +84,90 @@ public class GraphicActivity extends Activity {
 	        // To get rid of them call disableAllMarkup():
 	        mySimpleXYPlot.disableAllMarkup();
 	    }
+	    
+		private void info() {
+			DriverData driverData = eventData.driversData.get(2);
+			List<Integer> pos_history = driverData.posHistory;
+			int size = pos_history.size();
+			Log.d("NOM PILOT: ",driverData.driver);
+			Log.d("POS PILOT: ",Integer.toString(driverData.pos));
+			Log.d("VOLTES GUARDADES PILOT: ",Integer.toString(driverData.lapData.size()));
+			Log.d("SIZE POSICIONS: ", Integer.toString(size));
+		}
+
+		//@Override
+		public void onStart()
+		{
+			super.onStart();
+					
+			dataStreamReader = DataStreamReader.getInstance();
+			dataStreamReader.setSecondaryDataStreamReceiver(handler, this);	  
+			
+		}
+
+		//@Override
+		public void onNewDataObtained(boolean updateTimer)
+		{
+			//if (!updateTimer)
+				//updateView();
+		}
+		
+		//@Override
+		public void onPause()
+		{
+			dataStreamReader.removeSecondaryDataStreamReceiver();
+			super.onPause();
+		}
+
+		//@Override
+		public void onShowMessageBoard(String msg, boolean rem) {
+			// TODO Auto-generated method stub
+			
+		}
+
+		//@Override
+		public void onDataStreamError(int code)
+		{
+			if (alertDialogShown)
+				return;
+			
+			String msg = "Could not connect to the LT server"; 
+			dataStreamReader.disconnect();
+			
+	    	if (code == 1)
+	    		msg = "Lost connection to the LT server.";
+	    	
+	    	AlertDialog.Builder builder = new AlertDialog.Builder(this);
+	    	builder.setMessage(msg)
+	    	       .setCancelable(false)
+	    	       .setPositiveButton("Retry", new DialogInterface.OnClickListener() 
+	    	       {
+	    	           public void onClick(DialogInterface dialog, int id) 
+	    	           {    
+	    	        	   dialog.cancel();
+	    	        	   dataStreamReader.reconnect();
+	    	        	   alertDialogShown = false;
+//	    	        	   	
+//	    	        	   
+//	    	        	   	Intent intent = new Intent();
+//							intent.putExtra("Request login", true);
+//													
+//							setResult(RESULT_OK, intent);
+//							finish();
+	    	           }
+	    	       })
+	    	       .setNegativeButton("Close", new DialogInterface.OnClickListener() 
+	    	       {
+	    	           public void onClick(DialogInterface dialog, int id) 
+	    	           {
+	    	        	   dialog.cancel();
+	    	        	   alertDialogShown = false;
+	    	           }
+	    	       });
+	    	AlertDialog alert = builder.create();
+	    	alert.show();
+	    	alertDialogShown = true;
+		}
+		
+		
 }

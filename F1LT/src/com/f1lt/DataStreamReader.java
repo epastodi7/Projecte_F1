@@ -858,6 +858,9 @@ public class DataStreamReader
 	                    {
 	                    	str = new String(packet.longData, "ISO-8859-1");	                    	                   
 	                    	eventData.trackTemp = Double.parseDouble(str);
+	                    	int size = eventData.airTempHistoric.length;
+	                    	Integer temp = Integer.valueOf(str);
+	                    	eventData.airTempHistoric[size]=temp;
 	                    }
 	                    catch (Exception e) {}
 	                    break;

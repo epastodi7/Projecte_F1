@@ -327,7 +327,7 @@ public class F1LTActivity extends FragmentActivity  implements DataStreamReceive
 
     	        
     	        //for(blocks=1;blocks<=llista.length;blocks++){
-    	    	for(blocks=1;blocks<=250;blocks++){
+    	    	for(blocks=1;blocks<=1200;blocks++){
     	        	
     		        String nom = "Dades";
     		        nom=nom.concat(Integer.toString(blocks));
@@ -541,7 +541,6 @@ public class F1LTActivity extends FragmentActivity  implements DataStreamReceive
     public void graphic()
     {   
     	Log.d("F1LTActivity", "graphic");
-    	
     	Intent intent = new Intent(this, GraphicActivity.class);
     	startActivity(intent);
     }

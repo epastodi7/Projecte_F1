@@ -25,8 +25,9 @@ public class EventData
 
     double airTemp = 0, humidity = 0;
     double windSpeed = 0, windDirection = 0;
-
     double pressure = 0, trackTemp = 0;
+    
+    Integer[] airTempHistoric;
 
     boolean sessionStarted = false;
 
