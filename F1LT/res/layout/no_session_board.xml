@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:android1="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android1:background="@drawable/carbon" >
+
+    <LinearLayout
+        android1:layout_width="match_parent"
+        android1:layout_height="wrap_content"
+        android1:layout_margin="10dp"
+        android1:layout_weight="0.08"
+        android1:background="@drawable/bg_big"
+        android1:orientation="vertical" >
+        
+    <TextView
+        android1:id="@+id/textView"
+        android1:layout_width="fill_parent"
+        android1:layout_height="68dp"
+        android1:layout_weight="0.08"
+        android1:gravity="center"
+        android1:text="@string/session_msg1"
+        android1:textAppearance="?android:attr/textAppearanceLarge"
+        android1:textColor="@color/red" />
+
+	<TextView
+	    android1:id="@+id/textView2"
+	    android1:layout_width="fill_parent"
+	    android1:layout_height="wrap_content"
+	    android1:layout_weight="0.15"
+	    android1:gravity="center|center_horizontal"
+	    android1:text="@string/session_msg2"
+	    android1:textAppearance="?android:attr/textAppearanceMedium"
+	    android1:textColor="@color/yellow" />
+
+        <TextView
+            android1:id="@+id/msgView"
+            android1:layout_width="fill_parent"
+            android1:layout_height="wrap_content"
+            android1:layout_weight="0.17"
+            android1:gravity="center"
+            android1:text="Large Text"
+            android1:textAppearance="?android:attr/textAppearanceLarge"
+            android1:textColor="@color/green" />
+        
+    </LinearLayout>
+
+        
+</LinearLayout>
