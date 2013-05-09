@@ -491,6 +491,7 @@ public class DataStreamReader
 	public void parseBlockDelayed(byte[] data, int bytes)
     {
 		delayed = true;
+		//sessionTimer.decrementTime();
 		blocks = blocks + 1;
 		Log.d("DataStreamReader", "parseBlock: " + blocks);
         AtomicReference<Packet> packet = new AtomicReference<Packet>(new Packet());
@@ -693,7 +694,7 @@ public class DataStreamReader
 	
 	public void parseSystemPacket(Packet packet)
 	{
-		Log.d("DataStreamReader", "parseSystemPacket");
+		Log.d("parseSystemPacket", eventData.remainingTime);
 		try
 		{
 //			if (packet.type != LTData.SystemPacket.SYS_COMMENTARY && packet.type != LTData.SystemPacket.SYS_TIMESTAMP)
@@ -720,6 +721,7 @@ public class DataStreamReader
 	            {
 	            	eventData.eventInfo = LTData.getCurrentEvent();
 	            	eventData.qualiPeriod = 0;
+	            	eventData.eventInfo.laps = 57;
 	            	
 	            	String eventNo = (new String(copyPacket.longData, 1, copyPacket.length-1, "ISO-8859-1"));	            		            	
 	            	
@@ -1074,7 +1076,7 @@ public class DataStreamReader
 	
 	public void parseCarPacket(Packet packet)
 	{    
-		Log.d("DataStreamReader", "parseCarPacket");
+		Log.d("parseCarPacket", eventData.remainingTime);
 		if (noSession)
 		{
 //			receiverHandler.post(new Runnable() 
@@ -1126,7 +1128,9 @@ public class DataStreamReader
 	    Log.d("CAR=" + packet.carID, " CAR TYPE=" + packet.type + " CAR DATA= " + packet.data + " CAR LEN= " + packet.length + " LONG DATA= " + longData);// + new String(packet.longData, 0, packet.length, "ISO-8859-1") + " " + eventData.driversData.size());
 	    
 	    //return;
-	    DriverData dd = eventData.driversData.get(packet.carID-1);	    
+	    DriverData dd = eventData.driversData.get(packet.carID-1);
+	    int size_dd = dd.lapData.size();
+	    Log.d("MIDA VOLTES-CARPACKET ABANS: ",Integer.toString(size_dd));
 	    int lap = 0;
 	    int ibuf = 0;
 	    PitData pd = new PitData();
@@ -1375,6 +1379,7 @@ public class DataStreamReader
 	        case LTData.RacePacket.RACE_LAP_TIME:
 	        //case LTData::PRACTICE_SECTOR_1:
 	        //case LTData::QUALI_PERIOD_3:
+	        	
 	            switch (eventData.eventType)
 	            {
 	                case LTData.EventType.RACE_EVENT:
@@ -1383,7 +1388,7 @@ public class DataStreamReader
 	                    	try
 	                    	{
 		                    	String str = new String(longData);
-		                    	
+		                    	Log.d("RACE_LAP_TIME", str);
 		                        dd.lastLap.lapTime.setTime(str);		                        		                       
 	
 		                        if (!dd.lapData.isEmpty() && !str.equals("OUT"))
@@ -1396,6 +1401,9 @@ public class DataStreamReader
 		                            dd.lastLap.numLap++;
 	
 		                        dd.addLap(eventData);
+		                        size_dd = dd.lapData.size();
+		                	    Log.d("MIDA VOLTES-CARPACKET DESPRES: ",Integer.toString(size_dd));
+		                        
 	                    	} catch (Exception e) { }
 	                    }
 	                    dd.colorData[LTData.RacePacket.RACE_LAP_TIME] = packet.data;

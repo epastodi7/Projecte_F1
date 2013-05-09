@@ -45,7 +45,7 @@ public class F1LTActivity extends FragmentActivity  implements DataStreamReceive
 	private Thread authThread;
     //private final Handler handler = new Handler();
 	
-    Handler handler = new Handler()
+    private final Handler handler = new Handler()
     {
         public void handleMessage(Message msg)
         {
@@ -53,10 +53,10 @@ public class F1LTActivity extends FragmentActivity  implements DataStreamReceive
         	int num_dades=0;
         	Bundle bundle = msg.getData();
         	dades = bundle.getByteArray("Data");
-        	Log.d("Handle Message", dades.toString());
+        	//Log.d("Handle Message", dades.toString());
         	num_dades = dades.length;
         	
-        	Log.d("Handle Message", Integer.toString(num_dades));
+        	//Log.d("Handle Message", Integer.toString(num_dades));
         	
         	dataStreamReader.parseBlockDelayed(dades, num_dades);
         	onNewDataObtained(false);
@@ -331,10 +331,10 @@ public class F1LTActivity extends FragmentActivity  implements DataStreamReceive
 				
 	}
     
-    private void delayed(final Handler handler) {
+    private void delayed() {
     	
-    	
-    	class DelayThread extends Thread {
+    	Thread DelayThread = new Thread(){
+    	//class DelayThread extends Thread {
     	    
     		@Override
     	    public void run(){
@@ -347,16 +347,9 @@ public class F1LTActivity extends FragmentActivity  implements DataStreamReceive
     	        byte[] dades = new byte[65535];
     	    	//LTViewFragment lt = (LTViewFragment)getSupportFragmentManager().findFragmentByTag("LTViewFragment");
 
-    	        
-    	        //for(blocks=1;blocks<=llista.length;blocks++){
-	        	for(blocks=1;blocks<=200;blocks++){
-    	        	try {
-						DelayThread.sleep(1000);
-					} catch (InterruptedException e1) {
-						// TODO Auto-generated catch block
-						e1.printStackTrace();
-					}
-    	    	
+    	        eventData.sessionStarted=true;
+    	        for(blocks=1;blocks<=llista.length;blocks++){
+	        	//for(blocks=1;blocks<=200;blocks++){   	    	
     	        	
     		        String nom = "Dades";
     		        nom=nom.concat(Integer.toString(blocks));
@@ -389,7 +382,7 @@ public class F1LTActivity extends FragmentActivity  implements DataStreamReceive
     		            Log.e("ERROR", "Error obrint fitxer", e);
     		        }
     		        try{
-    		        	
+    		        	Thread.sleep(100);
     		        	//dataStreamReader.parseBlockDelayed(dades, bytes);
     		        	
     		        	Message msg = new Message();
@@ -404,12 +397,13 @@ public class F1LTActivity extends FragmentActivity  implements DataStreamReceive
     		        }
     		        
 
-    	        }	
+    	        }
+	        	//eventData.sessionStarted=false;
     	    }
-    	}
+    	};
 
-    	DelayThread mThread = new DelayThread();
-    	mThread.start();
+    	//DelayThread mThread = new DelayThread();
+    	DelayThread.start();
 				
 	}
     
@@ -622,7 +616,7 @@ public class F1LTActivity extends FragmentActivity  implements DataStreamReceive
         	            delayed = true;
         	            Log.d("BOTO RESULTAT", "OK TIO");
         	        	if(delayed){
-        	        		delayed(handler);
+        	        		delayed();
         	        	}
         	            break;
 

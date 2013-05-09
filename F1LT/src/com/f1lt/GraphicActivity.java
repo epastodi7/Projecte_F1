@@ -35,7 +35,13 @@ public class GraphicActivity extends Activity implements DataStreamReceiver{
 		DataStreamReader dataStreamReader;
 		private Handler handler = new Handler();
 		private EventData eventData = EventData.getInstance();
-	
+		DriverData driverData1 = eventData.driversData.get(2);
+		DriverData driverData2 = eventData.driversData.get(1);
+		List<Integer> pos_history1 = driverData1.posHistory;
+		List<Integer> pos_history2 = driverData2.posHistory;
+		Integer[] llista1, llista2;
+		
+		
 	    private XYPlot mySimpleXYPlot;
 	 
 	    @Override
@@ -46,14 +52,15 @@ public class GraphicActivity extends Activity implements DataStreamReceiver{
 	        setContentView(R.layout.graphic);
 	        //double temp = eventData.airTemp;
 	        //Log.d("Temperatura: ", Double.toString(temp));
+	        convert();
 	        info();
 	        
 	        // initialize our XYPlot reference:
 	        mySimpleXYPlot = (XYPlot) findViewById(R.id.mySimpleXYPlot);
 	 
 	        // Create a couple arrays of y-values to plot:
-	        Integer[] series1Numbers = {1, 8, 5, 2, 7, 4};
-	        Integer[] series2Numbers = {4, 6, 3, 8, 2, 10};
+	        Integer[] series1Numbers = llista1;
+	        Integer[] series2Numbers = llista2;
 	 
 	        // Turn the above arrays into XYSeries':
 	        XYSeries series1 = new SimpleXYSeries(
@@ -85,14 +92,30 @@ public class GraphicActivity extends Activity implements DataStreamReceiver{
 	        mySimpleXYPlot.disableAllMarkup();
 	    }
 	    
+		private void convert() {
+			
+			llista1=toIntArray(pos_history1);
+			llista2=toIntArray(pos_history2);
+			
+		}
+		
+		private Integer[] toIntArray(List<Integer> list){
+			  Integer[] ret = new Integer[list.size()];
+			  for(int i = 0;i < ret.length;i++)
+			    ret[i] = list.get(i);
+			  return ret;
+			}
+
 		private void info() {
 			DriverData driverData = eventData.driversData.get(2);
 			List<Integer> pos_history = driverData.posHistory;
 			int size = pos_history.size();
+			int event_info = eventData.eventInfo.laps;
 			Log.d("NOM PILOT: ",driverData.driver);
 			Log.d("POS PILOT: ",Integer.toString(driverData.pos));
 			Log.d("VOLTES GUARDADES PILOT: ",Integer.toString(driverData.lapData.size()));
 			Log.d("SIZE POSICIONS: ", Integer.toString(size));
+			Log.d("EVENT INFO / LAPS: ", Integer.toString(event_info));
 		}
 
 		//@Override
