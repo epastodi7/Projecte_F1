@@ -98,6 +98,7 @@ public class DataStreamReader
 	private int blocks = 0;
 	private boolean carpeta_creada = false;
 	private boolean delayed = false;
+	private String RUTA = "/PROVA/F1/BAR/P1";
 	
 	private Handler receiverHandler;
 	private Handler secondaryReceiverHandler;
@@ -411,7 +412,7 @@ public class DataStreamReader
 	        
 	        //Creem un arxiu per copiar a dins
 	        File sdCard = Environment.getExternalStorageDirectory();
-	        File dir = new File (sdCard.getAbsolutePath() + "/PROVA/F1/BAH/R-CHECK");
+	        File dir = new File (sdCard.getAbsolutePath() + RUTA);
 	        String nom = "Dades";
 	        nom=nom.concat(Integer.toString(blocks));
 	        nom=nom.concat(".txt");
@@ -721,7 +722,7 @@ public class DataStreamReader
 	            {
 	            	eventData.eventInfo = LTData.getCurrentEvent();
 	            	eventData.qualiPeriod = 0;
-	            	eventData.eventInfo.laps = 57;
+	            	//eventData.eventInfo.laps = 57;
 	            	
 	            	String eventNo = (new String(copyPacket.longData, 1, copyPacket.length-1, "ISO-8859-1"));	            		            	
 	            	
@@ -1779,5 +1780,10 @@ public class DataStreamReader
 	    
 //	    if (emitSignal)
 //	        emit driverDataChanged(packet.carID);
+	}
+
+	public void setKeyDelayed(int key) {
+		decrypter.setKey(key);
+		
 	}
 }

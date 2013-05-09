@@ -53,10 +53,10 @@ public class F1LTActivity extends FragmentActivity  implements DataStreamReceive
         	int num_dades=0;
         	Bundle bundle = msg.getData();
         	dades = bundle.getByteArray("Data");
-        	//Log.d("Handle Message", dades.toString());
+        	Log.d("Handle Message", dades.toString());
         	num_dades = dades.length;
         	
-        	//Log.d("Handle Message", Integer.toString(num_dades));
+        	Log.d("Handle Message", Integer.toString(num_dades));
         	
         	dataStreamReader.parseBlockDelayed(dades, num_dades);
         	onNewDataObtained(false);
@@ -75,6 +75,8 @@ public class F1LTActivity extends FragmentActivity  implements DataStreamReceive
     private boolean messageBoardShown = false;
     private boolean showCommentaryLine = true;
     private boolean delayed;
+    private String RUTA_SAVE = "/PROVA/F1/BAR/P1";
+    private String RUTA_LOAD = "/PROVA/F1/BAR/P1";
     
     private final String PREFS_NAME = "F1LTPrefs";    
     private final int GET_LOGIN = 1;
@@ -333,6 +335,8 @@ public class F1LTActivity extends FragmentActivity  implements DataStreamReceive
     
     private void delayed() {
     	
+    	loadKEYFrame();
+    	
     	Thread DelayThread = new Thread(){
     	//class DelayThread extends Thread {
     	    
@@ -341,14 +345,15 @@ public class F1LTActivity extends FragmentActivity  implements DataStreamReceive
     	    	Log.d("delayed", "FUNCIO DIFERIT");
     	    	int blocks, bytes = 0;
     	    	File sdCard = Environment.getExternalStorageDirectory();
-    	        File dir = new File (sdCard.getAbsolutePath() + "/PROVA/F1/BAH/R-2");
+    	        File dir = new File (sdCard.getAbsolutePath() + RUTA_LOAD);
     	        File[] llista = dir.listFiles();
     	        Log.d("NUM FITXERS CARPETA:", Integer.toString(llista.length));
     	        byte[] dades = new byte[65535];
     	    	//LTViewFragment lt = (LTViewFragment)getSupportFragmentManager().findFragmentByTag("LTViewFragment");
 
     	        eventData.sessionStarted=true;
-    	        for(blocks=1;blocks<=llista.length;blocks++){
+    	        // Arribem fins un arxiu abans perque hi ha el DadesKEYS
+    	        for(blocks=1;blocks<=(llista.length-1);blocks++){
 	        	//for(blocks=1;blocks<=200;blocks++){   	    	
     	        	
     		        String nom = "Dades";
@@ -379,7 +384,7 @@ public class F1LTActivity extends FragmentActivity  implements DataStreamReceive
     		            f.close();
     		            
     		        } catch (Exception e) {
-    		            Log.e("ERROR", "Error obrint fitxer", e);
+    		            Log.d("ERROR", "Error obrint fitxer");
     		        }
     		        try{
     		        	Thread.sleep(100);
@@ -461,7 +466,45 @@ public class F1LTActivity extends FragmentActivity  implements DataStreamReceive
 //        }               
 //    }
     
-    @Override
+    private void loadKEYFrame() {
+    	File sdCard = Environment.getExternalStorageDirectory();
+        File dir = new File (sdCard.getAbsolutePath() + RUTA_LOAD);
+        
+        String nom = "DadesKEY.txt";
+        
+        File file = new File(dir, nom);
+        Log.d("ARREL ARXIU KEY: ", file.toString());
+        byte[] dades = new byte[100];
+        ByteArrayOutputStream buffer = new ByteArrayOutputStream();
+        byte[] data = new byte[65535];
+    
+        try {
+        	FileInputStream f = new FileInputStream(file);
+        	int nRead = 0;
+
+        	while ((nRead = f.read(data, 0, data.length)) != -1) {
+        	  buffer.write(data, 0, nRead);
+        	}
+        	
+        	dades = buffer.toByteArray();
+        	String text = new String(dades, "UTF8");
+        	Log.d("NUM KEY FRAME PRE VALUE OF:", text);
+        	
+        	int key = Integer.valueOf(text);
+        	
+    		Log.d("NUM KEY FRAME:", Integer.toString(key));
+    		//dataStreamReader.onDecryptionKeyObtained(key, true);
+        	//f.read(temps);
+            //f.read(dades);
+            f.close();
+            
+        } catch (Exception e) {
+            Log.e("ERROR", "Error obrint fitxer", e);
+        }
+		
+	}
+
+	@Override
     public void onBackPressed()
     {
     	Log.d("F1LTActivity", "onBackPressed");
@@ -474,7 +517,8 @@ public class F1LTActivity extends FragmentActivity  implements DataStreamReceive
     	       {
     	           public void onClick(DialogInterface dialog, int id) 
     	           {
-    	        	   dataStreamReader.disconnect();   
+    	        	   dataStreamReader.disconnect();
+    	        	   //dataStreamReader.borrablocks();
     	        	   eventData.clear();
     	        	   LTData.ltTeams.clear();
     	        	   LTData.ltEvents.clear();

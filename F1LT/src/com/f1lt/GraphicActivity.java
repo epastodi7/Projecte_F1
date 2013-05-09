@@ -66,10 +66,10 @@ public class GraphicActivity extends Activity implements DataStreamReceiver{
 	        XYSeries series1 = new SimpleXYSeries(
 	                Arrays.asList(series1Numbers),          // SimpleXYSeries takes a List so turn our array into a List
 	                SimpleXYSeries.ArrayFormat.Y_VALS_ONLY, // Y_VALS_ONLY means use the element index as the x value
-	                "Series1");                             // Set the display title of the series
+	                "Pilot1");                             // Set the display title of the series
 	 
 	        // same as above
-	        XYSeries series2 = new SimpleXYSeries(Arrays.asList(series2Numbers), SimpleXYSeries.ArrayFormat.Y_VALS_ONLY, "Series2");
+	        XYSeries series2 = new SimpleXYSeries(Arrays.asList(series2Numbers), SimpleXYSeries.ArrayFormat.Y_VALS_ONLY, "Pilot2");
 	 
 	        // Create a formatter to use for drawing a series using LineAndPointRenderer:
 	        LineAndPointFormatter series1Format = new LineAndPointFormatter(
@@ -86,6 +86,8 @@ public class GraphicActivity extends Activity implements DataStreamReceiver{
 	 
 	        // reduce the number of range labels
 	        mySimpleXYPlot.setTicksPerRangeLabel(3);
+	        mySimpleXYPlot.setTitle("Position Chart");
+	        //mySimpleXYPlot.
 	 
 	        // by default, AndroidPlot displays developer guides to aid in laying out your plot.
 	        // To get rid of them call disableAllMarkup():

@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -36,6 +37,7 @@ public class HttpReader
 	private static String host;
 	private static String loginHost;
 	private static int decryptionKey = 0;
+	private static String RUTA = "/PROVA/F1/BAR/P1";
 	
 	public HttpReader()
 	{	
@@ -311,22 +313,28 @@ public class HttpReader
 		        
 		        
 		        //Creem un arxiu per copiar a dins
+		        /*
 		        Time time = new Time();
 		        time.setToNow();
+		        */
 		        File sdCard = Environment.getExternalStorageDirectory();
-		        File dir = new File (sdCard.getAbsolutePath() + "/PROVA/F1/KEYS");
-		        String nom = "DadesKEY";
-		        nom=nom.concat(time.toMillis(false)+".txt");
+		        File dir = new File (sdCard.getAbsolutePath() + RUTA);
+		        String nom = "DadesKEY.txt";
+		        //nom=nom.concat(time.toMillis(false)+".txt");
 		        dir.mkdirs();
 		        File file = new File(dir, nom);
-		        Log.d("Nom fitxer: ", file.getName());
+		        Log.d("Nom fitxer KEY: ", file.getName());
+		        
+		        String key = Integer.toString(decryptionKey);
+		        Log.d("GUARDAT KEY.", key);
+		        byte[] bytes = key.getBytes("UTF8");
 		        
 		        try {
 		        	FileOutputStream f = new FileOutputStream(file);
-		            f.write(decryptionKey);
+		            f.write(bytes);
 		            f.flush();
 		            f.close();
-		            Log.d("GUARDAT KEY.", Integer.toString(decryptionKey));
+		            Log.d("GUARDAT KEY STRING", key);
 		        } catch (Exception e) {
 		            Log.e("ERROR", "Guardant Key", e);
 		        }
