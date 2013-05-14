@@ -767,9 +767,12 @@ public class DataStreamReader
 	            try
 	            {
 	            	eventData.eventInfo = LTData.getCurrentEvent();
+	            	
+	            	//Log.d("LLOC EVENT: ",eventData.eventInfo.shortName);
 	            	eventData.qualiPeriod = 0;
-	            	// HARDCODED
-	            	eventData.eventInfo.laps = 66;
+	            	
+	            	// SET THE LAPS OF THE RACE
+	            	setLaps(eventData.eventInfo.no);
 	            	
 	            	String eventNo = (new String(copyPacket.longData, 1, copyPacket.length-1, "ISO-8859-1"));	            		            	
 	            	
@@ -1125,6 +1128,72 @@ public class DataStreamReader
 	    }
 	}
 	
+	private void setLaps(int no) {
+		switch(no) {
+			case 1:
+				eventData.eventInfo.laps=58;
+				break;
+			case 2:
+				eventData.eventInfo.laps=56;
+				break;
+			case 3:
+				eventData.eventInfo.laps=56;
+				break;
+			case 4:
+				eventData.eventInfo.laps=57;
+				break;
+			case 5:
+				eventData.eventInfo.laps=66;
+				break;
+			case 6:
+				eventData.eventInfo.laps=78;
+				break;
+			case 7:
+				eventData.eventInfo.laps=70;
+				break;
+			case 8:
+				eventData.eventInfo.laps=57;
+				break;
+			case 9:
+				eventData.eventInfo.laps=52;
+				break;
+			case 10:
+				eventData.eventInfo.laps=60;
+				break;
+			case 11:
+				eventData.eventInfo.laps=70;
+				break;
+			case 12:
+				eventData.eventInfo.laps=44;
+				break;
+			case 13:
+				eventData.eventInfo.laps=53;
+				break;
+			case 14:
+				eventData.eventInfo.laps=61;
+				break;
+			case 15:
+				eventData.eventInfo.laps=53;
+				break;
+			case 16:
+				eventData.eventInfo.laps=55;
+				break;
+			case 17:
+				eventData.eventInfo.laps=60;
+				break;
+			case 18:
+				eventData.eventInfo.laps=55;
+				break;
+			case 19:
+				eventData.eventInfo.laps=56;
+				break;
+			case 20:
+				eventData.eventInfo.laps=71;
+				break;
+		}
+		
+	}
+
 	public void parseCarPacket(Packet packet)
 	{    
 		//Log.d("parseCarPacket","Car");
@@ -1833,7 +1902,7 @@ public class DataStreamReader
 //	        emit driverDataChanged(packet.carID);
 	}
 
-	public void guardarKey(int key, boolean b) {
+	public void guardarKey(int key) {
 		provisionalKey = key;
 		pKey = true;
 		

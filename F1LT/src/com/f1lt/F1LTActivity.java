@@ -358,7 +358,7 @@ public class F1LTActivity extends FragmentActivity  implements DataStreamReceive
     	        Log.d("ARXIUS A REPRODUIR: ",Integer.toString(fitxersDades));
     	        
     	        //for(blocks=1;blocks<=fitxersDades;blocks++){   	
-	        	for(blocks=1;blocks<=80;blocks++){   	    	
+	        	for(blocks=1;blocks<=50;blocks++){   	    	
     	        	
     		        String nom = "Dades";
     		        nom=nom.concat(Integer.toString(blocks));
@@ -497,7 +497,7 @@ public class F1LTActivity extends FragmentActivity  implements DataStreamReceive
         	int key = Integer.valueOf(text);
         	
     		Log.d("NUM KEY FRAME:", Integer.toString(key));
-    		dataStreamReader.guardarKey(key, true);
+    		dataStreamReader.guardarKey(key);
         	//f.read(temps);
             //f.read(dades);
             f.close();
