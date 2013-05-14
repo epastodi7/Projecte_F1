@@ -37,7 +37,8 @@ public class HttpReader
 	private static String host;
 	private static String loginHost;
 	private static int decryptionKey = 0;
-	private static String RUTA = "/PROVA/F1/BAR/P1";
+    private static String RUTA_SAVE = "/PROVA/F1/BAR/R-CHECK";
+    private static String RUTA_LOAD = "/PROVA/F1/BAR/R-1";
 	
 	public HttpReader()
 	{	
@@ -318,7 +319,7 @@ public class HttpReader
 		        time.setToNow();
 		        */
 		        File sdCard = Environment.getExternalStorageDirectory();
-		        File dir = new File (sdCard.getAbsolutePath() + RUTA);
+		        File dir = new File (sdCard.getAbsolutePath() + RUTA_SAVE);
 		        String nom = "DadesKEY.txt";
 		        //nom=nom.concat(time.toMillis(false)+".txt");
 		        dir.mkdirs();

@@ -138,6 +138,7 @@ public class EventData
 	
 	public static EventData getInstance()
 	{
+		//Log.d("EventData", "getInstance");
 		if (instance == null)
 			instance = new EventData();
 		 
@@ -147,6 +148,7 @@ public class EventData
 	
 	public int getDriverId(String driver)
 	{
+		Log.d("EventData", "getDriverId-str");
 		for (int i = 0; i < driversData.size(); ++i)
 	    {
 	        if (driversData.get(i).driver == driver)
@@ -157,6 +159,7 @@ public class EventData
 	
 	public int getDriverId(int no)
 	{
+		Log.d("EventData", "getDriverId-int");
 		for (int i = 0; i < driversData.size(); ++i)
 	    {
 	        if (driversData.get(i).number == no)
@@ -167,6 +170,7 @@ public class EventData
 	
 	public DriverData getDriverData(int pos)
 	{
+		Log.d("EventData", "getDriverData");
 		for (int i = 0; i < driversData.size(); ++i)
 		{
 			if (driversData.get(i).pos == pos)
@@ -177,6 +181,7 @@ public class EventData
 	
 	public String calculateInterval(DriverData d1, DriverData d2, int lap)
     {
+		Log.d("EventData", "calculateInterval");
         LapData ld1 = d1.getLapData(lap);
         LapData ld2 = d2.getLapData(lap);
         

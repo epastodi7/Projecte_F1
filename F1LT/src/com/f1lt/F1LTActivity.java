@@ -49,6 +49,7 @@ public class F1LTActivity extends FragmentActivity  implements DataStreamReceive
     {
         public void handleMessage(Message msg)
         {
+        	// handle the message sent from delay thread
         	byte[] dades = new byte[65535];
         	int num_dades=0;
         	Bundle bundle = msg.getData();
@@ -60,7 +61,7 @@ public class F1LTActivity extends FragmentActivity  implements DataStreamReceive
         	
         	dataStreamReader.parseBlockDelayed(dades, num_dades);
         	onNewDataObtained(false);
-    		//... handle the message sent from delay thread
+    		
         }
     };
     private DataStreamReader dataStreamReader;
@@ -75,8 +76,8 @@ public class F1LTActivity extends FragmentActivity  implements DataStreamReceive
     private boolean messageBoardShown = false;
     private boolean showCommentaryLine = true;
     private boolean delayed;
-    private String RUTA_SAVE = "/PROVA/F1/BAR/P1";
-    private String RUTA_LOAD = "/PROVA/F1/BAR/P1";
+    private static String RUTA_SAVE = "/PROVA/F1/BAR/R-CHECK";
+    private static String RUTA_LOAD = "/PROVA/F1/BAR/R-1";
     
     private final String PREFS_NAME = "F1LTPrefs";    
     private final int GET_LOGIN = 1;
@@ -352,9 +353,12 @@ public class F1LTActivity extends FragmentActivity  implements DataStreamReceive
     	    	//LTViewFragment lt = (LTViewFragment)getSupportFragmentManager().findFragmentByTag("LTViewFragment");
 
     	        eventData.sessionStarted=true;
+    	        int fitxersDades = (llista.length-1)/3;
     	        // Arribem fins un arxiu abans perque hi ha el DadesKEYS
-    	        for(blocks=1;blocks<=(llista.length-1);blocks++){
-	        	//for(blocks=1;blocks<=200;blocks++){   	    	
+    	        Log.d("ARXIUS A REPRODUIR: ",Integer.toString(fitxersDades));
+    	        
+    	        //for(blocks=1;blocks<=fitxersDades;blocks++){   	
+	        	for(blocks=1;blocks<=80;blocks++){   	    	
     	        	
     		        String nom = "Dades";
     		        nom=nom.concat(Integer.toString(blocks));
@@ -387,7 +391,7 @@ public class F1LTActivity extends FragmentActivity  implements DataStreamReceive
     		            Log.d("ERROR", "Error obrint fitxer");
     		        }
     		        try{
-    		        	Thread.sleep(100);
+    		        	Thread.sleep(30);
     		        	//dataStreamReader.parseBlockDelayed(dades, bytes);
     		        	
     		        	Message msg = new Message();
@@ -493,7 +497,7 @@ public class F1LTActivity extends FragmentActivity  implements DataStreamReceive
         	int key = Integer.valueOf(text);
         	
     		Log.d("NUM KEY FRAME:", Integer.toString(key));
-    		//dataStreamReader.onDecryptionKeyObtained(key, true);
+    		dataStreamReader.guardarKey(key, true);
         	//f.read(temps);
             //f.read(dades);
             f.close();
@@ -523,6 +527,8 @@ public class F1LTActivity extends FragmentActivity  implements DataStreamReceive
     	        	   LTData.ltTeams.clear();
     	        	   LTData.ltEvents.clear();
     	               F1LTActivity.this.finish();
+    	               clearApplicationData();
+    	               System.exit(0);
     	           }
     	       })
     	       .setNegativeButton("No", new DialogInterface.OnClickListener() 
@@ -836,5 +842,33 @@ public class F1LTActivity extends FragmentActivity  implements DataStreamReceive
 //				lt.removeMessageBoard();
 			}
 		}    	    	
+    }
+    
+    public void clearApplicationData() 
+    {
+        File cache = getCacheDir();
+        File appDir = new File(cache.getParent());
+        if (appDir.exists()) {
+            String[] children = appDir.list();
+            for (String s : children) {
+                if (!s.equals("lib")) {
+                    deleteDir(new File(appDir, s));Log.i("TAG", "**************** File /data/data/APP_PACKAGE/" + s + " DELETED *******************");
+                }
+            }
+        }
+    }
+
+    public static boolean deleteDir(File dir) 
+    {
+        if (dir != null && dir.isDirectory()) {
+            String[] children = dir.list();
+            for (int i = 0; i < children.length; i++) {
+                boolean success = deleteDir(new File(dir, children[i]));
+                if (!success) {
+                    return false;
+                }
+            }
+        }
+        return dir.delete();
     }
 }

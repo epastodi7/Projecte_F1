@@ -44,10 +44,12 @@ class LapTime
     }
 	public void setTime(String time)
 	{
+		//Log.d("DriverData", "setTime-str");
 		this.time = new String(time);
 	}
 	public void setTime(LapTime lt)
 	{
+		//Log.d("DriverData", "setTime-lt");
 		this.time = new String(lt.time);
 	}
 	public String toString() 
@@ -57,6 +59,7 @@ class LapTime
 	
 	public boolean isValid()
     {
+		
         if (time == "")
             return false;
 
@@ -136,15 +139,18 @@ class LapTime
 	
 	public LapTime sum(final LapTime lt)
 	{
+		//Log.d("DriverData", "LapTime-sum");
 	    return new LapTime(toMsecs() + lt.toMsecs());
 	}
 	public LapTime diff(final LapTime lt)
 	{
+		//Log.d("DriverData", "LapTime-diff");
 	    return new LapTime(toMsecs() - lt.toMsecs());
 	}
 	
 	public boolean lessThan(LapTime lt)
 	{
+		//Log.d("DriverData", "LapTime-lessThan");
 		if (isValid() && !lt.isValid())
 			return true;
 		
@@ -155,6 +161,7 @@ class LapTime
 	}
 	public boolean lessEqual(LapTime lt)
 	{
+		//Log.d("DriverData", "LapTime-lessEqual");
 		if (isValid() && !lt.isValid())
 			return true;
 		
@@ -166,6 +173,7 @@ class LapTime
 	
 	public boolean equals(Object b)
 	{
+		//Log.d("DriverData", "LapTime-equals");
 		if (this == b)
 			return true;
 		
@@ -291,7 +299,7 @@ class LapData implements Comparable<LapData>
 //        LapTime ls1 = new LapTime(s1);
 //        LapTime ls2 = new LapTime(s2);
 //        LapTime ls3 = new LapTime(s3);
-
+    	//Log.d("DriverData", "LapTime-sumSectors");
         return (ls1.sum(ls2).sum(ls3));
     }
     /*GregorianCalendar toTime() const
@@ -370,6 +378,7 @@ public class DriverData implements Comparable<DriverData>
 	
 	public int compareTo(DriverData pd)
     {
+		//Log.d("DriverData", "DriverData-compareTo");
 		if (pos < 0 || pos > pd.pos)
 			return 1;
 		
@@ -393,6 +402,7 @@ public class DriverData implements Comparable<DriverData>
 //    }
 	public static String calculateGap(LapTime lap1, LapTime lap2)
     {
+		//Log.d("DriverData", "DriverData-calculateGap");
         if (lap1.isValid() && lap2.isValid())
         {
         	double ld1 = lap1.toDouble();
@@ -412,6 +422,7 @@ public class DriverData implements Comparable<DriverData>
     //used in the head2head dialog - finds the best time and sets the differences between the best time and the others (max 4 lap times)
     public static int lapDiff(LapTime []lap)
     {
+    	//Log.d("DriverData", "DriverData-lapDiff");
         int msec;
 
         if (lap[0] == null || !lap[0].isValid())
@@ -440,6 +451,7 @@ public class DriverData implements Comparable<DriverData>
 
     public void addLap(EventData ed)
     {
+    	//Log.d("DriverData", "DriverData-addLap");
     	//ok, this looks a bit complicated, but since the LT server doesn't give us the actuall lap number for every driver during the race we have to find another way to gather laps:
         //- first of all - don't append laps if driver has retired (it's rather obvious)
         //- don't add empty lap time, except for the first lap of the race - it's always empty
@@ -694,6 +706,7 @@ public class DriverData implements Comparable<DriverData>
     }
     public void correctNumLap(int raceNumLap)
     {
+    	//Log.d("DriverData", "DriverData-correctNumLap");
     	//first of all check if we are lapped
         int lapped = 0;
         if (!lastLap.gap.equals("") && lastLap.gap.charAt(lastLap.gap.length()-1) == 'L')
@@ -728,6 +741,7 @@ public class DriverData implements Comparable<DriverData>
 //    }
     public void updateLastLap()
     {
+    	//Log.d("DriverData", "DriverData-updateLastLap");
     	if (!lapData.isEmpty() && lapData.get(lapData.size()-1).numLap == lastLap.numLap)
         {
             if (!lapData.get(lapData.size()-1).lapTime.toString().equals("IN PIT") && lapData.get(lapData.size()-1).sector3.toString().equals("") && !lastLap.sector3.toString().equals(""))
@@ -765,6 +779,7 @@ public class DriverData implements Comparable<DriverData>
     }
     public void updateInPit()
     {
+    	//Log.d("DriverData", "DriverData-updateInPit");
     	 if (!lapData.isEmpty())
     	    {
     	        lapData.get(lapData.size()-1).pos = lastLap.pos;
@@ -775,7 +790,7 @@ public class DriverData implements Comparable<DriverData>
     }
     public void updateGaps(EventData ed)
     {
-    	
+    	//Log.d("DriverData", "DriverData-updateGaps");
 //    	DecimalFormat df = new DecimalFormat("#0.000");   
 //    	for (int i = 0; i < lapData.size(); ++i)
 //    	{    		 	   
@@ -786,6 +801,7 @@ public class DriverData implements Comparable<DriverData>
 
     public void addPitStop(PitData pd)
     {
+    	//Log.d("DriverData", "DriverData-addPitStop");
         if (pd.pitLap == 0)
             return;
         for (int i = 0; i < pitData.size(); ++i)
@@ -805,6 +821,7 @@ public class DriverData implements Comparable<DriverData>
 
     LapData getLapData(int lap)
     {
+    	//Log.d("DriverData", "DriverData-getLapData");
         for (int i = 0; i < lapData.size(); ++i)
         {
             if (lap == lapData.get(i).numLap)
@@ -815,6 +832,7 @@ public class DriverData implements Comparable<DriverData>
 
     void setFastestLap(LapTime lapTime, int lapNo)
     {
+    	//Log.d("DriverData", "DriverData-setFastestLap");
         if (lapNo == bestLap.numLap && lapTime.equals(bestLap.lapTime))
             return;
 
@@ -828,6 +846,7 @@ public class DriverData implements Comparable<DriverData>
 
     String getPitTime(int lap)
     {
+    	//Log.d("DriverData", "DriverData-getPitTime");
         for (int i = 0; i < pitData.size(); ++i)
         {
             if (lap == pitData.get(i).pitLap)

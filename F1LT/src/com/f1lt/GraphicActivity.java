@@ -109,15 +109,17 @@ public class GraphicActivity extends Activity implements DataStreamReceiver{
 			}
 
 		private void info() {
-			DriverData driverData = eventData.driversData.get(2);
-			List<Integer> pos_history = driverData.posHistory;
-			int size = pos_history.size();
-			int event_info = eventData.eventInfo.laps;
-			Log.d("NOM PILOT: ",driverData.driver);
-			Log.d("POS PILOT: ",Integer.toString(driverData.pos));
-			Log.d("VOLTES GUARDADES PILOT: ",Integer.toString(driverData.lapData.size()));
-			Log.d("SIZE POSICIONS: ", Integer.toString(size));
-			Log.d("EVENT INFO / LAPS: ", Integer.toString(event_info));
+			for(int i=0;i<eventData.driversData.size();i++){
+				DriverData driverData = eventData.driversData.get(i);
+				List<Integer> pos_history = driverData.posHistory;
+				int size = pos_history.size();
+				int event_info = eventData.eventInfo.laps;
+				Log.d("POSICIO I NOM PILOT: ",i+" "+driverData.driver);
+			}
+			//Log.d("POS PILOT: ",Integer.toString(driverData.pos));
+			//Log.d("VOLTES GUARDADES PILOT: ",Integer.toString(driverData.lapData.size()));
+			//Log.d("SIZE POSICIONS: ", Integer.toString(size));
+			//Log.d("EVENT INFO / LAPS: ", Integer.toString(event_info));
 		}
 
 		//@Override

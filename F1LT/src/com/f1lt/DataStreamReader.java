@@ -16,6 +16,7 @@ import org.apache.http.util.ByteArrayBuffer;
 import android.app.ProgressDialog;
 import android.os.Environment;
 import android.os.Handler;
+import android.text.format.DateFormat;
 import android.util.Log;
 import android.widget.Toast;
 
@@ -47,7 +48,7 @@ class Decrypter
 	
 	public byte[] decrypt(byte [] buf)
 	{
-		Log.d("DataStreamReader", "decrypt");
+		//Log.d("DataStreamReader", "decrypt");
 		for (int i = 0; i < buf.length; ++i)
 		{
 			mask = mask >> 1 & 0x7fffffff ^ ((mask & 1) != 1 ? 0 : key);
@@ -98,7 +99,11 @@ public class DataStreamReader
 	private int blocks = 0;
 	private boolean carpeta_creada = false;
 	private boolean delayed = false;
-	private String RUTA = "/PROVA/F1/BAR/P1";
+	private int provisionalKey = 0;
+	private boolean pKey = false;
+	
+    private static String RUTA_SAVE = "/PROVA/F1/BAR/R-CHECK";
+    private static String RUTA_LOAD = "/PROVA/F1/BAR/R-1";
 	
 	private Handler receiverHandler;
 	private Handler secondaryReceiverHandler;
@@ -221,7 +226,9 @@ public class DataStreamReader
 			sessionTimer.stopTimer();
 		
 		if (httpThread != null && httpThread.isAlive())
-			httpThread.interrupt();				
+			httpThread.interrupt();
+		
+		blocks = 0;
 	}
 	
 	 public void onSessionTimerUpdated(String time, boolean stop)
@@ -404,25 +411,48 @@ public class DataStreamReader
         AtomicReference<Integer> pos = new AtomicReference<Integer>(0);   
         
         boolean entra = true;
-        if(entra){
-	        //Creem calendari per extreure el temps ( en milisegons )
-	        Calendar c1 = Calendar.getInstance();
-	        long milis = c1.getTimeInMillis();
-	        milis = milis / 1000;
+        if(entra){   	
 	        
+        	long millis = (System.currentTimeMillis()/1000);
+        	Log.d("MILLIS",Long.toString(millis));
+        	
 	        //Creem un arxiu per copiar a dins
 	        File sdCard = Environment.getExternalStorageDirectory();
-	        File dir = new File (sdCard.getAbsolutePath() + RUTA);
+	        File dir = new File (sdCard.getAbsolutePath() + RUTA_SAVE);
+	        
 	        String nom = "Dades";
 	        nom=nom.concat(Integer.toString(blocks));
 	        nom=nom.concat(".txt");
+	        
+	        String nom2 = "Temps";
+	        nom2=nom2.concat(Integer.toString(blocks));
+	        nom2=nom2.concat(".txt");	  
+	        
+	        String nom3 = "Milis";
+	        nom3=nom3.concat(Integer.toString(blocks));
+	        nom3=nom3.concat(".txt");
+	        
+	        byte[] temps = null;
+	        byte[] milis = null;
+	        
 	        if(carpeta_creada==false){
 		        dir.mkdirs();
 		        carpeta_creada=true;
 	        }
 	        File file = new File(dir, nom);
-	        Log.d("ARREL ARXIU: ", file.toString());
-	        byte[] temps = ByteBuffer.allocate(8).putLong(milis).array();
+	        File file2 = new File(dir, nom2);
+	        File file3 = new File(dir, nom3);
+	        
+	        Log.d("ARREL ARXIU DADES: ", file.toString());
+	        Log.d("ARREL ARXIU TEMPS: ", file2.toString());
+	        Log.d("ARREL ARXIU MILIS: ", file3.toString());
+	        String timer = sessionTimer.getTime();
+	        try {
+				temps = timer.getBytes("UTF8");
+				milis = ByteBuffer.allocate(10).putLong(millis).array();
+			} catch (UnsupportedEncodingException e) {
+				Log.e("ERROR", "Error al passar temps a Bytes", e);
+			}
 	        
 	        // Nomes copiem els bytes del array que contenen elements
 	        byte[] dades = new byte [bytes];
@@ -431,12 +461,27 @@ public class DataStreamReader
 	        }
 	        
 	        try {
+	        	
 	        	FileOutputStream f = new FileOutputStream(file);
+	        	FileOutputStream f2 = new FileOutputStream(file2);
+	        	FileOutputStream f3 = new FileOutputStream(file3);
+	        	
 	        	//f.write(temps);
 	            f.write(dades);
 	            f.flush();
 	            f.close();
-	            Log.d("GUARDAT NUM DADES AL ARXIU: ", Integer.toString(dades.length));
+	            
+	            f2.write(temps);
+	            f2.flush();
+	            f2.close();
+	            
+	            f3.write(milis);
+	            f3.flush();
+	            f3.close();
+	            
+	            Log.d("GUARDAT NUM DADES AL ARXIU DADES: ", Integer.toString(dades.length));
+	            Log.d("GUARDAT NUM DADES AL ARXIU TEMPS: ", Integer.toString(temps.length));
+	            Log.d("GUARDAT NUM DADES AL ARXIU MILIS: ", Integer.toString(milis.length));
 	        } catch (Exception e) {
 	            Log.e("EERROR", "Error opening Log.", e);
 	        }
@@ -695,6 +740,7 @@ public class DataStreamReader
 	
 	public void parseSystemPacket(Packet packet)
 	{
+		//Log.d("parseSystemPacket","System");
 		Log.d("parseSystemPacket", eventData.remainingTime);
 		try
 		{
@@ -722,7 +768,8 @@ public class DataStreamReader
 	            {
 	            	eventData.eventInfo = LTData.getCurrentEvent();
 	            	eventData.qualiPeriod = 0;
-	            	//eventData.eventInfo.laps = 57;
+	            	// HARDCODED
+	            	eventData.eventInfo.laps = 66;
 	            	
 	            	String eventNo = (new String(copyPacket.longData, 1, copyPacket.length-1, "ISO-8859-1"));	            		            	
 	            	
@@ -761,7 +808,10 @@ public class DataStreamReader
 	            		httpThread = HttpReader.attemptObtainDecryptionKey(eventNo, handler, this);
 	            	}
 	            	else{
-	            		onDecryptionKeyObtained(-1730044027, true);
+	            		// SI TENIM LA KEY CARREGADA, LA ENVIEM
+	            		if(pKey){
+	            			onDecryptionKeyObtained(provisionalKey, true);
+	            		}
 	            	}
 	            }
 	            catch (Exception e)
@@ -1077,6 +1127,7 @@ public class DataStreamReader
 	
 	public void parseCarPacket(Packet packet)
 	{    
+		//Log.d("parseCarPacket","Car");
 		Log.d("parseCarPacket", eventData.remainingTime);
 		if (noSession)
 		{
@@ -1131,7 +1182,7 @@ public class DataStreamReader
 	    //return;
 	    DriverData dd = eventData.driversData.get(packet.carID-1);
 	    int size_dd = dd.lapData.size();
-	    Log.d("MIDA VOLTES-CARPACKET ABANS: ",Integer.toString(size_dd));
+	    //Log.d("MIDA VOLTES-CARPACKET ABANS: ",Integer.toString(size_dd));
 	    int lap = 0;
 	    int ibuf = 0;
 	    PitData pd = new PitData();
@@ -1782,8 +1833,9 @@ public class DataStreamReader
 //	        emit driverDataChanged(packet.carID);
 	}
 
-	public void setKeyDelayed(int key) {
-		decrypter.setKey(key);
+	public void guardarKey(int key, boolean b) {
+		provisionalKey = key;
+		pKey = true;
 		
 	}
 }

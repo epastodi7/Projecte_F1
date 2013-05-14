@@ -28,6 +28,7 @@ public class SectorsImageView extends View
 	
 	public SectorsImageView(Context ctx, AttributeSet attrs) 
 	{
+		
         super(ctx, attrs);                
     }
 	
@@ -40,6 +41,7 @@ public class SectorsImageView extends View
 	
 	public void setSector(int i, int idx) 
 	{ 
+		Log.d("SectorsImage", "setSector");
 		if (i >= 0 && i < 3) 
 		{
 			sectorIdx[i] = idx;
@@ -49,6 +51,7 @@ public class SectorsImageView extends View
 	
 	public void setTextSize(float size)
 	{
+		Log.d("SectorsImage", "setTextSize");
 		paint.setTextSize(size);
 		
 		int height = getHeight() - (getPaddingTop() + getPaddingBottom());
@@ -59,28 +62,33 @@ public class SectorsImageView extends View
 	
 	public int getDrawIdx()
 	{
+		Log.d("SectorsImage", "getDrawIdx");
 		return drawIdx;
 	}
 	
 	public void setDrawIdx(int d)
 	{
+		Log.d("SectorsImage", "setDrawIdx");
 		drawIdx = d;
 	}
 	
 	public void setSectorTimes(double [] times, int offset)
 	{
+		Log.d("SectorsImage", "setSectorTimes");
 		for (int i = 0; i < 3; ++i)
 			sectorTimes[i] = times[i+offset];
 	}
 	
 	public void clear()
 	{
+		Log.d("SectorsImage", "clear");
 		dontDraw = true;
 	}
 	
 	@Override
 	protected void onSizeChanged (int w, int h, int oldw, int oldh)
-	{				
+	{		
+		Log.d("SectorsImage", "onSizeChanged");
 		if (!bitmapsLoaded || (h - (getPaddingTop() + getPaddingBottom())) != height)
 		{
 			height = h - (getPaddingTop() + getPaddingBottom());
@@ -124,6 +132,7 @@ public class SectorsImageView extends View
 	@Override
 	protected void onDraw(Canvas canvas) 
 	{
+		Log.d("SectorsImage", "onDraw");
 		super.onDraw(canvas);
 				
 		if (!dontDraw)
