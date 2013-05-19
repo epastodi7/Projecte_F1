@@ -103,7 +103,6 @@ public class DataStreamReader
 	private boolean pKey = false;
 	
     private static String RUTA_SAVE = "/PROVA/F1/BAR/R-CHECK";
-    private static String RUTA_LOAD = "/PROVA/F1/BAR/R-1";
 	
 	private Handler receiverHandler;
 	private Handler secondaryReceiverHandler;
@@ -111,7 +110,7 @@ public class DataStreamReader
 	private DataStreamReceiver secondaryDataStreamReceiver;
 	
 	private boolean noSession = false;
-	private boolean connected = false;
+	boolean connected = false;
 	
 	private ProgressDialog dialog = null;
 	
@@ -189,7 +188,7 @@ public class DataStreamReader
 		connected = true;
 	
 		eventData.frame = 1;
-		httpThread = HttpReader.attemptObtainKeyFrame(0, handler, DataStreamReader.this);
+		httpThread = HttpReader.attemptObtainKeyFrame(0, handler, DataStreamReader.this, RUTA_SAVE);
 //		onKeyFrameObtained(null, 0, true);
 //		socketThread = new Thread()
 //		{
@@ -597,6 +596,8 @@ public class DataStreamReader
 			//Log.d("packets", String.valueOf(packets));
 		}
 		
+		guardarEventData();
+		
 		Packet packet = arPacket.get();
 		
 	
@@ -738,12 +739,42 @@ public class DataStreamReader
 		return true;
 	}
 	
+	private void guardarEventData() {
+		// GUARDEM HISTORIC DE DADES DE L'EVENT
+		String [] timeArray = eventData.remainingTime.split(":");
+		int hour = 0, min = 0, sec = 0;
+		
+		if (timeArray.length == 3)
+		{
+			hour = Integer.parseInt(timeArray[0]);
+			min = Integer.parseInt(timeArray[1]);
+			sec = Integer.parseInt(timeArray[2]);
+		}
+		
+		if(sec==0){
+			if(hour>0){
+				min = min + (hour*60);
+			}
+			guardemDadesTemps(min,sec);
+		}
+		
+	}
+
+	private void guardemDadesTemps(int min, int sec) {
+		if(!eventData.airTempHistory.containsKey(min)){
+			int temp = (int)eventData.airTemp;
+			eventData.airTempHistory.put(min, temp);
+		}
+		
+	}
+
 	public void parseSystemPacket(Packet packet)
 	{
 		//Log.d("parseSystemPacket","System");
 		Log.d("parseSystemPacket", eventData.remainingTime);
 		try
 		{
+			
 //			if (packet.type != LTData.SystemPacket.SYS_COMMENTARY && packet.type != LTData.SystemPacket.SYS_TIMESTAMP)
 			String logMsg = "SYS=" + packet.type + " " + packet.data + " " + packet.length + " ";				
 			if (packet.type != LTData.SystemPacket.SYS_COMMENTARY && packet.length > 0 && packet.type != LTData.SystemPacket.SYS_TIMESTAMP)
@@ -806,7 +837,7 @@ public class DataStreamReader
 	    	            eventData.lapsCompleted = 0;
 	            	}
 	            		
-	            	Log.d("HTTP ATTEMPT L752", Integer.toString(number));
+	            	Log.d("HTTP ATTEMPT L808", Integer.toString(number));
 	            	if(!delayed){
 	            		httpThread = HttpReader.attemptObtainDecryptionKey(eventNo, handler, this);
 	            	}
@@ -847,11 +878,12 @@ public class DataStreamReader
 	            number = packet.longData[1] << 8 & 0xff00 | packet.longData[0] & 0xff;
 	            decrypter.resetDecryption();
 
+	            Log.d("HTTP ATTEMPT L849", Integer.toString(number));
 	             if (eventData.frame == 0 && delayed == false)
 	             {
 	                eventData.frame = number;
-	                httpThread = HttpReader.attemptObtainKeyFrame(number, handler, DataStreamReader.this);
-	                Log.d("HTTP ATTEMPT L789", Integer.toString(number));
+	                httpThread = HttpReader.attemptObtainKeyFrame(number, handler, DataStreamReader.this, RUTA_SAVE);
+	                
 	             }
 	             else
 	                 eventData.frame = number;
@@ -882,6 +914,8 @@ public class DataStreamReader
 	                				(eventData.lapsCompleted < eventData.eventInfo.laps)) && 
 	                				!sessionTimer.isTimerRunning())
 	                			{
+	                				Log.d("TIMER ABANS START", sessionTimer.getTime());
+	                				guardarTempsTotalSessio(sessionTimer.getTime());
 	                				sessionTimer.startTimer();
 	                				
 	                				if (eventData.eventType == LTData.EventType.QUALI_EVENT)
@@ -914,6 +948,7 @@ public class DataStreamReader
 	                    {
 	                    	str = new String(packet.longData, "ISO-8859-1");	                    	                   
 	                    	eventData.trackTemp = Double.parseDouble(str);
+	                    	// PROVA
 	                    	int size = eventData.airTempHistoric.length;
 	                    	Integer temp = Integer.valueOf(str);
 	                    	eventData.airTempHistoric[size]=temp;
@@ -1128,6 +1163,26 @@ public class DataStreamReader
 	    }
 	}
 	
+	private void guardarTempsTotalSessio(String time) {
+		String [] timeArray = time.split(":");
+		
+		int hour = 0, min = 0, sec = 0;
+		
+		if (timeArray.length == 3)
+		{
+			hour = Integer.parseInt(timeArray[0]);
+			min = Integer.parseInt(timeArray[1]);
+			sec = Integer.parseInt(timeArray[2]);
+		}
+		
+		if(hour>0){
+			min = min + (hour*60);
+		}
+		
+		eventData.minutsSessio=min+1;
+		
+	}
+
 	private void setLaps(int no) {
 		switch(no) {
 			case 1:

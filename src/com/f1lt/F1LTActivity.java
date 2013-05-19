@@ -6,6 +6,9 @@ import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.nio.BufferUnderflowException;
+import java.nio.ByteBuffer;
+import java.nio.ByteOrder;
 import java.util.List;
 
 import org.apache.http.cookie.Cookie;
@@ -76,6 +79,7 @@ public class F1LTActivity extends FragmentActivity  implements DataStreamReceive
     private boolean messageBoardShown = false;
     private boolean showCommentaryLine = true;
     private boolean delayed;
+    
     private static String RUTA_SAVE = "/PROVA/F1/BAR/R-CHECK";
     private static String RUTA_LOAD = "/PROVA/F1/BAR/R-1";
     
@@ -345,6 +349,7 @@ public class F1LTActivity extends FragmentActivity  implements DataStreamReceive
     	    public void run(){
     	    	Log.d("delayed", "FUNCIO DIFERIT");
     	    	int blocks, bytes = 0;
+    			long segonsDelay=0;
     	    	File sdCard = Environment.getExternalStorageDirectory();
     	        File dir = new File (sdCard.getAbsolutePath() + RUTA_LOAD);
     	        File[] llista = dir.listFiles();
@@ -353,12 +358,19 @@ public class F1LTActivity extends FragmentActivity  implements DataStreamReceive
     	    	//LTViewFragment lt = (LTViewFragment)getSupportFragmentManager().findFragmentByTag("LTViewFragment");
 
     	        eventData.sessionStarted=true;
+    	        //CORRECTE
     	        int fitxersDades = (llista.length-1)/3;
+    	        //PROVA NO MILIS I TEMPS
+    	        int fitxersDades2 = llista.length-1;
+    	        
     	        // Arribem fins un arxiu abans perque hi ha el DadesKEYS
     	        Log.d("ARXIUS A REPRODUIR: ",Integer.toString(fitxersDades));
     	        
-    	        //for(blocks=1;blocks<=fitxersDades;blocks++){   	
-	        	for(blocks=1;blocks<=50;blocks++){   	    	
+    	        for(blocks=1;blocks<=fitxersDades;blocks++){   	
+	        	//for(blocks=1;blocks<=150;blocks++){   	    	
+    	        	
+    	        	segonsDelay=gestionaMilis(blocks,fitxersDades, dir);
+    	        	Log.d("SEGONS DE DELAY", Long.toString(segonsDelay));
     	        	
     		        String nom = "Dades";
     		        nom=nom.concat(Integer.toString(blocks));
@@ -391,7 +403,7 @@ public class F1LTActivity extends FragmentActivity  implements DataStreamReceive
     		            Log.d("ERROR", "Error obrint fitxer");
     		        }
     		        try{
-    		        	Thread.sleep(30);
+    		        	Thread.sleep(segonsDelay*1000);
     		        	//dataStreamReader.parseBlockDelayed(dades, bytes);
     		        	
     		        	Message msg = new Message();
@@ -402,13 +414,80 @@ public class F1LTActivity extends FragmentActivity  implements DataStreamReceive
     		            msg.setData(datas);
     		            handler.sendMessage(msg);                        //this points to the handler from the main thread
     		        } catch (Exception e) {
-    		            Log.e("ERROR", "Error obrint fitxer", e);
+    		            Log.e("ERROR", "Error Pasant dades al handle", e);
     		        }
     		        
 
     	        }
-	        	//eventData.sessionStarted=false;
+	        	//dataStreamReader.disconnect();
+	        	//dataStreamReader.connected = false;
     	    }
+
+			private long gestionaMilis(int blocks, int fitxersDades, File dir) {
+				
+				long resultat1 = 0, resultat2 = 0;
+				
+				//Arxiu de lectura actual
+				String nom = "Milis";
+		        nom=nom.concat(Integer.toString(blocks));
+		        nom=nom.concat(".txt");
+		        
+		        //Arxiu de lectura posterior
+				String nom2 = "Milis";
+		        nom2=nom2.concat(Integer.toString(blocks+1));
+		        nom2=nom2.concat(".txt");
+				
+				if(blocks==fitxersDades){
+					return 1;
+				}
+				else{
+					resultat1 = obreArxiuMilis(nom, dir);
+					resultat2 = obreArxiuMilis(nom2, dir);
+				}
+		        
+		        
+				return resultat2-resultat1;
+				
+			}
+
+			private long obreArxiuMilis(String nom, File dir) throws BufferUnderflowException {
+				byte[] dades = new byte[10];
+				int bytes = 0;
+				long res = 0;
+				
+				File file = new File(dir, nom);
+		        Log.d("ARREL ARXIU: ", file.toString());
+		        dades = null;
+		        ByteArrayOutputStream buffer = new ByteArrayOutputStream();
+		        byte[] data = new byte[10];
+		    
+		        try {
+		        	FileInputStream f = new FileInputStream(file);
+		        	int nRead = 0;
+		
+		        	while ((nRead = f.read(data, 0, data.length)) != -1) {
+		        	  buffer.write(data, 0, nRead);
+		        	}
+		
+		        	dades = buffer.toByteArray();
+		        	//bytes = dades.length;
+		        	
+		        	ByteBuffer buf = ByteBuffer.wrap(dades);
+		        	buf = ByteBuffer.wrap(dades);
+		        	buf.order(ByteOrder.BIG_ENDIAN);
+		        	res = buf.getLong();
+		        	
+		        	buffer.flush();
+		        	
+		    		Log.d("NUM DADES BYTES:", Integer.toString(bytes));
+
+		            f.close();
+		            
+		        } catch (Exception e) {
+		            Log.d("ERROR", "Error obrint fitxer Milis");
+		        }
+				return res;
+			}
     	};
 
     	//DelayThread mThread = new DelayThread();
@@ -654,7 +733,7 @@ public class F1LTActivity extends FragmentActivity  implements DataStreamReceive
         } 
         else 
         {
-        	Toast error = Toast.makeText(this, "Could not find any active network connections!", Toast.LENGTH_LONG);
+        	Toast error = Toast.makeText(this, "Could not find any active network connections!", Toast.LENGTH_SHORT);
         	error.show();
         	
         	DialogInterface.OnClickListener dialogClickListener = new DialogInterface.OnClickListener() {
@@ -852,7 +931,8 @@ public class F1LTActivity extends FragmentActivity  implements DataStreamReceive
             String[] children = appDir.list();
             for (String s : children) {
                 if (!s.equals("lib")) {
-                    deleteDir(new File(appDir, s));Log.i("TAG", "**************** File /data/data/APP_PACKAGE/" + s + " DELETED *******************");
+                    deleteDir(new File(appDir, s));
+                    Log.i("TAG", "**************** File /data/data/APP_PACKAGE/" + s + " DELETED *******************");
                 }
             }
         }

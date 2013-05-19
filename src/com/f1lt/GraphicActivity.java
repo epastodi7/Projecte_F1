@@ -87,7 +87,15 @@ public class GraphicActivity extends Activity implements DataStreamReceiver{
 	        // reduce the number of range labels
 	        mySimpleXYPlot.setTicksPerRangeLabel(3);
 	        mySimpleXYPlot.setTitle("Position Chart");
-	        //mySimpleXYPlot.
+	        
+	        
+	        //PROVA
+	        mySimpleXYPlot.setRangeBottomMax(22);
+	        mySimpleXYPlot.setRangeBottomMax(1);
+	        
+	        //PROVA
+	        mySimpleXYPlot.setRangeStep(XYStepMode.INCREMENT_BY_VAL, 5);
+	        mySimpleXYPlot.setDomainStep(XYStepMode.INCREMENT_BY_VAL, 1);
 	 
 	        // by default, AndroidPlot displays developer guides to aid in laying out your plot.
 	        // To get rid of them call disableAllMarkup():

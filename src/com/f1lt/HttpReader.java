@@ -37,8 +37,8 @@ public class HttpReader
 	private static String host;
 	private static String loginHost;
 	private static int decryptionKey = 0;
-    private static String RUTA_SAVE = "/PROVA/F1/BAR/R-CHECK";
-    private static String RUTA_LOAD = "/PROVA/F1/BAR/R-1";
+    private static String RUTA_SAVE = "";
+
 	
 	public HttpReader()
 	{	
@@ -246,9 +246,10 @@ public class HttpReader
 //            return "Unable to retrieve web page. URL may be invalid.";
 		}
 	}
-	public static Thread attemptObtainKeyFrame(final int frame, final Handler handler, final DataStreamReader thread)
+	public static Thread attemptObtainKeyFrame(final int frame, final Handler handler, final DataStreamReader thread, String ruta)
 	{
 		Log.d("HttpReader", "attemptObtainKeyFrame");
+		RUTA_SAVE = ruta;
 		Thread _thread = new Thread()
 		{
 			public void run()

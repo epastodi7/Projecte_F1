@@ -3,6 +3,7 @@ package com.f1lt;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.ConcurrentHashMap;
 
 import android.util.Log;
 
@@ -18,6 +19,7 @@ public class EventData
     int flagStatus = 0;
     int sessionId = 0;
     int firstSessionId = 7066;
+    int minutsSessio = 0;
 
     String remainingTime = "";
     int lapsCompleted;
@@ -28,6 +30,9 @@ public class EventData
     double pressure = 0, trackTemp = 0;
     
     Integer[] airTempHistoric;
+    
+    // HISTORIC DADES DE TEMPS
+    public ConcurrentHashMap<Integer, Integer> airTempHistory = new ConcurrentHashMap<Integer, Integer>();
 
     boolean sessionStarted = false;
 
