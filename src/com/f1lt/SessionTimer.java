@@ -19,13 +19,13 @@ public class SessionTimer// extends Thread
 	
 	public boolean isTimerRunning()
 	{
-		Log.d("SessionTimer", "isTimerRunning");
+		//Log.d("SessionTimer", "isTimerRunning");
 		return timerRunning;
 	}
 	
 	public void setTime(String t)
 	{
-		Log.d("SessionTimer", "setTime");
+		//Log.d("SessionTimer", "setTime");
 		String [] arr = t.split(":");
 		if (arr.length == 3)
 		{
@@ -52,13 +52,13 @@ public class SessionTimer// extends Thread
 	
 	public String getTime()
 	{
-		Log.d("SessionTimer", "getTime");
+		//Log.d("SessionTimer", "getTime");
 		return time;
 	}
 	
 	public void startTimer()
 	{
-		Log.d("SessionTimer", "startTimer");
+		//Log.d("SessionTimer", "startTimer");
 		if (timerRunning)
 			return;
 		
@@ -94,7 +94,7 @@ public class SessionTimer// extends Thread
 	
 	public void stopTimer()
 	{
-		Log.d("SessionTimer", "stopTimer");
+		//Log.d("SessionTimer", "stopTimer");
 		timerRunning = false;
 	}
 	
@@ -117,7 +117,7 @@ public class SessionTimer// extends Thread
 	
 	public void decrementTime()
 	{
-		Log.d("SessionTimer", "decrementTime");
+		//Log.d("SessionTimer", "decrementTime");
 		if (EventData.getInstance().eventType != LTData.EventType.PRACTICE_EVENT && EventData.getInstance().flagStatus == LTData.FlagStatus.RED_FLAG)
 			return;
 		
@@ -183,7 +183,7 @@ public class SessionTimer// extends Thread
 	
 	public void timerUpdated()
 	{
-		Log.d("SessionTimer", "timerUpdated");
+		//Log.d("SessionTimer", "timerUpdated");
 		if (handler == null)
 			return;
 		
@@ -198,7 +198,7 @@ public class SessionTimer// extends Thread
 	
 	public void timerStopped()
 	{
-		Log.d("SessionTimer", "timerStopped");
+		//Log.d("SessionTimer", "timerStopped");
 		if (handler == null)
 			return;
 		

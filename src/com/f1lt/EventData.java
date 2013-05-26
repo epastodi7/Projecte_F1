@@ -29,11 +29,13 @@ public class EventData
     double windSpeed = 0, windDirection = 0;
     double pressure = 0, trackTemp = 0;
     
-    Integer[] airTempHistoric;
+    //Integer[] airTempHistoric;
     
     // HISTORIC DADES DE TEMPS
+    public ConcurrentHashMap<Integer, Integer> temps_guardats = new ConcurrentHashMap<Integer, Integer>();
     public ConcurrentHashMap<Integer, Integer> airTempHistory = new ConcurrentHashMap<Integer, Integer>();
-
+    public ConcurrentHashMap<Integer, Integer> airTrackHistory = new ConcurrentHashMap<Integer, Integer>();
+    
     boolean sessionStarted = false;
 
     int wetdry;

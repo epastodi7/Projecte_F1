@@ -97,12 +97,14 @@ public class DataStreamReader
 	private Thread socketThread;
 	private int packets = 0;
 	private int blocks = 0;
+	//dades per contar cada cop que entrem una dada de temps
+	private int values = 0;
 	private boolean carpeta_creada = false;
 	private boolean delayed = false;
 	private int provisionalKey = 0;
 	private boolean pKey = false;
 	
-    private static String RUTA_SAVE = "/PROVA/F1/BAR/R-CHECK";
+    private static String RUTA_SAVE = F1LTActivity.getRUTA_SAVE();
 	
 	private Handler receiverHandler;
 	private Handler secondaryReceiverHandler;
@@ -128,7 +130,7 @@ public class DataStreamReader
 	
 	public static DataStreamReader getInstance()
 	{
-		Log.d("DataStreamReader", "getInstance");
+		//Log.d("DataStreamReader", "getInstance");
 		if (dataStreamReader == null)
 			dataStreamReader = new DataStreamReader();
 		
@@ -405,7 +407,7 @@ public class DataStreamReader
 	public void parseBlock(byte[] data, int bytes)
     {
 		blocks = blocks + 1;
-		Log.d("DataStreamReader", "parseBlock: " + blocks);
+		//Log.d("DataStreamReader", "parseBlock: " + blocks);
         AtomicReference<Packet> packet = new AtomicReference<Packet>(new Packet());
         AtomicReference<Integer> pos = new AtomicReference<Integer>(0);   
         
@@ -413,7 +415,7 @@ public class DataStreamReader
         if(entra){   	
 	        
         	long millis = (System.currentTimeMillis()/1000);
-        	Log.d("MILLIS",Long.toString(millis));
+        	//Log.d("MILLIS",Long.toString(millis));
         	
 	        //Creem un arxiu per copiar a dins
 	        File sdCard = Environment.getExternalStorageDirectory();
@@ -443,8 +445,8 @@ public class DataStreamReader
 	        File file3 = new File(dir, nom3);
 	        
 	        Log.d("ARREL ARXIU DADES: ", file.toString());
-	        Log.d("ARREL ARXIU TEMPS: ", file2.toString());
-	        Log.d("ARREL ARXIU MILIS: ", file3.toString());
+	        //Log.d("ARREL ARXIU TEMPS: ", file2.toString());
+	        //Log.d("ARREL ARXIU MILIS: ", file3.toString());
 	        String timer = sessionTimer.getTime();
 	        try {
 				temps = timer.getBytes("UTF8");
@@ -478,9 +480,9 @@ public class DataStreamReader
 	            f3.flush();
 	            f3.close();
 	            
-	            Log.d("GUARDAT NUM DADES AL ARXIU DADES: ", Integer.toString(dades.length));
-	            Log.d("GUARDAT NUM DADES AL ARXIU TEMPS: ", Integer.toString(temps.length));
-	            Log.d("GUARDAT NUM DADES AL ARXIU MILIS: ", Integer.toString(milis.length));
+	            //Log.d("GUARDAT NUM DADES AL ARXIU DADES: ", Integer.toString(dades.length));
+	            //Log.d("GUARDAT NUM DADES AL ARXIU TEMPS: ", Integer.toString(temps.length));
+	            //Log.d("GUARDAT NUM DADES AL ARXIU MILIS: ", Integer.toString(milis.length));
 	        } catch (Exception e) {
 	            Log.e("EERROR", "Error opening Log.", e);
 	        }
@@ -755,15 +757,32 @@ public class DataStreamReader
 			if(hour>0){
 				min = min + (hour*60);
 			}
+			
 			guardemDadesTemps(min,sec);
 		}
 		
 	}
 
 	private void guardemDadesTemps(int min, int sec) {
-		if(!eventData.airTempHistory.containsKey(min)){
+		
+		if(!eventData.temps_guardats.containsKey(min)){
+			
+			Log.d("GUARDEM EVENT DATA",eventData.remainingTime);
+			// Ens guardem a la taula de keys guardades - per saber com les anem guardant
+			//Log.d("=== GUARDEM EVENT DATA",eventData.remainingTime);
+			values=values+1;
+			eventData.temps_guardats.put(min, values);
+			
+			//Ens anem guardant els diferents valors a cada Hash Map
+			// Temperatura del Aire
 			int temp = (int)eventData.airTemp;
 			eventData.airTempHistory.put(min, temp);
+			//Log.d("=== SIZE AIR TEMP",Integer.toString(eventData.airTempHistory.size()));
+			
+			// Temperatura del Asfalt
+			temp = (int)eventData.trackTemp;
+			eventData.airTrackHistory.put(min, temp);
+			//Log.d("=== SIZE TRACK TEMP",Integer.toString(eventData.airTrackHistory.size()));
 		}
 		
 	}
@@ -794,6 +813,7 @@ public class DataStreamReader
 		switch(packet.type)
 	    {
 	        case LTData.SystemPacket.SYS_EVENT_ID:
+	        	Log.d("DataStreamReader", "ENTRA SYS_EVENT_ID");
 	            number = 0;	            
 	            try
 	            {
@@ -837,7 +857,7 @@ public class DataStreamReader
 	    	            eventData.lapsCompleted = 0;
 	            	}
 	            		
-	            	Log.d("HTTP ATTEMPT L808", Integer.toString(number));
+	            	Log.d("HTTPATTEMPT_EVENTID_L856 NUMBER I KEYFRAME", Integer.toString(number)+" "+Integer.toString(decrypter.getKey()));
 	            	if(!delayed){
 	            		httpThread = HttpReader.attemptObtainDecryptionKey(eventNo, handler, this);
 	            	}
@@ -873,14 +893,16 @@ public class DataStreamReader
 	            break;
 
 	        case LTData.SystemPacket.SYS_KEY_FRAME:
+	        	Log.d("DataStreamReader", "ENTRA SYS_KEY_FRAME");
 	            number = 0;
     
 	            number = packet.longData[1] << 8 & 0xff00 | packet.longData[0] & 0xff;
 	            decrypter.resetDecryption();
 
-	            Log.d("HTTP ATTEMPT L849", Integer.toString(number));
+	            Log.d("SYSKEYFRAME_L897 NUMBER I KEYFRAME", Integer.toString(number)+" "+Integer.toString(decrypter.getKey()));
 	             if (eventData.frame == 0 && delayed == false)
 	             {
+	            	Log.d("ENTRA FRAME = 0", "eventData.frame=number");
 	                eventData.frame = number;
 	                httpThread = HttpReader.attemptObtainKeyFrame(number, handler, DataStreamReader.this, RUTA_SAVE);
 	                
@@ -949,9 +971,11 @@ public class DataStreamReader
 	                    	str = new String(packet.longData, "ISO-8859-1");	                    	                   
 	                    	eventData.trackTemp = Double.parseDouble(str);
 	                    	// PROVA
+	                    	/*
 	                    	int size = eventData.airTempHistoric.length;
 	                    	Integer temp = Integer.valueOf(str);
 	                    	eventData.airTempHistoric[size]=temp;
+	                    	*/
 	                    }
 	                    catch (Exception e) {}
 	                    break;
@@ -1252,7 +1276,7 @@ public class DataStreamReader
 	public void parseCarPacket(Packet packet)
 	{    
 		//Log.d("parseCarPacket","Car");
-		Log.d("parseCarPacket", eventData.remainingTime);
+		//Log.d("parseCarPacket", eventData.remainingTime);
 		if (noSession)
 		{
 //			receiverHandler.post(new Runnable() 
@@ -1301,7 +1325,7 @@ public class DataStreamReader
 	    {
 	    }
 	    
-	    Log.d("CAR=" + packet.carID, " CAR TYPE=" + packet.type + " CAR DATA= " + packet.data + " CAR LEN= " + packet.length + " LONG DATA= " + longData);// + new String(packet.longData, 0, packet.length, "ISO-8859-1") + " " + eventData.driversData.size());
+	    Log.d("ParseCarPacket CAR=" + packet.carID, " CAR TYPE=" + packet.type + " CAR DATA= " + packet.data + " CAR LEN= " + packet.length + " LONG DATA= " + longData);// + new String(packet.longData, 0, packet.length, "ISO-8859-1") + " " + eventData.driversData.size());
 	    
 	    //return;
 	    DriverData dd = eventData.driversData.get(packet.carID-1);
@@ -1564,7 +1588,7 @@ public class DataStreamReader
 	                    	try
 	                    	{
 		                    	String str = new String(longData);
-		                    	Log.d("RACE_LAP_TIME", str);
+		                    	//Log.d("RACE_LAP_TIME", str);
 		                        dd.lastLap.lapTime.setTime(str);		                        		                       
 	
 		                        if (!dd.lapData.isEmpty() && !str.equals("OUT"))
@@ -1578,7 +1602,7 @@ public class DataStreamReader
 	
 		                        dd.addLap(eventData);
 		                        size_dd = dd.lapData.size();
-		                	    Log.d("MIDA VOLTES-CARPACKET DESPRES: ",Integer.toString(size_dd));
+		                	    //Log.d("MIDA VOLTES-CARPACKET DESPRES: ",Integer.toString(size_dd));
 		                        
 	                    	} catch (Exception e) { }
 	                    }

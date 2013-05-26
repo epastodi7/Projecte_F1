@@ -4,6 +4,7 @@ import java.text.FieldPosition;
 import java.text.Format;
 import java.text.ParsePosition;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
@@ -39,6 +40,8 @@ public class GraphicActivity extends Activity implements DataStreamReceiver{
 		DriverData driverData2 = eventData.driversData.get(1);
 		List<Integer> pos_history1 = driverData1.posHistory;
 		List<Integer> pos_history2 = driverData2.posHistory;
+		Object[] air = eventData.airTempHistory.values().toArray();
+		Object[] track = eventData.airTrackHistory.values().toArray();
 		Integer[] llista1, llista2;
 		
 		
@@ -104,9 +107,16 @@ public class GraphicActivity extends Activity implements DataStreamReceiver{
 	    
 		private void convert() {
 			
+			//CONVERTEIX DOS PILOTS
 			llista1=toIntArray(pos_history1);
 			llista2=toIntArray(pos_history2);
 			
+			
+			//CONVERTEIX AIR I TEMP TEMPERATURE
+			/*
+			llista1=toIntArray((List<Integer>) air);
+			llista2=toIntArray((List<Integer>) track);
+			*/
 		}
 		
 		private Integer[] toIntArray(List<Integer> list){
@@ -117,6 +127,13 @@ public class GraphicActivity extends Activity implements DataStreamReceiver{
 			}
 
 		private void info() {
+			Log.d("GRAPHIC ACT", "INFO");
+			Log.d("LLISTA airTempHistoric", Integer.toString(eventData.airTempHistory.size()));
+			Collection<Integer> airTemp;
+			airTemp = eventData.airTempHistory.values();
+			Log.d("LLista despres air", Integer.toString(airTemp.size()));
+			
+			/*
 			for(int i=0;i<eventData.driversData.size();i++){
 				DriverData driverData = eventData.driversData.get(i);
 				List<Integer> pos_history = driverData.posHistory;
@@ -124,6 +141,7 @@ public class GraphicActivity extends Activity implements DataStreamReceiver{
 				int event_info = eventData.eventInfo.laps;
 				Log.d("POSICIO I NOM PILOT: ",i+" "+driverData.driver);
 			}
+			*/
 			//Log.d("POS PILOT: ",Integer.toString(driverData.pos));
 			//Log.d("VOLTES GUARDADES PILOT: ",Integer.toString(driverData.lapData.size()));
 			//Log.d("SIZE POSICIONS: ", Integer.toString(size));
@@ -143,8 +161,7 @@ public class GraphicActivity extends Activity implements DataStreamReceiver{
 		//@Override
 		public void onNewDataObtained(boolean updateTimer)
 		{
-			//if (!updateTimer)
-				//updateView();
+
 		}
 		
 		//@Override

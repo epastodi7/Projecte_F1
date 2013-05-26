@@ -129,7 +129,7 @@ public class SocketDataReader //extends Thread
 	{
 		try
 		{
-			Log.d("SocketDataReader", "PingOK");
+			//Log.d("SocketDataReader", "PingOK");
 			outputStream.write(16);
 			outputStream.flush();
 		}
@@ -200,7 +200,7 @@ public class SocketDataReader //extends Thread
 	}
 	private void sendDataBlock(final byte [] data, final int bytes, final boolean result)
 	{
-		Log.d("SocketDataReader", "sendDataBlock");
+		//Log.d("SocketDataReader", "sendDataBlock");
 		if (handler == null || context == null)
 			return;
 		

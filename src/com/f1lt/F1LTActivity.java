@@ -57,10 +57,10 @@ public class F1LTActivity extends FragmentActivity  implements DataStreamReceive
         	int num_dades=0;
         	Bundle bundle = msg.getData();
         	dades = bundle.getByteArray("Data");
-        	Log.d("Handle Message", dades.toString());
+        	//Log.d("Handle Message", dades.toString());
         	num_dades = dades.length;
         	
-        	Log.d("Handle Message", Integer.toString(num_dades));
+        	//Log.d("Handle Message", Integer.toString(num_dades));
         	
         	dataStreamReader.parseBlockDelayed(dades, num_dades);
         	onNewDataObtained(false);
@@ -80,8 +80,8 @@ public class F1LTActivity extends FragmentActivity  implements DataStreamReceive
     private boolean showCommentaryLine = true;
     private boolean delayed;
     
-    private static String RUTA_SAVE = "/PROVA/F1/BAR/R-CHECK";
-    private static String RUTA_LOAD = "/PROVA/F1/BAR/R-1";
+    private static String RUTA_SAVE = "/PROVA/F1/MON/Q3-CHECK";
+    private static String RUTA_LOAD = "/PROVA/F1/MON/P1-2";
     
     private final String PREFS_NAME = "F1LTPrefs";    
     private final int GET_LOGIN = 1;
@@ -349,7 +349,7 @@ public class F1LTActivity extends FragmentActivity  implements DataStreamReceive
     	    public void run(){
     	    	Log.d("delayed", "FUNCIO DIFERIT");
     	    	int blocks, bytes = 0;
-    			long segonsDelay=0;
+    			long segonsDelay=0, Delay=0;
     	    	File sdCard = Environment.getExternalStorageDirectory();
     	        File dir = new File (sdCard.getAbsolutePath() + RUTA_LOAD);
     	        File[] llista = dir.listFiles();
@@ -403,7 +403,10 @@ public class F1LTActivity extends FragmentActivity  implements DataStreamReceive
     		            Log.d("ERROR", "Error obrint fitxer");
     		        }
     		        try{
-    		        	Thread.sleep(segonsDelay*1000);
+    		        	//PROVES PER ANAR MES RAPID
+    		        	//segonsDelay = 1;
+    		        	Delay = 1000;
+    		        	Thread.sleep(segonsDelay*Delay);
     		        	//dataStreamReader.parseBlockDelayed(dades, bytes);
     		        	
     		        	Message msg = new Message();
@@ -456,7 +459,7 @@ public class F1LTActivity extends FragmentActivity  implements DataStreamReceive
 				long res = 0;
 				
 				File file = new File(dir, nom);
-		        Log.d("ARREL ARXIU: ", file.toString());
+		        //Log.d("ARREL ARXIU: ", file.toString());
 		        dades = null;
 		        ByteArrayOutputStream buffer = new ByteArrayOutputStream();
 		        byte[] data = new byte[10];
@@ -479,7 +482,7 @@ public class F1LTActivity extends FragmentActivity  implements DataStreamReceive
 		        	
 		        	buffer.flush();
 		        	
-		    		Log.d("NUM DADES BYTES:", Integer.toString(bytes));
+		    		//Log.d("NUM DADES BYTES:", Integer.toString(bytes));
 
 		            f.close();
 		            
@@ -571,7 +574,7 @@ public class F1LTActivity extends FragmentActivity  implements DataStreamReceive
         	
         	dades = buffer.toByteArray();
         	String text = new String(dades, "UTF8");
-        	Log.d("NUM KEY FRAME PRE VALUE OF:", text);
+        	//Log.d("NUM KEY FRAME PRE VALUE OF:", text);
         	
         	int key = Integer.valueOf(text);
         	
@@ -710,8 +713,8 @@ public class F1LTActivity extends FragmentActivity  implements DataStreamReceive
     
     public void onConnectedClicked(String email, String passwd) 
     {
-    	email = "ernestpd@hotmail.com";
-    	passwd = "010185epd";
+    	email = "pdernest@gmail.com";
+    	passwd = "ernestpd85";
     	Log.d("F1LTActivity", "onConnectedClicked");
     	String url = "http://formula1.com/reg/login?";
     	String url2 = "http://live-timing.formula1.com";
@@ -743,7 +746,7 @@ public class F1LTActivity extends FragmentActivity  implements DataStreamReceive
         	        switch (which){
         	        case DialogInterface.BUTTON_POSITIVE:
         	            delayed = true;
-        	            Log.d("BOTO RESULTAT", "OK TIO");
+        	            //Log.d("BOTO RESULTAT", "OK TIO");
         	        	if(delayed){
         	        		delayed();
         	        	}
@@ -751,7 +754,7 @@ public class F1LTActivity extends FragmentActivity  implements DataStreamReceive
 
         	        case DialogInterface.BUTTON_NEGATIVE:
         	            delayed = false;
-        	            Log.d("BOTO RESULTAT", "ROKA TIO");
+        	            //Log.d("BOTO RESULTAT", "ROKA TIO");
         	            break;
         	        }
         	    }
@@ -802,11 +805,11 @@ public class F1LTActivity extends FragmentActivity  implements DataStreamReceive
 		{
 			if (updateTimer){
 				lt.updateStatus();
-				Log.d("onNewDataObtained", "updateStatus");
+				//Log.d("onNewDataObtained", "updateStatus");
 			}
 			else{
 				lt.refreshView();
-				Log.d("onNewDataObtained", "refreshView");
+				//Log.d("onNewDataObtained", "refreshView");
 			}
 		}	
     	updateCommentaryLine();
@@ -814,7 +817,7 @@ public class F1LTActivity extends FragmentActivity  implements DataStreamReceive
     
     public void updateCommentaryLine()
     {
-    	Log.d("F1LTActivity", "updateCommentaryLine");
+    	//Log.d("F1LTActivity", "updateCommentaryLine");
     	if (eventData.commentary != null)
     	{
 	    	String [] arr = eventData.commentary.split("\n");
@@ -951,4 +954,12 @@ public class F1LTActivity extends FragmentActivity  implements DataStreamReceive
         }
         return dir.delete();
     }
+
+	public static String getRUTA_SAVE() {
+		return RUTA_SAVE;
+	}
+
+	public static void setRUTA_SAVE(String rUTA_SAVE) {
+		RUTA_SAVE = rUTA_SAVE;
+	}
 }
