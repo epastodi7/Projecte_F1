@@ -80,8 +80,8 @@ public class F1LTActivity extends FragmentActivity  implements DataStreamReceive
     private boolean showCommentaryLine = true;
     private boolean delayed;
     
-    private static String RUTA_SAVE = "/PROVA/F1/MON/Q3-CHECK";
-    private static String RUTA_LOAD = "/PROVA/F1/MON/P1-2";
+    private static String RUTA_SAVE = "/PROVA/F1/MON/R-CHECK";
+    private static String RUTA_LOAD = "/PROVA/F1/MON/R-1";
     
     private final String PREFS_NAME = "F1LTPrefs";    
     private final int GET_LOGIN = 1;
@@ -282,17 +282,25 @@ public class F1LTActivity extends FragmentActivity  implements DataStreamReceive
 	{
     	Log.d("F1LTActivity", "onActivityResult");
     	Log.d("ResultCode dins F1LT", Integer.toString(resultCode));
+    	String ruta = "/PROVA/F1/";
     	
 		if (requestCode == GET_LOGIN && resultCode == RESULT_OK)
-		{			
+		{
+			Log.d("ENTRA", "ON VULL");
 			String email = data.getStringExtra("Email");
 			String passwd = data.getStringExtra("Passwd");
+			String rutaPath = data.getStringExtra("pathSave");
+	        Log.d("RUTAPATH", rutaPath);
+	        ruta=ruta.concat(rutaPath);
+	        Log.d("RUTA", ruta);
+	        setRUTA_SAVE(ruta);
+	        dataStreamReader.setRUTA_SAVE(getRUTA_SAVE());
 		
 			onConnectedClicked(email, passwd);
 		}
 		if (requestCode == GET_PREFERENCES && resultCode == RESULT_OK)
 		{
-			
+			Log.d("NO ENTRA", "ON VULL");
 			ltViewFragment = (LTViewFragment)getSupportFragmentManager().findFragmentByTag("LTViewFragment");
             if (ltViewFragment != null)
             	ltViewFragment.setPreferences(data);
@@ -631,6 +639,7 @@ public class F1LTActivity extends FragmentActivity  implements DataStreamReceive
         String email = settings.getString("email", "");
         String passwd = settings.getString("passwd", "");
         
+        
     	if (!showDialog && !email.equals("") && !passwd.equals(""))
     	{	    		       
 	        onConnectedClicked(email, Decrypter.encodePasswd(passwd));	        
@@ -956,10 +965,13 @@ public class F1LTActivity extends FragmentActivity  implements DataStreamReceive
     }
 
 	public static String getRUTA_SAVE() {
+		Log.d("getRUTA", RUTA_SAVE);
 		return RUTA_SAVE;
 	}
 
 	public static void setRUTA_SAVE(String rUTA_SAVE) {
+		Log.d("setRUTA ABANS", RUTA_SAVE);
+		Log.d("setRUTA ENTRANT", rUTA_SAVE);
 		RUTA_SAVE = rUTA_SAVE;
 	}
 }

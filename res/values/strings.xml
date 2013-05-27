@@ -27,5 +27,8 @@
     <string name="gap_to_front">Gap to P</string>
     <string name="gap_to_back">Gap to P</string>
     <string name="pos_history">Position History</string>
+    <string name="savePath">save path:</string>
+    <string name="estatInet"></string>
+    <string name="estatOnline">ONline</string>
 
 </resources>

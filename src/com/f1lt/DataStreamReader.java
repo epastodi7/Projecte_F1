@@ -104,7 +104,7 @@ public class DataStreamReader
 	private int provisionalKey = 0;
 	private boolean pKey = false;
 	
-    private static String RUTA_SAVE = F1LTActivity.getRUTA_SAVE();
+    private static String RUTA_SAVE = "";
 	
 	private Handler receiverHandler;
 	private Handler secondaryReceiverHandler;
@@ -1984,6 +1984,11 @@ public class DataStreamReader
 	public void guardarKey(int key) {
 		provisionalKey = key;
 		pKey = true;
+		
+	}
+
+	public void setRUTA_SAVE(String ruta_SAVE2) {
+		RUTA_SAVE = ruta_SAVE2;
 		
 	}
 }
