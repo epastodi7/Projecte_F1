@@ -286,13 +286,13 @@ public class F1LTActivity extends FragmentActivity  implements DataStreamReceive
     	
 		if (requestCode == GET_LOGIN && resultCode == RESULT_OK)
 		{
-			Log.d("ENTRA", "ON VULL");
+			//Log.d("ENTRA", "ON VULL");
 			String email = data.getStringExtra("Email");
 			String passwd = data.getStringExtra("Passwd");
 			String rutaPath = data.getStringExtra("pathSave");
-	        Log.d("RUTAPATH", rutaPath);
+	        //Log.d("RUTAPATH", rutaPath);
 	        ruta=ruta.concat(rutaPath);
-	        Log.d("RUTA", ruta);
+	        //Log.d("RUTA", ruta);
 	        setRUTA_SAVE(ruta);
 	        dataStreamReader.setRUTA_SAVE(getRUTA_SAVE());
 		
@@ -300,7 +300,7 @@ public class F1LTActivity extends FragmentActivity  implements DataStreamReceive
 		}
 		if (requestCode == GET_PREFERENCES && resultCode == RESULT_OK)
 		{
-			Log.d("NO ENTRA", "ON VULL");
+			//Log.d("NO ENTRA", "ON VULL");
 			ltViewFragment = (LTViewFragment)getSupportFragmentManager().findFragmentByTag("LTViewFragment");
             if (ltViewFragment != null)
             	ltViewFragment.setPreferences(data);
@@ -412,8 +412,8 @@ public class F1LTActivity extends FragmentActivity  implements DataStreamReceive
     		        }
     		        try{
     		        	//PROVES PER ANAR MES RAPID
-    		        	//segonsDelay = 1;
-    		        	Delay = 1000;
+    		        	segonsDelay = 1;
+    		        	Delay = 500;
     		        	Thread.sleep(segonsDelay*Delay);
     		        	//dataStreamReader.parseBlockDelayed(dades, bytes);
     		        	
@@ -745,8 +745,7 @@ public class F1LTActivity extends FragmentActivity  implements DataStreamReceive
         } 
         else 
         {
-        	Toast error = Toast.makeText(this, "Could not find any active network connections!", Toast.LENGTH_SHORT);
-        	error.show();
+        	final Toast error = Toast.makeText(this, "Could not find any active network connections!", Toast.LENGTH_LONG);
         	
         	DialogInterface.OnClickListener dialogClickListener = new DialogInterface.OnClickListener() {
         	    
@@ -755,7 +754,6 @@ public class F1LTActivity extends FragmentActivity  implements DataStreamReceive
         	        switch (which){
         	        case DialogInterface.BUTTON_POSITIVE:
         	            delayed = true;
-        	            //Log.d("BOTO RESULTAT", "OK TIO");
         	        	if(delayed){
         	        		delayed();
         	        	}
@@ -763,7 +761,7 @@ public class F1LTActivity extends FragmentActivity  implements DataStreamReceive
 
         	        case DialogInterface.BUTTON_NEGATIVE:
         	            delayed = false;
-        	            //Log.d("BOTO RESULTAT", "ROKA TIO");
+        	            error.show();
         	            break;
         	        }
         	    }
@@ -812,6 +810,7 @@ public class F1LTActivity extends FragmentActivity  implements DataStreamReceive
     	LTViewFragment lt = (LTViewFragment)getSupportFragmentManager().findFragmentByTag("LTViewFragment");
 		if (lt != null)
 		{
+			dataStreamReader.guardarEventData();
 			if (updateTimer){
 				lt.updateStatus();
 				//Log.d("onNewDataObtained", "updateStatus");

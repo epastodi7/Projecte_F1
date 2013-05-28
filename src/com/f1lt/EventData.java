@@ -33,8 +33,8 @@ public class EventData
     
     // HISTORIC DADES DE TEMPS
     public ConcurrentHashMap<Integer, Integer> temps_guardats = new ConcurrentHashMap<Integer, Integer>();
-    public ConcurrentHashMap<Integer, Integer> airTempHistory = new ConcurrentHashMap<Integer, Integer>();
-    public ConcurrentHashMap<Integer, Integer> airTrackHistory = new ConcurrentHashMap<Integer, Integer>();
+    public ConcurrentHashMap<Integer, Double> airTempHistory = new ConcurrentHashMap<Integer, Double>();
+    public ConcurrentHashMap<Integer, Double> trackTempHistory = new ConcurrentHashMap<Integer, Double>();
     
     boolean sessionStarted = false;
 

@@ -79,7 +79,7 @@ public class LoginActivity extends Activity
 			intent.putExtra("Passwd", passwdText.getText().toString());
 			intent.putExtra("pathSave", rutaPath.getText().toString());
 			String prova = intent.getStringExtra("pathSave");
-			Log.d("QUE HI HA A pathSave", prova);
+			//Log.d("QUE HI HA A pathSave", prova);
 			
 			setResult(RESULT_OK, intent);
 			finish();

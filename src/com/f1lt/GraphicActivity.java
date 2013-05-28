@@ -7,6 +7,7 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
+import java.util.concurrent.ConcurrentHashMap;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -36,13 +37,18 @@ public class GraphicActivity extends Activity implements DataStreamReceiver{
 		DataStreamReader dataStreamReader;
 		private Handler handler = new Handler();
 		private EventData eventData = EventData.getInstance();
+		
+		//PROVA PER 2 PILOTS
 		DriverData driverData1 = eventData.driversData.get(2);
 		DriverData driverData2 = eventData.driversData.get(1);
 		List<Integer> pos_history1 = driverData1.posHistory;
 		List<Integer> pos_history2 = driverData2.posHistory;
-		Object[] air = eventData.airTempHistory.values().toArray();
-		Object[] track = eventData.airTrackHistory.values().toArray();
-		Integer[] llista1, llista2;
+		
+		//PROVA PER DADES TEMPS
+		int minutsSessio = eventData.minutsSessio;
+		//Collection<Double> airC = eventData.airTempHistory.values();
+		//Collection<Double> trackC = eventData.airTempHistory.values();
+		Number[] llista1, llista2;
 		
 		
 	    private XYPlot mySimpleXYPlot;
@@ -53,17 +59,18 @@ public class GraphicActivity extends Activity implements DataStreamReceiver{
 	 
 	        super.onCreate(savedInstanceState);
 	        setContentView(R.layout.graphic);
-	        //double temp = eventData.airTemp;
-	        //Log.d("Temperatura: ", Double.toString(temp));
+	        
 	        convert();
+	        llista1=CollectionToList(eventData.trackTempHistory);
+	        llista2=CollectionToList(eventData.airTempHistory);
 	        info();
 	        
 	        // initialize our XYPlot reference:
 	        mySimpleXYPlot = (XYPlot) findViewById(R.id.mySimpleXYPlot);
 	 
 	        // Create a couple arrays of y-values to plot:
-	        Integer[] series1Numbers = llista1;
-	        Integer[] series2Numbers = llista2;
+	        Number[] series1Numbers = llista1;
+	        Number[] series2Numbers = llista2;
 	 
 	        // Turn the above arrays into XYSeries':
 	        XYSeries series1 = new SimpleXYSeries(
@@ -105,6 +112,20 @@ public class GraphicActivity extends Activity implements DataStreamReceiver{
 	        mySimpleXYPlot.disableAllMarkup();
 	    }
 	    
+		@SuppressWarnings("null")
+		private Number[] CollectionToList(ConcurrentHashMap<Integer, Double> History) {
+			Number[] prova = new Number[History.size()];
+			int i = 0;
+			Log.d("HI HAN X VALORS DE track temperature", Integer.toString(History.size()));
+			for (Double value : History.values()){
+				Log.d("temperatura", Double.toString(value));
+				prova[i] = value;
+				i++;
+			}
+			return prova;
+			
+		}
+
 		private void convert() {
 			
 			//CONVERTEIX DOS PILOTS
@@ -130,8 +151,7 @@ public class GraphicActivity extends Activity implements DataStreamReceiver{
 			Log.d("GRAPHIC ACT", "INFO");
 			Log.d("LLISTA airTempHistoric", Integer.toString(eventData.airTempHistory.size()));
 			Collection<Integer> airTemp;
-			airTemp = eventData.airTempHistory.values();
-			Log.d("LLista despres air", Integer.toString(airTemp.size()));
+			//Log.d("LLista despres air", Integer.toString(airC.size()));
 			
 			/*
 			for(int i=0;i<eventData.driversData.size();i++){

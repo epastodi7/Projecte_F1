@@ -593,12 +593,17 @@ public class DataStreamReader
 	{	
 		//Log.d("DataStreamReader", "parsePacket");
 		packets = packets + 1;
-		int cent = packets % 40;
-		if(cent==0){
-			//Log.d("packets", String.valueOf(packets));
-		}
 		
-		guardarEventData();
+		/*
+		int cent = packets % 100;
+		// CONTA PAQUETS QUE ENTREN (CADA 100)
+		
+		if(cent==0){
+			Log.d("packets", String.valueOf(packets));
+		}
+		*/
+		
+		//guardarEventData();
 		
 		Packet packet = arPacket.get();
 		
@@ -741,7 +746,7 @@ public class DataStreamReader
 		return true;
 	}
 	
-	private void guardarEventData() {
+	public void guardarEventData() {
 		// GUARDEM HISTORIC DE DADES DE L'EVENT
 		String [] timeArray = eventData.remainingTime.split(":");
 		int hour = 0, min = 0, sec = 0;
@@ -775,13 +780,13 @@ public class DataStreamReader
 			
 			//Ens anem guardant els diferents valors a cada Hash Map
 			// Temperatura del Aire
-			int temp = (int)eventData.airTemp;
+			double temp = eventData.airTemp;
 			eventData.airTempHistory.put(min, temp);
 			//Log.d("=== SIZE AIR TEMP",Integer.toString(eventData.airTempHistory.size()));
 			
 			// Temperatura del Asfalt
-			temp = (int)eventData.trackTemp;
-			eventData.airTrackHistory.put(min, temp);
+			temp = eventData.trackTemp;
+			eventData.trackTempHistory.put(min, temp);
 			//Log.d("=== SIZE TRACK TEMP",Integer.toString(eventData.airTrackHistory.size()));
 		}
 		
