@@ -18,10 +18,13 @@ import android.os.Handler;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 
 import com.androidplot.series.XYSeries;
+import com.androidplot.xy.BoundaryMode;
 import com.androidplot.xy.LineAndPointFormatter;
 import com.androidplot.xy.SimpleXYSeries;
 import com.androidplot.xy.XYPlot;
@@ -59,57 +62,8 @@ public class GraphicActivity extends Activity implements DataStreamReceiver{
 	 
 	        super.onCreate(savedInstanceState);
 	        setContentView(R.layout.graphic);
+	        airTrackTEMP();
 	        
-	        convert();
-	        llista1=CollectionToList(eventData.trackTempHistory);
-	        llista2=CollectionToList(eventData.airTempHistory);
-	        info();
-	        
-	        // initialize our XYPlot reference:
-	        mySimpleXYPlot = (XYPlot) findViewById(R.id.mySimpleXYPlot);
-	 
-	        // Create a couple arrays of y-values to plot:
-	        Number[] series1Numbers = llista1;
-	        Number[] series2Numbers = llista2;
-	 
-	        // Turn the above arrays into XYSeries':
-	        XYSeries series1 = new SimpleXYSeries(
-	                Arrays.asList(series1Numbers),          // SimpleXYSeries takes a List so turn our array into a List
-	                SimpleXYSeries.ArrayFormat.Y_VALS_ONLY, // Y_VALS_ONLY means use the element index as the x value
-	                "Pilot1");                             // Set the display title of the series
-	 
-	        // same as above
-	        XYSeries series2 = new SimpleXYSeries(Arrays.asList(series2Numbers), SimpleXYSeries.ArrayFormat.Y_VALS_ONLY, "Pilot2");
-	 
-	        // Create a formatter to use for drawing a series using LineAndPointRenderer:
-	        LineAndPointFormatter series1Format = new LineAndPointFormatter(
-	                Color.rgb(0, 200, 0),                   // line color
-	                Color.rgb(0, 100, 0),                   // point color
-	                null);                                  // fill color (none)
-	 
-	        // add a new series' to the xyplot:
-	        mySimpleXYPlot.addSeries(series1, series1Format);
-	 
-	        // same as above:
-	        mySimpleXYPlot.addSeries(series2,
-	                new LineAndPointFormatter(Color.rgb(0, 0, 200), Color.rgb(0, 0, 100), null));
-	 
-	        // reduce the number of range labels
-	        mySimpleXYPlot.setTicksPerRangeLabel(3);
-	        mySimpleXYPlot.setTitle("Position Chart");
-	        
-	        
-	        //PROVA
-	        mySimpleXYPlot.setRangeBottomMax(22);
-	        mySimpleXYPlot.setRangeBottomMax(1);
-	        
-	        //PROVA
-	        mySimpleXYPlot.setRangeStep(XYStepMode.INCREMENT_BY_VAL, 5);
-	        mySimpleXYPlot.setDomainStep(XYStepMode.INCREMENT_BY_VAL, 1);
-	 
-	        // by default, AndroidPlot displays developer guides to aid in laying out your plot.
-	        // To get rid of them call disableAllMarkup():
-	        mySimpleXYPlot.disableAllMarkup();
 	    }
 	    
 		@SuppressWarnings("null")
@@ -132,12 +86,6 @@ public class GraphicActivity extends Activity implements DataStreamReceiver{
 			llista1=toIntArray(pos_history1);
 			llista2=toIntArray(pos_history2);
 			
-			
-			//CONVERTEIX AIR I TEMP TEMPERATURE
-			/*
-			llista1=toIntArray((List<Integer>) air);
-			llista2=toIntArray((List<Integer>) track);
-			*/
 		}
 		
 		private Integer[] toIntArray(List<Integer> list){
@@ -172,9 +120,396 @@ public class GraphicActivity extends Activity implements DataStreamReceiver{
 		public void onStart()
 		{
 			super.onStart();
-					
+			
 			dataStreamReader = DataStreamReader.getInstance();
-			dataStreamReader.setSecondaryDataStreamReceiver(handler, this);	  
+			dataStreamReader.setSecondaryDataStreamReceiver(handler, this);
+			
+			
+		}
+
+		@Override
+	    public boolean onCreateOptionsMenu(Menu menu) 
+	    {
+	    	Log.d("Grafic", "onCreateOptionsMenu");
+	    	/*
+	    	menu.add(0, AirTrackTEMP, 0, "Air/Track Temp");
+	    	menu.add(0, Humidity, 0, "Humidity");
+	    	menu.add(0, Pressure, 0, "Pressure");
+	    	menu.add(0, WetDry, 0, "Wet/Dry");
+	    	*/
+	        MenuInflater inflater = getMenuInflater();
+	        inflater.inflate(R.menu.menu_graphic, menu);
+	    	
+	        return true;
+	    }
+		
+		@Override
+	    public boolean onOptionsItemSelected(MenuItem item) 
+	    {
+	    	Log.d("Grafic", "onOptionsItemSelected");
+	        // Handle item selection
+	        switch (item.getItemId()) 
+	        {
+	            case R.id.AirTrackTEMP:
+	               	airTrackTEMP();
+	                return true;
+	                
+	            case R.id.Humidity:
+	            	humidity();
+	            	return true;
+	            	
+	            case R.id.Pressure:
+	            	pressure();
+	            	return true;
+	            	
+	            case R.id.WindSpeed:
+	            	windSpeed();
+	            	return true;
+	            	
+	            case R.id.WetDry:
+	            	wetDry();
+	            	return true;
+	            
+	            case R.id.FlagStatus:
+	            	flags();
+	            	return true;
+	            
+	            default:
+	                return super.onOptionsItemSelected(item);
+	        }
+	    }
+		
+		
+		private void flags() {
+			setContentView(R.layout.graphic);
+			//convert();
+	        llista1=CollectionToList(eventData.flagStatusHistory);
+	        //info();
+	        
+	        // initialize our XYPlot reference:
+	        mySimpleXYPlot = (XYPlot) findViewById(R.id.mySimpleXYPlot);
+	 
+	        // Create a couple arrays of y-values to plot:
+	        Number[] series1Numbers = llista1;
+	 
+	        // Turn the above arrays into XYSeries':
+	        XYSeries series1 = new SimpleXYSeries(
+	                Arrays.asList(series1Numbers),          // SimpleXYSeries takes a List so turn our array into a List
+	                SimpleXYSeries.ArrayFormat.Y_VALS_ONLY, // Y_VALS_ONLY means use the element index as the x value
+	                "Flag Status");                             // Set the display title of the series
+	 
+	 
+	        // Create a formatter to use for drawing a series using LineAndPointRenderer:
+	        LineAndPointFormatter series1Format = new LineAndPointFormatter(
+	                Color.rgb(0, 200, 0),                   // line color
+	                Color.rgb(0, 100, 0),                   // point color
+	                null);                                  // fill color (none)
+	 
+	        // add a new series' to the xyplot:
+	        mySimpleXYPlot.addSeries(series1, series1Format);
+	 
+	 
+	        // reduce the number of range labels
+	        mySimpleXYPlot.setTicksPerRangeLabel(2);
+	        mySimpleXYPlot.setTitle("Flag Status");
+
+	        mySimpleXYPlot.getGraphWidget().setRangeLabelWidth(50);
+	        
+	        mySimpleXYPlot.setRangeBoundaries(0, 10, BoundaryMode.FIXED);
+	        
+	        //PROVA
+	        //mySimpleXYPlot.setRangeBottomMax(22);
+	        //mySimpleXYPlot.setRangeBottomMax(1);
+	        
+	        //PROVA
+	        mySimpleXYPlot.setRangeStep(XYStepMode.INCREMENT_BY_VAL, 5);
+	        //mySimpleXYPlot.set
+	        mySimpleXYPlot.setDomainStep(XYStepMode.INCREMENT_BY_VAL, 1);
+	 
+	        // by default, AndroidPlot displays developer guides to aid in laying out your plot.
+	        // To get rid of them call disableAllMarkup():
+	        mySimpleXYPlot.disableAllMarkup();
+			
+		}
+
+		private void wetDry() {
+			setContentView(R.layout.graphic);
+			//convert();
+	        llista1=CollectionToList(eventData.wetDryHistory);
+	        llista2=CollectionToList(eventData.windDirectionHistory);
+	        //info();
+	        
+	        // initialize our XYPlot reference:
+	        mySimpleXYPlot = (XYPlot) findViewById(R.id.mySimpleXYPlot);
+	 
+	        // Create a couple arrays of y-values to plot:
+	        Number[] series1Numbers = llista1;
+	        Number[] series2Numbers = llista2;
+	 
+	        // Turn the above arrays into XYSeries':
+	        XYSeries series1 = new SimpleXYSeries(
+	                Arrays.asList(series1Numbers),          // SimpleXYSeries takes a List so turn our array into a List
+	                SimpleXYSeries.ArrayFormat.Y_VALS_ONLY, // Y_VALS_ONLY means use the element index as the x value
+	                "Wet/Dry");                             // Set the display title of the series
+	 
+	        // same as above
+	        XYSeries series2 = new SimpleXYSeries(Arrays.asList(series2Numbers), SimpleXYSeries.ArrayFormat.Y_VALS_ONLY, "Wind Direction");
+	 
+	        // Create a formatter to use for drawing a series using LineAndPointRenderer:
+	        LineAndPointFormatter series1Format = new LineAndPointFormatter(
+	                Color.rgb(0, 200, 0),                   // line color
+	                Color.rgb(0, 100, 0),                   // point color
+	                null);                                  // fill color (none)
+	 
+	        // add a new series' to the xyplot:
+	        mySimpleXYPlot.addSeries(series1, series1Format);
+	 
+	        // same as above:
+	        mySimpleXYPlot.addSeries(series2,
+	                new LineAndPointFormatter(Color.rgb(0, 0, 200), Color.rgb(0, 0, 100), null));
+	 
+	        // reduce the number of range labels
+	        mySimpleXYPlot.setTicksPerRangeLabel(2);
+	        mySimpleXYPlot.setTitle("Wet/Dry & Wind Direction");
+
+	        mySimpleXYPlot.getGraphWidget().setRangeLabelWidth(50);
+	        
+	        mySimpleXYPlot.setRangeBoundaries(0, 360, BoundaryMode.FIXED);
+	        
+	        //PROVA
+	        //mySimpleXYPlot.setRangeBottomMax(22);
+	        //mySimpleXYPlot.setRangeBottomMax(1);
+	        
+	        //PROVA
+	        mySimpleXYPlot.setRangeStep(XYStepMode.INCREMENT_BY_VAL, 20);
+	        //mySimpleXYPlot.set
+	        mySimpleXYPlot.setDomainStep(XYStepMode.INCREMENT_BY_VAL, 1);
+	 
+	        // by default, AndroidPlot displays developer guides to aid in laying out your plot.
+	        // To get rid of them call disableAllMarkup():
+	        mySimpleXYPlot.disableAllMarkup();
+			
+		}
+
+		private void windSpeed() {
+			setContentView(R.layout.graphic);
+			//convert();
+	        llista1=CollectionToList(eventData.windSpeedHistory);
+	        //info();
+	        
+	        // initialize our XYPlot reference:
+	        mySimpleXYPlot = (XYPlot) findViewById(R.id.mySimpleXYPlot);
+	 
+	        // Create a couple arrays of y-values to plot:
+	        Number[] series1Numbers = llista1;
+	 
+	        // Turn the above arrays into XYSeries':
+	        XYSeries series1 = new SimpleXYSeries(
+	                Arrays.asList(series1Numbers),          // SimpleXYSeries takes a List so turn our array into a List
+	                SimpleXYSeries.ArrayFormat.Y_VALS_ONLY, // Y_VALS_ONLY means use the element index as the x value
+	                "Wind Speed");                             // Set the display title of the series
+	 
+	 
+	        // Create a formatter to use for drawing a series using LineAndPointRenderer:
+	        LineAndPointFormatter series1Format = new LineAndPointFormatter(
+	                Color.rgb(0, 200, 0),                   // line color
+	                Color.rgb(0, 100, 0),                   // point color
+	                null);                                  // fill color (none)
+	 
+	        // add a new series' to the xyplot:
+	        mySimpleXYPlot.addSeries(series1, series1Format);
+	 
+	 
+	        // reduce the number of range labels
+	        mySimpleXYPlot.setTicksPerRangeLabel(2);
+	        mySimpleXYPlot.setTitle("Wind Speed");
+
+	        
+	        //PROVA
+	        //mySimpleXYPlot.setRangeBottomMax(22);
+	        //mySimpleXYPlot.setRangeBottomMax(1);
+	        
+	        mySimpleXYPlot.setRangeBoundaries(0, 30, BoundaryMode.FIXED);
+	        
+	        mySimpleXYPlot.getGraphWidget().setRangeLabelWidth(50);
+	        
+	        //PROVA
+	        mySimpleXYPlot.setRangeStep(XYStepMode.INCREMENT_BY_VAL, 5);
+	        //mySimpleXYPlot.set
+	        mySimpleXYPlot.setDomainStep(XYStepMode.INCREMENT_BY_VAL, 1);
+	 
+	        // by default, AndroidPlot displays developer guides to aid in laying out your plot.
+	        // To get rid of them call disableAllMarkup():
+	        mySimpleXYPlot.disableAllMarkup();
+			
+		}
+
+		private void pressure() {
+			setContentView(R.layout.graphic);
+			//convert();
+	        llista1=CollectionToList(eventData.pressureHistory);
+	        //info();
+	        
+	        // initialize our XYPlot reference:
+	        mySimpleXYPlot = (XYPlot) findViewById(R.id.mySimpleXYPlot);
+	 
+	        // Create a couple arrays of y-values to plot:
+	        Number[] series1Numbers = llista1;
+	 
+	        // Turn the above arrays into XYSeries':
+	        XYSeries series1 = new SimpleXYSeries(
+	                Arrays.asList(series1Numbers),          // SimpleXYSeries takes a List so turn our array into a List
+	                SimpleXYSeries.ArrayFormat.Y_VALS_ONLY, // Y_VALS_ONLY means use the element index as the x value
+	                "Humidity");                             // Set the display title of the series
+	 
+	 
+	        // Create a formatter to use for drawing a series using LineAndPointRenderer:
+	        LineAndPointFormatter series1Format = new LineAndPointFormatter(
+	                Color.rgb(0, 200, 0),                   // line color
+	                Color.rgb(0, 100, 0),                   // point color
+	                null);                                  // fill color (none)
+	 
+	        // add a new series' to the xyplot:
+	        mySimpleXYPlot.addSeries(series1, series1Format);
+	 
+	 
+	        // reduce the number of range labels
+	        mySimpleXYPlot.setTicksPerRangeLabel(2);
+	        mySimpleXYPlot.setTitle("Pressure");
+
+	        
+	        //PROVA
+	        //mySimpleXYPlot.setRangeBottomMax(22);
+	        //mySimpleXYPlot.setRangeBottomMax(1);
+	        
+	        mySimpleXYPlot.getGraphWidget().setRangeLabelWidth(50);
+	        
+	        //PROVA
+	        mySimpleXYPlot.setRangeStep(XYStepMode.INCREMENT_BY_VAL, 5);
+	        //mySimpleXYPlot.set
+	        mySimpleXYPlot.setDomainStep(XYStepMode.INCREMENT_BY_VAL, 1);
+	        
+	        
+	        mySimpleXYPlot.setRangeBoundaries(950, 1100, BoundaryMode.FIXED);
+	 
+	        // by default, AndroidPlot displays developer guides to aid in laying out your plot.
+	        // To get rid of them call disableAllMarkup():
+	        mySimpleXYPlot.disableAllMarkup();
+			
+		}
+
+		private void humidity() {
+			
+			setContentView(R.layout.graphic);
+	        llista1=CollectionToList(eventData.humidityHistory);
+	        
+	        // initialize our XYPlot reference:
+	        mySimpleXYPlot = (XYPlot) findViewById(R.id.mySimpleXYPlot);
+	 
+	        // Create a couple arrays of y-values to plot:
+	        Number[] series1Numbers = llista1;
+	 
+	        // Turn the above arrays into XYSeries':
+	        XYSeries series1 = new SimpleXYSeries(
+	                Arrays.asList(series1Numbers),          // SimpleXYSeries takes a List so turn our array into a List
+	                SimpleXYSeries.ArrayFormat.Y_VALS_ONLY, // Y_VALS_ONLY means use the element index as the x value
+	                "Humidity");                             // Set the display title of the series
+	 
+	 
+	        // Create a formatter to use for drawing a series using LineAndPointRenderer:
+	        LineAndPointFormatter series1Format = new LineAndPointFormatter(
+	                Color.rgb(0, 200, 0),                   // line color
+	                Color.rgb(0, 100, 0),                   // point color
+	                null);                                  // fill color (none)
+	 
+	        // add a new series' to the xyplot:
+	        mySimpleXYPlot.addSeries(series1, series1Format);
+	 
+	 
+	        // reduce the number of range labels
+	        mySimpleXYPlot.setTicksPerRangeLabel(2);
+	        mySimpleXYPlot.setTitle("Humidity");
+
+	        
+	        //PROVA
+	        //mySimpleXYPlot.setRangeBottomMax(22);
+	        //mySimpleXYPlot.setRangeBottomMax(1);
+	        
+	        mySimpleXYPlot.setRangeBoundaries(0, 100, BoundaryMode.FIXED);
+	        
+	        //PROVA
+	        mySimpleXYPlot.setRangeStep(XYStepMode.INCREMENT_BY_VAL, 5);
+	        //mySimpleXYPlot.set
+	        mySimpleXYPlot.setDomainStep(XYStepMode.INCREMENT_BY_VAL, 1);
+	        
+	        mySimpleXYPlot.getGraphWidget().setRangeLabelWidth(50);
+	        
+	        mySimpleXYPlot.setRangeTopMax(100);
+	        mySimpleXYPlot.setRangeTopMin(0);
+	 
+	        // by default, AndroidPlot displays developer guides to aid in laying out your plot.
+	        // To get rid of them call disableAllMarkup():
+	        mySimpleXYPlot.disableAllMarkup();
+			
+		}
+
+		private void airTrackTEMP() {
+			
+			setContentView(R.layout.graphic);
+			//convert();
+	        llista1=CollectionToList(eventData.trackTempHistory);
+	        llista2=CollectionToList(eventData.airTempHistory);
+	        //info();
+	        
+	        // initialize our XYPlot reference:
+	        mySimpleXYPlot = (XYPlot) findViewById(R.id.mySimpleXYPlot);
+	 
+	        // Create a couple arrays of y-values to plot:
+	        Number[] series1Numbers = llista1;
+	        Number[] series2Numbers = llista2;
+	 
+	        // Turn the above arrays into XYSeries':
+	        XYSeries series1 = new SimpleXYSeries(
+	                Arrays.asList(series1Numbers),          // SimpleXYSeries takes a List so turn our array into a List
+	                SimpleXYSeries.ArrayFormat.Y_VALS_ONLY, // Y_VALS_ONLY means use the element index as the x value
+	                "Track Temp");                             // Set the display title of the series
+	 
+	        // same as above
+	        XYSeries series2 = new SimpleXYSeries(Arrays.asList(series2Numbers), SimpleXYSeries.ArrayFormat.Y_VALS_ONLY, "Air Temp");
+	 
+	        // Create a formatter to use for drawing a series using LineAndPointRenderer:
+	        LineAndPointFormatter series1Format = new LineAndPointFormatter(
+	                Color.rgb(0, 200, 0),                   // line color
+	                Color.rgb(0, 100, 0),                   // point color
+	                null);                                  // fill color (none)
+	 
+	        // add a new series' to the xyplot:
+	        mySimpleXYPlot.addSeries(series1, series1Format);
+	 
+	        // same as above:
+	        mySimpleXYPlot.addSeries(series2,
+	                new LineAndPointFormatter(Color.rgb(0, 0, 200), Color.rgb(0, 0, 100), null));
+	 
+	        // reduce the number of range labels
+	        mySimpleXYPlot.setTicksPerRangeLabel(2);
+	        mySimpleXYPlot.setTitle("Temperature");
+
+	        mySimpleXYPlot.setRangeBoundaries(0, 70, BoundaryMode.FIXED);
+	        
+	        //PROVA
+	        //mySimpleXYPlot.setRangeBottomMax(22);
+	        //mySimpleXYPlot.setRangeBottomMax(1);
+	        
+	        mySimpleXYPlot.getGraphWidget().setRangeLabelWidth(50);
+	        
+	        //PROVA
+	        mySimpleXYPlot.setRangeStep(XYStepMode.INCREMENT_BY_VAL, 5);
+	        //mySimpleXYPlot.set
+	        mySimpleXYPlot.setDomainStep(XYStepMode.INCREMENT_BY_VAL, 1);
+	 
+	        // by default, AndroidPlot displays developer guides to aid in laying out your plot.
+	        // To get rid of them call disableAllMarkup():
+	        mySimpleXYPlot.disableAllMarkup();
 			
 		}
 

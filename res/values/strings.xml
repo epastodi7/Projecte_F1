@@ -30,5 +30,11 @@
     <string name="savePath">save path:</string>
     <string name="estatInet"></string>
     <string name="estatOnline">ONline</string>
+    <string name="AirTrackTEMP">Air-Track Temp</string>
+    <string name="humidity">Humidity</string>
+    <string name="Pressure">Pressure</string>
+    <string name="WindSpeed">Wind Speed</string>
+    <string name="WetDry">Wet/Dry</string>
+    <string name="FlagStatus">Flags</string>
 
 </resources>

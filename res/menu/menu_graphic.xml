@@ -1,0 +1,11 @@
+    <menu xmlns:android="http://schemas.android.com/apk/res/android">
+        <item android:id="@+id/AirTrackTEMP" android:title="@string/AirTrackTEMP"></item>
+        <item android:id="@+id/Humidity" android:title="@string/humidity"></item>
+        <item android:id="@+id/Pressure" android:title="@string/Pressure"></item>
+        <item android:id="@+id/WindSpeed" android:title="@string/WindSpeed"></item>
+        <item android:id="@+id/WetDry" android:title="@string/WetDry"></item>
+        <item android:id="@+id/FlagStatus" android:title="@string/FlagStatus"></item>
+
+                        
+        
+    </menu>

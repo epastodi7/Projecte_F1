@@ -35,6 +35,12 @@ public class EventData
     public ConcurrentHashMap<Integer, Integer> temps_guardats = new ConcurrentHashMap<Integer, Integer>();
     public ConcurrentHashMap<Integer, Double> airTempHistory = new ConcurrentHashMap<Integer, Double>();
     public ConcurrentHashMap<Integer, Double> trackTempHistory = new ConcurrentHashMap<Integer, Double>();
+    public ConcurrentHashMap<Integer, Double> humidityHistory = new ConcurrentHashMap<Integer, Double>();
+    public ConcurrentHashMap<Integer, Double> pressureHistory = new ConcurrentHashMap<Integer, Double>();
+    public ConcurrentHashMap<Integer, Double> windSpeedHistory = new ConcurrentHashMap<Integer, Double>();
+    public ConcurrentHashMap<Integer, Double> windDirectionHistory = new ConcurrentHashMap<Integer, Double>();
+    public ConcurrentHashMap<Integer, Double> wetDryHistory = new ConcurrentHashMap<Integer, Double>();
+    public ConcurrentHashMap<Integer, Double> flagStatusHistory = new ConcurrentHashMap<Integer, Double>();
     
     boolean sessionStarted = false;
 

@@ -770,11 +770,10 @@ public class DataStreamReader
 
 	private void guardemDadesTemps(int min, int sec) {
 		
-		if(!eventData.temps_guardats.containsKey(min)){
+		if(!eventData.temps_guardats.containsKey(min) && sessionTimer.isTimerRunning()){
 			
 			Log.d("GUARDEM EVENT DATA",eventData.remainingTime);
 			// Ens guardem a la taula de keys guardades - per saber com les anem guardant
-			//Log.d("=== GUARDEM EVENT DATA",eventData.remainingTime);
 			values=values+1;
 			eventData.temps_guardats.put(min, values);
 			
@@ -788,6 +787,31 @@ public class DataStreamReader
 			temp = eventData.trackTemp;
 			eventData.trackTempHistory.put(min, temp);
 			//Log.d("=== SIZE TRACK TEMP",Integer.toString(eventData.airTrackHistory.size()));
+		
+			// Humitat en % sobre 100
+			temp = eventData.humidity;
+			eventData.humidityHistory.put(min, temp);
+			
+			// Pressio atmosferica
+			temp = eventData.pressure;
+			eventData.pressureHistory.put(min, temp);
+			
+			// Velocitat de l'aire
+			temp = eventData.windSpeed;
+			eventData.windSpeedHistory.put(min, temp);
+			
+			// Direccio de l'aire
+			temp = eventData.windDirection;
+			eventData.windDirectionHistory.put(min, temp);
+			
+			// Sec/Mullat
+			double wetDry = eventData.wetdry;
+			eventData.wetDryHistory.put(min, wetDry);
+			
+			// Estat Banderes
+			double flagStatus = eventData.flagStatus;
+			eventData.flagStatusHistory.put(min, flagStatus);
+			
 		}
 		
 	}
@@ -944,6 +968,7 @@ public class DataStreamReader
 	                				Log.d("TIMER ABANS START", sessionTimer.getTime());
 	                				guardarTempsTotalSessio(sessionTimer.getTime());
 	                				sessionTimer.startTimer();
+	                				guardemDadesTemps(eventData.minutsSessio,0);
 	                				
 	                				if (eventData.eventType == LTData.EventType.QUALI_EVENT)
 	                					++eventData.qualiPeriod;

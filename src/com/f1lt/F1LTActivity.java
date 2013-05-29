@@ -81,7 +81,7 @@ public class F1LTActivity extends FragmentActivity  implements DataStreamReceive
     private boolean delayed;
     
     private static String RUTA_SAVE = "/PROVA/F1/MON/R-CHECK";
-    private static String RUTA_LOAD = "/PROVA/F1/MON/R-1";
+    private static String RUTA_LOAD = "/PROVA/F1/MON/R";
     
     private final String PREFS_NAME = "F1LTPrefs";    
     private final int GET_LOGIN = 1;
@@ -413,7 +413,7 @@ public class F1LTActivity extends FragmentActivity  implements DataStreamReceive
     		        try{
     		        	//PROVES PER ANAR MES RAPID
     		        	segonsDelay = 1;
-    		        	Delay = 500;
+    		        	Delay = 1000;
     		        	Thread.sleep(segonsDelay*Delay);
     		        	//dataStreamReader.parseBlockDelayed(dades, bytes);
     		        	
@@ -964,13 +964,13 @@ public class F1LTActivity extends FragmentActivity  implements DataStreamReceive
     }
 
 	public static String getRUTA_SAVE() {
-		Log.d("getRUTA", RUTA_SAVE);
+		//Log.d("getRUTA", RUTA_SAVE);
 		return RUTA_SAVE;
 	}
 
 	public static void setRUTA_SAVE(String rUTA_SAVE) {
-		Log.d("setRUTA ABANS", RUTA_SAVE);
-		Log.d("setRUTA ENTRANT", rUTA_SAVE);
+		//Log.d("setRUTA ABANS", RUTA_SAVE);
+		//Log.d("setRUTA ENTRANT", rUTA_SAVE);
 		RUTA_SAVE = rUTA_SAVE;
 	}
 }
