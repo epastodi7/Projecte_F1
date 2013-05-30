@@ -770,7 +770,7 @@ public class DataStreamReader
 
 	private void guardemDadesTemps(int min, int sec) {
 		
-		if(!eventData.temps_guardats.containsKey(min) && sessionTimer.isTimerRunning()){
+		//if(!eventData.temps_guardats.containsKey(min) && sessionTimer.isTimerRunning()){
 			
 			Log.d("GUARDEM EVENT DATA",eventData.remainingTime);
 			// Ens guardem a la taula de keys guardades - per saber com les anem guardant
@@ -812,7 +812,7 @@ public class DataStreamReader
 			double flagStatus = eventData.flagStatus;
 			eventData.flagStatusHistory.put(min, flagStatus);
 			
-		}
+		//}
 		
 	}
 
@@ -969,6 +969,8 @@ public class DataStreamReader
 	                				guardarTempsTotalSessio(sessionTimer.getTime());
 	                				sessionTimer.startTimer();
 	                				guardemDadesTemps(eventData.minutsSessio,0);
+	                				//Delete the first minute data History
+	                				eventData.temps_guardats.remove(0);
 	                				
 	                				if (eventData.eventType == LTData.EventType.QUALI_EVENT)
 	                					++eventData.qualiPeriod;

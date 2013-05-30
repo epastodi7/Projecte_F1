@@ -413,7 +413,7 @@ public class F1LTActivity extends FragmentActivity  implements DataStreamReceive
     		        try{
     		        	//PROVES PER ANAR MES RAPID
     		        	segonsDelay = 1;
-    		        	Delay = 1000;
+    		        	Delay = 900;
     		        	Thread.sleep(segonsDelay*Delay);
     		        	//dataStreamReader.parseBlockDelayed(dades, bytes);
     		        	

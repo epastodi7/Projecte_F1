@@ -36,5 +36,6 @@
     <string name="WindSpeed">Wind Speed</string>
     <string name="WetDry">Wet/Dry</string>
     <string name="FlagStatus">Flags</string>
+    <string name="WindDirection">Wind Direction</string>
 
 </resources>

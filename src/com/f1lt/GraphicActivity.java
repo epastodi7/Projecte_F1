@@ -1,12 +1,17 @@
 package com.f1lt;
 
+import java.text.DecimalFormat;
 import java.text.FieldPosition;
 import java.text.Format;
 import java.text.ParsePosition;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
 import java.util.concurrent.ConcurrentHashMap;
 
 import android.app.Activity;
@@ -40,6 +45,8 @@ public class GraphicActivity extends Activity implements DataStreamReceiver{
 		DataStreamReader dataStreamReader;
 		private Handler handler = new Handler();
 		private EventData eventData = EventData.getInstance();
+		private ArrayList<Integer> keys_minuts = new ArrayList<Integer>();
+		
 		
 		//PROVA PER 2 PILOTS
 		DriverData driverData1 = eventData.driversData.get(2);
@@ -62,18 +69,83 @@ public class GraphicActivity extends Activity implements DataStreamReceiver{
 	 
 	        super.onCreate(savedInstanceState);
 	        setContentView(R.layout.graphic);
+	        obteOrdenaKeysMinuts();
 	        airTrackTEMP();
+	        imprimeixHash();
 	        
 	    }
 	    
+	    private void obteOrdenaKeysMinuts() {
+	    	Map<Integer, Integer> map = eventData.temps_guardats;
+			Log.d("OBTEKEYS","MINUTS");
+			for (Entry<Integer, Integer> entry : map.entrySet()) {
+				Integer key = entry.getKey();
+				keys_minuts.add(key);
+			    Integer value = entry.getValue();
+			    Log.d("OBTEMINUTS GUARDATS I VALUE", Integer.toString(key)+" "+Integer.toString(value));
+			}
+			ordenaMinuts(keys_minuts);
+	    }
+	    
+	    public class DescendingComparator implements Comparator{
+    	   public int compare(Object o1, Object o2) /*descending order*/  {
+    	      if (((Integer) o1).intValue() > ((Integer)o2).intValue()) return -1;
+    	      else if (((Integer) o1).intValue() < ((Integer)o2).intValue()) return 1;
+    	      return 0; /*equal*/
+    	   }
+    	}
+
+	    	
+	    
+		@SuppressWarnings("unchecked")
+		private void ordenaMinuts(ArrayList<Integer> keys_minuts) {
+			Collections.sort(keys_minuts, new DescendingComparator()); //will sort ArrayList of Integers in descending order
+			Log.d("TAULA ORDENADA", "EN PRINCIPI");
+			for(int i=0;i<keys_minuts.size();i++){
+				Log.d("VALOR ORDENAT: ",Integer.toString(keys_minuts.get(i)));
+			}
+		}
+
+		private void imprimeixHash() {
+			Map<Integer, Integer> map = eventData.temps_guardats;
+			Log.d("IMPRIMEIXHASH","MINUTS");
+			for (Entry<Integer, Integer> entry : map.entrySet()) {
+				Integer key = entry.getKey();
+			    Integer value = entry.getValue();
+			    Log.d("MINUTS GUARDATS I VALUE", Integer.toString(key)+" "+Integer.toString(value));
+			}
+			Map<Integer, Double> map2 = eventData.windDirectionHistory;
+			Log.d("IMPRIMEIXHASH","WIND-DIRECTION");
+			for (Entry<Integer, Double> entry : map2.entrySet()) {
+				Integer key = entry.getKey();
+				Double value = entry.getValue();
+			    Log.d("WIND-DIR GUARDATS I VALUE", Integer.toString(key)+" "+Double.toString(value));
+			}
+			
+		}
+
 		@SuppressWarnings("null")
 		private Number[] CollectionToList(ConcurrentHashMap<Integer, Double> History) {
 			Number[] prova = new Number[History.size()];
 			int i = 0;
-			Log.d("HI HAN X VALORS DE track temperature", Integer.toString(History.size()));
-			for (Double value : History.values()){
+			Log.d("HI HAN X VALORS ", Integer.toString(History.size()));
+			for (i=0;i<keys_minuts.size();i++){
+				Double value = History.get(keys_minuts.get(i));
 				Log.d("temperatura", Double.toString(value));
 				prova[i] = value;
+			}
+			return prova;
+			
+		}
+		
+		@SuppressWarnings("null")
+		private Number[] CollectionToListWind(ConcurrentHashMap<Integer, Double> History) {
+			Number[] prova = new Number[History.size()];
+			int i = 0;
+			Log.d("HI HAN X VALORS ", Integer.toString(History.size()));
+			for (Double value : History.values()){
+				Log.d("wind", Double.toString(value));
+				prova[i] = value/22.5;
 				i++;
 			}
 			return prova;
@@ -166,8 +238,8 @@ public class GraphicActivity extends Activity implements DataStreamReceiver{
 	            	windSpeed();
 	            	return true;
 	            	
-	            case R.id.WetDry:
-	            	wetDry();
+	            case R.id.WindDirection:
+	            	windDirection();
 	            	return true;
 	            
 	            case R.id.FlagStatus:
@@ -184,59 +256,7 @@ public class GraphicActivity extends Activity implements DataStreamReceiver{
 			setContentView(R.layout.graphic);
 			//convert();
 	        llista1=CollectionToList(eventData.flagStatusHistory);
-	        //info();
-	        
-	        // initialize our XYPlot reference:
-	        mySimpleXYPlot = (XYPlot) findViewById(R.id.mySimpleXYPlot);
-	 
-	        // Create a couple arrays of y-values to plot:
-	        Number[] series1Numbers = llista1;
-	 
-	        // Turn the above arrays into XYSeries':
-	        XYSeries series1 = new SimpleXYSeries(
-	                Arrays.asList(series1Numbers),          // SimpleXYSeries takes a List so turn our array into a List
-	                SimpleXYSeries.ArrayFormat.Y_VALS_ONLY, // Y_VALS_ONLY means use the element index as the x value
-	                "Flag Status");                             // Set the display title of the series
-	 
-	 
-	        // Create a formatter to use for drawing a series using LineAndPointRenderer:
-	        LineAndPointFormatter series1Format = new LineAndPointFormatter(
-	                Color.rgb(0, 200, 0),                   // line color
-	                Color.rgb(0, 100, 0),                   // point color
-	                null);                                  // fill color (none)
-	 
-	        // add a new series' to the xyplot:
-	        mySimpleXYPlot.addSeries(series1, series1Format);
-	 
-	 
-	        // reduce the number of range labels
-	        mySimpleXYPlot.setTicksPerRangeLabel(2);
-	        mySimpleXYPlot.setTitle("Flag Status");
-
-	        mySimpleXYPlot.getGraphWidget().setRangeLabelWidth(50);
-	        
-	        mySimpleXYPlot.setRangeBoundaries(0, 10, BoundaryMode.FIXED);
-	        
-	        //PROVA
-	        //mySimpleXYPlot.setRangeBottomMax(22);
-	        //mySimpleXYPlot.setRangeBottomMax(1);
-	        
-	        //PROVA
-	        mySimpleXYPlot.setRangeStep(XYStepMode.INCREMENT_BY_VAL, 5);
-	        //mySimpleXYPlot.set
-	        mySimpleXYPlot.setDomainStep(XYStepMode.INCREMENT_BY_VAL, 1);
-	 
-	        // by default, AndroidPlot displays developer guides to aid in laying out your plot.
-	        // To get rid of them call disableAllMarkup():
-	        mySimpleXYPlot.disableAllMarkup();
-			
-		}
-
-		private void wetDry() {
-			setContentView(R.layout.graphic);
-			//convert();
-	        llista1=CollectionToList(eventData.wetDryHistory);
-	        llista2=CollectionToList(eventData.windDirectionHistory);
+	        llista2=CollectionToList(eventData.wetDryHistory);
 	        //info();
 	        
 	        // initialize our XYPlot reference:
@@ -250,10 +270,10 @@ public class GraphicActivity extends Activity implements DataStreamReceiver{
 	        XYSeries series1 = new SimpleXYSeries(
 	                Arrays.asList(series1Numbers),          // SimpleXYSeries takes a List so turn our array into a List
 	                SimpleXYSeries.ArrayFormat.Y_VALS_ONLY, // Y_VALS_ONLY means use the element index as the x value
-	                "Wet/Dry");                             // Set the display title of the series
+	                "Flag Status");                             // Set the display title of the series
 	 
-	        // same as above
-	        XYSeries series2 = new SimpleXYSeries(Arrays.asList(series2Numbers), SimpleXYSeries.ArrayFormat.Y_VALS_ONLY, "Wind Direction");
+	     // same as above
+	        XYSeries series2 = new SimpleXYSeries(Arrays.asList(series2Numbers), SimpleXYSeries.ArrayFormat.Y_VALS_ONLY, "Wet/Dry");
 	 
 	        // Create a formatter to use for drawing a series using LineAndPointRenderer:
 	        LineAndPointFormatter series1Format = new LineAndPointFormatter(
@@ -263,18 +283,73 @@ public class GraphicActivity extends Activity implements DataStreamReceiver{
 	 
 	        // add a new series' to the xyplot:
 	        mySimpleXYPlot.addSeries(series1, series1Format);
-	 
-	        // same as above:
 	        mySimpleXYPlot.addSeries(series2,
 	                new LineAndPointFormatter(Color.rgb(0, 0, 200), Color.rgb(0, 0, 100), null));
 	 
+	        
 	        // reduce the number of range labels
 	        mySimpleXYPlot.setTicksPerRangeLabel(2);
-	        mySimpleXYPlot.setTitle("Wet/Dry & Wind Direction");
+	        mySimpleXYPlot.setTitle("Flag Status");
 
 	        mySimpleXYPlot.getGraphWidget().setRangeLabelWidth(50);
 	        
+	        mySimpleXYPlot.setDomainValueFormat(new DecimalFormat("#"));
+	        mySimpleXYPlot.setRangeValueFormat(new DecimalFormat("#"));
+	        mySimpleXYPlot.setRangeBoundaries(0, 5, BoundaryMode.FIXED);
+	        
+	        //PROVA
+	        //mySimpleXYPlot.setRangeBottomMax(22);
+	        //mySimpleXYPlot.setRangeBottomMax(1);
+	        
+	        //PROVA
+	        mySimpleXYPlot.setRangeStep(XYStepMode.INCREMENT_BY_VAL, 1);
+	        //mySimpleXYPlot.set
+	        mySimpleXYPlot.setDomainStep(XYStepMode.INCREMENT_BY_VAL, getAppropiateDomainStep());
+	 
+	        // by default, AndroidPlot displays developer guides to aid in laying out your plot.
+	        // To get rid of them call disableAllMarkup():
+	        mySimpleXYPlot.disableAllMarkup();
+			
+		}
+
+		private void windDirection() {
+			setContentView(R.layout.graphic);
+			//convert();
+	        llista1=CollectionToList(eventData.windDirectionHistory);
+	        //info();
+	        
+	        // initialize our XYPlot reference:
+	        mySimpleXYPlot = (XYPlot) findViewById(R.id.mySimpleXYPlot);
+	 
+	        // Create a couple arrays of y-values to plot:
+	        Number[] series1Numbers = llista1;
+	 
+	        // Turn the above arrays into XYSeries':
+	        XYSeries series1 = new SimpleXYSeries(
+	                Arrays.asList(series1Numbers),          // SimpleXYSeries takes a List so turn our array into a List
+	                SimpleXYSeries.ArrayFormat.Y_VALS_ONLY, // Y_VALS_ONLY means use the element index as the x value
+	                "Wind Direction");                             // Set the display title of the series
+	 
+ 
+	        // Create a formatter to use for drawing a series using LineAndPointRenderer:
+	        LineAndPointFormatter series1Format = new LineAndPointFormatter(
+	                Color.rgb(0, 200, 0),                   // line color
+	                Color.rgb(0, 100, 0),                   // point color
+	                null);                                  // fill color (none)
+	 
+	        // add a new series' to the xyplot:
+	        mySimpleXYPlot.addSeries(series1, series1Format);
+	 
+	 
+	        // reduce the number of range labels
+	        mySimpleXYPlot.setTicksPerRangeLabel(2);
+	        mySimpleXYPlot.setTitle("Wind Direction");
+
+	        mySimpleXYPlot.getGraphWidget().setRangeLabelWidth(50);
+	        
+	        mySimpleXYPlot.setDomainValueFormat(new DecimalFormat("#"));
 	        mySimpleXYPlot.setRangeBoundaries(0, 360, BoundaryMode.FIXED);
+	        //mySimpleXYPlot.setRangeUpperBoundary(1, BoundaryMode.FIXED);
 	        
 	        //PROVA
 	        //mySimpleXYPlot.setRangeBottomMax(22);
@@ -283,7 +358,7 @@ public class GraphicActivity extends Activity implements DataStreamReceiver{
 	        //PROVA
 	        mySimpleXYPlot.setRangeStep(XYStepMode.INCREMENT_BY_VAL, 20);
 	        //mySimpleXYPlot.set
-	        mySimpleXYPlot.setDomainStep(XYStepMode.INCREMENT_BY_VAL, 1);
+	        mySimpleXYPlot.setDomainStep(XYStepMode.INCREMENT_BY_VAL, getAppropiateDomainStep());
 	 
 	        // by default, AndroidPlot displays developer guides to aid in laying out your plot.
 	        // To get rid of them call disableAllMarkup():
@@ -295,6 +370,7 @@ public class GraphicActivity extends Activity implements DataStreamReceiver{
 			setContentView(R.layout.graphic);
 			//convert();
 	        llista1=CollectionToList(eventData.windSpeedHistory);
+	        //llista2=CollectionToListWind(eventData.windDirectionHistory);
 	        //info();
 	        
 	        // initialize our XYPlot reference:
@@ -302,6 +378,7 @@ public class GraphicActivity extends Activity implements DataStreamReceiver{
 	 
 	        // Create a couple arrays of y-values to plot:
 	        Number[] series1Numbers = llista1;
+	        //Number[] series2Numbers = llista2;
 	 
 	        // Turn the above arrays into XYSeries':
 	        XYSeries series1 = new SimpleXYSeries(
@@ -318,7 +395,7 @@ public class GraphicActivity extends Activity implements DataStreamReceiver{
 	 
 	        // add a new series' to the xyplot:
 	        mySimpleXYPlot.addSeries(series1, series1Format);
-	 
+	        
 	 
 	        // reduce the number of range labels
 	        mySimpleXYPlot.setTicksPerRangeLabel(2);
@@ -329,14 +406,15 @@ public class GraphicActivity extends Activity implements DataStreamReceiver{
 	        //mySimpleXYPlot.setRangeBottomMax(22);
 	        //mySimpleXYPlot.setRangeBottomMax(1);
 	        
-	        mySimpleXYPlot.setRangeBoundaries(0, 30, BoundaryMode.FIXED);
+	        mySimpleXYPlot.setDomainValueFormat(new DecimalFormat("#"));
+	        //mySimpleXYPlot.setRangeBoundaries(0, 30, BoundaryMode.FIXED);
 	        
 	        mySimpleXYPlot.getGraphWidget().setRangeLabelWidth(50);
 	        
 	        //PROVA
-	        mySimpleXYPlot.setRangeStep(XYStepMode.INCREMENT_BY_VAL, 5);
+	        mySimpleXYPlot.setRangeStep(XYStepMode.INCREMENT_BY_VAL, 1);
 	        //mySimpleXYPlot.set
-	        mySimpleXYPlot.setDomainStep(XYStepMode.INCREMENT_BY_VAL, 1);
+	        mySimpleXYPlot.setDomainStep(XYStepMode.INCREMENT_BY_VAL, getAppropiateDomainStep());
 	 
 	        // by default, AndroidPlot displays developer guides to aid in laying out your plot.
 	        // To get rid of them call disableAllMarkup():
@@ -385,12 +463,12 @@ public class GraphicActivity extends Activity implements DataStreamReceiver{
 	        mySimpleXYPlot.getGraphWidget().setRangeLabelWidth(50);
 	        
 	        //PROVA
-	        mySimpleXYPlot.setRangeStep(XYStepMode.INCREMENT_BY_VAL, 5);
+	        mySimpleXYPlot.setRangeStep(XYStepMode.INCREMENT_BY_VAL, 0.2);
 	        //mySimpleXYPlot.set
-	        mySimpleXYPlot.setDomainStep(XYStepMode.INCREMENT_BY_VAL, 1);
+	        mySimpleXYPlot.setDomainStep(XYStepMode.INCREMENT_BY_VAL, getAppropiateDomainStep());
 	        
-	        
-	        mySimpleXYPlot.setRangeBoundaries(950, 1100, BoundaryMode.FIXED);
+	        mySimpleXYPlot.setDomainValueFormat(new DecimalFormat("#"));
+	        //mySimpleXYPlot.setRangeBoundaries(970, 1050, BoundaryMode.FIXED);
 	 
 	        // by default, AndroidPlot displays developer guides to aid in laying out your plot.
 	        // To get rid of them call disableAllMarkup():
@@ -435,12 +513,14 @@ public class GraphicActivity extends Activity implements DataStreamReceiver{
 	        //mySimpleXYPlot.setRangeBottomMax(22);
 	        //mySimpleXYPlot.setRangeBottomMax(1);
 	        
-	        mySimpleXYPlot.setRangeBoundaries(0, 100, BoundaryMode.FIXED);
+	        mySimpleXYPlot.setDomainValueFormat(new DecimalFormat("#"));
+	        mySimpleXYPlot.setRangeValueFormat(new DecimalFormat("#"));
+	        //mySimpleXYPlot.setRangeBoundaries(0, 100, BoundaryMode.FIXED);
 	        
 	        //PROVA
-	        mySimpleXYPlot.setRangeStep(XYStepMode.INCREMENT_BY_VAL, 5);
+	        mySimpleXYPlot.setRangeStep(XYStepMode.INCREMENT_BY_VAL, 1);
 	        //mySimpleXYPlot.set
-	        mySimpleXYPlot.setDomainStep(XYStepMode.INCREMENT_BY_VAL, 1);
+	        mySimpleXYPlot.setDomainStep(XYStepMode.INCREMENT_BY_VAL, getAppropiateDomainStep());
 	        
 	        mySimpleXYPlot.getGraphWidget().setRangeLabelWidth(50);
 	        
@@ -494,18 +574,24 @@ public class GraphicActivity extends Activity implements DataStreamReceiver{
 	        mySimpleXYPlot.setTicksPerRangeLabel(2);
 	        mySimpleXYPlot.setTitle("Temperature");
 
-	        mySimpleXYPlot.setRangeBoundaries(0, 70, BoundaryMode.FIXED);
+	        //mySimpleXYPlot.setRangeBoundaries(0, 70, BoundaryMode.FIXED);
 	        
 	        //PROVA
 	        //mySimpleXYPlot.setRangeBottomMax(22);
 	        //mySimpleXYPlot.setRangeBottomMax(1);
 	        
-	        mySimpleXYPlot.getGraphWidget().setRangeLabelWidth(50);
+	        //Marge esquerra
+	        mySimpleXYPlot.getGraphWidget().setRangeLabelWidth(25);
+	        
+	        //Format form = mySimpleXYPlot.getGraphWidget().getDomainValueFormat();
+	        //System.out.println("FORMAT GRAFICA: "+form);
+	        mySimpleXYPlot.setDomainValueFormat(new DecimalFormat("#"));
+	        mySimpleXYPlot.setRangeValueFormat(new DecimalFormat("#"));
 	        
 	        //PROVA
 	        mySimpleXYPlot.setRangeStep(XYStepMode.INCREMENT_BY_VAL, 5);
 	        //mySimpleXYPlot.set
-	        mySimpleXYPlot.setDomainStep(XYStepMode.INCREMENT_BY_VAL, 1);
+	        mySimpleXYPlot.setDomainStep(XYStepMode.INCREMENT_BY_VAL, getAppropiateDomainStep());
 	 
 	        // by default, AndroidPlot displays developer guides to aid in laying out your plot.
 	        // To get rid of them call disableAllMarkup():
@@ -513,6 +599,17 @@ public class GraphicActivity extends Activity implements DataStreamReceiver{
 			
 		}
 
+		
+		public int getAppropiateDomainStep()
+		{
+			int lapsToDisplay = eventData.temps_guardats.size();
+			int result = lapsToDisplay/8;
+			if(result<1){
+				result = 1;
+			}
+			return result;
+		}
+		
 		//@Override
 		public void onNewDataObtained(boolean updateTimer)
 		{
