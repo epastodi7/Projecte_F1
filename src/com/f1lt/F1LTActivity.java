@@ -39,9 +39,7 @@ import android.view.WindowManager.LayoutParams;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.util.Log;
-
-
-
+import java.io.FileNotFoundException;
 public class F1LTActivity extends FragmentActivity  implements DataStreamReceiver
 {
 	
@@ -81,7 +79,7 @@ public class F1LTActivity extends FragmentActivity  implements DataStreamReceive
     private boolean delayed;
     
     private static String RUTA_SAVE = "/PROVA/F1/MON/R-CHECK";
-    private static String RUTA_LOAD = "/PROVA/F1/MON/R";
+    private static String RUTA_LOAD = "/PROVA/F1/UNZIPPED/";
     
     private final String PREFS_NAME = "F1LTPrefs";    
     private final int GET_LOGIN = 1;
@@ -245,7 +243,14 @@ public class F1LTActivity extends FragmentActivity  implements DataStreamReceive
             	return true;
             	
             case R.id.item2:
-            	compress();
+				try {
+					compress();
+					Toast.makeText(getApplicationContext(), "DADES COMPRIMIDES A: /sdcard/PROVA/F1/ZIP/", Toast.LENGTH_LONG).show();
+
+				} catch (FileNotFoundException e) {
+					Toast.makeText(getApplicationContext(), "ERROR: NO S'HA POGUT COMPRIMIR", Toast.LENGTH_LONG).show();
+
+				}
             	return true;
             	
             case R.id.commentary:
@@ -727,40 +732,68 @@ public class F1LTActivity extends FragmentActivity  implements DataStreamReceive
     	startActivity(intent);
     }
     
-    public void compress()
+    public void compress() throws FileNotFoundException
     {   
     	Log.d("F1LTActivity", "compress");
-    	
     	final Toast error = Toast.makeText(this, "COMPRIMIM DADES GUARDADES", Toast.LENGTH_SHORT);
-    	error.show();
+		error.show();
+		
+		File sdCard = Environment.getExternalStorageDirectory();
+		File dir = new File (sdCard.getAbsolutePath() + RUTA_SAVE);
+		File[] files = dir.listFiles();
+		int size = files.length;
+		
+		String[] files_str = new String[size];
+		
+		int i = 0;
+		for (File file : files) {
+			//Log.d("VALOR I: ", Integer.toString(i));
+			files_str[i]=file.getAbsolutePath();
+			i++;
+		}
+		
+		String nom = RUTA_SAVE, ruta=Environment.getExternalStorageDirectory().getPath()+"/PROVA/F1/ZIP/";
+		
+		File dir2 = new File (ruta);
+		if(!dir2.isDirectory()) { 
+			dir2.mkdirs(); 
+		} 
+		nom=nom.replace("/PROVA/F1/", "");
+		nom=nom.replace("/", "_");
+		nom=nom.concat(".zip");
+		
+		
+		Log.d("NOU NOM DE L'ARXIU ES: ", nom);
+		ruta = ruta.concat(nom);
+		Log.d("RUTA DE L'ARXIU ES: ", ruta);
+		Compress c = new Compress(files_str, ruta);
+		c.zip();
     	
-    	String zipName = "/sdcard/zipname.zip";
+    }
+    
+    public void decompress(){
+    	Log.d("F1LTActivity", "decompress");
     	
+    	//BORREM TOT EL CONTIGUT ANTERIOR DE LA CARPETA
     	File sdCard = Environment.getExternalStorageDirectory();
-        File dir = new File (sdCard.getAbsolutePath() + RUTA_SAVE);
-    	File[] files = dir.listFiles();
-    	int size = files.length;
+		File dir = new File (sdCard.getAbsolutePath() + RUTA_LOAD);
+		String[] children = dir.list();
+		Log.d("ARXIUS A LA CARPETA ABANS DE BORRAR, SIZE: ", Integer.toString(children.length));
+    	if (dir.isDirectory()) {
+            for (int i = 0; i < children.length; i++) {
+                new File(dir, children[i]).delete();
+            }
+            children = dir.list();
+        }
+    	Log.d("BORRATS TOTS ARXIUS A LA CARPETA, SIZE: ", Integer.toString(children.length));
     	
-    	String[] files_str = new String[size];
+    	String ruta=Environment.getExternalStorageDirectory().getPath()+"/PROVA/F1/ZIP/";
     	
-    	int i = 0;
-    	for (File file : files) {
-    		Log.d("VALOR I: ", Integer.toString(i));
-    		files_str[i]=file.getAbsolutePath();
-    		i++;
-    	}
-    	
-    	String nom = RUTA_SAVE, ruta="/sdcard/PROVA/F1/";
-    	nom=nom.replace("/PROVA/F1/", "");
-    	nom=nom.replace("/", "_");
-    	nom=nom.concat(".zip");
-    	Log.d("NOU NOM DE L'ARXIU ES: ", nom);
-    	ruta = ruta.concat(nom);
-    	Log.d("RUTA DE L'ARXIU ES: ", ruta);
-    	Compress c = new Compress(files_str, ruta);
-    	c.zip();
-    	
-    	Toast.makeText(getApplicationContext(), "DADES COMPRIMIDES A: "+ruta, Toast.LENGTH_LONG).show();
+    	String zipFile = ruta + "/MON_R-CHECKhaha.zip"; 
+    	String unzipLocation = ruta + "../UNZIPPED/"; 
+    	 
+    	Decompress d = new Decompress(zipFile, unzipLocation); 
+    	d.unzip();
     }
     
     public void onConnectedClicked(String email, String passwd) 
@@ -798,6 +831,7 @@ public class F1LTActivity extends FragmentActivity  implements DataStreamReceive
         	        case DialogInterface.BUTTON_POSITIVE:
         	            delayed = true;
         	        	if(delayed){
+        	        		decompress();
         	        		delayed();
         	        	}
         	            break;
@@ -1012,8 +1046,9 @@ public class F1LTActivity extends FragmentActivity  implements DataStreamReceive
 	}
 
 	public static void setRUTA_SAVE(String rUTA_SAVE) {
-		//Log.d("setRUTA ABANS", RUTA_SAVE);
-		//Log.d("setRUTA ENTRANT", rUTA_SAVE);
+
+		//Per evitar errors, treiem els espais de la ruta per guardar
+		rUTA_SAVE=rUTA_SAVE.replace(" ", "");
 		RUTA_SAVE = rUTA_SAVE;
 	}
 }
