@@ -29,6 +29,7 @@ import android.widget.TableLayout;
 import android.widget.TableRow;
 
 import com.androidplot.series.XYSeries;
+import com.androidplot.ui.SizeMetrics;
 import com.androidplot.xy.BoundaryMode;
 import com.androidplot.xy.LineAndPointFormatter;
 import com.androidplot.xy.SimpleXYSeries;
@@ -46,7 +47,6 @@ public class GraphicActivity extends Activity implements DataStreamReceiver{
 		private Handler handler = new Handler();
 		private EventData eventData = EventData.getInstance();
 		private ArrayList<Integer> keys_minuts = new ArrayList<Integer>();
-		
 		
 		//PROVA PER 2 PILOTS
 		DriverData driverData1 = eventData.driversData.get(2);
@@ -71,7 +71,7 @@ public class GraphicActivity extends Activity implements DataStreamReceiver{
 	        setContentView(R.layout.graphic);
 	        obteOrdenaKeysMinuts();
 	        airTrackTEMP();
-	        imprimeixHash();
+	        //imprimeixHash();
 	        
 	    }
 	    
@@ -277,21 +277,33 @@ public class GraphicActivity extends Activity implements DataStreamReceiver{
 	 
 	        // Create a formatter to use for drawing a series using LineAndPointRenderer:
 	        LineAndPointFormatter series1Format = new LineAndPointFormatter(
-	                Color.rgb(0, 200, 0),                   // line color
-	                Color.rgb(0, 100, 0),                   // point color
+	                Color.rgb(238, 0, 0),                   // line color
+	                null,                   // point color
 	                null);                                  // fill color (none)
 	 
 	        // add a new series' to the xyplot:
 	        mySimpleXYPlot.addSeries(series1, series1Format);
 	        mySimpleXYPlot.addSeries(series2,
-	                new LineAndPointFormatter(Color.rgb(0, 0, 200), Color.rgb(0, 0, 100), null));
+	                new LineAndPointFormatter(Color.rgb(113, 113, 198), null, null));
 	 
+	        
 	        
 	        // reduce the number of range labels
 	        mySimpleXYPlot.setTicksPerRangeLabel(2);
-	        mySimpleXYPlot.setTitle("Flag Status");
-
-	        mySimpleXYPlot.getGraphWidget().setRangeLabelWidth(50);
+	        mySimpleXYPlot.setTitle("Flag Status / Wet-Dry");
+	        
+	        //Posem el fons a negre
+	        mySimpleXYPlot.getGraphWidget().getGridBackgroundPaint().setColor(Color.BLACK);
+	        
+	        //Marge esquerra
+	        mySimpleXYPlot.getGraphWidget().setRangeLabelWidth(25);
+	        mySimpleXYPlot.getGraphWidget().setDomainLabelWidth(20);
+	        mySimpleXYPlot.getGraphWidget().setBorderPaint(null);
+	        
+	        mySimpleXYPlot.setRangeLabel("Flags:(1)Green (2)Yellow (4)SC");
+	        mySimpleXYPlot.setDomainLabel("Minutes");
+	        
+	        mySimpleXYPlot.getLegendWidget().setMarginBottom((float) 2.5);
 	        
 	        mySimpleXYPlot.setDomainValueFormat(new DecimalFormat("#"));
 	        mySimpleXYPlot.setRangeValueFormat(new DecimalFormat("#"));
@@ -333,8 +345,8 @@ public class GraphicActivity extends Activity implements DataStreamReceiver{
  
 	        // Create a formatter to use for drawing a series using LineAndPointRenderer:
 	        LineAndPointFormatter series1Format = new LineAndPointFormatter(
-	                Color.rgb(0, 200, 0),                   // line color
-	                Color.rgb(0, 100, 0),                   // point color
+	                Color.rgb(255, 215, 0),                   // line color
+	                null,                   // point color
 	                null);                                  // fill color (none)
 	 
 	        // add a new series' to the xyplot:
@@ -345,15 +357,20 @@ public class GraphicActivity extends Activity implements DataStreamReceiver{
 	        mySimpleXYPlot.setTicksPerRangeLabel(2);
 	        mySimpleXYPlot.setTitle("Wind Direction");
 
-	        mySimpleXYPlot.getGraphWidget().setRangeLabelWidth(50);
+	        //Posem el fons a negre
+	        mySimpleXYPlot.getGraphWidget().getGridBackgroundPaint().setColor(Color.BLACK);	        
 	        
 	        mySimpleXYPlot.setDomainValueFormat(new DecimalFormat("#"));
 	        mySimpleXYPlot.setRangeBoundaries(0, 360, BoundaryMode.FIXED);
-	        //mySimpleXYPlot.setRangeUpperBoundary(1, BoundaryMode.FIXED);
+	        	        
+	        //Marge esquerra
+	        mySimpleXYPlot.getGraphWidget().setRangeLabelWidth(40);
+	        mySimpleXYPlot.getGraphWidget().setDomainLabelWidth(20);
 	        
-	        //PROVA
-	        //mySimpleXYPlot.setRangeBottomMax(22);
-	        //mySimpleXYPlot.setRangeBottomMax(1);
+	        mySimpleXYPlot.setRangeLabel("Direction (degrees)");
+	        mySimpleXYPlot.setDomainLabel("Minutes");
+	        
+	        mySimpleXYPlot.getLegendWidget().setMarginBottom((float) 2.5);
 	        
 	        //PROVA
 	        mySimpleXYPlot.setRangeStep(XYStepMode.INCREMENT_BY_VAL, 20);
@@ -389,8 +406,8 @@ public class GraphicActivity extends Activity implements DataStreamReceiver{
 	 
 	        // Create a formatter to use for drawing a series using LineAndPointRenderer:
 	        LineAndPointFormatter series1Format = new LineAndPointFormatter(
-	                Color.rgb(0, 200, 0),                   // line color
-	                Color.rgb(0, 100, 0),                   // point color
+	                Color.rgb(0, 255, 0),                   // line color
+	                null,                   // point color
 	                null);                                  // fill color (none)
 	 
 	        // add a new series' to the xyplot:
@@ -401,18 +418,23 @@ public class GraphicActivity extends Activity implements DataStreamReceiver{
 	        mySimpleXYPlot.setTicksPerRangeLabel(2);
 	        mySimpleXYPlot.setTitle("Wind Speed");
 
+	        //Posem el fons a negre
+	        mySimpleXYPlot.getGraphWidget().getGridBackgroundPaint().setColor(Color.BLACK);
 	        
-	        //PROVA
-	        //mySimpleXYPlot.setRangeBottomMax(22);
-	        //mySimpleXYPlot.setRangeBottomMax(1);
+	        //Marge esquerra
+	        mySimpleXYPlot.getGraphWidget().setRangeLabelWidth(30);
+	        mySimpleXYPlot.getGraphWidget().setDomainLabelWidth(20);
+	        
+	        mySimpleXYPlot.setRangeLabel("");
+	        mySimpleXYPlot.setDomainLabel("Minutes");
+	        
+	        mySimpleXYPlot.getLegendWidget().setMarginBottom((float) 2.5);
 	        
 	        mySimpleXYPlot.setDomainValueFormat(new DecimalFormat("#"));
 	        //mySimpleXYPlot.setRangeBoundaries(0, 30, BoundaryMode.FIXED);
-	        
-	        mySimpleXYPlot.getGraphWidget().setRangeLabelWidth(50);
-	        
+	        	        
 	        //PROVA
-	        mySimpleXYPlot.setRangeStep(XYStepMode.INCREMENT_BY_VAL, 1);
+	        mySimpleXYPlot.setRangeStep(XYStepMode.INCREMENT_BY_VAL, 0.5);
 	        //mySimpleXYPlot.set
 	        mySimpleXYPlot.setDomainStep(XYStepMode.INCREMENT_BY_VAL, getAppropiateDomainStep());
 	 
@@ -438,13 +460,13 @@ public class GraphicActivity extends Activity implements DataStreamReceiver{
 	        XYSeries series1 = new SimpleXYSeries(
 	                Arrays.asList(series1Numbers),          // SimpleXYSeries takes a List so turn our array into a List
 	                SimpleXYSeries.ArrayFormat.Y_VALS_ONLY, // Y_VALS_ONLY means use the element index as the x value
-	                "Humidity");                             // Set the display title of the series
+	                "Pressure");                             // Set the display title of the series
 	 
 	 
 	        // Create a formatter to use for drawing a series using LineAndPointRenderer:
 	        LineAndPointFormatter series1Format = new LineAndPointFormatter(
-	                Color.rgb(0, 200, 0),                   // line color
-	                Color.rgb(0, 100, 0),                   // point color
+	                Color.rgb(255, 165, 0),                   // line color
+	                null,                   // point color
 	                null);                                  // fill color (none)
 	 
 	        // add a new series' to the xyplot:
@@ -455,15 +477,20 @@ public class GraphicActivity extends Activity implements DataStreamReceiver{
 	        mySimpleXYPlot.setTicksPerRangeLabel(2);
 	        mySimpleXYPlot.setTitle("Pressure");
 
+	        //Posem el fons a negre
+	        mySimpleXYPlot.getGraphWidget().getGridBackgroundPaint().setColor(Color.BLACK);
 	        
 	        //PROVA
 	        //mySimpleXYPlot.setRangeBottomMax(22);
 	        //mySimpleXYPlot.setRangeBottomMax(1);
 	        
 	        mySimpleXYPlot.getGraphWidget().setRangeLabelWidth(50);
+	        mySimpleXYPlot.getGraphWidget().setDomainLabelWidth(20);
+	        
+	        mySimpleXYPlot.getLegendWidget().setMarginBottom((float) 2.5);
 	        
 	        //PROVA
-	        mySimpleXYPlot.setRangeStep(XYStepMode.INCREMENT_BY_VAL, 0.2);
+	        mySimpleXYPlot.setRangeStep(XYStepMode.INCREMENT_BY_VAL, 0.1);
 	        //mySimpleXYPlot.set
 	        mySimpleXYPlot.setDomainStep(XYStepMode.INCREMENT_BY_VAL, getAppropiateDomainStep());
 	        
@@ -496,8 +523,8 @@ public class GraphicActivity extends Activity implements DataStreamReceiver{
 	 
 	        // Create a formatter to use for drawing a series using LineAndPointRenderer:
 	        LineAndPointFormatter series1Format = new LineAndPointFormatter(
-	                Color.rgb(0, 200, 0),                   // line color
-	                Color.rgb(0, 100, 0),                   // point color
+	                Color.rgb(255, 240, 245),                   // line color
+	                null,                   // point color
 	                null);                                  // fill color (none)
 	 
 	        // add a new series' to the xyplot:
@@ -507,23 +534,27 @@ public class GraphicActivity extends Activity implements DataStreamReceiver{
 	        // reduce the number of range labels
 	        mySimpleXYPlot.setTicksPerRangeLabel(2);
 	        mySimpleXYPlot.setTitle("Humidity");
-
-	        
-	        //PROVA
-	        //mySimpleXYPlot.setRangeBottomMax(22);
-	        //mySimpleXYPlot.setRangeBottomMax(1);
 	        
 	        mySimpleXYPlot.setDomainValueFormat(new DecimalFormat("#"));
 	        mySimpleXYPlot.setRangeValueFormat(new DecimalFormat("#"));
 	        //mySimpleXYPlot.setRangeBoundaries(0, 100, BoundaryMode.FIXED);
 	        
+	        //Posem el fons a negre
+	        mySimpleXYPlot.getGraphWidget().getGridBackgroundPaint().setColor(Color.BLACK);
+	        
+	        //Marge esquerra
+	        mySimpleXYPlot.getGraphWidget().setRangeLabelWidth(25);
+	        mySimpleXYPlot.getGraphWidget().setDomainLabelWidth(20);
+	        
+	        mySimpleXYPlot.setRangeLabel("");
+	        mySimpleXYPlot.setDomainLabel("Minutes");
+	        
+	        mySimpleXYPlot.getLegendWidget().setMarginBottom((float) 2.5);
+	        
 	        //PROVA
 	        mySimpleXYPlot.setRangeStep(XYStepMode.INCREMENT_BY_VAL, 1);
-	        //mySimpleXYPlot.set
 	        mySimpleXYPlot.setDomainStep(XYStepMode.INCREMENT_BY_VAL, getAppropiateDomainStep());
-	        
-	        mySimpleXYPlot.getGraphWidget().setRangeLabelWidth(50);
-	        
+	        	        
 	        mySimpleXYPlot.setRangeTopMax(100);
 	        mySimpleXYPlot.setRangeTopMin(0);
 	 
@@ -559,8 +590,8 @@ public class GraphicActivity extends Activity implements DataStreamReceiver{
 	 
 	        // Create a formatter to use for drawing a series using LineAndPointRenderer:
 	        LineAndPointFormatter series1Format = new LineAndPointFormatter(
-	                Color.rgb(0, 200, 0),                   // line color
-	                Color.rgb(0, 100, 0),                   // point color
+	                Color.rgb(255, 255, 0),                   // line color
+	                null,                   // point color
 	                null);                                  // fill color (none)
 	 
 	        // add a new series' to the xyplot:
@@ -568,20 +599,25 @@ public class GraphicActivity extends Activity implements DataStreamReceiver{
 	 
 	        // same as above:
 	        mySimpleXYPlot.addSeries(series2,
-	                new LineAndPointFormatter(Color.rgb(0, 0, 200), Color.rgb(0, 0, 100), null));
+	                new LineAndPointFormatter(Color.rgb(255, 0, 255), null, null));
 	 
 	        // reduce the number of range labels
 	        mySimpleXYPlot.setTicksPerRangeLabel(2);
 	        mySimpleXYPlot.setTitle("Temperature");
-
-	        //mySimpleXYPlot.setRangeBoundaries(0, 70, BoundaryMode.FIXED);
+	        
+	        //Posem el fons a negre
+	        mySimpleXYPlot.getGraphWidget().getGridBackgroundPaint().setColor(Color.BLACK);
 	        
 	        //PROVA
 	        //mySimpleXYPlot.setRangeBottomMax(22);
 	        //mySimpleXYPlot.setRangeBottomMax(1);
 	        
-	        //Marge esquerra
+	        //Marge Esquerra i Inferior
 	        mySimpleXYPlot.getGraphWidget().setRangeLabelWidth(25);
+	        mySimpleXYPlot.getGraphWidget().setDomainLabelWidth(20);
+	        
+	        mySimpleXYPlot.setRangeLabel("");
+	        mySimpleXYPlot.setDomainLabel("Minutes");
 	        
 	        //Format form = mySimpleXYPlot.getGraphWidget().getDomainValueFormat();
 	        //System.out.println("FORMAT GRAFICA: "+form);
@@ -590,9 +626,13 @@ public class GraphicActivity extends Activity implements DataStreamReceiver{
 	        
 	        //PROVA
 	        mySimpleXYPlot.setRangeStep(XYStepMode.INCREMENT_BY_VAL, 5);
-	        //mySimpleXYPlot.set
 	        mySimpleXYPlot.setDomainStep(XYStepMode.INCREMENT_BY_VAL, getAppropiateDomainStep());
-	 
+        
+	        
+	        // adjust the padding of the legend widget to look a little nicer:
+	        mySimpleXYPlot.getLegendWidget().setPadding(10, 5, 5, 5);
+	        mySimpleXYPlot.getLegendWidget().setMarginBottom((float) 2.5);
+	        
 	        // by default, AndroidPlot displays developer guides to aid in laying out your plot.
 	        // To get rid of them call disableAllMarkup():
 	        mySimpleXYPlot.disableAllMarkup();

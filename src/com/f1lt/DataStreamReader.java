@@ -1240,6 +1240,12 @@ public class DataStreamReader
 	}
 
 	private void setLaps(int no) {
+		Log.d("===eventData","INFO");
+		Log.d("eventData TYPE",Integer.toString(eventData.eventType));
+		Log.d("eventData NAME",eventData.eventInfo.name);
+		Log.d("eventData PLACE",eventData.eventInfo.place);
+		Log.d("eventData SHORT",eventData.eventInfo.shortName);
+		Log.d("eventData RACE DATE",eventData.eventInfo.raceDate);
 		switch(no) {
 			case 0:
 				eventData.eventInfo.laps=78;

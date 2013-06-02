@@ -648,10 +648,10 @@ public class LTData
     
     public static LTEvent getCurrentEvent()
     {
-    	//Log.d("LTData/LTEvent", "getCurrentEvent");
+    	Log.d("LTData/LTEvent", "getCurrentEvent");
     	Calendar gc = Calendar.getInstance();
     	String currDate = new StringBuilder().append(gc.get(Calendar.DAY_OF_MONTH)).append("-").append(gc.get(Calendar.MONTH)+1).append("-").append(gc.get(Calendar.YEAR)).toString();
-    	
+    	Log.d("getCurrentEvent currDate", currDate);
     	return getEvent(currDate);
     }
     
