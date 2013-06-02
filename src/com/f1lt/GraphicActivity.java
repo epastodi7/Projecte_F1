@@ -77,12 +77,12 @@ public class GraphicActivity extends Activity implements DataStreamReceiver{
 	    
 	    private void obteOrdenaKeysMinuts() {
 	    	Map<Integer, Integer> map = eventData.temps_guardats;
-			Log.d("OBTEKEYS","MINUTS");
+			//Log.d("OBTEKEYS","MINUTS");
 			for (Entry<Integer, Integer> entry : map.entrySet()) {
 				Integer key = entry.getKey();
 				keys_minuts.add(key);
 			    Integer value = entry.getValue();
-			    Log.d("OBTEMINUTS GUARDATS I VALUE", Integer.toString(key)+" "+Integer.toString(value));
+			    //Log.d("OBTEMINUTS GUARDATS I VALUE", Integer.toString(key)+" "+Integer.toString(value));
 			}
 			ordenaMinuts(keys_minuts);
 	    }
@@ -100,9 +100,9 @@ public class GraphicActivity extends Activity implements DataStreamReceiver{
 		@SuppressWarnings("unchecked")
 		private void ordenaMinuts(ArrayList<Integer> keys_minuts) {
 			Collections.sort(keys_minuts, new DescendingComparator()); //will sort ArrayList of Integers in descending order
-			Log.d("TAULA ORDENADA", "EN PRINCIPI");
+			//Log.d("TAULA ORDENADA", "EN PRINCIPI");
 			for(int i=0;i<keys_minuts.size();i++){
-				Log.d("VALOR ORDENAT: ",Integer.toString(keys_minuts.get(i)));
+				//Log.d("VALOR ORDENAT: ",Integer.toString(keys_minuts.get(i)));
 			}
 		}
 
@@ -284,7 +284,7 @@ public class GraphicActivity extends Activity implements DataStreamReceiver{
 	        // add a new series' to the xyplot:
 	        mySimpleXYPlot.addSeries(series1, series1Format);
 	        mySimpleXYPlot.addSeries(series2,
-	                new LineAndPointFormatter(Color.rgb(113, 113, 198), null, null));
+	                new LineAndPointFormatter(Color.rgb(0, 178, 255), null, null));
 	 
 	        
 	        
@@ -487,6 +487,9 @@ public class GraphicActivity extends Activity implements DataStreamReceiver{
 	        mySimpleXYPlot.getGraphWidget().setRangeLabelWidth(50);
 	        mySimpleXYPlot.getGraphWidget().setDomainLabelWidth(20);
 	        
+	        mySimpleXYPlot.setRangeLabel("");
+	        mySimpleXYPlot.setDomainLabel("Minutes");
+	        
 	        mySimpleXYPlot.getLegendWidget().setMarginBottom((float) 2.5);
 	        
 	        //PROVA
@@ -523,7 +526,7 @@ public class GraphicActivity extends Activity implements DataStreamReceiver{
 	 
 	        // Create a formatter to use for drawing a series using LineAndPointRenderer:
 	        LineAndPointFormatter series1Format = new LineAndPointFormatter(
-	                Color.rgb(255, 240, 245),                   // line color
+	                Color.rgb(255, 255, 255),                   // line color
 	                null,                   // point color
 	                null);                                  // fill color (none)
 	 
