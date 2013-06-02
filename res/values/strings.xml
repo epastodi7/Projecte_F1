@@ -37,5 +37,6 @@
     <string name="WetDry">Wet/Dry</string>
     <string name="FlagStatus">Flags</string>
     <string name="WindDirection">Wind Direction</string>
+    <string name="Compress">Compress Session</string>
 
 </resources>

@@ -9,6 +9,8 @@
         <item android:id="@+id/ltc" android:title="@string/lap_time_comparison" android:showAsAction="ifRoom" android:icon="@drawable/ic_menu_ltc"></item>
         <item android:id="@+id/fps" android:title="@string/fastest_pit_stops" android:showAsAction="ifRoom" android:icon="@drawable/ic_menu_fps"></item>
         <item android:id="@+id/item1" android:title="@string/pos_history"></item>
+        <item android:id="@+id/item2" android:title="@string/Compress"></item>
+        
                         
         
     </menu>

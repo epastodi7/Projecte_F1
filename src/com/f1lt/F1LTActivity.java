@@ -244,6 +244,10 @@ public class F1LTActivity extends FragmentActivity  implements DataStreamReceive
             	login(true);
             	return true;
             	
+            case R.id.item2:
+            	compress();
+            	return true;
+            	
             case R.id.commentary:
             	showCommentary();
             	return true;
@@ -271,6 +275,8 @@ public class F1LTActivity extends FragmentActivity  implements DataStreamReceive
             case R.id.item1:
             	graphic();
             	return true;
+            
+            
             	
             default:
                 return super.onOptionsItemSelected(item);
@@ -611,6 +617,7 @@ public class F1LTActivity extends FragmentActivity  implements DataStreamReceive
     	       {
     	           public void onClick(DialogInterface dialog, int id) 
     	           {
+    	        	   
     	        	   dataStreamReader.disconnect();
     	        	   //dataStreamReader.borrablocks();
     	        	   eventData.clear();
@@ -718,6 +725,42 @@ public class F1LTActivity extends FragmentActivity  implements DataStreamReceive
     	Log.d("F1LTActivity", "graphic");
     	Intent intent = new Intent(this, GraphicActivity.class);
     	startActivity(intent);
+    }
+    
+    public void compress()
+    {   
+    	Log.d("F1LTActivity", "compress");
+    	
+    	final Toast error = Toast.makeText(this, "COMPRIMIM DADES GUARDADES", Toast.LENGTH_SHORT);
+    	error.show();
+    	
+    	String zipName = "/sdcard/zipname.zip";
+    	
+    	File sdCard = Environment.getExternalStorageDirectory();
+        File dir = new File (sdCard.getAbsolutePath() + RUTA_SAVE);
+    	File[] files = dir.listFiles();
+    	int size = files.length;
+    	
+    	String[] files_str = new String[size];
+    	
+    	int i = 0;
+    	for (File file : files) {
+    		Log.d("VALOR I: ", Integer.toString(i));
+    		files_str[i]=file.getAbsolutePath();
+    		i++;
+    	}
+    	
+    	String nom = RUTA_SAVE, ruta="/sdcard/PROVA/F1/";
+    	nom=nom.replace("/PROVA/F1/", "");
+    	nom=nom.replace("/", "_");
+    	nom=nom.concat(".zip");
+    	Log.d("NOU NOM DE L'ARXIU ES: ", nom);
+    	ruta = ruta.concat(nom);
+    	Log.d("RUTA DE L'ARXIU ES: ", ruta);
+    	Compress c = new Compress(files_str, ruta);
+    	c.zip();
+    	
+    	Toast.makeText(getApplicationContext(), "DADES COMPRIMIDES A: "+ruta, Toast.LENGTH_LONG).show();
     }
     
     public void onConnectedClicked(String email, String passwd) 
