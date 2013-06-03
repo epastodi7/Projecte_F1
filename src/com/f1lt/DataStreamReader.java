@@ -91,7 +91,7 @@ public class DataStreamReader
 	private Decrypter decrypter = new Decrypter();
 	private SocketDataReader socketDataReader = new SocketDataReader();
 	private EventData eventData = null;
-	private SessionTimer sessionTimer;
+	public SessionTimer sessionTimer;
 	private List<Packet> encryptedPackets = new ArrayList<Packet>();
 	private Thread httpThread;
 	private Thread socketThread;

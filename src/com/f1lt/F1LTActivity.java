@@ -5,6 +5,7 @@ package com.f1lt;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FilenameFilter;
 import java.io.IOException;
 import java.nio.BufferUnderflowException;
 import java.nio.ByteBuffer;
@@ -14,6 +15,8 @@ import java.util.List;
 import org.apache.http.cookie.Cookie;
 
 import android.app.AlertDialog;
+import android.app.AlertDialog.Builder;
+import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -80,6 +83,16 @@ public class F1LTActivity extends FragmentActivity  implements DataStreamReceive
     
     private static String RUTA_SAVE = "/PROVA/F1/MON/R-CHECK";
     private static String RUTA_LOAD = "/PROVA/F1/UNZIPPED/";
+    private static String RUTA_ZIP = "/PROVA/F1/ZIP/";
+    
+    //PROVA DIALOG
+    private String[] mFileList;
+    private File mPath = new File(Environment.getExternalStorageDirectory() + RUTA_ZIP);
+    private String mChosenFile;
+    private static final String FTYPE = ".zip";    
+    private static final int DIALOG_LOAD_FILE = 1000;
+    
+    
     
     private final String PREFS_NAME = "F1LTPrefs";    
     private final int GET_LOGIN = 1;
@@ -388,6 +401,11 @@ public class F1LTActivity extends FragmentActivity  implements DataStreamReceive
     	        for(blocks=1;blocks<=fitxersDades;blocks++){   	
 	        	//for(blocks=1;blocks<=150;blocks++){   	    	
     	        	
+    	        	//Parem el temps de la sessio al llegir l'ultima dada guardada
+    	        	if(blocks==fitxersDades){
+    	        		dataStreamReader.sessionTimer.stopTimer();
+    	        	}
+    	        	
     	        	segonsDelay=gestionaMilis(blocks,fitxersDades, dir);
     	        	Log.d("SEGONS DE DELAY", Long.toString(segonsDelay));
     	        	
@@ -425,6 +443,11 @@ public class F1LTActivity extends FragmentActivity  implements DataStreamReceive
     		        	//PROVES PER ANAR MES RAPID
     		        	//segonsDelay = 1;
     		        	Delay = 900;
+    		        	
+    		        	//De vegades el primer intèrval de temps el treu negatiu, corregim l'error.
+    		        	if(segonsDelay<0){
+    		        		segonsDelay=1;
+    		        	}
     		        	Thread.sleep(segonsDelay*Delay);
     		        	//dataStreamReader.parseBlockDelayed(dades, bytes);
     		        	
@@ -735,40 +758,46 @@ public class F1LTActivity extends FragmentActivity  implements DataStreamReceive
     public void compress() throws FileNotFoundException
     {   
     	Log.d("F1LTActivity", "compress");
-    	final Toast error = Toast.makeText(this, "COMPRIMIM DADES GUARDADES", Toast.LENGTH_SHORT);
-		error.show();
-		
-		File sdCard = Environment.getExternalStorageDirectory();
-		File dir = new File (sdCard.getAbsolutePath() + RUTA_SAVE);
-		File[] files = dir.listFiles();
-		int size = files.length;
-		
-		String[] files_str = new String[size];
-		
-		int i = 0;
-		for (File file : files) {
-			//Log.d("VALOR I: ", Integer.toString(i));
-			files_str[i]=file.getAbsolutePath();
-			i++;
-		}
-		
-		String nom = RUTA_SAVE, ruta=Environment.getExternalStorageDirectory().getPath()+"/PROVA/F1/ZIP/";
-		
-		File dir2 = new File (ruta);
-		if(!dir2.isDirectory()) { 
-			dir2.mkdirs(); 
-		} 
-		nom=nom.replace("/PROVA/F1/", "");
-		nom=nom.replace("/", "_");
-		nom=nom.concat(".zip");
-		
-		
-		Log.d("NOU NOM DE L'ARXIU ES: ", nom);
-		ruta = ruta.concat(nom);
-		Log.d("RUTA DE L'ARXIU ES: ", ruta);
-		Compress c = new Compress(files_str, ruta);
-		c.zip();
-    	
+    	if(!delayed){
+	    	final Toast error = Toast.makeText(this, "COMPRIMIM DADES GUARDADES", Toast.LENGTH_SHORT);
+			error.show();
+			
+			File sdCard = Environment.getExternalStorageDirectory();
+			File dir = new File (sdCard.getAbsolutePath() + RUTA_SAVE);
+			File[] files = dir.listFiles();
+			int size = files.length;
+			
+			String[] files_str = new String[size];
+			
+			int i = 0;
+			for (File file : files) {
+				//Log.d("VALOR I: ", Integer.toString(i));
+				files_str[i]=file.getAbsolutePath();
+				i++;
+			}
+			
+			String nom = RUTA_SAVE, ruta=Environment.getExternalStorageDirectory().getPath()+"/PROVA/F1/ZIP/";
+			RUTA_ZIP = ruta;
+			
+			File dir2 = new File (ruta);
+			if(!dir2.isDirectory()) { 
+				dir2.mkdirs(); 
+			} 
+			nom=nom.replace("/PROVA/F1/", "");
+			nom=nom.replace("/", "_");
+			nom=nom.concat(".zip");
+			
+			
+			Log.d("NOU NOM DE L'ARXIU ES: ", nom);
+			ruta = ruta.concat(nom);
+			Log.d("RUTA DE L'ARXIU ES: ", ruta);
+			Compress c = new Compress(files_str, ruta);
+			c.zip();
+    	}
+    	else{
+    		final Toast error = Toast.makeText(this, "ERROR: SESSIO JA GUARDADA", Toast.LENGTH_SHORT);
+    		error.show();
+    	}
     }
     
     public void decompress(){
@@ -778,6 +807,8 @@ public class F1LTActivity extends FragmentActivity  implements DataStreamReceive
     	File sdCard = Environment.getExternalStorageDirectory();
 		File dir = new File (sdCard.getAbsolutePath() + RUTA_LOAD);
 		String[] children = dir.list();
+		//Toast toast = Toast.makeText(getApplicationContext(), "BORREM ARXIUS TEMPORALS. AQUESTA OPERACIÓ POT TRIGAR UNS MINUTS...", Toast.LENGTH_LONG);
+		//toast.show();
 		Log.d("ARXIUS A LA CARPETA ABANS DE BORRAR, SIZE: ", Integer.toString(children.length));
     	if (dir.isDirectory()) {
             for (int i = 0; i < children.length; i++) {
@@ -789,7 +820,7 @@ public class F1LTActivity extends FragmentActivity  implements DataStreamReceive
     	
     	String ruta=Environment.getExternalStorageDirectory().getPath()+"/PROVA/F1/ZIP/";
     	
-    	String zipFile = ruta + "/MON_R-CHECKhaha.zip"; 
+    	String zipFile = ruta + mChosenFile; 
     	String unzipLocation = ruta + "../UNZIPPED/"; 
     	 
     	Decompress d = new Decompress(zipFile, unzipLocation); 
@@ -831,8 +862,12 @@ public class F1LTActivity extends FragmentActivity  implements DataStreamReceive
         	        case DialogInterface.BUTTON_POSITIVE:
         	            delayed = true;
         	        	if(delayed){
-        	        		decompress();
-        	        		delayed();
+        	        		
+        	        		loadFileList();
+        	        		Toast INFO = Toast.makeText(getApplicationContext(), "DESCOMPRIMIREM LA SESSIÓ: AIXÒ POT TRIGAR MINUTS...", Toast.LENGTH_LONG);
+                            INFO.show();
+    	        			onCreateDialog(DIALOG_LOAD_FILE);
+
         	        	}
         	            break;
 
@@ -1038,6 +1073,54 @@ public class F1LTActivity extends FragmentActivity  implements DataStreamReceive
             }
         }
         return dir.delete();
+    }
+    
+    private void loadFileList() {
+        try {
+            mPath.mkdirs();
+        }
+        catch(SecurityException e) {
+            Log.e("Hola SecurityException loadFileList", "unable to write on the sd card " + e.toString());
+        }
+        if(mPath.exists()) {
+            FilenameFilter filter = new FilenameFilter() {
+                public boolean accept(File dir, String filename) {
+                    File sel = new File(dir, filename);
+                    return filename.contains(FTYPE) || sel.isDirectory();
+                }
+            };
+            mFileList = mPath.list(filter);
+        }
+        else {
+            mFileList= new String[0];
+        }
+    }
+
+    @Override
+    protected Dialog onCreateDialog(int id) {
+        Dialog dialog = null;
+        AlertDialog.Builder builder = new Builder(this);
+
+        switch(id) {
+            case DIALOG_LOAD_FILE:
+                builder.setTitle("Choose your file");
+                if(mFileList == null) {
+                    Log.e("HOLA ERROR", "Showing file picker before loading the file list");
+                    dialog = builder.create();
+                    return dialog;
+                }
+                builder.setItems(mFileList, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        mChosenFile = mFileList[which];
+                        
+                        decompress();
+    	        		delayed();
+                    }
+                });
+                break;
+        }
+        dialog = builder.show();
+        return dialog;
     }
 
 	public static String getRUTA_SAVE() {
