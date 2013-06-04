@@ -489,7 +489,9 @@ public class DataStreamReader
 	            //Log.d("GUARDAT NUM DADES AL ARXIU TEMPS: ", Integer.toString(temps.length));
 	            //Log.d("GUARDAT NUM DADES AL ARXIU MILIS: ", Integer.toString(milis.length));
 	        } catch (Exception e) {
-	            Log.e("EERROR", "Error opening Log.", e);
+	            Log.e("ERROR", "Error opening Log.", e);
+	            F1LTActivity.callbackNOSpaceLeft();
+	            
 	        }
 	        
         } // fi del if

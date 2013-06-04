@@ -1155,4 +1155,9 @@ public class F1LTActivity extends FragmentActivity  implements DataStreamReceive
 		rUTA_SAVE=rUTA_SAVE.replace(" ", "");
 		RUTA_SAVE = rUTA_SAVE;
 	}
+
+	public void callbackNOSpaceLeft() {
+		final Toast error = Toast.makeText(this, "NO SPACE LEFT TO SAVE DATA !!", Toast.LENGTH_SHORT);
+		error.show();
+	}
 }
