@@ -776,8 +776,15 @@ public class DataStreamReader
 	private void guardemDadesTemps(int min, int sec) {
 		
 		//if(!eventData.temps_guardats.containsKey(min) && sessionTimer.isTimerRunning()){
-			
-			Log.d("GUARDEM EVENT DATA",eventData.remainingTime);
+		// Si estem a la Q1 o Q2, sumem el temps que resta per tal que no es sobre-escrigui.	
+		if(eventData.qualiPeriod == 1){
+			min = min+40;
+		}
+		else if(eventData.qualiPeriod == 2){
+			min = min+18;
+		}
+		
+			Log.d("GUARDEM EVENTDATA, REMAINING i MINUTS: ",eventData.remainingTime+" "+Integer.toString(min));
 			// Ens guardem a la taula de keys guardades - per saber com les anem guardant
 			values=values+1;
 			eventData.temps_guardats.put(min, values);

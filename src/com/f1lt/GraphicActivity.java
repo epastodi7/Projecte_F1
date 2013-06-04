@@ -166,6 +166,16 @@ public class GraphicActivity extends Activity implements DataStreamReceiver{
 			    ret[i] = list.get(i);
 			  return ret;
 			}
+		
+		private String[] toStringArray(ArrayList<Integer> list){
+			  String[] ret = new String[list.size()];
+			  int i;
+			  for(i = 0;i < ret.length;i++){
+			    ret[i] = Integer.toString(list.get(i));
+			  	Log.d("===ITERACIO TOSTRINGARRAY: ", ret[i]);
+			  }
+			  return ret;
+			}
 
 		private void info() {
 			Log.d("GRAPHIC ACT", "INFO");
@@ -295,23 +305,36 @@ public class GraphicActivity extends Activity implements DataStreamReceiver{
 	        //Posem el fons a negre
 	        mySimpleXYPlot.getGraphWidget().getGridBackgroundPaint().setColor(Color.BLACK);
 	        
+	        // Formatting the Domain Values ( X-Axis )
+	        final String[] domain = toStringArray(keys_minuts);
+	        
+	        mySimpleXYPlot.setDomainValueFormat(new Format() {
+	        	 
+	        	@Override
+	            public StringBuffer format(Object obj, StringBuffer toAppendTo, FieldPosition pos) {
+	                return new StringBuffer( domain[ ( (Number)obj).intValue() ]  );
+	            }
+	 
+	            @Override
+	            public Object parseObject(String source, ParsePosition pos) {
+	                return null; 
+	            }
+	        });
+	        
 	        //Marge esquerra
 	        mySimpleXYPlot.getGraphWidget().setRangeLabelWidth(25);
 	        mySimpleXYPlot.getGraphWidget().setDomainLabelWidth(20);
 	        mySimpleXYPlot.getGraphWidget().setBorderPaint(null);
 	        
-	        mySimpleXYPlot.setRangeLabel("Flags:(1)Green (2)Yellow (4)SC");
+	        mySimpleXYPlot.setRangeLabel("Flag (1)Green (2)Yellow (4)SC (5)Red");
 	        mySimpleXYPlot.setDomainLabel("Minutes");
 	        
 	        mySimpleXYPlot.getLegendWidget().setMarginBottom((float) 2.5);
 	        
-	        mySimpleXYPlot.setDomainValueFormat(new DecimalFormat("#"));
+	        //mySimpleXYPlot.setDomainValueFormat(new DecimalFormat("#"));
 	        mySimpleXYPlot.setRangeValueFormat(new DecimalFormat("#"));
 	        mySimpleXYPlot.setRangeBoundaries(0, 5, BoundaryMode.FIXED);
 	        
-	        //PROVA
-	        //mySimpleXYPlot.setRangeBottomMax(22);
-	        //mySimpleXYPlot.setRangeBottomMax(1);
 	        
 	        //PROVA
 	        mySimpleXYPlot.setRangeStep(XYStepMode.INCREMENT_BY_VAL, 1);
@@ -360,7 +383,23 @@ public class GraphicActivity extends Activity implements DataStreamReceiver{
 	        //Posem el fons a negre
 	        mySimpleXYPlot.getGraphWidget().getGridBackgroundPaint().setColor(Color.BLACK);	        
 	        
-	        mySimpleXYPlot.setDomainValueFormat(new DecimalFormat("#"));
+	        // Formatting the Domain Values ( X-Axis )
+	        final String[] domain = toStringArray(keys_minuts);
+	        
+	        mySimpleXYPlot.setDomainValueFormat(new Format() {
+	        	 
+	        	@Override
+	            public StringBuffer format(Object obj, StringBuffer toAppendTo, FieldPosition pos) {
+	                return new StringBuffer( domain[ ( (Number)obj).intValue() ]  );
+	            }
+	 
+	            @Override
+	            public Object parseObject(String source, ParsePosition pos) {
+	                return null; 
+	            }
+	        });
+	        
+	        //mySimpleXYPlot.setDomainValueFormat(new DecimalFormat("#"));
 	        mySimpleXYPlot.setRangeBoundaries(0, 360, BoundaryMode.FIXED);
 	        	        
 	        //Marge esquerra
@@ -425,12 +464,28 @@ public class GraphicActivity extends Activity implements DataStreamReceiver{
 	        mySimpleXYPlot.getGraphWidget().setRangeLabelWidth(30);
 	        mySimpleXYPlot.getGraphWidget().setDomainLabelWidth(20);
 	        
+	        // Formatting the Domain Values ( X-Axis )
+	        final String[] domain = toStringArray(keys_minuts);
+	        
+	        mySimpleXYPlot.setDomainValueFormat(new Format() {
+	        	 
+	        	@Override
+	            public StringBuffer format(Object obj, StringBuffer toAppendTo, FieldPosition pos) {
+	                return new StringBuffer( domain[ ( (Number)obj).intValue() ]  );
+	            }
+	 
+	            @Override
+	            public Object parseObject(String source, ParsePosition pos) {
+	                return null; 
+	            }
+	        });
+	        
 	        mySimpleXYPlot.setRangeLabel("");
 	        mySimpleXYPlot.setDomainLabel("Minutes");
 	        
 	        mySimpleXYPlot.getLegendWidget().setMarginBottom((float) 2.5);
 	        
-	        mySimpleXYPlot.setDomainValueFormat(new DecimalFormat("#"));
+	        //mySimpleXYPlot.setDomainValueFormat(new DecimalFormat("#"));
 	        //mySimpleXYPlot.setRangeBoundaries(0, 30, BoundaryMode.FIXED);
 	        	        
 	        //PROVA
@@ -480,9 +535,21 @@ public class GraphicActivity extends Activity implements DataStreamReceiver{
 	        //Posem el fons a negre
 	        mySimpleXYPlot.getGraphWidget().getGridBackgroundPaint().setColor(Color.BLACK);
 	        
-	        //PROVA
-	        //mySimpleXYPlot.setRangeBottomMax(22);
-	        //mySimpleXYPlot.setRangeBottomMax(1);
+	        // Formatting the Domain Values ( X-Axis )
+	        final String[] domain = toStringArray(keys_minuts);
+	        
+	        mySimpleXYPlot.setDomainValueFormat(new Format() {
+	        	 
+	        	@Override
+	            public StringBuffer format(Object obj, StringBuffer toAppendTo, FieldPosition pos) {
+	                return new StringBuffer( domain[ ( (Number)obj).intValue() ]  );
+	            }
+	 
+	            @Override
+	            public Object parseObject(String source, ParsePosition pos) {
+	                return null; 
+	            }
+	        });
 	        
 	        mySimpleXYPlot.getGraphWidget().setRangeLabelWidth(50);
 	        mySimpleXYPlot.getGraphWidget().setDomainLabelWidth(20);
@@ -497,7 +564,7 @@ public class GraphicActivity extends Activity implements DataStreamReceiver{
 	        //mySimpleXYPlot.set
 	        mySimpleXYPlot.setDomainStep(XYStepMode.INCREMENT_BY_VAL, getAppropiateDomainStep());
 	        
-	        mySimpleXYPlot.setDomainValueFormat(new DecimalFormat("#"));
+	        //mySimpleXYPlot.setDomainValueFormat(new DecimalFormat("#"));
 	        //mySimpleXYPlot.setRangeBoundaries(970, 1050, BoundaryMode.FIXED);
 	 
 	        // by default, AndroidPlot displays developer guides to aid in laying out your plot.
@@ -548,6 +615,22 @@ public class GraphicActivity extends Activity implements DataStreamReceiver{
 	        //Marge esquerra
 	        mySimpleXYPlot.getGraphWidget().setRangeLabelWidth(25);
 	        mySimpleXYPlot.getGraphWidget().setDomainLabelWidth(20);
+	        
+	        // Formatting the Domain Values ( X-Axis )
+	        final String[] domain = toStringArray(keys_minuts);
+	        
+	        mySimpleXYPlot.setDomainValueFormat(new Format() {
+	        	 
+	        	@Override
+	            public StringBuffer format(Object obj, StringBuffer toAppendTo, FieldPosition pos) {
+	                return new StringBuffer( domain[ ( (Number)obj).intValue() ]  );
+	            }
+	 
+	            @Override
+	            public Object parseObject(String source, ParsePosition pos) {
+	                return null; 
+	            }
+	        });
 	        
 	        mySimpleXYPlot.setRangeLabel("");
 	        mySimpleXYPlot.setDomainLabel("Minutes");
@@ -611,9 +694,22 @@ public class GraphicActivity extends Activity implements DataStreamReceiver{
 	        //Posem el fons a negre
 	        mySimpleXYPlot.getGraphWidget().getGridBackgroundPaint().setColor(Color.BLACK);
 	        
-	        //PROVA
-	        //mySimpleXYPlot.setRangeBottomMax(22);
-	        //mySimpleXYPlot.setRangeBottomMax(1);
+	        
+	        // Formatting the Domain Values ( X-Axis )
+	        final String[] domain = toStringArray(keys_minuts);
+	        
+	        mySimpleXYPlot.setDomainValueFormat(new Format() {
+	        	 
+	        	@Override
+	            public StringBuffer format(Object obj, StringBuffer toAppendTo, FieldPosition pos) {
+	                return new StringBuffer( domain[ ( (Number)obj).intValue() ]  );
+	            }
+	 
+	            @Override
+	            public Object parseObject(String source, ParsePosition pos) {
+	                return null; 
+	            }
+	        });  
 	        
 	        //Marge Esquerra i Inferior
 	        mySimpleXYPlot.getGraphWidget().setRangeLabelWidth(25);
@@ -622,9 +718,9 @@ public class GraphicActivity extends Activity implements DataStreamReceiver{
 	        mySimpleXYPlot.setRangeLabel("");
 	        mySimpleXYPlot.setDomainLabel("Minutes");
 	        
-	        //Format form = mySimpleXYPlot.getGraphWidget().getDomainValueFormat();
-	        //System.out.println("FORMAT GRAFICA: "+form);
-	        mySimpleXYPlot.setDomainValueFormat(new DecimalFormat("#"));
+
+
+	        //mySimpleXYPlot.setDomainValueFormat(new DecimalFormat("#"));
 	        mySimpleXYPlot.setRangeValueFormat(new DecimalFormat("#"));
 	        
 	        //PROVA
