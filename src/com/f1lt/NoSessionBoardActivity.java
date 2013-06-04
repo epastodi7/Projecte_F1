@@ -31,7 +31,7 @@ public class NoSessionBoardActivity extends Activity implements DataStreamReceiv
 			TextView msgView = (TextView)findViewById(R.id.msgView);
 			if (msgView != null)
 			{
-				String event = LTData.getCurrentEvent().name;
+				String event = LTData.getCurrentEvent("",false).name;
 				msgView.setText(event + "\n" + encodeDate(msg));
 			}
 		}

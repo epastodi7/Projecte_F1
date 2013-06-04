@@ -9,6 +9,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 import org.apache.http.HttpEntity;
@@ -36,6 +37,7 @@ public class HttpReader
 	private static Cookie cookie;
 	private static String host;
 	private static String loginHost;
+	private static String data=setData();
 	private static int decryptionKey = 0;
     private static String RUTA_SAVE = "";
 
@@ -315,30 +317,36 @@ public class HttpReader
 		        
 		        
 		        //Creem un arxiu per copiar a dins
-		        /*
-		        Time time = new Time();
-		        time.setToNow();
-		        */
+		        
+		        
 		        File sdCard = Environment.getExternalStorageDirectory();
 		        File dir = new File (sdCard.getAbsolutePath() + RUTA_SAVE);
 		        String nom = "DadesKEY.txt";
-		        //nom=nom.concat(time.toMillis(false)+".txt");
+		        String nom2 = "DadesDATE.txt";
+		        
 		        dir.mkdirs();
 		        File file = new File(dir, nom);
+		        File file2 = new File(dir, nom2);
 		        Log.d("Nom fitxer KEY: ", file.getName());
 		        
 		        String key = Integer.toString(decryptionKey);
-		        Log.d("GUARDAT KEY.", key);
+		        Log.d("GUARDAT KEY: ", key);
+		        Log.d("GUARDAT DATA: ", data);
 		        byte[] bytes = key.getBytes("UTF8");
+		        byte[] bytes2 = data.getBytes("UTF8");
 		        
 		        try {
 		        	FileOutputStream f = new FileOutputStream(file);
 		            f.write(bytes);
 		            f.flush();
 		            f.close();
-		            Log.d("GUARDAT KEY STRING", key);
+		            
+		            FileOutputStream f2 = new FileOutputStream(file2);
+		            f2.write(bytes2);
+		            f2.flush();
+		            f2.close();
 		        } catch (Exception e) {
-		            Log.e("ERROR", "Guardant Key", e);
+		            Log.e("ERROR", "Guardant Key o Data", e);
 		        }
 		        
 //	          readStream(in);	         
@@ -397,6 +405,11 @@ public class HttpReader
 		};
 		_thread.start();
 		return _thread;
+	}
+	
+	public static String setData(){
+		Calendar gc = Calendar.getInstance();
+    	return data = new StringBuilder().append(gc.get(Calendar.DAY_OF_MONTH)).append("-").append(gc.get(Calendar.MONTH)+1).append("-").append(gc.get(Calendar.YEAR)).toString();
 	}
 }
 

@@ -646,12 +646,19 @@ public class LTData
     	return driver.substring(3, 6);
     }
     
-    public static LTEvent getCurrentEvent()
+    public static LTEvent getCurrentEvent(String dataEvent, boolean delayed)
     {
     	Log.d("LTData/LTEvent", "getCurrentEvent");
-    	Calendar gc = Calendar.getInstance();
-    	String currDate = new StringBuilder().append(gc.get(Calendar.DAY_OF_MONTH)).append("-").append(gc.get(Calendar.MONTH)+1).append("-").append(gc.get(Calendar.YEAR)).toString();
-    	Log.d("getCurrentEvent currDate", currDate);
+    	String currDate;
+    	if(!delayed){
+	    	Calendar gc = Calendar.getInstance();
+	    	currDate = new StringBuilder().append(gc.get(Calendar.DAY_OF_MONTH)).append("-").append(gc.get(Calendar.MONTH)+1).append("-").append(gc.get(Calendar.YEAR)).toString();
+	    	Log.d("getCurrentEvent LIVE currDate", currDate);
+    	}
+    	else{
+    		currDate = dataEvent;
+    		Log.d("getCurrentEvent DELAYED currDate", currDate);
+    	}
     	return getEvent(currDate);
     }
     

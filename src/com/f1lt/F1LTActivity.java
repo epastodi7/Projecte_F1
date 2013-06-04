@@ -84,6 +84,7 @@ public class F1LTActivity extends FragmentActivity  implements DataStreamReceive
     private static String RUTA_SAVE = "/PROVA/F1/MON/R-CHECK";
     private static String RUTA_LOAD = "/PROVA/F1/UNZIPPED/";
     private static String RUTA_ZIP = "/PROVA/F1/ZIP/";
+    private String data_event;
     
     //PROVA DIALOG
     private String[] mFileList;
@@ -391,7 +392,7 @@ public class F1LTActivity extends FragmentActivity  implements DataStreamReceive
 
     	        eventData.sessionStarted=true;
     	        //CORRECTE
-    	        int fitxersDades = (llista.length-1)/3;
+    	        int fitxersDades = (llista.length-2)/2;
     	        //PROVA NO MILIS I TEMPS
     	        int fitxersDades2 = llista.length-1;
     	        
@@ -599,14 +600,19 @@ public class F1LTActivity extends FragmentActivity  implements DataStreamReceive
         File dir = new File (sdCard.getAbsolutePath() + RUTA_LOAD);
         
         String nom = "DadesKEY.txt";
+        String nom2 = "DadesDATE.txt";
         
         File file = new File(dir, nom);
+        File file2 = new File(dir, nom2);
         Log.d("ARREL ARXIU KEY: ", file.toString());
+        Log.d("ARREL ARXIU DATE: ", file2.toString());
         byte[] dades = new byte[100];
         ByteArrayOutputStream buffer = new ByteArrayOutputStream();
         byte[] data = new byte[65535];
     
         try {
+        	
+        	//Llegim el numero KeyFrame
         	FileInputStream f = new FileInputStream(file);
         	int nRead = 0;
 
@@ -614,17 +620,32 @@ public class F1LTActivity extends FragmentActivity  implements DataStreamReceive
         	  buffer.write(data, 0, nRead);
         	}
         	
+        	f.close();
         	dades = buffer.toByteArray();
-        	String text = new String(dades, "UTF8");
+        	String textkey = new String(dades, "UTF8");
         	//Log.d("NUM KEY FRAME PRE VALUE OF:", text);
         	
-        	int key = Integer.valueOf(text);
+        	int key = Integer.valueOf(textkey);
         	
     		Log.d("NUM KEY FRAME:", Integer.toString(key));
     		dataStreamReader.guardarKey(key);
-        	//f.read(temps);
-            //f.read(dades);
-            f.close();
+            
+    		//Llegim la data del event
+    		f = new FileInputStream(file2);
+    		nRead = 0;
+    		data = new byte[65535];
+    		dades = new byte[100];
+    		buffer.reset();
+
+        	while ((nRead = f.read(data, 0, data.length)) != -1) {
+        	  buffer.write(data, 0, nRead);
+        	}
+        	
+        	f.close();
+        	dades = buffer.toByteArray();
+        	data_event = new String(dades, "UTF8");
+        	dataStreamReader.dataEvent = data_event;
+        	Log.d("DATA EVENT LLEGIDA: ", data_event);
             
         } catch (Exception e) {
             Log.e("ERROR", "Error obrint fitxer", e);

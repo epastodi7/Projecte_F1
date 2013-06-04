@@ -120,6 +120,7 @@ public class DataStreamReader
 	
 	ByteArrayBuffer pbuf = new ByteArrayBuffer(512);    
     int pbuf_length = 0;
+	public String dataEvent;
 	
 	private DataStreamReader()
 	{
@@ -425,9 +426,11 @@ public class DataStreamReader
 	        nom=nom.concat(Integer.toString(blocks));
 	        nom=nom.concat(".txt");
 	        
+	        /*
 	        String nom2 = "Temps";
 	        nom2=nom2.concat(Integer.toString(blocks));
-	        nom2=nom2.concat(".txt");	  
+	        nom2=nom2.concat(".txt");
+	        */	  
 	        
 	        String nom3 = "Milis";
 	        nom3=nom3.concat(Integer.toString(blocks));
@@ -441,7 +444,7 @@ public class DataStreamReader
 		        carpeta_creada=true;
 	        }
 	        File file = new File(dir, nom);
-	        File file2 = new File(dir, nom2);
+	        //File file2 = new File(dir, nom2);
 	        File file3 = new File(dir, nom3);
 	        
 	        Log.d("ARREL ARXIU DADES: ", file.toString());
@@ -464,7 +467,7 @@ public class DataStreamReader
 	        try {
 	        	
 	        	FileOutputStream f = new FileOutputStream(file);
-	        	FileOutputStream f2 = new FileOutputStream(file2);
+	        	//FileOutputStream f2 = new FileOutputStream(file2);
 	        	FileOutputStream f3 = new FileOutputStream(file3);
 	        	
 	        	//f.write(temps);
@@ -472,9 +475,11 @@ public class DataStreamReader
 	            f.flush();
 	            f.close();
 	            
+	            /*
 	            f2.write(temps);
 	            f2.flush();
 	            f2.close();
+	            */
 	            
 	            f3.write(milis);
 	            f3.flush();
@@ -846,7 +851,7 @@ public class DataStreamReader
 	            number = 0;	            
 	            try
 	            {
-	            	eventData.eventInfo = LTData.getCurrentEvent();
+	            	eventData.eventInfo = LTData.getCurrentEvent(dataEvent,delayed);
 	            	
 	            	//Log.d("LLOC EVENT: ",eventData.eventInfo.shortName);
 	            	eventData.qualiPeriod = 0;

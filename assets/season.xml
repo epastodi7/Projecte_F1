@@ -8,8 +8,8 @@
    <ShortName>MAL</ShortName>
    <Place>Sepang, Malaysia</Place>
    <Laps>56</Laps>
-   <PracticeDate>22-03-2013</PracticeDate>
-   <RaceDate>24-03-2013</RaceDate>
+   <PracticeDate>22-3-2013</PracticeDate>
+   <RaceDate>24-3-2013</RaceDate>
   </Race>
   <Race>
    <Number>1</Number>
@@ -17,8 +17,8 @@
    <ShortName>AUS</ShortName>
    <Place>Albert Park, Australia</Place>
    <Laps>58</Laps>
-   <PracticeDate>15-03-2013</PracticeDate>
-   <RaceDate>17-03-2013</RaceDate>
+   <PracticeDate>15-3-2013</PracticeDate>
+   <RaceDate>17-3-2013</RaceDate>
   </Race>
   <Race>
    <Number>3</Number>
@@ -26,8 +26,8 @@
    <ShortName>CHN</ShortName>
    <Place>Shanghai, China</Place>
    <Laps>56</Laps>
-   <PracticeDate>12-04-2013</PracticeDate>
-   <RaceDate>14-04-2013</RaceDate>
+   <PracticeDate>12-4-2013</PracticeDate>
+   <RaceDate>14-4-2013</RaceDate>
   </Race>
   <Race>
    <Number>4</Number>
@@ -35,8 +35,8 @@
    <ShortName>BAH</ShortName>
    <Place>Sakhir, Bahrain</Place>
    <Laps>57</Laps>
-   <PracticeDate>19-04-2013</PracticeDate>
-   <RaceDate>21-04-2013</RaceDate>
+   <PracticeDate>19-4-2013</PracticeDate>
+   <RaceDate>21-4-2013</RaceDate>
   </Race>
   <Race>
    <Number>5</Number>
@@ -44,8 +44,8 @@
    <ShortName>SPA</ShortName>
    <Place>Catalunya, Spain</Place>
    <Laps>66</Laps>
-   <PracticeDate>10-05-2013</PracticeDate>
-   <RaceDate>12-05-2013</RaceDate>
+   <PracticeDate>10-5-2013</PracticeDate>
+   <RaceDate>12-5-2013</RaceDate>
   </Race>
   <Race>
    <Number>6</Number>
@@ -53,8 +53,8 @@
    <ShortName>MON</ShortName>
    <Place>Monte Carlo, Monaco</Place>
    <Laps>78</Laps>
-   <PracticeDate>23-05-2013</PracticeDate>
-   <RaceDate>26-05-2013</RaceDate>
+   <PracticeDate>23-5-2013</PracticeDate>
+   <RaceDate>26-5-2013</RaceDate>
   </Race>
   <Race>
    <Number>7</Number>
@@ -62,8 +62,8 @@
    <ShortName>CAN</ShortName>
    <Place>Montreal, Canada</Place>
    <Laps>70</Laps>
-   <PracticeDate>07-06-2013</PracticeDate>
-   <RaceDate>09-06-2013</RaceDate>
+   <PracticeDate>7-6-2013</PracticeDate>
+   <RaceDate>9-6-2013</RaceDate>
   </Race>
   <Race>
    <Number>8</Number>
@@ -71,8 +71,8 @@
    <ShortName>VAL</ShortName>
    <Place>Valencia, Spain</Place>
    <Laps>57</Laps>
-   <PracticeDate>22-06-2012</PracticeDate>
-   <RaceDate>24-06-2012</RaceDate>
+   <PracticeDate>22-6-2012</PracticeDate>
+   <RaceDate>24-6-2012</RaceDate>
   </Race>
   <Race>
    <Number>9</Number>
@@ -80,8 +80,8 @@
    <ShortName>GBR</ShortName>
    <Place>Silverstone, Great Britain</Place>
    <Laps>52</Laps>
-   <PracticeDate>28-06-2013</PracticeDate>
-   <RaceDate>30-06-2013</RaceDate>
+   <PracticeDate>28-6-2013</PracticeDate>
+   <RaceDate>30-6-2013</RaceDate>
   </Race>
   <Race>
    <Number>10</Number>
@@ -89,8 +89,8 @@
    <ShortName>GER</ShortName>
    <Place>Nürburgring, Germany</Place>
    <Laps>60</Laps>
-   <PracticeDate>05-07-2013</PracticeDate>
-   <RaceDate>07-07-2013</RaceDate>
+   <PracticeDate>5-7-2013</PracticeDate>
+   <RaceDate>7-7-2013</RaceDate>
   </Race>
   <Race>
    <Number>11</Number>
@@ -98,8 +98,8 @@
    <ShortName>HUN</ShortName>
    <Place>Budapest, Hungary</Place>
    <Laps>70</Laps>
-   <PracticeDate>26-07-2013</PracticeDate>
-   <RaceDate>28-07-2013</RaceDate>
+   <PracticeDate>26-7-2013</PracticeDate>
+   <RaceDate>28-7-2013</RaceDate>
   </Race>
   <Race>
    <Number>12</Number>
@@ -107,8 +107,8 @@
    <ShortName>BEL</ShortName>
    <Place>Spa-Francorchamps, Belgium</Place>
    <Laps>44</Laps>
-   <PracticeDate>23-08-2013</PracticeDate>
-   <RaceDate>25-08-2013</RaceDate>
+   <PracticeDate>23-8-2013</PracticeDate>
+   <RaceDate>25-8-2013</RaceDate>
   </Race>
   <Race>
    <Number>13</Number>
@@ -116,8 +116,8 @@
    <ShortName>ITA</ShortName>
    <Place>Monza, Italy</Place>
    <Laps>53</Laps>
-   <PracticeDate>06-09-2013</PracticeDate>
-   <RaceDate>08-09-2013</RaceDate>
+   <PracticeDate>6-9-2013</PracticeDate>
+   <RaceDate>8-9-2013</RaceDate>
   </Race>
   <Race>
    <Number>15</Number>
@@ -143,8 +143,8 @@
    <ShortName>KOR</ShortName>
    <Place>Yeongam, Korea</Place>
    <Laps>55</Laps>
-   <PracticeDate>04-10-2013</PracticeDate>
-   <RaceDate>06-10-2013</RaceDate>
+   <PracticeDate>4-10-2013</PracticeDate>
+   <RaceDate>6-10-2013</RaceDate>
   </Race>
   <Race>
    <Number>17</Number>
@@ -161,8 +161,8 @@
    <ShortName>ABU</ShortName>
    <Place>Yas Marina, Abu Dhabi</Place>
    <Laps>55</Laps>
-   <PracticeDate>01-11-2013</PracticeDate>
-   <RaceDate>03-11-2013</RaceDate>
+   <PracticeDate>1-11-2013</PracticeDate>
+   <RaceDate>3-11-2013</RaceDate>
   </Race>
   <Race>
    <Number>19</Number>
