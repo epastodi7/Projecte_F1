@@ -490,7 +490,7 @@ public class DataStreamReader
 	            //Log.d("GUARDAT NUM DADES AL ARXIU MILIS: ", Integer.toString(milis.length));
 	        } catch (Exception e) {
 	            Log.e("ERROR", "Error opening Log.", e);
-	            F1LTActivity.callbackNOSpaceLeft();
+	            
 	            
 	        }
 	        
@@ -780,10 +780,22 @@ public class DataStreamReader
 		//if(!eventData.temps_guardats.containsKey(min) && sessionTimer.isTimerRunning()){
 		// Si estem a la Q1 o Q2, sumem el temps que resta per tal que no es sobre-escrigui.	
 		if(eventData.qualiPeriod == 1){
-			min = min+40;
+			// Si estem a l'interval entre Q1 i Q2, ho posem al minut 34 (arbitrariament)
+			if(min==15 && !sessionTimer.isTimerRunning()){
+				min=34;
+			}
+			else{
+				min = min+40;
+			}
 		}
 		else if(eventData.qualiPeriod == 2){
-			min = min+18;
+			// Si estem a l'interval entre Q2 i Q3, ho posem al minut 11 (arbitrariament)
+			if(min==10 && !sessionTimer.isTimerRunning()){
+				min=11;
+			}
+			else{
+				min = min+18;
+			}
 		}
 		
 			Log.d("GUARDEM EVENTDATA, REMAINING i MINUTS: ",eventData.remainingTime+" "+Integer.toString(min));
