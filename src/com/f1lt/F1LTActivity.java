@@ -10,6 +10,7 @@ import java.io.IOException;
 import java.nio.BufferUnderflowException;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
+import java.util.Arrays;
 import java.util.List;
 
 import org.apache.http.cookie.Cookie;
@@ -394,7 +395,15 @@ public class F1LTActivity extends FragmentActivity  implements DataStreamReceive
     	        //CORRECTE
     	        int fitxersDades = (llista.length-2)/2;
     	        //PROVA NO MILIS I TEMPS
-    	        int fitxersDades2 = llista.length-1;
+    	        int fitxersDades2 = llista.length-2;
+    	        
+    	        boolean time_synchro = llista.equals("Milis1.txt");
+    	        if(!time_synchro){
+    	        	Log.d("->->NO ESTA CAPTURAT ELS MILIS, ","SESSIO NO SINCRONITZADA");
+    	        	fitxersDades = fitxersDades2;
+    	        	// Establim 5 segons per deixar que es carreguin be les dades inicials
+    	        	segonsDelay=5;
+    	        }
     	        
     	        // Arribem fins un arxiu abans perque hi ha el DadesKEYS
     	        Log.d("ARXIUS A REPRODUIR: ",Integer.toString(fitxersDades));
@@ -407,7 +416,16 @@ public class F1LTActivity extends FragmentActivity  implements DataStreamReceive
     	        		dataStreamReader.sessionTimer.stopTimer();
     	        	}
     	        	
-    	        	segonsDelay=gestionaMilis(blocks,fitxersDades, dir);
+    	        	
+    	        	if(time_synchro){
+    	        		segonsDelay=gestionaMilis(blocks,fitxersDades, dir);
+        	        	
+    	        	}
+    	        	// A partir del segon paquet, podem posar 1 segon de delay entre cada actualitzacio
+    	        	else if(!time_synchro && blocks==4){
+    	        		segonsDelay=1;
+    	        	}
+    	        	
     	        	Log.d("SEGONS DE DELAY", Long.toString(segonsDelay));
     	        	
     		        String nom = "Dades";
@@ -433,12 +451,10 @@ public class F1LTActivity extends FragmentActivity  implements DataStreamReceive
     		        	buffer.flush();
     		        	
     		    		Log.d("NUM DADES BYTES:", Integer.toString(bytes));
-    		        	//f.read(temps);
-    		            //f.read(dades);
     		            f.close();
     		            
     		        } catch (Exception e) {
-    		            Log.d("ERROR", "Error obrint fitxer");
+    		            Log.d("ERROR", "Error obrint fitxer Dades.txt");
     		        }
     		        try{
     		        	//PROVES PER ANAR MES RAPID
@@ -621,9 +637,20 @@ public class F1LTActivity extends FragmentActivity  implements DataStreamReceive
         	}
         	
         	f.close();
+        	
+        	//Copiem les dades llegides a un array
         	dades = buffer.toByteArray();
+        	
+        	//Pot ser que es crei un salt de linia o espai a l'ultima posicion, la borrem
+        	for(Byte byte_act : dades ){
+        		Log.d("ITER BYTES:", byte_act.toString());
+        		if(byte_act==10){
+        			dades=Arrays.copyOfRange(dades, 0, dades.length-1);
+        			Log.d("ENTRA CopyOfRange: ", Integer.toString(byte_act.SIZE));
+        		}
+        	}
         	String textkey = new String(dades, "UTF8");
-        	//Log.d("NUM KEY FRAME PRE VALUE OF:", text);
+        	Log.d("NUM KEY FRAME PRE VALUE OF:", textkey);
         	
         	int key = Integer.valueOf(textkey);
         	
@@ -648,7 +675,7 @@ public class F1LTActivity extends FragmentActivity  implements DataStreamReceive
         	Log.d("DATA EVENT LLEGIDA: ", data_event);
             
         } catch (Exception e) {
-            Log.e("ERROR", "Error obrint fitxer", e);
+            Log.e("ERROR", "Error obrint fitxer Key", e);
         }
 		
 	}
