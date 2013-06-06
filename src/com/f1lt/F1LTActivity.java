@@ -397,7 +397,12 @@ public class F1LTActivity extends FragmentActivity  implements DataStreamReceive
     	        //PROVA NO MILIS I TEMPS
     	        int fitxersDades2 = llista.length-2;
     	        
-    	        boolean time_synchro = llista.equals("Milis1.txt");
+    	        // Capturem el primer nom del arxiu emmagatzeman ( sera un Milis.txt ..
+    	        // .. ja que abans agafa els Dades1,2... DadesKEY i DadesDATE 
+    	        // Si conte Milis, sabem que hem obtingut tambe que la sessio es pot
+    	        // reproduir sincronitzada
+    	        String nom_fitxer0 = llista[0].getName();
+    	        boolean time_synchro = nom_fitxer0.contains("Milis");
     	        if(!time_synchro){
     	        	Log.d("->->NO ESTA CAPTURAT ELS MILIS, ","SESSIO NO SINCRONITZADA");
     	        	fitxersDades = fitxersDades2;
