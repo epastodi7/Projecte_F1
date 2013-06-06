@@ -401,13 +401,15 @@ public class F1LTActivity extends FragmentActivity  implements DataStreamReceive
     	        // .. ja que abans agafa els Dades1,2... DadesKEY i DadesDATE 
     	        // Si conte Milis, sabem que hem obtingut tambe que la sessio es pot
     	        // reproduir sincronitzada
-    	        String nom_fitxer0 = llista[0].getName();
-    	        boolean time_synchro = nom_fitxer0.contains("Milis");
+    	        boolean time_synchro = comprovaSincro(llista);
     	        if(!time_synchro){
     	        	Log.d("->->NO ESTA CAPTURAT ELS MILIS, ","SESSIO NO SINCRONITZADA");
     	        	fitxersDades = fitxersDades2;
     	        	// Establim 5 segons per deixar que es carreguin be les dades inicials
     	        	segonsDelay=5;
+    	        }
+    	        else if(time_synchro){
+    	        	Log.d("->->CAPTURAT ELS MILIS, ","SESSIO SINCRONITZADA");
     	        }
     	        
     	        // Arribem fins un arxiu abans perque hi ha el DadesKEYS
@@ -489,6 +491,21 @@ public class F1LTActivity extends FragmentActivity  implements DataStreamReceive
 	        	//dataStreamReader.disconnect();
 	        	//dataStreamReader.connected = false;
     	    }
+
+			private boolean comprovaSincro(File[] llista) {
+				boolean condition = false;
+				for(int i=0;i<llista.length;i++){
+					if(llista[i].getName().contains("Milis")){
+						condition = true;
+						Log.d("TROBAT MILIS", "SURT WHILE-NOMES LLEGIR 1 COP");
+						return condition;
+					}
+					if(i==llista.length-1 && condition==false){
+						return condition;
+					}
+				}
+				return condition;
+			}
 
 			private long gestionaMilis(int blocks, int fitxersDades, File dir) {
 				
