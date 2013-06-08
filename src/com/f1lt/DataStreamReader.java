@@ -230,7 +230,7 @@ public class DataStreamReader
 		if (httpThread != null && httpThread.isAlive())
 			httpThread.interrupt();
 		
-		blocks = 0;
+		//blocks = 0;
 	}
 	
 	 public void onSessionTimerUpdated(String time, boolean stop)
@@ -489,7 +489,7 @@ public class DataStreamReader
 	            //Log.d("GUARDAT NUM DADES AL ARXIU TEMPS: ", Integer.toString(temps.length));
 	            //Log.d("GUARDAT NUM DADES AL ARXIU MILIS: ", Integer.toString(milis.length));
 	        } catch (Exception e) {
-	            Log.e("ERROR", "Error opening Log.", e);
+	            Log.e("ERROR", "Error al escriure Dades i Milis.txt", e);
 	            
 	            
 	        }

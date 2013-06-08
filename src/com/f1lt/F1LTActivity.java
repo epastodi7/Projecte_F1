@@ -876,6 +876,12 @@ public class F1LTActivity extends FragmentActivity  implements DataStreamReceive
     	//BORREM TOT EL CONTIGUT ANTERIOR DE LA CARPETA
     	File sdCard = Environment.getExternalStorageDirectory();
 		File dir = new File (sdCard.getAbsolutePath() + RUTA_LOAD);
+		
+		//Creem la carpeta en cas que no existeixi
+		if(!dir.exists()){
+			dir.mkdir();
+		}
+		
 		String[] children = dir.list();
 		//Toast toast = Toast.makeText(getApplicationContext(), "BORREM ARXIUS TEMPORALS. AQUESTA OPERACIÓ POT TRIGAR UNS MINUTS...", Toast.LENGTH_LONG);
 		//toast.show();
