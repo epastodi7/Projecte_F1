@@ -48,8 +48,7 @@ public class F1LTActivity extends FragmentActivity  implements DataStreamReceive
 {
 	
 	private Thread authThread;
-    //private final Handler handler = new Handler();
-	
+    	
     private final Handler handler = new Handler()
     {
         public void handleMessage(Message msg)
@@ -59,7 +58,7 @@ public class F1LTActivity extends FragmentActivity  implements DataStreamReceive
         	int num_dades=0;
         	Bundle bundle = msg.getData();
         	dades = bundle.getByteArray("Data");
-        	//Log.d("Handle Message", dades.toString());
+        	
         	num_dades = dades.length;
         	
         	//Log.d("Handle Message", Integer.toString(num_dades));
@@ -82,19 +81,17 @@ public class F1LTActivity extends FragmentActivity  implements DataStreamReceive
     private boolean showCommentaryLine = true;
     private boolean delayed;
     
-    private static String RUTA_SAVE = "/PROVA/F1/MON/R-CHECK";
-    private static String RUTA_LOAD = "/PROVA/F1/UNZIPPED/";
-    private static String RUTA_ZIP = "/PROVA/F1/ZIP/";
+    private static String RUTA_SAVE = "/F1LT/F1/MON/R-CHECK";
+    private static String RUTA_LOAD = "/F1LT/F1/UNZIPPED/";
+    private static String RUTA_ZIP = "/F1LT/F1/ZIP/";
     private String data_event;
     
-    //PROVA DIALOG
+    //Atributs Compressio
     private String[] mFileList;
     private File mPath = new File(Environment.getExternalStorageDirectory() + RUTA_ZIP);
     private String mChosenFile;
     private static final String FTYPE = ".zip";    
     private static final int DIALOG_LOAD_FILE = 1000;
-    
-    
     
     private final String PREFS_NAME = "F1LTPrefs";    
     private final int GET_LOGIN = 1;
@@ -308,15 +305,15 @@ public class F1LTActivity extends FragmentActivity  implements DataStreamReceive
 	{
     	Log.d("F1LTActivity", "onActivityResult");
     	Log.d("ResultCode dins F1LT", Integer.toString(resultCode));
-    	String ruta = "/PROVA/F1/";
+    	String ruta = "/F1LT/F1/";
     	
 		if (requestCode == GET_LOGIN && resultCode == RESULT_OK)
 		{
-			//Log.d("ENTRA", "ON VULL");
+			
 			String email = data.getStringExtra("Email");
 			String passwd = data.getStringExtra("Passwd");
 			String rutaPath = data.getStringExtra("pathSave");
-	        //Log.d("RUTAPATH", rutaPath);
+	        
 	        ruta=ruta.concat(rutaPath);
 	        //Log.d("RUTA", ruta);
 	        setRUTA_SAVE(ruta);
@@ -326,7 +323,7 @@ public class F1LTActivity extends FragmentActivity  implements DataStreamReceive
 		}
 		if (requestCode == GET_PREFERENCES && resultCode == RESULT_OK)
 		{
-			//Log.d("NO ENTRA", "ON VULL");
+			
 			ltViewFragment = (LTViewFragment)getSupportFragmentManager().findFragmentByTag("LTViewFragment");
             if (ltViewFragment != null)
             	ltViewFragment.setPreferences(data);
@@ -389,12 +386,11 @@ public class F1LTActivity extends FragmentActivity  implements DataStreamReceive
     	        File[] llista = dir.listFiles();
     	        Log.d("NUM FITXERS CARPETA:", Integer.toString(llista.length));
     	        byte[] dades = new byte[65535];
-    	    	//LTViewFragment lt = (LTViewFragment)getSupportFragmentManager().findFragmentByTag("LTViewFragment");
 
     	        eventData.sessionStarted=true;
-    	        //CORRECTE
+    	        //Arxius Sessio Sincronitzada
     	        int fitxersDades = (llista.length-2)/2;
-    	        //PROVA NO MILIS I TEMPS
+    	        //Arxius Sessio NO Sincronitzada
     	        int fitxersDades2 = llista.length-2;
     	        
     	        // Capturem el primer nom del arxiu emmagatzeman ( sera un Milis.txt ..
@@ -473,8 +469,7 @@ public class F1LTActivity extends FragmentActivity  implements DataStreamReceive
     		        		segonsDelay=1;
     		        	}
     		        	Thread.sleep(segonsDelay*Delay);
-    		        	//dataStreamReader.parseBlockDelayed(dades, bytes);
-    		        	
+    		        	    		        	
     		        	Message msg = new Message();
     		            Bundle datas = new Bundle();
     		           
@@ -488,8 +483,7 @@ public class F1LTActivity extends FragmentActivity  implements DataStreamReceive
     		        
 
     	        }
-	        	//dataStreamReader.disconnect();
-	        	//dataStreamReader.connected = false;
+	        	
     	    }
 
 			private boolean comprovaSincro(File[] llista) {
@@ -554,8 +548,7 @@ public class F1LTActivity extends FragmentActivity  implements DataStreamReceive
 		        	}
 		
 		        	dades = buffer.toByteArray();
-		        	//bytes = dades.length;
-		        	
+		        			        	
 		        	ByteBuffer buf = ByteBuffer.wrap(dades);
 		        	buf = ByteBuffer.wrap(dades);
 		        	buf.order(ByteOrder.BIG_ENDIAN);
@@ -717,7 +710,7 @@ public class F1LTActivity extends FragmentActivity  implements DataStreamReceive
     	           {
     	        	   
     	        	   dataStreamReader.disconnect();
-    	        	   //dataStreamReader.borrablocks();
+    	        	   
     	        	   eventData.clear();
     	        	   LTData.ltTeams.clear();
     	        	   LTData.ltEvents.clear();
@@ -846,14 +839,14 @@ public class F1LTActivity extends FragmentActivity  implements DataStreamReceive
 				i++;
 			}
 			
-			String nom = RUTA_SAVE, ruta=Environment.getExternalStorageDirectory().getPath()+"/PROVA/F1/ZIP/";
+			String nom = RUTA_SAVE, ruta=Environment.getExternalStorageDirectory().getPath()+"/F1LT/F1/ZIP/";
 			RUTA_ZIP = ruta;
 			
 			File dir2 = new File (ruta);
 			if(!dir2.isDirectory()) { 
 				dir2.mkdirs(); 
 			} 
-			nom=nom.replace("/PROVA/F1/", "");
+			nom=nom.replace("/F1LT/F1/", "");
 			nom=nom.replace("/", "_");
 			nom=nom.concat(".zip");
 			
@@ -894,7 +887,7 @@ public class F1LTActivity extends FragmentActivity  implements DataStreamReceive
         }
     	Log.d("BORRATS TOTS ARXIUS A LA CARPETA, SIZE: ", Integer.toString(children.length));
     	
-    	String ruta=Environment.getExternalStorageDirectory().getPath()+"/PROVA/F1/ZIP/";
+    	String ruta=Environment.getExternalStorageDirectory().getPath()+ RUTA_ZIP;
     	
     	String zipFile = ruta + mChosenFile; 
     	String unzipLocation = ruta + "../UNZIPPED/"; 
