@@ -1,0 +1,11 @@
+
+    <resources>
+        <color name="red">#e71f1f</color>
+        <color name="cyan">#00ffff</color>
+        <color name="green">#00ff00</color>
+        <color name="yellow">#ffff00</color>
+        <color name="black">#000000</color>
+        <color name="white">#dcdcdc</color>
+        <color name="defaultcolor">#969696</color>
+        <color name="violet">#ff00ff</color>
+    </resources>
