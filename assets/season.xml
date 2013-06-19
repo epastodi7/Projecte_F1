@@ -1,0 +1,296 @@
+<!DOCTYPE F1LT>
+<Season>
+ <Year>2012</Year>
+ <Races>
+  <Race>
+   <Number>2</Number>
+   <Event>Petronas Malaysian Grand Prix</Event>
+   <ShortName>MAL</ShortName>
+   <Place>Sepang, Malaysia</Place>
+   <Laps>56</Laps>
+   <PracticeDate>22-3-2013</PracticeDate>
+   <RaceDate>24-3-2013</RaceDate>
+  </Race>
+  <Race>
+   <Number>1</Number>
+   <Event>Qantas Australian Grand Prix</Event>
+   <ShortName>AUS</ShortName>
+   <Place>Albert Park, Australia</Place>
+   <Laps>58</Laps>
+   <PracticeDate>15-3-2013</PracticeDate>
+   <RaceDate>17-3-2013</RaceDate>
+  </Race>
+  <Race>
+   <Number>3</Number>
+   <Event>UBS Chinese Grand Prix</Event>
+   <ShortName>CHN</ShortName>
+   <Place>Shanghai, China</Place>
+   <Laps>56</Laps>
+   <PracticeDate>12-4-2013</PracticeDate>
+   <RaceDate>14-4-2013</RaceDate>
+  </Race>
+  <Race>
+   <Number>4</Number>
+   <Event>Gulf Air Bahrain Grand Prix</Event>
+   <ShortName>BAH</ShortName>
+   <Place>Sakhir, Bahrain</Place>
+   <Laps>57</Laps>
+   <PracticeDate>19-4-2013</PracticeDate>
+   <RaceDate>21-4-2013</RaceDate>
+  </Race>
+  <Race>
+   <Number>5</Number>
+   <Event>Gran Premio de Espana Santander 2012</Event>
+   <ShortName>SPA</ShortName>
+   <Place>Catalunya, Spain</Place>
+   <Laps>66</Laps>
+   <PracticeDate>10-5-2013</PracticeDate>
+   <RaceDate>12-5-2013</RaceDate>
+  </Race>
+  <Race>
+   <Number>6</Number>
+   <Event>Grand Prix de Monaco</Event>
+   <ShortName>MON</ShortName>
+   <Place>Monte Carlo, Monaco</Place>
+   <Laps>78</Laps>
+   <PracticeDate>23-5-2013</PracticeDate>
+   <RaceDate>26-5-2013</RaceDate>
+  </Race>
+  <Race>
+   <Number>7</Number>
+   <Event>Grand Prix du Canada 2012</Event>
+   <ShortName>CAN</ShortName>
+   <Place>Montreal, Canada</Place>
+   <Laps>70</Laps>
+   <PracticeDate>7-6-2013</PracticeDate>
+   <RaceDate>9-6-2013</RaceDate>
+  </Race>
+  <Race>
+   <Number>8</Number>
+   <Event>Grand Prix of Europe</Event>
+   <ShortName>VAL</ShortName>
+   <Place>Valencia, Spain</Place>
+   <Laps>57</Laps>
+   <PracticeDate>22-6-2012</PracticeDate>
+   <RaceDate>24-6-2012</RaceDate>
+  </Race>
+  <Race>
+   <Number>9</Number>
+   <Event>Santander British Grand Prix</Event>
+   <ShortName>GBR</ShortName>
+   <Place>Silverstone, Great Britain</Place>
+   <Laps>52</Laps>
+   <PracticeDate>28-6-2013</PracticeDate>
+   <RaceDate>30-6-2013</RaceDate>
+  </Race>
+  <Race>
+   <Number>10</Number>
+   <Event>Grosser Preis Santander von Deutschland 2012</Event>
+   <ShortName>GER</ShortName>
+   <Place>Nürburgring, Germany</Place>
+   <Laps>60</Laps>
+   <PracticeDate>5-7-2013</PracticeDate>
+   <RaceDate>7-7-2013</RaceDate>
+  </Race>
+  <Race>
+   <Number>11</Number>
+   <Event>Eni Magyar Nagydij 2012</Event>
+   <ShortName>HUN</ShortName>
+   <Place>Budapest, Hungary</Place>
+   <Laps>70</Laps>
+   <PracticeDate>26-7-2013</PracticeDate>
+   <RaceDate>28-7-2013</RaceDate>
+  </Race>
+  <Race>
+   <Number>12</Number>
+   <Event>Shell Belgian Grand Prix</Event>
+   <ShortName>BEL</ShortName>
+   <Place>Spa-Francorchamps, Belgium</Place>
+   <Laps>44</Laps>
+   <PracticeDate>23-8-2013</PracticeDate>
+   <RaceDate>25-8-2013</RaceDate>
+  </Race>
+  <Race>
+   <Number>13</Number>
+   <Event>Gran Premio Santander d'Italia 2012</Event>
+   <ShortName>ITA</ShortName>
+   <Place>Monza, Italy</Place>
+   <Laps>53</Laps>
+   <PracticeDate>6-9-2013</PracticeDate>
+   <RaceDate>8-9-2013</RaceDate>
+  </Race>
+  <Race>
+   <Number>15</Number>
+   <Event>Japanese Grand Prix</Event>
+   <ShortName>JPN</ShortName>
+   <Place>Suzuka, Japan</Place>
+   <Laps>53</Laps>
+   <PracticeDate>11-10-2013</PracticeDate>
+   <RaceDate>13-10-2013</RaceDate>
+  </Race>
+  <Race>
+   <Number>14</Number>
+   <Event>Singtel Singapore Grand Prix</Event>
+   <ShortName>SGP</ShortName>
+   <Place>Marina Bay, Singapore</Place>
+   <Laps>61</Laps>
+   <PracticeDate>20-09-2013</PracticeDate>
+   <RaceDate>22-09-2013</RaceDate>
+  </Race>
+  <Race>
+   <Number>16</Number>
+   <Event>Korean Grand Prix</Event>
+   <ShortName>KOR</ShortName>
+   <Place>Yeongam, Korea</Place>
+   <Laps>55</Laps>
+   <PracticeDate>4-10-2013</PracticeDate>
+   <RaceDate>6-10-2013</RaceDate>
+  </Race>
+  <Race>
+   <Number>17</Number>
+   <Event>Airtel Indian Grand Prix</Event>
+   <ShortName>IND</ShortName>
+   <Place>New Delhi, India</Place>
+   <Laps>60</Laps>
+   <PracticeDate>25-10-2013</PracticeDate>
+   <RaceDate>27-10-2013</RaceDate>
+  </Race>
+  <Race>
+   <Number>18</Number>
+   <Event>Etihad Airways Abu Dhabi Grand Prix</Event>
+   <ShortName>ABU</ShortName>
+   <Place>Yas Marina, Abu Dhabi</Place>
+   <Laps>55</Laps>
+   <PracticeDate>1-11-2013</PracticeDate>
+   <RaceDate>3-11-2013</RaceDate>
+  </Race>
+  <Race>
+   <Number>19</Number>
+   <Event>United States Grand Prix</Event>
+   <ShortName>USA</ShortName>
+   <Place>Austin, USA</Place>
+   <Laps>56</Laps>
+   <PracticeDate>15-11-2013</PracticeDate>
+   <RaceDate>17-11-2013</RaceDate>
+  </Race>
+  <Race>
+   <Number>20</Number>
+   <Event>Grande Premio do Brasil 2012</Event>
+   <ShortName>BRA</ShortName>
+   <Place>Interlagos, Brazil</Place>
+   <Laps>71</Laps>
+   <PracticeDate>22-11-2012</PracticeDate>
+   <RaceDate>24-11-2012</RaceDate>
+  </Race>
+ </Races>
+ <Teams>
+  <Team id="0">
+   <Name>Ferrari</Name>
+   <Driver1Name>F. Alonso</Driver1Name>
+   <Driver1ShortName>ALO</Driver1ShortName>
+   <Driver1Number>3</Driver1Number>
+   <Driver2Name>F. Massa</Driver2Name>
+   <Driver2ShortName>MAS</Driver2ShortName>
+   <Driver2Number>4</Driver2Number>
+  </Team>
+  <Team id="1">
+   <Name>McLaren Mercedes</Name>
+   <Driver1Name>J. Button</Driver1Name>
+   <Driver1ShortName>BUT</Driver1ShortName>
+   <Driver1Number>5</Driver1Number>
+   <Driver2Name>S. Perez</Driver2Name>
+   <Driver2ShortName>PER</Driver2ShortName>
+   <Driver2Number>6</Driver2Number>
+  </Team>
+  <Team id="2">
+   <Name>Caterham Renault</Name>
+   <Driver1Name>C. Pic</Driver1Name>
+   <Driver1ShortName>PIC</Driver1ShortName>
+   <Driver1Number>20</Driver1Number>
+   <Driver2Name>V. der Garde</Driver2Name>
+   <Driver2ShortName>VAN</Driver2ShortName>
+   <Driver2Number>21</Driver2Number>
+  </Team>
+  <Team id="3">
+   <Name>Force India Mercedes</Name>
+   <Driver1Name>P. di Resta</Driver1Name>
+   <Driver1ShortName>DIR</Driver1ShortName>
+   <Driver1Number>14</Driver1Number>
+   <Driver2Name>A. Sutil</Driver2Name>
+   <Driver2ShortName>SUT</Driver2ShortName>
+   <Driver2Number>15</Driver2Number>
+  </Team>
+  <Team id="4">
+   <Name>HRT Cosworth</Name>
+   <Driver1Name>P. de la Rosa</Driver1Name>
+   <Driver1ShortName>DLR</Driver1ShortName>
+   <Driver1Number>24</Driver1Number>
+   <Driver2Name>N. Karthikeyan</Driver2Name>
+   <Driver2ShortName>KAR</Driver2ShortName>
+   <Driver2Number>25</Driver2Number>
+  </Team>
+  <Team id="5">
+   <Name>Lotus Renault</Name>
+   <Driver1Name>K. Raikkonen</Driver1Name>
+   <Driver1ShortName>RAI</Driver1ShortName>
+   <Driver1Number>7</Driver1Number>
+   <Driver2Name>R. Grosjean</Driver2Name>
+   <Driver2ShortName>GRO</Driver2ShortName>
+   <Driver2Number>8</Driver2Number>
+  </Team>
+  <Team id="6">
+   <Name>Marussia Cosworth</Name>
+   <Driver1Name>J. Bianchi</Driver1Name>
+   <Driver1ShortName>BIA</Driver1ShortName>
+   <Driver1Number>22</Driver1Number>
+   <Driver2Name>M. Chilton</Driver2Name>
+   <Driver2ShortName>CHI</Driver2ShortName>
+   <Driver2Number>23</Driver2Number>
+  </Team>
+  <Team id="7">
+   <Name>Mercedes</Name>
+   <Driver1Name>L. Hamilton</Driver1Name>
+   <Driver1ShortName>HAM</Driver1ShortName>
+   <Driver1Number>10</Driver1Number>
+   <Driver2Name>N. Rosberg</Driver2Name>
+   <Driver2ShortName>ROS</Driver2ShortName>
+   <Driver2Number>9</Driver2Number>
+  </Team>
+  <Team id="8">
+   <Name>Red Bull Renault</Name>
+   <Driver1Name>S. Vettel</Driver1Name>
+   <Driver1ShortName>VET</Driver1ShortName>
+   <Driver1Number>1</Driver1Number>
+   <Driver2Name>M. Webber</Driver2Name>
+   <Driver2ShortName>WEB</Driver2ShortName>
+   <Driver2Number>2</Driver2Number>
+  </Team>
+  <Team id="9">
+   <Name>Sauber Ferrari</Name>
+   <Driver1Name>N. Hulkenberg</Driver1Name>
+   <Driver1ShortName>HUL</Driver1ShortName>
+   <Driver1Number>11</Driver1Number>
+   <Driver2Name>E. Gutierrez</Driver2Name>
+   <Driver2ShortName>GUT</Driver2ShortName>
+   <Driver2Number>12</Driver2Number>
+  </Team>
+  <Team id="10">
+   <Name>Williams Renault</Name>
+   <Driver1Name>P. Maldonado</Driver1Name>
+   <Driver1ShortName>MAL</Driver1ShortName>
+   <Driver1Number>16</Driver1Number>
+   <Driver2Name>V. Bottas</Driver2Name>
+   <Driver2ShortName>BOT</Driver2ShortName>
+   <Driver2Number>17</Driver2Number>
+  </Team>
+  <Team id="11">
+   <Name>STR Ferrari</Name>
+   <Driver1Name>D. Ricciardo</Driver1Name>
+   <Driver1ShortName>RIC</Driver1ShortName>
+   <Driver1Number>19</Driver1Number>
+   <Driver2Name>J. Vergne</Driver2Name>
+   <Driver2ShortName>VER</Driver2ShortName>
+   <Driver2Number>18</Driver2Number>
+  </Team>
+ </Teams>
+</Season>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">Hello World, mF1LTActivity!</string>
+    <string name="app_name">F1LT</string>
+    <string name="email">e-mail:</string>
+    <string name="passwd">password:</string>
+    <string name="connect">Connect</string>
+    <string name="no_session">Currently no live session</string>
+    <string name="Login">Login</string>
+    <string name="login_activity">Login</string>
+    <string name="session_msg2">Next timed session will be</string>
+    <string name="session_msg1">Currently no live session</string>
+    <string name="color2">RED</string>
+    <string name="draw_car_thumbnails">Draw car thumbnails</string>
+    <string name="print_short_driver_names">Print short driver names (eg. HAM, MSC)</string>
+    <string name="cancel">Cancel</string>
+    <string name="preferences">Preferences</string>
+    <string name="commentary">Commentary</string>
+    <string name="show_commentary_line">Show commentary line in main window</string>
+    <string name="speed_records">Speed records</string>
+    <string name="fastest_pit_stops">Fastest pit stops</string>
+    <string name="fastest_laps">Fastest laps</string>
+    <string name="lap_time_comparison">Lap time comparison</string>
+    <string name="head_to_head">Head to head</string>
+    <string name="statistics">Statistics</string>
+    <string name="gap_to_front">Gap to P</string>
+    <string name="gap_to_back">Gap to P</string>
+    <string name="pos_history">Weather History</string>
+    <string name="savePath">save path:</string>
+    <string name="estatInet"></string>
+    <string name="estatOnline">ONline</string>
+    <string name="AirTrackTEMP">Air-Track Temp</string>
+    <string name="humidity">Humidity</string>
+    <string name="Pressure">Pressure</string>
+    <string name="WindSpeed">Wind Speed</string>
+    <string name="WetDry">Wet/Dry</string>
+    <string name="FlagStatus">Flags</string>
+    <string name="WindDirection">Wind Direction</string>
+    <string name="Compress">Compress Session</string>
+
+</resources>

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/carbon"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="50dip"
+        android:layout_margin="10dp"
+        android:layout_weight="0.73"
+        android:background="@drawable/bg" >
+
+        <Button
+            android:id="@+id/connectButton"
+            android:layout_width="120dp"
+            android:layout_height="45dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:text="@string/connect" />
+
+        <EditText
+            android:id="@+id/emailText"
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/textView1"
+            android:ems="10"
+            android:inputType="textEmailAddress" />
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:text="@string/email"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/emailText"
+            android:layout_centerHorizontal="true"
+            android:text="@string/passwd"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <EditText
+            android:id="@+id/passwdText"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_alignRight="@+id/emailText"
+            android:layout_below="@+id/textView2"
+            android:ems="10"
+            android:inputType="textPassword" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/passwdText"
+            android:layout_below="@+id/passwdText"
+            android:layout_marginTop="22dp"
+            android:text="@string/savePath"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <EditText
+            android:id="@+id/savePath"
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:layout_alignBaseline="@+id/textView3"
+            android:layout_alignBottom="@+id/textView3"
+            android:layout_centerHorizontal="true"
+            android:ems="10"
+            android:inputType="textUri" />
+
+        <TextView
+            android:id="@+id/estatInet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/savePath"
+            android:layout_alignBottom="@+id/savePath"
+            android:layout_alignRight="@+id/passwdText"
+            android:text="@string/estatOnline"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@color/green" />
+
+    </RelativeLayout>
+    
+</LinearLayout>
