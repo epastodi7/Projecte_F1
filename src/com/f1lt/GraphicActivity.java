@@ -58,8 +58,7 @@ public class GraphicActivity extends Activity implements DataStreamReceiver{
 		
 		//PROVA PER DADES TEMPS
 		int minutsSessio = eventData.minutsSessio;
-		//Collection<Double> airC = eventData.airTempHistory.values();
-		//Collection<Double> trackC = eventData.airTempHistory.values();
+
 		Number[] llista1, llista2;
 		
 		

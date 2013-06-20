@@ -898,8 +898,7 @@ public class F1LTActivity extends FragmentActivity  implements DataStreamReceive
     
     public void onConnectedClicked(String email, String passwd) 
     {
-    	email = "pdernest@gmail.com";
-    	passwd = "ernestpd85";
+
     	Log.d("F1LTActivity", "onConnectedClicked");
     	String url = "http://formula1.com/reg/login?";
     	String url2 = "http://live-timing.formula1.com";
